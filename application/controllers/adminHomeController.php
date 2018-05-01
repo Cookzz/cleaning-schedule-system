@@ -23,8 +23,39 @@
 			{
 				if($_SESSION['user_access_level'] == 1)
 				{
-					$data['large_state']='<button class="navLoginBtn" onclick="logout()"><img src="'.base_url().'assets/images/loginIcon.png" width="8%" class="loginIcon">Admin Logout</button>';  
-					$data['small_state'] = '<button class="navLoginBtn1" onclick="logout()">Admin Logout</button>';
+					//$data['large_state']='<button class="navLoginBtn" onclick="logout()"><img src="'.base_url().'assets/images/loginIcon.png" width="8%" class="loginIcon">Admin Logout</button>';  
+					$data['large_state'] = '
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a class="navLoginBtn dropdown-toggle" id="mainLogin" data-toggle="dropdown">ADMIN LOGIN</a>
+                                <ul class="dropdown-menu dropdown-lr pull-left profile-settings" role="menu">
+                                    <div class="text-center">
+                                        <h4 class="settingtitle"><b>User Settings</b></h4>
+                                    </div>
+                                    <form id="ajax-login-form" role="form" autocomplete="off">
+                                            <button class="settings" id="setting1">Settings</button>
+                                            <button class="settings" id="setting2" onclick="logout()">Logout</button>
+                                    </form>
+                                </ul>
+                            </li>
+                        </ul>'
+					
+					$data['small_state'] = '
+					<ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a class="navLoginBtn dropdown-toggle" id="mainLogin" data-toggle="dropdown">ADMIN LOGIN</a>
+                                <ul class="dropdown-menu dropdown-lr pull-left profile-settings" role="menu">
+                                <form id="ajax-login-form" role="form" autocomplete="off">
+                                    <div class="text-center">
+                                        <h4 class="settingtitle"><b>User Settings</b></h4>
+                                    </div>
+                                    
+                                            <button class="settings" id="setting1">Settings</button>
+                                            <button class="settings" id="setting2" onclick="logout()">Logout</button>
+                                    </form>
+                                </ul>
+                            </li>
+                        </ul>';
                     $data["admin_state"] = "<div id='content'>";
 					$data["main_page_controller"] = "adminHomeController/viewMainPage";
 					$data["big_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage" id="nav1">View As Supervisor<span class="sr-only">(current)</span></a>';									

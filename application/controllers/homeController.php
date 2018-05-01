@@ -27,7 +27,23 @@
 				$user_name = $row->user_name;
 				$user_picture = $row->user_picture;
                
-                $data['large_state']='<button class="navLoginBtn btn btn-secondary dropdown-toggle" type="button" onclick="logout()"><img src="'.base_url().'assets/images/'.$user_picture.'" width="30px" class="loginIcon">'.$user_name.'</button>';
+                //$data['large_state']='<button class="navLoginBtn btn btn-secondary dropdown-toggle" type="button" onclick="logout()"><img src="'.base_url().'assets/images/'.$user_picture.'" width="30px" class="loginIcon">'.$user_name.'</button>';
+				$data['large_state'] = '
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a class="navLoginBtn dropdown-toggle" id="mainLogin" data-toggle="dropdown"><img src="'.base_url().'assets/images/'.$user_picture.'" width="30px" class="loginIcon">'.$user_name.'</a>
+                                <ul class="dropdown-menu dropdown-lr pull-left profile-settings" role="menu">
+                                    <div class="text-center">
+                                        <h4 class="settingtitle"><b>User Settings</b></h4>
+                                    </div>
+                                    <form id="ajax-login-form" role="form" autocomplete="off">
+                                            <button class="settings" id="setting1">Settings</button>
+                                            <button class="settings" id="setting2" onclick="logout()">Logout</button>
+                                    </form>
+                                </ul>
+                            </li>
+                        </ul>';
+				
 				$data['small_state'] = '<button class="navLoginBtn1" onclick="logout()">'.$user_name.'</button>';
                    $data["admin_state"] = "<div>";
 				if(($_SESSION['user_access_level'] == 2) || ($_SESSION['user_access_level'] == 1))
