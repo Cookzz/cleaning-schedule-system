@@ -1,8 +1,38 @@
 @import url("https://fonts.googleapis.com/css?family=News+Cycle:700,1000");
+/* ---------------------------------------------------
+    STYLE FUNCTION
+----------------------------------------------------- */
+/* ---------------------------------------------------
+    ???
+----------------------------------------------------- */
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 .navbar-toggler {
   border: 0.1px solid #2196F3; }
 
+.profile-settings {
+  width: 220px;
+  right: 5%;
+  left: auto; }
+  .profile-settings .settingtitle {
+    color: black;
+    padding-bottom: 10px; }
+  .profile-settings .settings {
+    width: 100%;
+    background-color: white;
+    border: 0px solid white;
+    padding: 10px; }
+  .profile-settings .settings:hover {
+    cursor: pointer;
+    background-color: #033C73;
+    color: white; }
+
+#mainLogin {
+  color: white;
+  padding-bottom: 0px; }
+
+/* ---------------------------------------------------
+    GENERAL STYLE
+----------------------------------------------------- */
 body .navbar {
   font-family: "News Cycle";
   background-color: #2196F3;
@@ -25,7 +55,6 @@ body .navLoginBtn {
   font-weight: 700;
   cursor: pointer;
   padding: 13px;
-  padding-right: 0px;
   padding-left: 0px; }
 body .navLoginBtn:hover, body .navLoginBtn1:hover, body .loginIcon:hover {
   -webkit-stroke-width: 5.3px;
@@ -47,11 +76,14 @@ body .navLoginBtn1 {
 .loginIcon {
   padding-bottom: 3px; }
 
+/* ---------------------------------------------------
+    NAVIGATION BAR STYLE
+----------------------------------------------------- */
 .nav-item:hover {
   background-color: #033C73;
   color: white; }
 
-.dropdown-menu {
+#navigationBar .dropdown-menu {
   color: white;
   padding-left: 40px;
   padding-right: 32px; }
@@ -73,6 +105,9 @@ body .navLoginBtn1 {
   padding-left: 40px;
   cursor: pointer; }
 
+/* ---------------------------------------------------
+    MAIN CONTENT STYLE
+----------------------------------------------------- */
 .container .background {
   background-color: black;
   opacity: 0.8;
@@ -84,9 +119,15 @@ body .navLoginBtn1 {
   .container .background .content {
     color: white; }
 
+/* ---------------------------------------------------
+    TABLE STYLE
+----------------------------------------------------- */
 #user_table tr td {
   padding: 2px 10px 2px 10px; }
 
+/* ---------------------------------------------------
+    BROWSER RESIZING STYLE
+----------------------------------------------------- */
 @media (min-width: 769px) {
   .background {
     max-width: 100%; }
@@ -114,6 +155,9 @@ body .navLoginBtn1 {
     border: 1px solid #888;
     width: 80%;
     /* Could be more or less, depending on screen size */ } }
+/* ---------------------------------------------------
+    POPUP FORM STYLE
+----------------------------------------------------- */
 /* Full-width input fields */
 input[type=text], input[type=password] {
   width: 100%;
@@ -193,7 +237,7 @@ input[type=text], input[type=password] {
 @media screen and (max-width: 300px) {
   .cancelbtn, .forgotbtn {
     width: 100%; } }
-    /* ---------------------------------------------------
+/* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
 #sidebar {
@@ -238,7 +282,7 @@ a[aria-expanded="true"] {
   color: #fff;
   background: #6d7fcc; }
 
-    /* ---------------------------------------------------
+/* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
 #content {

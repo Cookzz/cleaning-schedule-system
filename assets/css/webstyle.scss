@@ -4,6 +4,9 @@ $themecolor: #2196F3;
 $secondarycolor: #033C73;
 $font: "News Cycle";
 
+/* ---------------------------------------------------
+    STYLE FUNCTION
+----------------------------------------------------- */
 @mixin navValues() {
     background-color: $themecolor;
     border-bottom: 0.1px solid $themecolor;
@@ -18,10 +21,44 @@ $font: "News Cycle";
     cursor: pointer;
 }
 
+/* ---------------------------------------------------
+    ???
+----------------------------------------------------- */
 .navbar-toggler {
     border: 0.1px solid $themecolor;
 }
 
+.profile-settings {
+    width: 220px;
+    right: 5%;
+    left: auto;
+    
+    .settingtitle {
+        color: black;
+        padding-bottom: 10px;
+    }
+    
+    .settings {
+        width: 100%;
+        background-color: white;
+        border: 0px solid white;
+        padding: 10px;
+    }
+    .settings:hover {
+        cursor: pointer;
+        background-color: $secondarycolor;
+        color: white;
+    }
+}
+
+#mainLogin {
+    color: white;
+    padding-bottom: 0px;
+}
+
+/* ---------------------------------------------------
+    GENERAL STYLE
+----------------------------------------------------- */
 body {
     
     .navbar {
@@ -43,9 +80,8 @@ body {
     
     .navLoginBtn {
         @include navValues();
-    
+        
         padding: 13px;
-        padding-right: 0px;
         padding-left: 0px;
     }
     
@@ -65,17 +101,23 @@ body {
     padding-bottom: 3px;
 }
 
+/* ---------------------------------------------------
+    NAVIGATION BAR STYLE
+----------------------------------------------------- */
 .nav-item:hover{
     background-color: $secondarycolor;
     color: white;
 }
 
-.dropdown-menu {
+#navigationBar {
+    .dropdown-menu {
     color: white;
     
     padding-left: 40px;
     padding-right: 32px;
+    }
 }
+
 
 #anothermenu {
     background-color: black;
@@ -101,6 +143,9 @@ body {
     cursor: pointer;
 }
 
+/* ---------------------------------------------------
+    MAIN CONTENT STYLE
+----------------------------------------------------- */
 //Container
 .container {
     //background of the container
@@ -122,6 +167,10 @@ body {
     }
 }
 
+/* ---------------------------------------------------
+    TABLE STYLE
+----------------------------------------------------- */
+
 //User table
 #user_table {
     tr {
@@ -133,6 +182,10 @@ body {
         }
     }
 }
+
+/* ---------------------------------------------------
+    BROWSER RESIZING STYLE
+----------------------------------------------------- */
 
 //For screens bigger than a tablet
 @media (min-width: 769px) { 
@@ -169,6 +222,9 @@ body {
     }
 }
 
+/* ---------------------------------------------------
+    POPUP FORM STYLE
+----------------------------------------------------- */
  /* Full-width input fields */
 input[type=text], input[type=password] {
     width: 100%;
@@ -254,7 +310,7 @@ input[type=text], input[type=password] {
 }
 
     @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-    /* ---------------------------------------------------
+/* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
     
@@ -307,7 +363,7 @@ input[type=text], input[type=password] {
       color: #fff;
       background: #6d7fcc;
     }
-    /* ---------------------------------------------------
+/* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
     
