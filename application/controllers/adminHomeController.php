@@ -27,7 +27,7 @@
 					$data['large_state'] = '
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
-                                <a class="navLoginBtn dropdown-toggle" id="mainLogin" data-toggle="dropdown">ADMIN LOGIN</a>
+                                <a class="navLoginBtn dropdown-toggle" id="mainLogin" data-toggle="dropdown">ADMIN PROFILE</a>
                                 <ul class="dropdown-menu dropdown-lr pull-left profile-settings" role="menu">
                                     <div class="text-center">
                                         <h4 class="settingtitle"><b>User Settings</b></h4>
@@ -41,21 +41,16 @@
                         </ul>';
 					
 					$data['small_state'] = '
-					<ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown">
-                                <a class="navLoginBtn dropdown-toggle" id="mainLogin" data-toggle="dropdown">ADMIN LOGIN</a>
-                                <ul class="dropdown-menu dropdown-lr pull-left profile-settings" role="menu">
-                                <form id="ajax-login-form" role="form" autocomplete="off">
-                                    <div class="text-center">
-                                        <h4 class="settingtitle"><b>User Settings</b></h4>
-                                    </div>
-                                    
-                                            <button class="settings" id="setting1">Settings</button>
-                                            <button class="settings" id="setting2" onclick="logout()">Logout</button>
-                                    </form>
-                                </ul>
-                            </li>
-                        </ul>';
+                    <div class="nav-item dropdown" id="n-nav6">
+                      <a class="dropdown-toggle" id="adminProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        ADMIN PROFILE
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="adminProfile" id="settingsMenu">
+                        <h2 class="dropdown-header">User Settings</h2>
+                        <button class="dropdown-item" type="button">Settings</button>
+                        <button class="dropdown-item" type="button" onclick="logout()">Logout</button>
+                      </div>
+                    </div>';
                     $data["admin_state"] = "<div id='content'>";
 					$data["main_page_controller"] = "adminHomeController/viewMainPage";
 					$data["big_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage" id="nav1">View As Supervisor<span class="sr-only">(current)</span></a>';									

@@ -8,6 +8,10 @@ $(document).ready(function() {
         $("#anothermenu").slideToggle("fast"); 
     });
     
+    $("#adminProfile").click(function() {
+        $("#settingsMenu").slideToggle("fast"); 
+    });
+    
     $(".loginBtn").on("click", popoutLogin);
     
     $(".loginForm").submit(function(){
