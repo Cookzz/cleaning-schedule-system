@@ -62,7 +62,7 @@
 			<tr id="<?php echo $user["id"];?>">
 				<!--the td will output the user table data row by row-->
 				<td id="<?php echo $user["id"];?>_user_id" contenteditable="true" ><?php echo $user["user_id"];?></td>
-				<td id="<?php echo $user["id"];?>_user_name" contenteditable="true"><?php echo $user["user_name"];?></td>
+				<td id="<?php echo $user["id"];?>_user_name"><?php echo $user["user_name"];?></td>
 				<td id="<?php echo $user["id"];?>_user_password" contenteditable="true"><?php echo $user["user_password"];?></td>
 				<td id="<?php echo $user["id"];?>_user_IC" contenteditable="true"><?php echo $user["user_IC"];?></td>
 				<td id="<?php echo $user["id"];?>_user_email" contenteditable="true"><?php echo $user["user_email"];?></td>

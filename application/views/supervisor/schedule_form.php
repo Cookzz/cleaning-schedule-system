@@ -49,7 +49,6 @@
                 <datalist id="cleaners"> <!--Lists/combobox of categories (autocompletes when typed) -->
 					<option value="NA">NA</option><?php foreach($cleaners as $cleaner): ?><option value="<?=$cleaner['user_id']."_".$cleaner['user_name']?>"><?=$cleaner['user_id']."_".$cleaner['user_name']?></option><?php endforeach; ?>
 				</datalist>
-				</select>
 			</center>
 		</td>
 	</tr>

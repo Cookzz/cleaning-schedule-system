@@ -69,7 +69,7 @@
 													<a class="dropdown-item" href="'.base_url().'HomeController/viewDutyPage">Duty</a>
 												</div>
 											</li>
-											<a class="nav-item nav-link active" href="forum.php" id="nav5">Special Stuff</a>
+											<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSetSpecialDutyPage" id="nav5">Special Duty</a>
 											<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewPendingDutyPage" id="nav6">Attendance</a>'.$extra_selector."";
 											
 										
@@ -85,7 +85,7 @@
 													<a class="dropdown-item" href="'.base_url().'HomeController/viewDutyPage">Duty</a>
 												  </div>
 												</li>
-												<a class="nav-item nav-link active" href="#" id="n-nav5">Special Stuff</a>
+												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSetSpecialDutyPage" id="n-nav5">Special Duty</a>
 												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewPendingDutyPage" id="nav6">Attendance</a>'.$extra_selector."";
 				}
 				elseif($_SESSION['user_access_level'] == 3)
@@ -660,6 +660,32 @@
 				
 				$this->viewNav();
 				$this->load->view('home/'.$page,$data);
+				$this->load->view('templates/footer');
+			}
+			
+		}
+		
+		public function viewSetSpecialDutyPage($page = "set_special_duty")
+		{
+			$this->load->library('session');
+			if(Empty($_SESSION['uid']))
+			{
+				redirect("HomeController/viewHomePage");
+			}
+			elseif($_SESSION['user_access_level'] == 3 || ($_SESSION['user_access_level'] == 4))
+			{
+				redirect("HomeController/viewMainPage");
+			}
+			else
+			{	
+				$this->load->model("main_model");
+				
+				$user_access_level = array("user_access_level" => 3);
+				$get_cleaner_query = $this->main_model->get_specify_data("*","id",$user_access_level,"users");
+				$data['cleaners'] = $get_cleaner_query->result_array();
+				
+				$this->viewNav();
+				$this->load->view('supervisor/'.$page,$data);
 				$this->load->view('templates/footer');
 			}
 			

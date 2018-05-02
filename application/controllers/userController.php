@@ -91,7 +91,7 @@
 								"user_IC"=>trim($newUserIC),
 								"user_email"=>$rand_num."@gmail.com",
 								"user_position"=>$newUserPosition,
-								"user_access_level"=> $access_level
+								"user_access_level"=> $access_level,
 								"user_picture"=> "loginIcon.png");
 								
 					$table = "users";
@@ -287,12 +287,44 @@
 					}
 					else
 					{
-					
+						$user_original_name = $result[0]["user_name"];
+						$user_original_id = $result[0]["user_id"];
+						
+						$user_id_name = $user_original_id."_".$user_original_name;
+						$new_user_data = $user_original_id."_".$user_data->user_name;
+						
+						//Update morning schedule and afternoon schedule monday to sunday cleaner data
+						$cleaner = "monday='".$user_id_name."' OR tuesday='".$user_id_name."' OR 
+									wednesday='".$user_id_name."' OR thursday='".$user_id_name."' 
+									OR friday='".$user_id_name."' OR saturday='".$user_id_name."' 
+									OR sunday='".$user_id_name."'";
+						
+						$new_cleaner_data = array('monday' => $new_user_data,
+											'tuesday' => $new_user_data,
+											'wednesday' => $new_user_data,
+											'thursday' => $new_user_data,
+											'friday' => $new_user_data,
+											'saturday' => $new_user_data,
+											'sunday' => $new_user_data);
+						
+						$query = $this->main_model->update_data2($cleaner,$new_cleaner_data,"morning_schedule");
+						$query = $this->main_model->update_data2($cleaner,$new_cleaner_data,"afternoon_schedule");
+						
+						//Update pending duty and complete duty table cleaner data
+						$pending_cleaner = "pending_duty_cleaner='".$user_id_name."'";						
+						$new_cleaner_data = array('pending_duty_cleaner' => $new_user_data);						
+						$query = $this->main_model->update_data2($pending_cleaner,$new_cleaner_data,"pending_duty");
+						
+						$complete_cleaner = "complete_duty_cleaner='".$user_id_name."'";						
+						$new_cleaner_data = array('complete_duty_cleaner' => $new_user_data);						
+						$query = $this->main_model->update_data2($complete_cleaner,$new_cleaner_data,"complete_duty");
+						
+						//Update user table data
 						$position_name = array('position_name' => $user_data->user_position);
 									
 						$query = $this->main_model->get_specify_data("position_access_level","id",$position_name,"position");
-						$result = $query->row();
-						$access_level = $result->position_access_level;
+						$access_level_result = $query->row();
+						$access_level = $access_level_result->position_access_level;
 					
 						$data = array(
 							'user_id' => $user_data->user_id,
