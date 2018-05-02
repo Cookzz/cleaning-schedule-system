@@ -10,7 +10,7 @@
 
 <!--The area of morning schedule , too complicated i will explain face to face-->
 <!--Front ender just put the class name to every td or tr-->
-<h3>Morning <button id="copyMorningSchedule">Copy Last Week Morning Schedule</button> </h3>
+<h3>Morning <button id="copyMorningSchedule">Copy This Week Morning Schedule</button> </h3>
 <form id="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 	<table border="1" style="width:90%" >
 		<thead>
