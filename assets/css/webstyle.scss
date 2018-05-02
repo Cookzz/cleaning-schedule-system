@@ -137,10 +137,18 @@ body {
     padding-right: 50px;
 }
 
-#n-nav1, #n-nav2, #n-nav3, #n-nav4, #n-nav5 {
+#n-nav1, #n-nav2, #n-nav3, #n-nav4, #n-nav5, #n-nav6 {
     padding-left: 40px;
+    color: white;
     
     cursor: pointer;
+}
+#n-nav6{
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+#n-nav6:hover{
+    background-color: $secondarycolor;
 }
 
 /* ---------------------------------------------------

@@ -38,7 +38,7 @@ $(document).ready(function(){
 	var baseURL = $("#baseURL").val();
 	var url = baseURL + 'LoginController/viewLoginValidation';
 	
-	$("form").submit(function(event){
+	$("#loginForm").submit(function(event){
 		event.preventDefault();
 
 		validateAll_login([["user_id","passwords"],["#user_id_field","#password_field"]],"#errorMessage",url,baseURL);

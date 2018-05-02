@@ -56,11 +56,11 @@
                     </button>
                     <!--Add picture here-->
                     <img src="<?php echo base_url(); ?>assets/images/FFF_Logo.png" width="4%" class="pageIcon">
-
-						<?= $small_state ?>
+						
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup1">
                     <div class="navbar-nav">
                         <?= $small_selector?>
+                        <?= $small_state ?>
                     </div>
                 </div>   
             </nav>
