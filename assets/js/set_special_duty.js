@@ -9,15 +9,28 @@ function insert_cleaner_dropdown(i)
 								"<td><input id='cleaner_"+i+"' type='text' list='cleaners'>");
 		
 	});
+	
+	$("#addSpecialDuty").click(function(){
+		if(confirm("Do you confrim to add the new special duty?"))
+		{
+			var cleaners = [];
+			for(var ii=1 ; ii<=i;ii++)
+			{
+				cleaners.push($("#cleaner_"+ii).val());
+			}
+			postSpecialDutyData(cleaners);
+		}
+		
+	});
 }
 
-function postStuff()
+function postSpecialDutyData(cleaners)
 {
 	var baseUrl = $("#baseURL").val();
-	var url = baseUrl+"stuffController/setNewStuff";
-	var newStuff = $("#newStuffField").val();
+	var url = baseUrl+"specialDutyController/setSpecialDuty";
+
 	var fd = new FormData();
-	fd.append('newStuff',newStuff);
+	fd.append('cleaners',cleaners);
 
 	$.ajax({
 		url: url,
@@ -49,7 +62,7 @@ $(document).ready(function(){
 	});
 	
 	insert_cleaner_dropdown(i);
-
+	
 /**	$(document).on('click','.update',function(){
 		if(confirm("Do you confirm want to update the stuff?"))
 		{

@@ -25,15 +25,20 @@
 				<td>Time:</td>
 				<td><input type="time" id="special_duty_time"></td>
 			</tr>
+			<tr>
+				<td></td>
+				<td colspan="2"><button width="100%" id="addCleaner">Add Cleaner</button></td>
+			</tr>
 		</tbody>
+		<!--Please the front ender go set_special_duty.js insert_cleaner_dropdown function to design the tr td-->
 		<tbody id="cleaners_area">	
 		</tbody>
 			<tr>
-				<td colspan="2"><center><button width="100%" id="addCleaner">Add Cleaner</button><center></td>
+				<td></td>
+				<td colspan="2"><button width="100%" id="addSpecialDuty">Add New Special Duty</button></td>
 			</tr>
 	</table>
 </form>
-<button id="test" >test</button>
 <datalist id='cleaners'>
 	<?php foreach($cleaners as $cleaner): ?><option value="<?= $cleaner['user_id']."_".$cleaner['user_name'] ?>" ></option><?php endforeach; ?>					
 </datalist>
