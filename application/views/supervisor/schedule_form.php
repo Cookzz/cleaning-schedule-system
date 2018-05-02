@@ -12,7 +12,7 @@
 <form id="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 <table>
 	<tr>
-		<th>Stuff Location:</td>
+		<th>Stuff Location:</th>
 		<td>
 			<center>
 				<input id="stuff" type="text" list="stuffs"> <!--Textfield/textbox -->
