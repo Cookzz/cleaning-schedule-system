@@ -3,7 +3,7 @@
             <span onclick="document.getElementById('loginForm').style.display='none'" class="close" title="Close Modal">&times;</span>
             <form class="modal-content animate" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                 <div class="container">
-                    <label><b>Username</b></label>
+                    <label><b>User ID</b></label>
                     <input id="user_id_field" type="text" placeholder="Enter User ID e.g: 16123456" name="user_id" required>
 
                     <label><b>Password</b></label>
