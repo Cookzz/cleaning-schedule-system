@@ -38,7 +38,7 @@
                                     </form>
                                 </ul>
                             </li>
-                        </ul>'
+                        </ul>';
 					
 					$data['small_state'] = '
 					<ul class="nav navbar-nav navbar-right">
