@@ -7,7 +7,7 @@
 <body>  
 
 <h2>Set Schedule</h2><hr/>
-<h3>Schedule</h3>
+<h1>Schedulezzz</h1>
 
 <form id="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 <table>
