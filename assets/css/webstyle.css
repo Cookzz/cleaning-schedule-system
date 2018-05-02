@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=News+Cycle:700,1000");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
 /* ---------------------------------------------------
     STYLE FUNCTION
 ----------------------------------------------------- */
 /* ---------------------------------------------------
     ???
 ----------------------------------------------------- */
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 .navbar-toggler {
   border: 0.1px solid #2196F3; }
 
@@ -260,27 +260,20 @@ input[type=text], input[type=password] {
   transition: all 0.3s;
   margin-left: -250px; }
 
-#sidebar.active {
-  margin-left: 0px; }
-
 #sidebar .sidebar-header {
   padding: 20px;
   background: #6d7fcc; }
-
-#sidebar ul.components {
+#sidebar .components {
   padding: 20px 0;
   border-bottom: 1px solid #47748b; }
-
 #sidebar ul p {
   color: #fff;
   padding: 10px; }
-
 #sidebar ul li a {
   padding: 10px;
   font-size: 1.1em;
   display: block;
   color: white; }
-
 #sidebar ul li a:hover {
   color: #7386D5;
   background: #fff; }
