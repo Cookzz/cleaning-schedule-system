@@ -394,6 +394,7 @@
 				$user_access_level = array("user_access_level" => 3);
 				$get_cleaner_query = $this->main_model->get_specify_data("*","id",$user_access_level,"users");
 				$data['cleaners'] = $get_cleaner_query->result_array();
+				$data['cleaners_string'] = json_encode($data['cleaners']);
 				
 				$get_stuff_query = $this->main_model->get_data_order("*","stuff","stuff");
 				$data['stuffs'] = $get_stuff_query->result_array();
@@ -683,6 +684,8 @@
 				$user_access_level = array("user_access_level" => 3);
 				$get_cleaner_query = $this->main_model->get_specify_data("*","id",$user_access_level,"users");
 				$data['cleaners'] = $get_cleaner_query->result_array();
+				
+				$data['cleaners_string'] = json_encode($data['cleaners']);
 				
 				$this->viewNav();
 				$this->load->view('supervisor/'.$page,$data);

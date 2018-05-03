@@ -10,39 +10,48 @@
 
 <h2>Create New Special Duty</h2><hr/>
 
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<form id="newSpecialDutyForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 	<table id="special_duty_table">
 		<tbody>
 			<tr>
-				<td>Location:</td>
-				<td><input type="text" id="special_duty_location"></td>
+				<td>Duty Detail:</td>
+				<td><textarea type="text" id="special_duty_dutyDetail" required></textarea></td>
+				<td id="special_duty_dutyDetail_error" style="color:red"></td>
 			</tr>
 			<tr>
 				<td>Date:</td>
-				<td><input type="date" id="special_duty_date"></td>
+				<td><input type="date" id="special_duty_date" required></td>
+				<td id="special_duty_date_error" style="color:red"></td>
 			</tr>
 			<tr>
 				<td>Time:</td>
-				<td><input type="time" id="special_duty_time"></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td colspan="2"><button width="100%" id="addCleaner">Add Cleaner</button></td>
+				<td><input type="time" id="special_duty_time" required></td>
 			</tr>
 		</tbody>
-		<!--Please the front ender go set_special_duty.js insert_cleaner_dropdown function to design the tr td-->
-		<tbody id="cleaners_area">	
-		</tbody>
-			<tr>
-				<td></td>
-				<td colspan="2"><button width="100%" id="addSpecialDuty">Add New Special Duty</button></td>
-			</tr>
+		<tr>
+			<td colspan="2"><input type="submit" width="100%"></td>
+		</tr>
 	</table>
 </form>
+<table border="1">
+	<tr>
+		<td><center>Number of Cleaner</center></td>
+		<td><center>Cleaner<center></td>
+	</tr>
+	<tbody id="cleaners_area">
+		<!--Please the front ender go set_special_duty.js insert_cleaner_dropdown function to design the tr td-->
+	</tbody>
+	<tr>
+		<td></td>
+		<td colspan="2"><button width="100%" id="addCleaner">Add Cleaner</button></td>
+	</tr>		
+</table>
 <datalist id='cleaners'>
 	<?php foreach($cleaners as $cleaner): ?><option value="<?= $cleaner['user_id']."_".$cleaner['user_name'] ?>" ></option><?php endforeach; ?>					
 </datalist>
 
+<!--hidden value for external js file-->
+<textarea id="cleaners_string" style="display:none"><?= $cleaners_string?></textarea>
 <input id="baseURL" type=hidden value="<?=base_url()?>">
 </body>
 </html>

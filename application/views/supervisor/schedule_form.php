@@ -119,6 +119,7 @@
 
 <!--boundary (below are hidden value to external js)-->
 <input id="baseURL" type=hidden value="<?=base_url()?>">
+<textarea id="cleaners_string" style="display:none"><?= $cleaners_string?></textarea>
 
 </body>
 </html>
