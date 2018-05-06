@@ -1,4 +1,7 @@
-<!--Login Modal-->
+<head>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/popUpFormStyle.css">
+</head>
+       <!--Login Modal-->
         <div id="loginForm" class="modal">
             <span onclick="document.getElementById('loginForm').style.display='none'" class="close" title="Close Modal">&times;</span>
             <form class="modal-content animate" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">

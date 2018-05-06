@@ -1,0 +1,143 @@
+@import "global.scss";
+
+/* ---------------------------------------------------
+    GENERAL STYLE
+----------------------------------------------------- */
+body {
+    .navbar {
+        font-family: $font;
+        background-color: $themecolor;
+        padding: 0px;
+
+        border: 0.1px solid $themecolor;
+    }
+    
+    #desknav {
+        font-size: 120%;
+    }
+    
+    #mobilenav {
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+    
+    .navLoginBtn {
+        @include navValues();
+        
+        padding: 13px;
+        padding-left: 0px;
+    }
+    
+    .navLoginBtn:hover, .navLoginBtn1:hover, .loginIcon:hover {
+        -webkit-stroke-width: 5.3px;
+        -webkit-stroke-color: #FFFFFF;
+        -webkit-fill-color: #FFFFFF;
+        text-shadow: 1px 0px 20px white;
+    }
+    
+    .navLoginBtn1 {
+        @include navValues();
+    }
+}
+
+.loginIcon {
+    padding-bottom: 3px;
+}
+
+/* ---------------------------------------------------
+    ???
+----------------------------------------------------- */
+.navbar-toggler {
+    border: 0.1px solid $themecolor;
+}
+
+.profile-settings {
+    width: 220px;
+    right: 5%;
+    left: auto;
+    
+    .settingtitle {
+        color: black;
+        padding-bottom: 10px;
+    }
+    
+    .settings {
+        width: 100%;
+        background-color: white;
+        border: 0px solid white;
+        padding: 10px;
+    }
+    .settings:hover {
+        cursor: pointer;
+        background-color: $secondarycolor;
+        color: white;
+    }
+}
+
+#mainLogin {
+    color: white;
+    padding-bottom: 0px;
+}
+
+/* ---------------------------------------------------
+    MAIN CONTENT STYLE
+----------------------------------------------------- */
+//Container
+.container {
+    //background of the container
+    .background {
+        background-color: black;
+        opacity: 0.8;
+
+        margin: 0 auto;
+        width: 1200px;
+
+        border: 5px solid gray;
+        border-radius: 20px;
+        padding: 10px;
+    
+    //Style for the main content of the website
+        .content {
+            color: white;
+        }
+    }
+}
+
+/* ---------------------------------------------------
+    BROWSER RESIZING STYLE
+----------------------------------------------------- */
+
+//For screens bigger than a tablet
+@media (min-width: 769px) { 
+    .background{
+        max-width: 100%;
+    }
+    
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 50%; /* Could be more or less, depending on screen size */
+    }
+}
+
+//For phones and tablets
+@media (max-width: 768px) { 
+    .container {
+        margin: 0px;
+        max-width: 100%;
+        
+        .background {
+            overflow-x: auto;
+            max-width: 100%;
+        }
+    }
+    
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+}

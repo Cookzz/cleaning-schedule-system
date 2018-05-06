@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=News+Cycle:700,1000");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+
+$themecolor: #2196F3;
+$secondarycolor: #033C73;
+$font: "News Cycle";
+
+/* ---------------------------------------------------
+    Navigation Bar Values
+----------------------------------------------------- */
+@mixin navValues() {
+    background-color: $themecolor;
+    border-bottom: 0.1px solid $themecolor;
+    border-top: 0.1px solid $themecolor;
+    border-right: 0.1px solid black;
+    border-left: 0.1px solid $themecolor;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 700;
+    
+    cursor: pointer;
+}

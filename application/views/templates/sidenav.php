@@ -1,4 +1,4 @@
-<!-- Sidebar Holder -->
+    <!-- Sidebar Holder -->
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h3>Header as you want </h3>

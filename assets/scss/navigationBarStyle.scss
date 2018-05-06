@@ -1,0 +1,51 @@
+@import "global.scss";
+
+/* ---------------------------------------------------
+    NAVIGATION BAR STYLE
+----------------------------------------------------- */
+.nav-item:hover{
+    background-color: $secondarycolor;
+    color: white;
+}
+
+#navigationBar {
+    .dropdown-menu {
+    color: white;
+    
+    padding-left: 40px;
+    padding-right: 32px;
+    }
+}
+
+
+#anothermenu {
+    background-color: black;
+    padding-left: 0px;
+    
+    .dropdown-item {
+        color: white;
+    }
+    .dropdown-item:hover {
+        background-color: white;
+        color: black;
+    }
+}
+
+#nav1, #nav2, #nav3, #nav4, #nav5 {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#n-nav1, #n-nav2, #n-nav3, #n-nav4, #n-nav5, #n-nav6 {
+    padding-left: 40px;
+    color: white;
+    
+    cursor: pointer;
+}
+#n-nav6{
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+#n-nav6:hover{
+    background-color: $secondarycolor;
+}
