@@ -1,24 +1,25 @@
 <!DOCTYPE HTML>  
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/schedule.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/schedule.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/supervisorScheduleStyle.css">
 </head>
 <body>  
 
-<h2><?= $date?> Schedule</h2><hr/>
-
-
 <a href="<?php echo base_url();?>HomeController/viewNextWeekSchedulePage">Next Week Schedule</a>
+<h2><?= $date?>Schedule</h2><hr/>
+
 <!--The area of morning schedule , too complicated i will explain face to face-->
 <!--Front ender just put the class name to every td or tr-->
-<h3>Morning</h3>
+<h3 class="dayLabel">Morning</h3>
+<hr class="scheduleHr">
 <form id="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-	<table border="1" style="width:90%">
+	<table border="1" style="width:90%" class="morningTable">
 		<thead>
 			<tr><th>Stuff</th>	
 			<th>Monday</th>
-			<th>Tueasday</th>
+			<th>Tuesday</th>
 			<th>Wednesday</th>
 			<th>Thursday</th>
 			<th>Friday</th>
@@ -61,16 +62,17 @@
 			</tr>
 			<?php }?>
 			<?php endforeach; ?>
-			<tr><td colspan="9"><button id="updateMorningSchedule" style="float:right" type="button">Update Schedule</button><button id="deleteMorningSchedule" style="float:right" type="button">Delete Schedule</button></td></tr>
+			<button id="updateMorningSchedule" style="float:right" type="button">Update Schedule</button><button id="deleteMorningSchedule" style="float:right" type="button">Delete Schedule</button>
 		</tbody>
 	</table>
 </form>
 
 <!--The area of afternoon schedule , too complicated i will explain face to face-->
 <!--Front ender just put the class name to every td or tr-->
-<h3>Afternoon</h3>
+<h3 class="dayLabel">Afternoon</h3>
+<hr class="scheduleHr">
 <form id="form2" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-	<table border="1" style="width:90%" >
+	<table border="1" style="width:90%" class="afternoonTable">
 		<thead>
 			<tr><th>Stuff</th>	
 			<th>Monday</th>
@@ -78,7 +80,7 @@
 			<th>Wednesday</th>
 			<th>Thursday</th>
 			<th>Friday</th>
-			<td>Saturday</th>
+			<th>Saturday</th>
 			<th>Sunday</th>
 			<th>Remark</th></tr>
 		</thead>

@@ -31,7 +31,7 @@
 				$data['large_state'] = '
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
-                                <a class="deskLoginBtn dropdown-toggle" data-toggle="dropdown"><img src="'.base_url().'assets/images/'.$user_picture.'" width="30px" class="loginIcon">'.$user_name.'</a>
+                                <a class="deskLoginBtn dropdown-toggle" id="deskLogin" data-toggle="dropdown"><img src="'.base_url().'assets/images/'.$user_picture.'" width="30px" class="loginIcon">'.$user_name.'</a>
                                 <ul class="dropdown-menu dropdown-lr pull-left profile-settings" role="menu">
                                     <div class="text-center">
                                         <h4 class="settingtitle"><b>User Settings</b></h4>

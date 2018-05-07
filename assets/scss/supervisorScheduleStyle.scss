@@ -1,0 +1,53 @@
+@import "global.scss";
+
+/* ---------------------------------------------------
+    MORNING TABLE STYLE
+----------------------------------------------------- */
+.morningTable {
+    width: 90%;
+    
+    thead{
+        font-family: $font;
+    }
+    
+    tbody{
+        tr {
+            &:nth-child(odd) {
+                background: #D0E4F5;
+                
+                select {
+                    background: #D0E4F5;
+                }
+            }
+        }
+        td {
+            select {
+                border: 0px;
+            }
+        }
+    }
+}
+
+/* ---------------------------------------------------
+    AFTERNOON TABLE STYLE
+----------------------------------------------------- */
+
+
+
+/* ---------------------------------------------------
+    GENERAL STYLE
+----------------------------------------------------- */
+.scheduleHr {
+    border: none;
+    height: 1px;
+    background-color: black;
+    margin-left:0;
+    width: 70%;
+    
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.dayLabel {
+    margin-bottom: 3px;
+}
