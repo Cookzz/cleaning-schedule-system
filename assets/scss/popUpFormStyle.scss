@@ -23,7 +23,7 @@ input[type=text], input[type=password] {
 }
 
 /* Float cancel and signup buttons and add an equal width */
-.cancelbtn,.forgotbtn,.loginbtn {
+.cancelbtn, .forgotbtn, .loginbtn {
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -63,16 +63,15 @@ input[type=text], input[type=password] {
     color: #000;
     font-size: 40px;
     font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: red;
-    cursor: pointer;
+    
+    &:hover, &:focus {
+        color: red;
+        cursor: pointer;
+    }
 }
 
 /* Clear floats */
-.clearfix::after {
+.clearfix:after {
     content: "";
     clear: both;
     display: table;

@@ -12,11 +12,11 @@
 			$this->load->library('session');
 			if((Empty($_SESSION['uid']))&&(Empty($_SESSION['user_access_level'])))
 			{
-				$data['large_state']='<button class="navLoginBtn" onclick="popoutLogin()"><img src="'.base_url().'assets/images/loginIcon.png" width="30px" class="loginIcon"> Login</button>';  
-				$data['small_state'] = '<button class="navLoginBtn1" onclick="popoutLogin()">Login</button>';
+				$data['large_state']='<button class="deskLoginBtn" onclick="popoutLogin()"><img src="'.base_url().'assets/images/loginIcon.png" width="30px" class="loginIcon"> Login</button>';  
+				$data['small_state'] = '<button class="mobileLoginBtn" onclick="popoutLogin()">Login</button>';
                 $data["admin_state"] = "<div>";
 				$data["big_selector"] = '<a class="nav-link active" id="nav1">FFF Cleaning System<span class="sr-only">(current)</span></a>';							
-				$data["small_selector"] = '<a class="nav-link active" id="n-nav1">FFF Cleaning System<span class="sr-only">(current)</span></a>';
+				$data["small_selector"] = '<a class="nav-link active">FFF Cleaning System<span class="sr-only">(current)</span></a>';
 			}
 			else
 			{
@@ -31,7 +31,7 @@
 				$data['large_state'] = '
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
-                                <a class="navLoginBtn dropdown-toggle" id="mainLogin" data-toggle="dropdown"><img src="'.base_url().'assets/images/'.$user_picture.'" width="30px" class="loginIcon">'.$user_name.'</a>
+                                <a class="deskLoginBtn dropdown-toggle" data-toggle="dropdown"><img src="'.base_url().'assets/images/'.$user_picture.'" width="30px" class="loginIcon">'.$user_name.'</a>
                                 <ul class="dropdown-menu dropdown-lr pull-left profile-settings" role="menu">
                                     <div class="text-center">
                                         <h4 class="settingtitle"><b>User Settings</b></h4>
@@ -44,7 +44,7 @@
                             </li>
                         </ul>';
 				
-				$data['small_state'] = '<button class="navLoginBtn1" onclick="logout()">'.$user_name.'</button>';
+				$data['small_state'] = '<button class="mobileLoginBtn" onclick="logout()">'.$user_name.'</button>';
                    $data["admin_state"] = "<div>";
 				if(($_SESSION['user_access_level'] == 2) || ($_SESSION['user_access_level'] == 1))
 				{
@@ -57,57 +57,58 @@
 						$extra_selector = "";
 					}
 					
-					$data["big_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage" id="nav1">Home<span class="sr-only">(current)</span></a>
-											<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage" id="nav3">Schedule</a>
-											<li class="nav-item dropdown">
-												<a class="nav-link dropdown-toggle active" id="nav2">
-												Stuff
-												</a>
-												<div class="dropdown-menu" id="menu">
-													<a class="dropdown-item" href="'.base_url().'HomeController/viewStuffLocationPage">Stuff</a>
-													<a class="dropdown-item" href="'.base_url().'HomeController/viewSubStuffPage">Substuff</a>
-													<a class="dropdown-item" href="'.base_url().'HomeController/viewDutyPage">Duty</a>
-												</div>
-											</li>
-											<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSetSpecialDutyPage" id="nav5">Special Duty</a>
-											<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewPendingDutyPage" id="nav6">Attendance</a>'.$extra_selector."";
+					$data["big_selector"] = '
+                    <a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage" id="nav1">Home<span class="sr-only">(current)</span></a>
+				        <a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage">Schedule</a>
+				            <li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle active">
+								    Stuff
+								</a>
+								<div class="dropdown-menu" id="menu">
+								    <a class="dropdown-item" href="'.base_url().'HomeController/viewStuffLocationPage">Stuff</a>
+								    <a class="dropdown-item" href="'.base_url().'HomeController/viewSubStuffPage">Substuff</a>
+								    <a class="dropdown-item" href="'.base_url().'HomeController/viewDutyPage">Duty</a>
+				                </div>
+				            </li>
+				            <a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSetSpecialDutyPage">Special Duty</a>
+				            <a class="nav-item nav-link active" href="'.base_url().'HomeController/viewPendingDutyPage">Attendance</a>'.$extra_selector."";
 											
 										
-					$data["small_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage" id="n-nav1">Home<span class="sr-only">(current)</span></a>
-												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage" id="n-nav3">Schedule</a>
-												<li class="nav-item dropdown" id="n-nav2">
+					$data["small_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage">Home<span class="sr-only">(current)</span></a>
+												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage">Schedule</a>
+												<li class="nav-item dropdown">
 												  <a class="nav-link dropdown-toggle active" id="navbardrop">
 													Stuff
 												  </a>
-												  <div class="dropdown-menu" id="anothermenu">
+												  <div class="dropdown-menu" id="mobileMenu">
 													<a class="dropdown-item" href="'.base_url().'HomeController/viewStuffLocationPage">Stuff</a>
 													<a class="dropdown-item" href="'.base_url().'HomeController/viewSubStuffPage">Substuff</a>
 													<a class="dropdown-item" href="'.base_url().'HomeController/viewDutyPage">Duty</a>
 												  </div>
 												</li>
-												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSetSpecialDutyPage" id="n-nav5">Special Duty</a>
-												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewPendingDutyPage" id="nav6">Attendance</a>'.$extra_selector."";
+												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSetSpecialDutyPage">Special Duty</a>
+												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewPendingDutyPage">Attendance</a>'.$extra_selector."";
 				}
 				elseif($_SESSION['user_access_level'] == 3)
 				{
-					$data["big_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage" id="nav1">Home<span class="sr-only">(current)</span></a>
-											<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage" id="nav3">Schedule</a>
-											<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewOwnDutyPage" id="nav5">Duty</a>
-											<a class="nav-item nav-link active" href="forum.php" id="nav5">Special Stuff</a>
-											<a class="nav-item nav-link active" href="#" id="nav4">Contact Us</a>';
+					$data["big_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage">Home<span class="sr-only">(current)</span></a>
+											<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage">Schedule</a>
+											<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewOwnDutyPage">Duty</a>
+											<a class="nav-item nav-link active" href="forum.php">Special Stuff</a>
+											<a class="nav-item nav-link active" href="#">Contact Us</a>';
 										
-					$data["small_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage" id="n-nav1">Home<span class="sr-only">(current)</span></a>
-												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage" id="n-nav3">Schedule</a>
-												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewOwnDutyPage" id="n-nav5">Duty</a>
-												<a class="nav-item nav-link active" href="#" id="n-nav5">Special Stuff</a>
-												<a class="nav-item nav-link active" href="#" id="n-nav4">Contact Us</a>';
+					$data["small_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage">Home<span class="sr-only">(current)</span></a>
+												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage">Schedule</a>
+												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewOwnDutyPage">Duty</a>
+												<a class="nav-item nav-link active" href="#">Special Stuff</a>
+												<a class="nav-item nav-link active" href="#">Contact Us</a>';
 				}
 				elseif($_SESSION['user_access_level'] == 4)
 				{
-					$data["big_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage" id="nav1">Home<span class="sr-only">(current)</span></a>
-											<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage" id="nav3">Schedule</a>
+					$data["big_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage">Home<span class="sr-only">(current)</span></a>
+											<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage">Schedule</a>
 											<li class="nav-item dropdown">
-												<a class="nav-link dropdown-toggle active" id="nav2">
+												<a class="nav-link dropdown-toggle active">
 												Stuff
 												</a>
 												<div class="dropdown-menu" id="menu">
@@ -116,12 +117,12 @@
 													<a class="dropdown-item" href="'.base_url().'HomeController/viewDutyPage">Duty</a>
 												</div>
 											</li>
-											<a class="nav-item nav-link active" href="forum.php" id="nav5">Special Stuff</a>
-											<a class="nav-item nav-link active" href="#" id="nav4">Contact Us</a>';
+											<a class="nav-item nav-link active" href="forum.php">Special Stuff</a>
+											<a class="nav-item nav-link active" href="#">Contact Us</a>';
 										
-					$data["small_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage" id="n-nav1">Home<span class="sr-only">(current)</span></a>
-												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage" id="n-nav3">Schedule</a>
-												<li class="nav-item dropdown" id="n-nav2">
+					$data["small_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage">Home<span class="sr-only">(current)</span></a>
+												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage">Schedule</a>
+												<li class="nav-item dropdown">
 												  <a class="nav-link dropdown-toggle active" id="navbardrop">
 													Stuff
 												  </a>
@@ -131,8 +132,8 @@
 													<a class="dropdown-item" href="'.base_url().'HomeController/viewDutyPage">Duty</a>
 												  </div>
 												</li>
-												<a class="nav-item nav-link active" href="#" id="n-nav5">Special Stuff</a>
-												<a class="nav-item nav-link active" href="#" id="n-nav4">Contact Us</a>';
+												<a class="nav-item nav-link active" href="#">Special Stuff</a>
+												<a class="nav-item nav-link active" href="#">Contact Us</a>';
 				}
 			}
 			

@@ -40,18 +40,3 @@
                 </div>
             </form>
         </div>
-        
-        <!--TEST MODAL-->
-       <div id="logOutForm" class="modal">
-            <span onclick="document.getElementById('signUpForm').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <form class="modal-content animate" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                <div class="container">
-                    <label><b>Username</b></label>
-                    <input type="text" placeholder="Enter Username e.g: Pa_Doru111" name="username" required>
-
-                    <div class="clearfix">
-                        <button type="button" class="cancelbtn">Logout</button>
-                    </div>
-                </div>
-            </form>
-        </div>

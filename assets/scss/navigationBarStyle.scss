@@ -1,51 +1,126 @@
 @import "global.scss";
 
 /* ---------------------------------------------------
+    USER SETTINGS BUTTON STYLE
+----------------------------------------------------- */
+.navbar-toggler {
+    border: 0.1px solid $themecolor;
+}
+
+.profile-settings {
+    width: 220px;
+    right: 5%;
+    left: auto;
+    
+    .settingtitle {
+        color: black;
+        padding-bottom: 10px;
+    }
+    
+    .settings {
+        width: 100%;
+        background-color: white;
+        border: 0px solid white;
+        padding: 10px;
+        
+        &:hover {
+            cursor: pointer;
+            background-color: $secondarycolor;
+            color: white;
+        }
+    }
+}
+
+/* ---------------------------------------------------
+    GENERAL NAVBAR
+----------------------------------------------------- */
+.navbar {
+    font-family: $font;
+    background-color: $themecolor;
+    padding: 0px;
+
+    border: 0.1px solid $themecolor;
+}
+    
+.deskLoginBtn {
+    @include navValues();
+    
+    padding: 13px;
+    padding-left: 0px;
+}
+
+#deskLogin {
+    color: white;
+    padding-bottom: 0px;
+}
+
+.mobileLoginBtn {
+    @include navValues();
+}
+    
+.deskLoginBtn, .mobileLoginBtn, .loginIcon {
+    &:hover {
+        -webkit-stroke-width: 5.3px;
+        -webkit-stroke-color: #FFFFFF;
+        -webkit-fill-color: #FFFFFF;
+        text-shadow: 1px 0px 20px white;
+    }    
+}
+
+.loginIcon {
+    padding-bottom: 3px;
+}
+
+/* ---------------------------------------------------
     NAVIGATION BAR STYLE
 ----------------------------------------------------- */
-.nav-item:hover{
-    background-color: $secondarycolor;
-    color: white;
-}
 
 #navigationBar {
     .dropdown-menu {
-    color: white;
-    
-    padding-left: 40px;
-    padding-right: 32px;
+        color: white;
+
+        padding-left: 40px;
+        padding-right: 32px;
     }
 }
 
 
-#anothermenu {
+#mobileMenu {
     background-color: black;
     padding-left: 0px;
     
     .dropdown-item {
         color: white;
-    }
-    .dropdown-item:hover {
-        background-color: white;
-        color: black;
+        
+        &:hover {
+            background-color: white;
+            color: black;
+        }
     }
 }
 
-#nav1, #nav2, #nav3, #nav4, #nav5 {
-    padding-left: 50px;
-    padding-right: 50px;
-}
-
-#n-nav1, #n-nav2, #n-nav3, #n-nav4, #n-nav5, #n-nav6 {
-    padding-left: 40px;
-    color: white;
+#desknav {
+    font-size: 120%;
     
-    cursor: pointer;
+    .nav-item {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
 }
-#n-nav6{
+
+#mobilenav {
     padding-top: 7px;
     padding-bottom: 7px;
+    
+    .nav-item {
+        padding-left: 40px;
+        color: white;
+    
+        cursor: pointer;
+    }
 }
-#n-nav6:hover{
+
+.nav-item:hover{
     background-color: $secondarycolor;
+    color: white;
 }

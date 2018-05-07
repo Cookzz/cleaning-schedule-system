@@ -4,40 +4,109 @@
     Navigation Bar Values
 ----------------------------------------------------- */
 /* ---------------------------------------------------
+    USER SETTINGS BUTTON STYLE
+----------------------------------------------------- */
+.navbar-toggler {
+  border: 0.1px solid #2196F3; }
+
+.profile-settings {
+  width: 220px;
+  right: 5%;
+  left: auto; }
+  .profile-settings .settingtitle {
+    color: black;
+    padding-bottom: 10px; }
+  .profile-settings .settings {
+    width: 100%;
+    background-color: white;
+    border: 0px solid white;
+    padding: 10px; }
+    .profile-settings .settings:hover {
+      cursor: pointer;
+      background-color: #033C73;
+      color: white; }
+
+/* ---------------------------------------------------
+    GENERAL NAVBAR
+----------------------------------------------------- */
+.navbar {
+  font-family: "News Cycle";
+  background-color: #2196F3;
+  padding: 0px;
+  border: 0.1px solid #2196F3; }
+
+.deskLoginBtn {
+  background-color: #2196F3;
+  border-bottom: 0.1px solid #2196F3;
+  border-top: 0.1px solid #2196F3;
+  border-right: 0.1px solid black;
+  border-left: 0.1px solid #2196F3;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 13px;
+  padding-left: 0px; }
+
+#deskLogin {
+  color: white;
+  padding-bottom: 0px; }
+
+.mobileLoginBtn {
+  background-color: #2196F3;
+  border-bottom: 0.1px solid #2196F3;
+  border-top: 0.1px solid #2196F3;
+  border-right: 0.1px solid black;
+  border-left: 0.1px solid #2196F3;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 700;
+  cursor: pointer; }
+
+.deskLoginBtn:hover, .mobileLoginBtn:hover, .loginIcon:hover {
+  -webkit-stroke-width: 5.3px;
+  -webkit-stroke-color: #FFFFFF;
+  -webkit-fill-color: #FFFFFF;
+  text-shadow: 1px 0px 20px white; }
+
+.loginIcon {
+  padding-bottom: 3px; }
+
+/* ---------------------------------------------------
     NAVIGATION BAR STYLE
 ----------------------------------------------------- */
-.nav-item:hover {
-  background-color: #033C73;
-  color: white; }
-
 #navigationBar .dropdown-menu {
   color: white;
   padding-left: 40px;
   padding-right: 32px; }
 
-#anothermenu {
+#mobileMenu {
   background-color: black;
   padding-left: 0px; }
-  #anothermenu .dropdown-item {
+  #mobileMenu .dropdown-item {
     color: white; }
-  #anothermenu .dropdown-item:hover {
-    background-color: white;
-    color: black; }
+    #mobileMenu .dropdown-item:hover {
+      background-color: white;
+      color: black; }
 
-#nav1, #nav2, #nav3, #nav4, #nav5 {
-  padding-left: 50px;
-  padding-right: 50px; }
+#desknav {
+  font-size: 120%; }
+  #desknav .nav-item {
+    padding-left: 50px;
+    padding-right: 50px; }
 
-#n-nav1, #n-nav2, #n-nav3, #n-nav4, #n-nav5, #n-nav6 {
-  padding-left: 40px;
-  color: white;
-  cursor: pointer; }
-
-#n-nav6 {
+#mobilenav {
   padding-top: 7px;
   padding-bottom: 7px; }
+  #mobilenav .nav-item {
+    padding-left: 40px;
+    color: white;
+    cursor: pointer; }
 
-#n-nav6:hover {
-  background-color: #033C73; }
+.nav-item:hover {
+  background-color: #033C73;
+  color: white; }
 
 /*# sourceMappingURL=navigationBarStyle.css.map */

@@ -39,8 +39,8 @@
                         <img src="<?php echo base_url(); ?>assets/images/FFF_Logo.png" width="4%" class="pageIcon">
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                           <ul class="navbar-nav mr-auto">
-                            <?= $big_selector?>
+                            <ul class="navbar-nav mr-auto">
+                                <?= $big_selector?>
                             </ul>
                         </div>
                     </div>

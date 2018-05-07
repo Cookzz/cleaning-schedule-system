@@ -12,12 +12,12 @@
 			$this->load->library('session');
 			if(Empty($_SESSION['uid']) &&(Empty($_SESSION['user_access_level'])))
 			{
-				$data['large_state']='<button class="navLoginBtn" onclick="popoutLogin()"><img src="'.base_url().'assets/images/loginIcon.png" width="8%" class="loginIcon"> Login</button>';  
-				$data['small_state'] = '<button class="navLoginBtn1" onclick="popoutLogin()">Login</button>';
-                $data["admin_state"] = "<div";
+				$data['large_state']='<button class="deskLoginBtn" id="deskLogin" onclick="popoutLogin()"><img src="'.base_url().'assets/images/loginIcon.png" width="8%" class="loginIcon"> Login</button>';  
+				$data['small_state'] = '<button class="mobileLoginBtn" onclick="popoutLogin()">Login</button>';
+                $data["admin_state"] = "<div>";
 				$data["main_page_controller"] = "HomeController/viewHomePage";
-				$data["big_selector"] = '<a class="nav-link active" id="nav1">FFF Cleaning System<span class="sr-only">(current)</span></a>';									
-				$data["small_selector"] = '<a class="nav-link active" id="n-nav1">FFF Cleaning System<span class="sr-only">(current)</span></a>';
+				$data["big_selector"] = '<a class="nav-link active">FFF Cleaning System<span class="sr-only">(current)</span></a>';									
+				$data["small_selector"] = '<a class="nav-link active">FFF Cleaning System<span class="sr-only">(current)</span></a>';
 			}
 			else
 			{
@@ -27,7 +27,7 @@
 					$data['large_state'] = '
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
-                                <a class="navLoginBtn dropdown-toggle" id="mainLogin" data-toggle="dropdown">ADMIN PROFILE</a>
+                                <a class="deskLoginBtn dropdown-toggle" id="deskLogin" data-toggle="dropdown">ADMIN PROFILE</a>
                                 <ul class="dropdown-menu dropdown-lr pull-left profile-settings" role="menu">
                                     <div class="text-center">
                                         <h4 class="settingtitle"><b>User Settings</b></h4>
@@ -41,7 +41,7 @@
                         </ul>';
 					
 					$data['small_state'] = '
-                    <div class="nav-item dropdown" id="n-nav6">
+                    <div class="nav-item dropdown">
                       <a class="dropdown-toggle" id="adminProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         ADMIN PROFILE
                       </a>

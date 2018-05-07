@@ -1,61 +1,53 @@
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
-    #sidebar {
-        width: 250px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        z-index: 999;
-        background: #7386D5;
-        color: #fff !important;
-        transition: all 0.3s;
-        margin-left: -250px;
-    }
-
-    #sidebar.active {
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #7386D5;
+    color: #fff !important;
+    transition: all 0.3s;
+    margin-left: -250px;
+        
+    &.active {
         margin-left: 0px;
     }
+
+    .sidebar-header {
+        padding: 20px;
+        background: #6d7fcc;
+    }
     
-    #sidebar{
-        .sidebar-header {
-            padding: 20px;
-            background: #6d7fcc;
+    .components {
+        padding: 20px 0;
+        border-bottom: 1px solid #47748b;
+    }
+    
+    ul {
+        p {
+            color: #fff;
+            padding: 10px;
         }
         
-        .components {
-            padding: 20px 0;
-            border-bottom: 1px solid #47748b;
-        }
-        
-        ul {
-            p {
-                color: #fff;
+        li {
+            a {
                 padding: 10px;
-            }
-            
-            li {
-                a {
-                    padding: 10px;
-                    font-size: 1.1em;
-                    display: block;
-                    color:white;
-                }
+                font-size: 1.1em;
+                display: block;
+                color: white;
                 
-                a:hover {
+                &:hover{
                     color: #7386D5;
                     background: #fff;
                 }
             }
         } 
     }
-    
-    #sidebar ul li.active>a,
-    a[aria-expanded="true"] {
-      color: #fff;
-      background: #6d7fcc;
-    }
+}
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
@@ -66,8 +58,8 @@
         position: absolute;
         top: 0;
         right: 0;
-    }
-    
-    #content.active {
-      width: calc(100% - 250px);
+        
+        &.active {
+            width: calc(100% - 250px);
+        }
     }
