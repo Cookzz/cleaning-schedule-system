@@ -95,9 +95,12 @@ function update_stuff(stuff_id)
 {
 		var baseUrl = $("#baseURL").val();
 		var url = baseUrl+"stuffController/updateStuffData";
-		var update_stuff = $("#"+stuff_id+"_stuff").text();
+		var update_stuff = $("#"+stuff_id+"_stuff").text().trim();
+		var test_update_stuff = $("#"+stuff_id+"_stuff").text();
+		console.log(update_stuff);
+		console.log(test_update_stuff);
 		var fd = new FormData();
-		
+
 		fd.append('update_stuff',update_stuff);
 		fd.append('stuff_id',stuff_id);
 

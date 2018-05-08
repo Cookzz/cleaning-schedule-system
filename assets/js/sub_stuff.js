@@ -95,7 +95,7 @@ function update_sub_stuff(sub_stuff_id)
 {
 		var baseUrl = $("#baseURL").val();
 		var url = baseUrl+"subStuffController/updateSubStuffData";
-		var update_sub_stuff = $("#"+sub_stuff_id+"_sub_stuff").text();
+		var update_sub_stuff = $("#"+sub_stuff_id+"_sub_stuff").text().trim();
 		var fd = new FormData();
 		
 		fd.append('update_sub_stuff',update_sub_stuff);
