@@ -96,6 +96,10 @@
 #mobilenav {
     padding-top: 7px;
     padding-bottom: 7px;
+}
+#navbarNavAltMarkup1 {
+    @extend #mobilenav;
+    @extend .navbar;
     
     .nav-item {
         padding-left: 40px;

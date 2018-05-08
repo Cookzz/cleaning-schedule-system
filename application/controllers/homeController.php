@@ -26,8 +26,7 @@
 				$row = $query->row();	
 				$user_name = $row->user_name;
 				$user_picture = $row->user_picture;
-               
-                //$data['large_state']='<button class="navLoginBtn btn btn-secondary dropdown-toggle" type="button" onclick="logout()"><img src="'.base_url().'assets/images/'.$user_picture.'" width="30px" class="loginIcon">'.$user_name.'</button>';
+
 				$data['large_state'] = '
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
