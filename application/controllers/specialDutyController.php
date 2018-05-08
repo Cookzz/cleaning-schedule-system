@@ -14,7 +14,8 @@
 			{
 				$newSpecialDutyObject = json_decode($_POST["newSpecialDutyString"], false);
 				
-				$special_duty_data = array("special_duty_detail" => $newSpecialDutyObject->special_duty_dutyDetail,
+				$special_duty_data = array("special_duty_title" => $newSpecialDutyObject->special_duty_dutyTitle,
+										"special_duty_detail" => $newSpecialDutyObject->special_duty_dutyDetail,
 										"special_duty_time" => $newSpecialDutyObject->special_duty_time,
 										"special_duty_date" => $newSpecialDutyObject->special_duty_date);
 										
@@ -31,6 +32,23 @@
 				}
 				echo(true);
 			}			
+		}
+		
+		public function deleteSpecialDuty()
+		{
+			if(isset($_POST['special_duty_id']))
+			{
+				$special_duty_id = $_POST['special_duty_id'];
+				$this->load->model("main_model");
+				
+				$data = array("special_duty_id"=>$special_duty_id);
+				
+				$delete_query = $this->main_model->delete_data("special_duty",$data);
+				
+				$get_query = $this->main_model->get_data_order("*","special_duty_id","special_duty");
+				$special_duty_data = $get_query->result_array();
+				echo json_encode($special_duty_data);
+			}
 		}
 	}
 	

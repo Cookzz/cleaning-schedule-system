@@ -21,7 +21,12 @@ function validateDate(cleaners,numberOfCleaner)
 	var TodayDate = new Date();
 	var special_duty_date = new Date(Date.parse($("#special_duty_date").val()));
 	
-	if(!($("#special_duty_dutyDetail").val().trim().match(/^([a-zA-Z0-9]+\s)*[a-zA-Z0-9]+$/)))
+	if(!($("#special_duty_dutyTitle").val().trim().match(/^([a-zA-Z0-9]+\s)*[a-zA-Z0-9]+$/)))
+	{
+		$("#special_duty_dutyTitle_error").show();
+		$("#special_duty_dutyTitle_error").text("Invalid Title");
+	}
+	else if(!($("#special_duty_dutyDetail").val().trim().match(/^([a-zA-Z0-9]+\s)*[a-zA-Z0-9]+$/)))
 	{
 		$("#special_duty_dutyDetail_error").show();
 		$("#special_duty_dutyDetail_error").text("Invalid Location");
@@ -30,7 +35,7 @@ function validateDate(cleaners,numberOfCleaner)
 	{
 		$("#special_duty_dutyDetail_error").hide();
 		$("#special_duty_date_error").show();
-		$("#special_duty_date_error").text("You cannot assign the special to previous day");
+		$("#special_duty_date_error").text("You cannot assign the special duty to previous day");
 	}
 	else
 	{
@@ -97,11 +102,13 @@ function postSpecialDutyData(cleaners)
 	var baseUrl = $("#baseURL").val();
 	var url = baseUrl+"specialDutyController/setSpecialDuty";
 	
+	var special_duty_dutyTitle = $("#special_duty_dutyTitle").val().trim();
 	var special_duty_dutyDetail = $("#special_duty_dutyDetail").val().trim();
 	var special_duty_date = $("#special_duty_date").val();
 	var special_duty_time = $("#special_duty_time").val();
 	
 	var newSpecialDutyObject = {
+			"special_duty_dutyTitle":special_duty_dutyTitle,
 			"special_duty_dutyDetail":special_duty_dutyDetail,
 			"special_duty_date":special_duty_date,
 			"special_duty_time":special_duty_time,

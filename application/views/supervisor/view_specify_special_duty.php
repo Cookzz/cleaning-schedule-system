@@ -7,20 +7,15 @@
 
 </head>
 <body>  
-<a href="<?php echo base_url(); ?>HomeController/viewAllSpecialDutyPage">View All Special Duty</a>
-<h2>Create New Special Duty</h2><hr/>
+
+<h2><?= $special_duties["special_duty_title"]?></h2><hr/>
 
 <form id="newSpecialDutyForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 	<table id="special_duty_table">
 		<tbody>
 			<tr>
-				<td>Duty Title:</td>
-				<td><input type="text" id="special_duty_dutyTitle" required></td>
-				<td id="special_duty_dutyTitle_error" style="color:red"></td>
-			</tr>
-			<tr>
 				<td>Duty Detail:</td>
-				<td><textarea type="text" id="special_duty_dutyDetail" required></textarea></td>
+				<td><textarea type="text" id="special_duty_dutyDetail" required><?= $special_duties["special_duty_detail"]?></textarea></td>
 				<td id="special_duty_dutyDetail_error" style="color:red"></td>
 			</tr>
 			<tr>
@@ -53,8 +48,8 @@
 </table>
 <datalist id='cleaners'>
 	<?php foreach($cleaners as $cleaner): ?><option value="<?= $cleaner['user_id']."_".$cleaner['user_name'] ?>" ></option><?php endforeach; ?>					
-
 </datalist>
+
 <!--hidden value for external js file-->
 <textarea id="cleaners_string" style="display:none"><?= $cleaners_string?></textarea>
 <input id="baseURL" type=hidden value="<?=base_url()?>">

@@ -694,7 +694,64 @@
 			}
 			
 		}
-
+		
+		public function viewAllSpecialDutyPage($page = "view_all_special_duties")
+		{
+			$this->load->library('session');
+			if(Empty($_SESSION['uid']))
+			{
+				redirect("HomeController/viewHomePage");
+			}
+			elseif($_SESSION['user_access_level'] == 3 || ($_SESSION['user_access_level'] == 4))
+			{
+				redirect("HomeController/viewMainPage");
+			}
+			else
+			{	
+				$this->load->model("main_model");
+				
+				$query = $this->main_model->get_data_order("*","special_duty_id","special_duty");				
+				$data['special_duties'] = $query->result_array();
+				
+				$this->viewNav();
+				$this->load->view('supervisor/'.$page,$data);
+				$this->load->view('templates/footer');
+			}
+			
+		}
+	
+		public function viewSpecifySpecialDutyPage($special_duty_id = NULL)
+		{
+			$this->load->library('session');
+			if(Empty($_SESSION['uid']))
+			{
+				redirect("HomeController/viewHomePage");
+			}
+			elseif($_SESSION['user_access_level'] == 3 || ($_SESSION['user_access_level'] == 4))
+			{
+				redirect("HomeController/viewMainPage");
+			}
+			else
+			{	
+				$this->load->model("main_model");
+				
+				$special_duty_id = array("special_duty_id"=>$special_duty_id);
+				$query = $this->main_model->get_specify_data("*","special_duty_id",$special_duty_id,"special_duty");
+				$data['special_duties'] = $query->row_array();
+				
+				if(Empty($data['special_duties']))
+				{
+					show_404();
+				}
+				else
+				{
+					$this->viewNav();
+					$this->load->view('supervisor/view_specify_special_duty.php',$data);
+					$this->load->view('templates/footer');
+				}
+			}
+			
+		}
 	}
 	
 	
