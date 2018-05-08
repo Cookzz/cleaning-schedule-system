@@ -75,36 +75,21 @@
     NAVIGATION BAR STYLE
 ----------------------------------------------------- */
 
-#navigationBar {
-    .dropdown-menu {
-        color: white;
-
-        padding-left: 40px;
-        padding-right: 30px;
-    }
-}
-
-
-#mobileMenu {
-    background-color: black;
-    padding-left: 0px;
-    
-    .dropdown-item {
-        color: white;
-        
-        &:hover {
-            background-color: white;
-            color: black;
-        }
-    }
-}
-
 #desknav {
     font-size: 120%;
     
     .nav-item {
         padding-left: 50px;
         padding-right: 50px;
+    }
+    
+    #deskDropDown {
+        .dropdown-menu {
+            color: white;
+
+            padding-left: 40px;
+            padding-right: 30px;
+        }
     }
 }
 
@@ -115,6 +100,22 @@
     .nav-item {
         padding-left: 40px;
         color: white;
+    }
+    
+    #mobileDropDown {
+        #mobileMenu {
+            background-color: black;
+            padding-left: 0px;
+
+            .dropdown-item {
+                color: white;
+
+                &:hover {
+                    background-color: white;
+                    color: black;
+                }
+            }
+        }
     }
 }
 
