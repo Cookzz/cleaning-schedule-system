@@ -33,7 +33,6 @@
             <div class="d-none d-lg-block">
                 <nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top" id="desknav">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
                         </button>
                         <!--Add picture here-->
                         <img src="<?php echo base_url(); ?>assets/images/FFF_Logo.png" width="4%" class="pageIcon">
@@ -57,13 +56,15 @@
                     </button>
                     <!--Add picture here-->
                     <img src="<?php echo base_url(); ?>assets/images/FFF_Logo.png" width="4%" class="pageIcon">
-						
+                <?= $small_state ?>   
+            </nav>
+            <nav class="navbar navbar-expand-lg">
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup1">
                     <div class="navbar-nav">
                         <?= $small_selector?>
-                        <?= $small_state ?>
                     </div>
-                </div>   
+                </div>
             </nav>
+            
         </div>
 		<input id="baseURL" type=hidden value="<?=base_url()?>">

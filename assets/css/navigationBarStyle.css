@@ -29,7 +29,7 @@
 /* ---------------------------------------------------
     GENERAL NAVBAR
 ----------------------------------------------------- */
-.navbar {
+.navbar, #navbarNavAltMarkup1 {
   font-family: "News Cycle";
   background-color: #2196F3;
   padding: 0px;
@@ -39,7 +39,7 @@
   background-color: #2196F3;
   border-bottom: 0.1px solid #2196F3;
   border-top: 0.1px solid #2196F3;
-  border-right: 0.1px solid black;
+  border-right: 0.1px solid #2196F3;
   border-left: 0.1px solid #2196F3;
   color: white;
   text-transform: uppercase;
@@ -57,7 +57,7 @@
   background-color: #2196F3;
   border-bottom: 0.1px solid #2196F3;
   border-top: 0.1px solid #2196F3;
-  border-right: 0.1px solid black;
+  border-right: 0.1px solid #2196F3;
   border-left: 0.1px solid #2196F3;
   color: white;
   text-transform: uppercase;
@@ -87,20 +87,21 @@
     padding-left: 40px;
     padding-right: 30px; }
 
-#mobilenav {
+#mobilenav, #navbarNavAltMarkup1 {
   padding-top: 7px;
   padding-bottom: 7px; }
-  #mobilenav .nav-item {
-    padding-left: 40px;
+
+#navbarNavAltMarkup1 .nav-item {
+  padding-left: 40px;
+  color: white; }
+#navbarNavAltMarkup1 #mobileDropDown #mobileMenu {
+  background-color: black;
+  padding-left: 0px; }
+  #navbarNavAltMarkup1 #mobileDropDown #mobileMenu .dropdown-item {
     color: white; }
-  #mobilenav #mobileDropDown #mobileMenu {
-    background-color: black;
-    padding-left: 0px; }
-    #mobilenav #mobileDropDown #mobileMenu .dropdown-item {
-      color: white; }
-      #mobilenav #mobileDropDown #mobileMenu .dropdown-item:hover {
-        background-color: white;
-        color: black; }
+    #navbarNavAltMarkup1 #mobileDropDown #mobileMenu .dropdown-item:hover {
+      background-color: white;
+      color: black; }
 
 .nav-item:hover {
   background-color: #033C73;

@@ -12,7 +12,7 @@ $font: "News Cycle";
     background-color: $themecolor;
     border-bottom: 0.1px solid $themecolor;
     border-top: 0.1px solid $themecolor;
-    border-right: 0.1px solid black;
+    border-right: 0.1px solid $themecolor;
     border-left: 0.1px solid $themecolor;
     color: white;
     text-transform: uppercase;
