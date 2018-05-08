@@ -80,7 +80,7 @@
         color: white;
 
         padding-left: 40px;
-        padding-right: 32px;
+        padding-right: 30px;
     }
 }
 
@@ -115,12 +115,12 @@
     .nav-item {
         padding-left: 40px;
         color: white;
-    
-        cursor: pointer;
     }
 }
 
 .nav-item:hover{
     background-color: $secondarycolor;
     color: white;
+    
+    cursor: pointer;
 }

@@ -60,16 +60,16 @@
 					$data["big_selector"] = '
                     <a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage" id="nav1">Home<span class="sr-only">(current)</span></a>
 				        <a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage">Schedule</a>
-				            <li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle active">
-								    Stuff
-								</a>
-								<div class="dropdown-menu" id="menu">
-								    <a class="dropdown-item" href="'.base_url().'HomeController/viewStuffLocationPage">Stuff</a>
+                            <li class="nav-item dropdown" id="navigationBar">
+                                <a class="nav-link dropdown-toggle active" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Stuff
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="'.base_url().'HomeController/viewStuffLocationPage">Stuff</a>
 								    <a class="dropdown-item" href="'.base_url().'HomeController/viewSubStuffPage">Substuff</a>
 								    <a class="dropdown-item" href="'.base_url().'HomeController/viewDutyPage">Duty</a>
-				                </div>
-				            </li>
+                                </div>
+                            </li>
 				            <a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSetSpecialDutyPage">Special Duty</a>
 				            <a class="nav-item nav-link active" href="'.base_url().'HomeController/viewPendingDutyPage">Attendance</a>'.$extra_selector."";
 											

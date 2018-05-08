@@ -80,7 +80,7 @@
 #navigationBar .dropdown-menu {
   color: white;
   padding-left: 40px;
-  padding-right: 32px; }
+  padding-right: 30px; }
 
 #mobileMenu {
   background-color: black;
@@ -102,11 +102,11 @@
   padding-bottom: 7px; }
   #mobilenav .nav-item {
     padding-left: 40px;
-    color: white;
-    cursor: pointer; }
+    color: white; }
 
 .nav-item:hover {
   background-color: #033C73;
-  color: white; }
+  color: white;
+  cursor: pointer; }
 
 /*# sourceMappingURL=navigationBarStyle.css.map */
