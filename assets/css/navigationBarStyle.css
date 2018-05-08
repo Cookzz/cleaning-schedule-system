@@ -77,25 +77,15 @@
 /* ---------------------------------------------------
     NAVIGATION BAR STYLE
 ----------------------------------------------------- */
-#navigationBar .dropdown-menu {
-  color: white;
-  padding-left: 40px;
-  padding-right: 30px; }
-
-#mobileMenu {
-  background-color: black;
-  padding-left: 0px; }
-  #mobileMenu .dropdown-item {
-    color: white; }
-    #mobileMenu .dropdown-item:hover {
-      background-color: white;
-      color: black; }
-
 #desknav {
   font-size: 120%; }
   #desknav .nav-item {
     padding-left: 50px;
     padding-right: 50px; }
+  #desknav #deskDropDown .dropdown-menu {
+    color: white;
+    padding-left: 40px;
+    padding-right: 30px; }
 
 #mobilenav {
   padding-top: 7px;
@@ -103,6 +93,14 @@
   #mobilenav .nav-item {
     padding-left: 40px;
     color: white; }
+  #mobilenav #mobileDropDown #mobileMenu {
+    background-color: black;
+    padding-left: 0px; }
+    #mobilenav #mobileDropDown #mobileMenu .dropdown-item {
+      color: white; }
+      #mobilenav #mobileDropDown #mobileMenu .dropdown-item:hover {
+        background-color: white;
+        color: black; }
 
 .nav-item:hover {
   background-color: #033C73;

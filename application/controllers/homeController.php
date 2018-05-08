@@ -60,11 +60,11 @@
 					$data["big_selector"] = '
                     <a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage" id="nav1">Home<span class="sr-only">(current)</span></a>
 				        <a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage">Schedule</a>
-                            <li class="nav-item dropdown" id="navigationBar">
-                                <a class="nav-link dropdown-toggle active" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <li class="nav-item dropdown" id="deskDropDown">
+                                <a class="nav-link dropdown-toggle active" id="deskToggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Stuff
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu" aria-labelledby="deskToggle" id="deskMenu">
                                     <a class="dropdown-item" href="'.base_url().'HomeController/viewStuffLocationPage">Stuff</a>
 								    <a class="dropdown-item" href="'.base_url().'HomeController/viewSubStuffPage">Substuff</a>
 								    <a class="dropdown-item" href="'.base_url().'HomeController/viewDutyPage">Duty</a>
@@ -76,16 +76,16 @@
 										
 					$data["small_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage">Home<span class="sr-only">(current)</span></a>
 												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage">Schedule</a>
-												<li class="nav-item dropdown">
-												  <a class="nav-link dropdown-toggle active" id="navbardrop">
-													Stuff
-												  </a>
-												  <div class="dropdown-menu" id="mobileMenu">
-													<a class="dropdown-item" href="'.base_url().'HomeController/viewStuffLocationPage">Stuff</a>
-													<a class="dropdown-item" href="'.base_url().'HomeController/viewSubStuffPage">Substuff</a>
-													<a class="dropdown-item" href="'.base_url().'HomeController/viewDutyPage">Duty</a>
-												  </div>
-												</li>
+												<li class="nav-item dropdown" id="mobileDropDown">
+                                                    <a class="nav-link dropdown-toggle active" id="mobileToggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Stuff
+                                                    </a>
+                                                    <div class="dropdown-menu" aria-labelledby="mobileToggle" id="mobileMenu">
+                                                        <a class="dropdown-item" href="'.base_url().'HomeController/viewStuffLocationPage">Stuff</a>
+                                                        <a class="dropdown-item" href="'.base_url().'HomeController/viewSubStuffPage">Substuff</a>
+                                                        <a class="dropdown-item" href="'.base_url().'HomeController/viewDutyPage">Duty</a>
+                                                    </div>
+                                                </li>
 												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSetSpecialDutyPage">Special Duty</a>
 												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewPendingDutyPage">Attendance</a>'.$extra_selector."";
 				}
@@ -107,31 +107,31 @@
 				{
 					$data["big_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage">Home<span class="sr-only">(current)</span></a>
 											<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage">Schedule</a>
-											<li class="nav-item dropdown">
-												<a class="nav-link dropdown-toggle active">
-												Stuff
-												</a>
-												<div class="dropdown-menu" id="menu">
-													<a class="dropdown-item" href="'.base_url().'HomeController/viewStuffLocationPage">Stuff</a>
-													<a class="dropdown-item" href="'.base_url().'HomeController/viewSubStuffPage">Substuff</a>
-													<a class="dropdown-item" href="'.base_url().'HomeController/viewDutyPage">Duty</a>
-												</div>
-											</li>
+											<li class="nav-item dropdown" id="deskDropDown">
+                                                <a class="nav-link dropdown-toggle active" id="deskToggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Stuff
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="deskToggle" id="deskMenu">
+                                                    <a class="dropdown-item" href="'.base_url().'HomeController/viewStuffLocationPage">Stuff</a>
+                                                    <a class="dropdown-item" href="'.base_url().'HomeController/viewSubStuffPage">Substuff</a>
+                                                    <a class="dropdown-item" href="'.base_url().'HomeController/viewDutyPage">Duty</a>
+                                                </div>
+                                            </li>
 											<a class="nav-item nav-link active" href="forum.php">Special Stuff</a>
 											<a class="nav-item nav-link active" href="#">Contact Us</a>';
 										
 					$data["small_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage">Home<span class="sr-only">(current)</span></a>
 												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage">Schedule</a>
-												<li class="nav-item dropdown">
-												  <a class="nav-link dropdown-toggle active" id="navbardrop">
-													Stuff
-												  </a>
-												  <div class="dropdown-menu" id="anothermenu">
-													<a class="dropdown-item" href="'.base_url().'HomeController/viewStuffLocationPage">Stuff</a>
-													<a class="dropdown-item" href="'.base_url().'HomeController/viewSubStuffPage">Substuff</a>
-													<a class="dropdown-item" href="'.base_url().'HomeController/viewDutyPage">Duty</a>
-												  </div>
-												</li>
+												<li class="nav-item dropdown" id="mobileDropDown">
+                                                    <a class="nav-link dropdown-toggle active" id="mobileToggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Stuff
+                                                    </a>
+                                                    <div class="dropdown-menu" aria-labelledby="mobileToggle" id="mobileMenu">
+                                                        <a class="dropdown-item" href="'.base_url().'HomeController/viewStuffLocationPage">Stuff</a>
+                                                        <a class="dropdown-item" href="'.base_url().'HomeController/viewSubStuffPage">Substuff</a>
+                                                        <a class="dropdown-item" href="'.base_url().'HomeController/viewDutyPage">Duty</a>
+                                                    </div>
+                                                </li>
 												<a class="nav-item nav-link active" href="#">Special Stuff</a>
 												<a class="nav-item nav-link active" href="#">Contact Us</a>';
 				}
