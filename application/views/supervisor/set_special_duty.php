@@ -47,7 +47,6 @@
 		<!--Please the front ender go set_special_duty.js insert_cleaner_dropdown function to design the tr td-->
 	</tbody>
 	<tr>
-		<td></td>
 		<td colspan="2"><button width="100%" id="addCleaner">Add Cleaner</button></td>
 	</tr>		
 </table>

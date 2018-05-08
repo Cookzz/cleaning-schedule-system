@@ -736,9 +736,17 @@
 				
 				$special_duty_id = array("special_duty_id"=>$special_duty_id);
 				$query = $this->main_model->get_specify_data("*","special_duty_id",$special_duty_id,"special_duty");
-				$data['special_duties'] = $query->row_array();
+				$data['special_duty'] = $query->row_array();
 				
-				if(Empty($data['special_duties']))
+				$query = $this->main_model->get_specify_data("*","special_duty_cleaner",$special_duty_id,"special_duty_cleaner");
+				$data['special_duty_cleaners'] = $query->result_array();
+				
+				$user_access_level = array("user_access_level" => 3);
+				$get_cleaner_query = $this->main_model->get_specify_data("*","id",$user_access_level,"users");
+				$data['cleaners'] = $get_cleaner_query->result_array();			
+				$data['cleaners_string'] = json_encode($data['cleaners']);
+				
+				if(Empty($data['special_duty']))
 				{
 					show_404();
 				}

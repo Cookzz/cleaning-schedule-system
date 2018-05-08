@@ -1,12 +1,12 @@
 function insert_cleaner_dropdown(numberOfCleaner)
 {
 	$( "#cleaners_area" ).prepend("<tr><td>"+numberOfCleaner+"</td>"+
-								"<td><input id='cleaner_"+numberOfCleaner+"' type='text' list='cleaners'>");
+								"<td><input id='cleaner_"+numberOfCleaner+"' type='text' list='cleaners'></td>");
 	
 	$("#addCleaner").click(function(){
 		numberOfCleaner++;
 		$( "#cleaners_area" ).append("<tr><td>"+numberOfCleaner+"</td>"+
-								"<td><input id='cleaner_"+numberOfCleaner+"' type='text' list='cleaners'>");
+								"<td><input id='cleaner_"+numberOfCleaner+"' type='text' list='cleaners'></td>");
 		
 	});
 	
@@ -23,23 +23,29 @@ function validateDate(cleaners,numberOfCleaner)
 	
 	if(!($("#special_duty_dutyTitle").val().trim().match(/^([a-zA-Z0-9]+\s)*[a-zA-Z0-9]+$/)))
 	{
+		$("#special_duty_dutyDetail_error").hide();
+		$("#special_duty_date_error").hide();
 		$("#special_duty_dutyTitle_error").show();
 		$("#special_duty_dutyTitle_error").text("Invalid Title");
 	}
 	else if(!($("#special_duty_dutyDetail").val().trim().match(/^([a-zA-Z0-9]+\s)*[a-zA-Z0-9]+$/)))
 	{
+		$("#special_duty_dutyTitle_error").hide();
+		$("#special_duty_date_error").hide();
 		$("#special_duty_dutyDetail_error").show();
 		$("#special_duty_dutyDetail_error").text("Invalid Location");
 	}
 	else if (special_duty_date < TodayDate) 
 	{
 		$("#special_duty_dutyDetail_error").hide();
+		$("#special_duty_dutyTitle_error").hide();
 		$("#special_duty_date_error").show();
 		$("#special_duty_date_error").text("You cannot assign the special duty to previous day");
 	}
 	else
 	{
 		$("#special_duty_date_error").hide();
+		$("#special_duty_dutyTitle_error").hide();
 		$("#special_duty_dutyDetail_error").hide();
 		if(confirm("Do you confrim to add the new special duty?"))
 		{
@@ -139,8 +145,6 @@ function postSpecialDutyData(cleaners)
 $(document).ready(function(){
 	
 	var numberOfCleaner = 1;
-	$("#special_duty_dutyDetail_error").hide();
-	$("#special_duty_date_error").hide();
 	
 	$("newSpecialDutyForm").submit(function(event){
 		event.preventDefault();
