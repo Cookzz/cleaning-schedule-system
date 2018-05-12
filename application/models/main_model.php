@@ -23,6 +23,16 @@
 			return $query;
 		}
 		
+		public function get_limit_date($selectField,$oderField,$limit_number,$table)
+		{
+			$this->db->select($selectField);
+			$this->db->order_by($oderField);
+			$this->db->limit(5);
+			$query = $this->db->get($table);
+			
+			return $query;
+		}
+		
 		public function get_specify_data2($selectField,$oderField,$data,$table)
 		{
 			$this->db->select($selectField);

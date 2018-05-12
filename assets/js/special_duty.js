@@ -52,7 +52,7 @@ $(document).ready(function(){
 	$('#special_duty_table').DataTable({
 		"paging": false,
 		"info": false,
-		"order": [[ 1, "asc" ]],
+		"order": [[ 0, "asc" ]],
 	});
 	
 	$(document).on('click','.delete',function(){

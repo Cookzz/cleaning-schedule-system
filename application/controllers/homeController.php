@@ -186,11 +186,11 @@
 			else
 			{
 				$this->load->model("main_model");
-				$query = $this->main_model->get_data_order("*","stuff","special_duty");
-				$data['stuffs'] = $query->result_array();
+				$query = $this->main_model->get_limit_date("*","special_duty_id DESC",5,"special_duty");
+				$data['special_duties'] = $query->result_array();
 				
 				$this->viewNav();
-				$this->load->view('home/'.$page);
+				$this->load->view('home/'.$page,$data);
 				$this->load->view('templates/footer');
 			}
 		}

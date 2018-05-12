@@ -26,7 +26,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php $i = 1?><?php foreach($special_duties as $special_duty):?>
+			<?php $i = 2?><?php foreach($special_duties as $special_duty):?>
 			<tr>
 				<td><?php echo $i ?></td>
 				<td id="<?php echo($special_duty["special_duty_id"])?>_special_duty_detail"><?php echo $special_duty["special_duty_detail"]; ?></td>

@@ -9,11 +9,16 @@
 <body>  
 
 <h2>Modify Special Duty</h2>
-<h3><?= $special_duty["special_duty_title"]?></h3><hr/>
 
 <form id="<?= $special_duty["special_duty_id"]?>" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 	<table id="special_duty_table">
 		<tbody>
+			<tr>
+				<td>Duty Title:</td>
+				<td><input type="text" id="special_duty_dutyTitle" value="<?= $special_duty["special_duty_title"]?>" required></td>
+				<td id="special_duty_dutyTitle_error" style="color:red"></td>
+			</tr>
+			<tr>
 			<tr>
 				<td>Duty Detail:</td>
 				<td><textarea type="text" id="special_duty_dutyDetail" required><?= $special_duty["special_duty_detail"]?></textarea></td>

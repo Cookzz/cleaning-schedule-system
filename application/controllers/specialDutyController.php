@@ -67,7 +67,8 @@
 				
 				$where_special_duty_id = array("special_duty_id" => $special_duty_id);
 				
-				$special_duty_data = array("special_duty_detail" => $SpecialDutyObject->special_duty_dutyDetail,
+				$special_duty_data = array("special_duty_title" => $SpecialDutyObject->special_duty_dutyTitle,
+										"special_duty_detail" => $SpecialDutyObject->special_duty_dutyDetail,
 										"special_duty_time" => $SpecialDutyObject->special_duty_time,
 										"special_duty_date" => $SpecialDutyObject->special_duty_date);
 										

@@ -18,11 +18,8 @@ function insert_cleaner_dropdown(numberOfCleaner)
 	$('form').submit(function(event){
 		event.preventDefault();
 		var txt = $(this).attr("id");
-		console.log(txt);
 		var special_duty_id = txt.match(/\d/g);
-		console.log(special_duty_id);
 		special_duty_id = special_duty_id.join("");
-		console.log(special_duty_id);
 		validateDate(special_duty_id,cleaners,numberOfCleaner);		
 	});
 }
@@ -32,7 +29,14 @@ function validateDate(special_duty_id,cleaners,numberOfCleaner)
 	var TodayDate = new Date();
 	var special_duty_date = new Date(Date.parse($("#special_duty_date").val()));
 	
-	if(!($("#special_duty_dutyDetail").val().trim().match(/^([a-zA-Z0-9]+\s)*[a-zA-Z0-9]+$/)))
+	if(!($("#special_duty_dutyTitle").val().trim().match(/^([a-zA-Z0-9]+\s)*[a-zA-Z0-9]+$/)))
+	{
+		$("#special_duty_dutyDetail_error").hide();
+		$("#special_duty_date_error").hide();
+		$("#special_duty_dutyTitle_error").show();
+		$("#special_duty_dutyTitle_error").text("Invalid Title");
+	}
+	else if(!($("#special_duty_dutyDetail").val().trim().match(/^([a-zA-Z0-9]+\s)*[a-zA-Z0-9]+$/)))
 	{
 		$("#special_duty_dutyTitle_error").hide();
 		$("#special_duty_date_error").hide();
@@ -107,11 +111,13 @@ function postSpecialDutyData(special_duty_id,cleaners)
 	var baseUrl = $("#baseURL").val();
 	var url = baseUrl+"specialDutyController/modifySpecialDuty";
 	
+	var special_duty_dutyTitle = $("#special_duty_dutyTitle").val().trim();
 	var special_duty_dutyDetail = $("#special_duty_dutyDetail").val().trim();
 	var special_duty_date = $("#special_duty_date").val();
 	var special_duty_time = $("#special_duty_time").val();
 	
 	var SpecialDutyObject = {
+			"special_duty_dutyTitle":special_duty_dutyTitle,
 			"special_duty_id":special_duty_id,
 			"special_duty_dutyDetail":special_duty_dutyDetail,
 			"special_duty_date":special_duty_date,
@@ -144,11 +150,9 @@ function insert_back_table(message)
 {
 	var special_duty_cleaners = JSON.parse(message);
 	$("#original_cleaners_area").empty();
-	console.log("sss");
 				
 	var i =1;
 	special_duty_cleaners.forEach(function(special_duty_cleaners){
-		console.log("sss");
 		$("#original_cleaners_area").append("<tr><td>"+i+"</td>"+
 		"<td><input value='" +special_duty_cleaners["special_duty_cleaner"]+"' list='cleaners'></td>"+
 		"<td><button type='button' id='"+special_duty_cleaners["special_duty_cleaner_id"]+"_delete' class='delete'>Delete</button></td>/tr>");
