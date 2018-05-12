@@ -14,6 +14,7 @@
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/print.css">
 
 </head>
 <body>  

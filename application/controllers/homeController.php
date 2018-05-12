@@ -185,6 +185,10 @@
 			}
 			else
 			{
+				$this->load->model("main_model");
+				$query = $this->main_model->get_data_order("*","stuff","special_duty");
+				$data['stuffs'] = $query->result_array();
+				
 				$this->viewNav();
 				$this->load->view('home/'.$page);
 				$this->load->view('templates/footer');
