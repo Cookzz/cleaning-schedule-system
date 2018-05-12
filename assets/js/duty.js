@@ -26,7 +26,7 @@ function insert_back_table(message)
 			i,
 			duty_data["duty_stuff"],
 			duty_data["duty_sub_stuff"],
-			"<button type='button' id='"+duty_data["duty_id"]+"_delete' class='delete'>Delete</button>"
+			"<center><button style='width:80px;height:30px' type='button' id='"+duty_data["duty_id"]+"_delete' class='w3-text-red fa fa-trash delete'></button></center>"
 		]).draw( false ).node();
 		i++;
 		

@@ -12,9 +12,12 @@
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.bootstrap4.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
 
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/print.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>  
@@ -53,7 +56,7 @@
 	</table>
 	<hr/>
 <!--This second table to display the user table information-->
-	<table id="user_table" class="display" style="width:100%" border="1">
+	<table id="user_table" class="table table-striped table-bordered display" style="width:100%" border="1">
 		<thead>
 			<tr>
 				<th>User ID</th>
@@ -83,8 +86,8 @@
 				<td><select id="<?php echo $user["id"];?>_user_position_selector"><option value="<?php echo $user["user_position"];?>"><?php echo $user["user_position"];?></option><?php foreach($positions as $position):?><option value="<?php echo($position["position_name"])?>"><?php echo($position["position_name"])?></option><?php endforeach; ?></select></td>
 				<td id="<?php echo $user["id"];?>_user_access_level"><?php echo $user["user_access_level"];?></td>
 				<td id="<?php echo $user["id"];?>_join_date"><?php echo $user["join_date"];?></td>
-				<td><button id="<?php echo $user["id"];?>update" class="update btn btn-default" type="button">Update</button></td>
-				<td><button id="<?php echo $user["id"];?>delete" class="delete btn btn-default" type="button">Delete</button></td>
+				<td><center><button id="<?php echo $user["id"];?>update" class="update btn btn-default" type="button">Update</button><center></td>
+				<td><center><button style="width:80px;height:30px" id="<?php echo $user["id"];?>delete" class="w3-text-red fa fa-trash delete" type="button"></button></center></td>
 			</tr>
 			<?php endforeach; ?>
 		</tbody>

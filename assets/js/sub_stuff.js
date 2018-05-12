@@ -26,7 +26,7 @@ function insert_back_table(message)
 			i,
 			sub_stuff_data["sub_stuff"],
 			"<button type='button' id='"+sub_stuff_data["sub_stuff_id"]+"_update' class='update'>Update</button>",
-			"<button type='button' id='"+sub_stuff_data["sub_stuff_id"]+"_delete' class='delete'>Delete</button>"
+			"<center><button style='width:80px;height:30px' type='button' id='"+sub_stuff_data["sub_stuff_id"]+"_delete' class='w3-text-red fa fa-trash delete'></button></center>"
 		]).draw( false ).node();
 		i++;
 		

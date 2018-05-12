@@ -66,11 +66,12 @@ function insert_user_data()
 					user_data["user_password"],
 					user_data["user_IC"],
 					user_data["user_email"],
-					"<select id='"+user_data["id"]+"_user_position'><option value='"+user_data["user_position"]+"'>"+user_data["user_position"]+"</option>",
+					user_data["user_position"],
+					"<select id='"+user_data["id"]+"_user_position_selector'><option value='"+user_data["user_position"]+"'>"+user_data["user_position"]+"</option>",
 					user_data["user_access_level"],
 					user_data["join_date"],
-					"<button id='"+user_data["id"]+"update' class='update btn btn-default' type='button'>Update</button>",
-					"<button id='"+user_data["id"]+"delete' class='delete btn btn-default' type='button'>Delete</button>"
+					"<center><button id='"+user_data["id"]+"update' class='update btn btn-default' type='button'>Update</button></center>",
+					"<center><button style='width:80px;height:30px' id='"+user_data["id"]+"delete' class='w3-text-red fa fa-trash delete' type='button'></button></center>"
 				]).draw( false ).node();
 				
 					$(newRow).attr("id",user_data["id"]);
@@ -85,11 +86,13 @@ function insert_user_data()
 					$("#"+user_data["id"]).find('td:eq(3)').attr('contenteditable',true);
 					$("#"+user_data["id"]).find('td:eq(4)').attr('id',user_data["id"]+"_user_email");
 					$("#"+user_data["id"]).find('td:eq(4)').attr('contenteditable',true);
-					$("#"+user_data["id"]).find('td:eq(6)').attr('id',user_data["id"]+"_user_access_level");
-					$("#"+user_data["id"]).find('td:eq(7)').attr('id',user_data["id"]+"_join_date");
+					$("#"+user_data["id"]).find('td:eq(5)').attr('id',user_data["id"]+"_user_position");
+					$("#"+user_data["id"]).find('td:eq(5)').attr('contenteditable',true);
+					$("#"+user_data["id"]).find('td:eq(7)').attr('id',user_data["id"]+"_user_access_level");
+					$("#"+user_data["id"]).find('td:eq(8)').attr('id',user_data["id"]+"_join_date");
 					
 					position_data.forEach(function(position_data){
-					$( "#"+user_data["id"]+"_user_position" ).prepend("<option value='"+position_data["position_name"]+"'>"+position_data["position_name"]+"</option>");
+					$( "#"+user_data["id"]+"_user_position_selector" ).prepend("<option value='"+position_data["position_name"]+"'>"+position_data["position_name"]+"</option>");
 					});
 					
 				});
@@ -221,6 +224,8 @@ $(document).ready(function(){
 	});
 	
 	var table = $('#user_table').DataTable({
+		"pageLength": 10,
+		"order": [[ 8, "desc" ]],
 		"dom": 'Bfrtip',
         "buttons": [
             {
