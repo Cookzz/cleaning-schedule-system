@@ -4,11 +4,21 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/user.js"></script>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.bootstrap4.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
+
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
 
 </head>
 <body>  
+
+
 
 <h2>User</h2><hr/>
 
@@ -40,8 +50,9 @@
 		<td id="UserICErrorMessage"></td>
 		</tr>
 	</table>
+	<hr/>
 <!--This second table to display the user table information-->
-	<table id="user_table" border="1">
+	<table id="user_table" class="display" style="width:100%" border="1">
 		<thead>
 			<tr>
 				<th>User ID</th>
@@ -49,6 +60,7 @@
 				<th>User Password</th>
 				<th>User IC/No></th>
 				<th>User Email</th>
+				<th>User Position</th>
 				<th>User Position</th>
 				<th>User Access Level</th>
 				<th>Join Date</th>
@@ -66,7 +78,8 @@
 				<td id="<?php echo $user["id"];?>_user_password" contenteditable="true"><?php echo $user["user_password"];?></td>
 				<td id="<?php echo $user["id"];?>_user_IC" contenteditable="true"><?php echo $user["user_IC"];?></td>
 				<td id="<?php echo $user["id"];?>_user_email" contenteditable="true"><?php echo $user["user_email"];?></td>
-				<td><select id="<?php echo $user["id"];?>_user_position"><option value="<?php echo $user["user_position"];?>"><?php echo $user["user_position"];?></option><?php foreach($positions as $position):?><option value="<?php echo($position["position_name"])?>"><?php echo($position["position_name"])?></option><?php endforeach; ?></select></td>
+				<td id="<?php echo $user["id"];?>_user_position" contenteditable="true"><?php echo $user["user_position"];?></td>
+				<td><select id="<?php echo $user["id"];?>_user_position_selector"><option value="<?php echo $user["user_position"];?>"><?php echo $user["user_position"];?></option><?php foreach($positions as $position):?><option value="<?php echo($position["position_name"])?>"><?php echo($position["position_name"])?></option><?php endforeach; ?></select></td>
 				<td id="<?php echo $user["id"];?>_user_access_level"><?php echo $user["user_access_level"];?></td>
 				<td id="<?php echo $user["id"];?>_join_date"><?php echo $user["join_date"];?></td>
 				<td><button id="<?php echo $user["id"];?>update" class="update btn btn-default" type="button">Update</button></td>
@@ -75,6 +88,8 @@
 			<?php endforeach; ?>
 		</tbody>
 		<!--This is the end of foreach-->
+		<tfoot>
+		</tfoot>
 	</table>
 </form>
 <!--This is the end of form element-->

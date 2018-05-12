@@ -160,7 +160,7 @@ function update_user_data(id)
 				"user_password"		:$("#"+id+"_user_password").text(),
 				"user_IC"			:$("#"+id+"_user_IC").text(),
 				"user_email"		:$("#"+id+"_user_email").text(),
-				"user_position"		:$("#"+id+"_user_position").val(),
+				"user_position"		:$("#"+id+"_user_position_selector").val(),
 				"user_access_level"	:$("#"+id+"_user_access_level").text(),
 				"join_date"			:$("#"+id+"_join_date").text()
 				};	
@@ -186,6 +186,7 @@ function update_user_data(id)
 				{
 					
 					alert(final_message);
+					$("#"+id+"_user_position").text($("#"+id+"_user_position_selector").val());
 					$("#"+id+"_user_access_level").text(access_level);
 				}
 				else
@@ -197,7 +198,7 @@ function update_user_data(id)
 					$("#"+id+"_user_name").text(data[0]["user_name"]);
 					$("#"+id+"_user_password").text(data[0]["user_password"]);
 					$("#"+id+"_user_email").text(data[0]["user_email"]);
-					$("#"+id+"_user_position").val(data[0]["user_position"]);
+					$("#"+id+"_user_position_selector").val(data[0]["user_position"]);
 					$("#"+id+"_user_IC").text(data[0]["user_IC"]);
 					$("#"+id+"_user_access_level").text(data[0]["user_access_level"]);
 				}
@@ -209,6 +210,8 @@ function update_user_data(id)
 
 $(document).ready(function(){
 	
+	var d= new Date();
+	
 	$("#IC").click(function(){
 		 $('#newUserICField').attr('maxlength', '12');
 	});
@@ -217,10 +220,27 @@ $(document).ready(function(){
 		 $('#newUserICField').attr('maxlength', '20');
 	});
 	
-	$('#user_table').DataTable({
-		"pageLength": 10,
-		"order": [[ 7, "desc" ]]
+	var table = $('#user_table').DataTable({
+		"dom": 'Bfrtip',
+        "buttons": [
+            {
+				extend: 'print',
+                exportOptions: {columns: '0,1,2,3,4,5,7,8'},
+				title:'User Table',
+				messageTop:"Print Date : " + d.getDate() + " / " + d.getMonth()+1 +' / '+ d.getFullYear(),
+				customize: function ( win ) {
+                    $(win.document.body)
+                        .css( 'font-size', '12pt' );
+
+ 
+                    $(win.document.body).find( 'table' )
+                        .addClass('compact')
+                        .css( 'font-size', 'inherit' );
+                }
+			}
+		]
 	});
+	table.column( 5 ).visible( false );
 	
 	$("form").submit(function(event){
 		event.preventDefault();
