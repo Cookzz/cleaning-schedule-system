@@ -35,7 +35,7 @@
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         </button>
                         <!--Add picture here-->
-                        <img src="<?php echo base_url(); ?>assets/images/FFF_Logo.png" width="4%" class="pageIcon">
+                        <img src="<?php echo base_url(); ?>assets/images/FFF_Logo.png" class="pageIcon">
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
                             <ul class="navbar-nav mr-auto">

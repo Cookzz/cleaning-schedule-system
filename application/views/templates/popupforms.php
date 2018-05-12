@@ -14,12 +14,12 @@
 
                     <label><h5>Password</h5></label></center>
                     <input id="password_field" type="password" placeholder="Enter Password e.g: @abc123" name="password" required>
-                    <label id="errorMessage"></label>
                     <label class="rememberLabel"><input type="checkbox" checked="checked" class="remember">Remember Username & Password</label>
+                    <center><label id="errorMessage"></label></center>
 
                     <div class="clearfix">
+                        <button type="submit" class="loginbtn" name="login" value="Submit">Login</button>
                         <button type="button" onclick="document.getElementById('loginForm').style.display='none'" class="cancelbtn">Cancel</button>
-                       <button type="submit" class="loginbtn" name="login" value="Submit">Login</button>
                     </div>
                 </div>
                 <input id="next" name="next" type="button" value="Forgot Password?" onclick="signLogin(1)" formnovalidate>
@@ -34,8 +34,8 @@
                    <span><button type="button" onclick="signLogin(0)" class="backbtn"><img src="<?php echo base_url(); ?>assets/images/backarrow.png" class="backarrowbtn"></button></span>
                     <center><img src="<?php echo base_url(); ?>assets/images/lockpicture.png" class="forgotPassPic">
                     <h2 class="forgotPassTitle">Forgot Password?</h2>
-                        <p>Just type in your email address and we will email a new password for you</p>
-                    <label><h5>Email Address</h5></label></center>
+                        <p>Just type in your User ID and we will email a new password for you</p>
+                    <label><h5>User ID</h5></label></center>
                     <input type="text" placeholder="Enter Email e.g: abc123@gmail.com" name="email" required>
 
                     <div class="clearfix">

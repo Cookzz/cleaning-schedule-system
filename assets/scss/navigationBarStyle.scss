@@ -78,6 +78,10 @@
 #desknav {
     font-size: 120%;
     
+    .pageIcon {
+        width: 4%;
+    }
+    
     .nav-item {
         padding-left: 50px;
         padding-right: 50px;
@@ -96,7 +100,12 @@
 #mobilenav {
     padding-top: 7px;
     padding-bottom: 7px;
+    
+    .pageIcon {
+        width: 10%;
+    }
 }
+
 #navbarNavAltMarkup1 {
     @extend #mobilenav;
     @extend .navbar;
