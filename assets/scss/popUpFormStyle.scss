@@ -1,3 +1,4 @@
+@import "global.scss";
 /* ---------------------------------------------------
     POPUP FORM STYLE
 ----------------------------------------------------- */
@@ -14,25 +15,42 @@ input[type=text], input[type=password] {
 /* Extra styles for the cancel button */
 .cancelbtn {
     padding: 14px 20px;
-    background-color: #f44336;
+    background-color: $secondarybuttontheme;
+    float: left;
 }
 
-/* New style for the sign up button */
-.forgotbtn,.loginbtn {
-    background-color: #4CAF50;
+/* New style for the login up button */
+.loginbtn {
+    background-color: $mainbuttontheme;
+    float: right;
 }
 
 /* Float cancel and signup buttons and add an equal width */
 .cancelbtn, .forgotbtn, .loginbtn {
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 8px -2px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
     width: 100%;
-    
-    float: left;
+
     width: 50%;
+}
+
+.forgotbtn {
+    width: 100%;
+    background-color: #003366;
+}
+
+.backbtn {
+    cursor: pointer;
+    background-color: white;
+    border: 0px solid white;
+}
+
+.cancelbtn, .loginbtn {
+    margin-bottom: 0px;
 }
 
 /* Add padding to container elements */
@@ -52,7 +70,6 @@ input[type=text], input[type=password] {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding-top: 60px;
 }
 
 /* The Close Button (x) */
@@ -70,6 +87,13 @@ input[type=text], input[type=password] {
     }
 }
 
+#next {
+    color: white;
+    background-color: slategray;
+    border: 5px solid slategray;
+    margin: 0px;
+}
+
 /* Clear floats */
 .clearfix:after {
     content: "";
@@ -77,9 +101,47 @@ input[type=text], input[type=password] {
     display: table;
 }
 
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-    .cancelbtn, .forgotbtn {
-        width: 100%;
+.loginFormPic {
+    width: 25%;
+    
+    &:hover {
+        -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+        animation: sk-rotateplane 1.2s infinite ease-in-out;
+    }
+}
+
+.forgotPassPic {
+    width: 25%;
+}
+
+h6, label {
+    margin-top: 10px;
+    
+    &,.forgotPassTitle, h5 {
+        margin-bottom: 0px;
+    }
+}
+
+.loginTitle {
+    letter-spacing: 10px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.rememberLabel {
+    display: block;
+    padding-left: 15px;
+    text-indent: -15px;
+    margin-top: -15px;
+    margin-bottom: 15px;
+    .remember {
+        width: 13px;
+        height: 13px;
+        padding: 0;
+        margin:0;
+        vertical-align: middle;
+        position: relative;
+        top: -1px;
+        *overflow: hidden;
     }
 }

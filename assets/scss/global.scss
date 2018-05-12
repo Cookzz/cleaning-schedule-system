@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=News+Cycle:700,1000");
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+@import url('https://fonts.googleapis.com/css?family=Cairo');
 
 $themecolor: #2196F3;
 $secondarycolor: #033C73;
 $font: "News Cycle";
+$mainbuttontheme: #003366;
+$secondarybuttontheme: #FF3366;
 
 /* ---------------------------------------------------
     Navigation Bar Values
@@ -27,4 +30,30 @@ $font: "News Cycle";
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
     width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* ---------------------------------------------------
+    ANIMATION
+----------------------------------------------------- */
+
+@-webkit-keyframes sk-rotateplane {
+  0% { 
+      -webkit-transform: perspective(120px) 
+    }
+  50% { 
+      -webkit-transform: perspective(120px) rotateY(180deg) 
+    }
+  100% { 
+      -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) 
+    }
+}
+
+@keyframes sk-rotateplane {
+  0% { 
+    transform: perspective(180px) rotateX(0deg) rotateY(0deg);
+  } 50% { 
+    transform: perspective(180px) rotateX(0deg) rotateY(180deg);
+  } 100% { 
+    transform: perspective(180px) rotateX(0deg) rotateY(360deg);
+  }
 }
