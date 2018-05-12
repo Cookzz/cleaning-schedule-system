@@ -51,6 +51,9 @@ body {
       overflow-x: auto;
       max-width: 100%; }
 
+  .changePassPic {
+    width: 100%; }
+
   .modal-content {
     background-color: #fefefe;
     margin: 5% auto 15% auto;

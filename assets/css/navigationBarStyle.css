@@ -81,7 +81,9 @@
   text-transform: uppercase;
   letter-spacing: 5px;
   font-weight: 700;
-  cursor: pointer; }
+  cursor: pointer;
+  letter-spacing: 0px;
+  padding-right: 5px; }
 
 .deskLoginBtn:hover, .mobileLoginBtn:hover, .loginIcon:hover {
   -webkit-stroke-width: 5.3px;

@@ -37,6 +37,10 @@ body {
         }
     }
     
+    .changePassPic {
+        width: 100%;
+    }
+    
     .modal-content {
         @include modalContent();
         width: 70%;

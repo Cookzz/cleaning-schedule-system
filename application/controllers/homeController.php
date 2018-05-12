@@ -37,7 +37,8 @@
                                     </div>
                                     <form id="ajax-login-form" role="form" autocomplete="off">
                                             <button class="settings" id="setting1">Settings</button>
-                                            <button class="settings" id="setting2" onclick="logout()">Logout</button>
+                                            <button class="settings" id="setting2" onclick="modalPop(1)">Change Password</button>
+                                            <button class="settings" id="setting3" onclick="logout()">Logout</button>
                                     </form>
                                 </ul>
                             </li>

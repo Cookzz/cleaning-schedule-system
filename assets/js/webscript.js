@@ -19,6 +19,16 @@ function popoutLogin() {
     document.getElementById('loginForm').style.display='block'
 }
 
+function modalPop(y){
+    if (y==1){
+        document.getElementById("changePassForm").style.display = "block";
+    }
+    else {
+        document.getElementById("changePassForm").style.display = "none";
+    }
+    
+}
+
 function signLogin(x) {
     if (x == 1) {
         document.getElementById("loginForm").style.display = "none";

@@ -27,7 +27,7 @@ input[type=text], input[type=password] {
 }
 
 /* Float cancel and signup buttons and add an equal width */
-.cancelbtn, .forgotbtn, .loginbtn {
+.cancelbtn, .forgotbtn, .loginbtn, .changebtn {
     color: white;
     padding: 14px 20px;
     margin: 8px -2px;
@@ -39,7 +39,7 @@ input[type=text], input[type=password] {
     width: 50%;
 }
 
-.forgotbtn {
+.forgotbtn, .changebtn {
     width: 100%;
     background-color: #003366;
 }
@@ -111,7 +111,7 @@ input[type=text], input[type=password] {
     }
 }
 
-.forgotPassPic {
+.forgotPassPic, .changePassPic {
     width: 25%;
 }
 
