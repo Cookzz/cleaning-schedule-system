@@ -36,7 +36,7 @@
                     <h2 class="forgotPassTitle">Forgot Password?</h2>
                         <p>Just type in your User ID and we will email a new password for you</p>
                     <label><h5>User ID</h5></label></center>
-                    <input type="text" placeholder="Enter Email e.g: abc123@gmail.com" name="email" required>
+                    <input type="text" placeholder="Enter User ID e.g: 16123456" name="userid" required>
 
                     <div class="clearfix">
                         <button type="submit" class="forgotbtn" name="forgot" value="Submit">Confirm</button>
