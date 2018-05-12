@@ -1,37 +1,19 @@
-$(document).ready(function() {
-    //testing code
-    $("#nav2").click(function() {
-        $("#menu").slideToggle("fast"); 
-    });
-    
-    $("#n-nav2").click(function() {
-        $("#anothermenu").slideToggle("fast"); 
-    });
-    
+$(document).ready(function() { 
     $("#adminProfile").click(function() {
         $("#settingsMenu").slideToggle("fast"); 
-    });
-    
-    $(".loginBtn").on("click", popoutLogin);
-    
-    $(".loginForm").submit(function(){
-        $(".loginBtn").off("click", popoutLogin);
     });
     
     $('#sidebarCollapse').on('click', function() {
         $('#sidebar, #content').toggleClass('active');
         //$('.collapse.in').toggleClass('in');
     });
+    
+    $("#loginForm").click(function (e) {
+        if ($(e.target).is('#loginForm')) {
+            $('#loginForm').fadeOut(100);
+        }
+    });
 });
-
-var modal = document.getElementById('loginForm');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
 
 function popoutLogin() {
     document.getElementById('loginForm').style.display='block'

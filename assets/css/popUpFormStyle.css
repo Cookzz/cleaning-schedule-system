@@ -1,3 +1,26 @@
+@import url("https://fonts.googleapis.com/css?family=News+Cycle:700,1000");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Cairo");
+/* ---------------------------------------------------
+    Navigation Bar Values
+----------------------------------------------------- */
+/* ---------------------------------------------------
+    ANIMATION
+----------------------------------------------------- */
+@-webkit-keyframes sk-rotateplane {
+  0% {
+    -webkit-transform: perspective(120px); }
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg); }
+  100% {
+    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg); } }
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(180px) rotateX(0deg) rotateY(0deg); }
+  50% {
+    transform: perspective(180px) rotateX(0deg) rotateY(180deg); }
+  100% {
+    transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
 /* ---------------------------------------------------
     POPUP FORM STYLE
 ----------------------------------------------------- */
@@ -13,22 +36,36 @@ input[type=text], input[type=password] {
 /* Extra styles for the cancel button */
 .cancelbtn {
   padding: 14px 20px;
-  background-color: #f44336; }
+  background-color: #FF3366;
+  float: left; }
 
-/* New style for the sign up button */
-.forgotbtn, .loginbtn {
-  background-color: #4CAF50; }
+/* New style for the login up button */
+.loginbtn {
+  background-color: #003366;
+  float: right; }
 
 /* Float cancel and signup buttons and add an equal width */
 .cancelbtn, .forgotbtn, .loginbtn {
   color: white;
   padding: 14px 20px;
-  margin: 8px 0;
+  margin: 8px -2px;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
   width: 100%;
-  float: left;
   width: 50%; }
+
+.forgotbtn {
+  width: 100%;
+  background-color: #003366; }
+
+.backbtn {
+  cursor: pointer;
+  background-color: white;
+  border: 0px solid white; }
+
+.cancelbtn, .loginbtn {
+  margin-bottom: 0px; }
 
 /* Add padding to container elements */
 .container {
@@ -53,8 +90,7 @@ input[type=text], input[type=password] {
   background-color: black;
   /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */
-  padding-top: 60px; }
+  /* Black w/ opacity */ }
 
 /* The Close Button (x) */
 .close {
@@ -68,15 +104,51 @@ input[type=text], input[type=password] {
     color: red;
     cursor: pointer; }
 
+#next {
+  color: white;
+  background-color: slategray;
+  border: 5px solid slategray;
+  margin: 0px; }
+
 /* Clear floats */
 .clearfix:after {
   content: "";
   clear: both;
   display: table; }
 
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-  .cancelbtn, .forgotbtn {
-    width: 100%; } }
+.loginFormPic {
+  width: 25%; }
+  .loginFormPic:hover {
+    -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+    animation: sk-rotateplane 1.2s infinite ease-in-out; }
+
+.forgotPassPic {
+  width: 25%; }
+
+h6, label {
+  margin-top: 10px; }
+  h6, h6 .forgotPassTitle, h6 h5, label, label .forgotPassTitle, label h5 {
+    margin-bottom: 0px; }
+
+.loginTitle {
+  letter-spacing: 10px;
+  font-size: 32px;
+  font-weight: bold; }
+
+.rememberLabel {
+  display: block;
+  padding-left: 15px;
+  text-indent: -15px;
+  margin-top: -15px;
+  margin-bottom: 15px; }
+  .rememberLabel .remember {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+    *overflow: hidden; }
 
 /*# sourceMappingURL=popUpFormStyle.css.map */
