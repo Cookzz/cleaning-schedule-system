@@ -49,7 +49,7 @@ function validateAll_login(dataAndDataFieldArray,errorMessageField,phpUrl)
 $(document).ready(function(){
 	
 	var baseURL = $("#baseURL").val();
-	var url = baseURL + 'LoginController/viewLoginValidation';
+	var url = baseURL + 'HomeController/viewLoginValidation';
 	
 	$("#loginForm").submit(function(event){
 		event.preventDefault();
@@ -63,6 +63,6 @@ $(document).ready(function(){
 function logout()
 {
 	var baseURL = $("#baseURL").val();
-	targetUrl = baseURL + "LoginController/viewLogout"
+	targetUrl = baseURL + "HomeController/viewLogout"
 	window.location.href =targetUrl;
 }

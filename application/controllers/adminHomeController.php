@@ -58,6 +58,23 @@
 				}
 			}
 			
+			if(isset($_SESSION["cookie_user_id"])) 
+			{
+				$data["cookie_user_id"] = $_SESSION["cookie_user_id"];
+			}
+			else
+			{
+				$data["cookie_user_id"] = '';
+			}
+			if(isset($_SESSION["cookie_password"])) 
+			{
+				$data["cookie_password"] = $_SESSION['cookie_password'];
+			}
+			else
+			{
+				$data["cookie_password"] = '';
+			}
+			
 			$this->load->view('templates/header',$data);
 			if(Empty($_SESSION['uid']))
 			{

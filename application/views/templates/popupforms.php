@@ -14,7 +14,7 @@
 
                     <label><h5>Password</h5></label></center>
                     <input id="password_field" type="password" placeholder="Enter Password e.g: @abc123" name="password" value="<?= $cookie_password?>" required>
-                    <label class="rememberLabel"><input type="checkbox" id="remember" class="remember" <?php if(($_SESSION["cookie_user_id"]) != ""){echo("checked");}?>>Remember Username & Password</label>
+                    <label class="rememberLabel"><input type="checkbox" id="remember" class="remember" <?php if(isset($_COOKIE["cookie_user_id"])){echo("checked");}?>>Remember Username & Password</label>
                     <center><label id="errorMessage"></label></center>
 
                     <div class="clearfix">

@@ -7,6 +7,238 @@
                 date_default_timezone_set("Asia/Kuala_Lumpur");
         }
 		
+		public function viewLoginForm($page = 'login')
+		{
+			if(!file_exists(APPPATH.'views/login/'.$page.'.php'))
+			{
+				show_404();
+			}
+			
+			$data['title'] = 'Login Form';
+			
+			$this->load->view('login/'.$page,$data);
+		}
+		
+		public function viewLoginValidation()
+		{
+			$this->load->model("main_model");
+			
+			if((isset($_POST['user_id']))&&(isset($_POST['passwords'])))
+			{	
+				$user_id = $_POST["user_id"];
+				$password = $_POST["passwords"];
+				$remember = $_POST["remember"];
+				
+				$inputErr = array();
+				//vaidate username
+				if($user_id == NULL)
+				{
+					$inputErr[] = $user_id;
+				}
+				else
+				{
+					$data = array('user_id' => $user_id);
+					$query = $this->main_model->get_specify_data('*',"user_id",$data,"users");
+					$result = $query->num_rows();
+					
+					if($result<=0)
+					{
+						$inputErr[] = $user_id;
+					}
+					else
+					{
+						//validate password
+						if($password == NULL)
+						{
+							$inputErr[] = $password;
+						}
+						else
+						{
+							$data = array('user_id' => $user_id);
+							$query = $this->main_model->get_specify_data("user_password","user_password",$data,"users");
+							$result = $query->row()->user_password;
+							if($result === $password)
+							{
+								
+							}
+							else
+							{
+								$inputErr[] = $password;
+							}
+						}
+					}
+				}	
+		
+				if(empty($inputErr))
+				{	
+					$this->load->library('session');
+					$this->load->helper('cookie');
+					
+					
+					//set cookie or remember me function
+					if($remember == "true")
+					{
+						setcookie ("cookie_user_id", $user_id, time() + (10 * 365 * 24 * 60 * 60));
+						setcookie ("cookie_password", $password, time() + (10 * 365 * 24 * 60 * 60));
+					//	$_SESSION['cookie_user_id'] = $_COOKIE['user_id'];
+					//	$_SESSION['cookie_password'] = $_COOKIE['password'];
+					}
+					if($remember == "false")
+					{
+						setcookie ("cookie_user_id", "");
+						setcookie ("cookie_password", "");
+					}
+										
+					//databases functions
+					$data = array('user_id' => $user_id);
+					$query = $this->main_model->get_specify_data("id","id",$data,"users");
+					$uid = $query->row()->id;	
+					
+					$query = $this->main_model->get_specify_data("user_access_level","user_access_level",$data,"users");
+					$user_access_level = $query->row()->user_access_level;
+					
+					$_SESSION['user_access_level'] = $user_access_level;
+					$_SESSION['uid'] = $uid;
+					
+					$data = array('pending_duty_date' => date("Y/m/d"));
+					$query = $this->main_model->get_specify_data("*","pending_duty_id",$data,"pending_duty");
+					$pending_duty_rows = $query->num_rows();
+					$data = array('complete_duty_date' => date("Y/m/d"));
+					$query = $this->main_model->get_specify_data("*","complete_duty_id",$data,"complete_duty");
+					$complete_duty_rows = $query->num_rows();
+					
+					if($pending_duty_rows <= 0 && $complete_duty_rows <=0 )
+					{
+						$day = strtolower(date("l"));
+						$week = date("W");
+						$week_number = array("week_number" => $week);
+						
+						//Select morning schedule and insert to pending order
+						$query = $this->main_model->get_specify_data("*","stuff",$week_number,"morning_schedule");
+						$schedule_results = $query->result_array();
+						
+						foreach($schedule_results as $schedule_result)
+						{
+							$stuff = $schedule_result["stuff"];
+							
+							$data = array("duty_stuff"=>$stuff);
+							$query = $this->main_model->get_specify_data("*","duty_stuff",$data,"duty");
+							$duty_results = $query->result_array();
+							$duty_number = $query->num_rows();
+							if($duty_number != 0)
+							{
+								foreach($duty_results as $duty_result)
+								{
+									if((!empty($schedule_result[$day])) && ($schedule_result[$day] != "NA"))
+									{
+										$duty_sub_stuff = $duty_result['duty_sub_stuff'];
+									
+										$data = array("pending_duty_stuff"=>$stuff,
+												"pending_duty_substuff"=>$duty_sub_stuff,
+												"pending_duty_cleaner"=>$schedule_result[$day],
+												"pending_duty_schedule"=>"morning",
+												"pending_duty_date"=>date("Y/m/d"));
+												
+										$query = $this->main_model->insert_data("pending_duty",$data);
+									}
+									
+								}
+							}
+							else
+							{
+								if((!empty($schedule_result[$day])) && ($schedule_result[$day] != "NA"))
+								{										
+									$data = array("pending_duty_stuff"=>$stuff,
+											"pending_duty_substuff"=>"No any substuff",
+											"pending_duty_cleaner"=>$schedule_result[$day],
+											"pending_duty_schedule"=>"morning",
+											"pending_duty_date"=>date("Y/m/d"));
+											
+									$query = $this->main_model->insert_data("pending_duty",$data);
+								}
+							}
+							
+						}
+						
+						//Select afternoon schedule and insert to pending order
+						$query = $this->main_model->get_specify_data("*","stuff",$week_number,"afternoon_schedule");
+						$schedule_results = $query->result_array();
+						
+						foreach($schedule_results as $schedule_result)
+						{
+							$stuff = $schedule_result["stuff"];
+							
+							$data = array("duty_stuff"=>$stuff);
+							$query = $this->main_model->get_specify_data("*","duty_stuff",$data,"duty");
+							$duty_results = $query->result_array();
+							$duty_number = $query->num_rows();
+							if($duty_number != 0)
+							{
+								foreach($duty_results as $duty_result)
+								{
+									if((!empty($schedule_result[$day])) && ($schedule_result[$day] != "NA"))
+									{
+										$duty_sub_stuff = $duty_result['duty_sub_stuff'];
+									
+										$data = array("pending_duty_stuff"=>$stuff,
+												"pending_duty_substuff"=>$duty_sub_stuff,
+												"pending_duty_cleaner"=>$schedule_result[$day],
+												"pending_duty_schedule"=>"afternoon",
+												"pending_duty_date"=>date("Y/m/d"));
+												
+										$query = $this->main_model->insert_data("pending_duty",$data);
+									}
+									
+								}
+							}
+							else
+							{
+								if((!empty($schedule_result[$day])) && ($schedule_result[$day] != "NA"))
+								{
+									$data = array("pending_duty_stuff"=>$stuff,
+											"pending_duty_substuff"=>"No any substuff",
+											"pending_duty_cleaner"=>$schedule_result[$day],
+											"pending_duty_schedule"=>"afternoon",
+											"pending_duty_date"=>date("Y/m/d"));
+											
+									$query = $this->main_model->insert_data("pending_duty",$data);
+								}
+							}
+							
+						}
+						
+					}
+					
+					if($_SESSION['user_access_level'] ==1)
+					{
+						echo("adminHomeController/viewMainPage");
+					}
+					elseif($_SESSION['user_access_level'] ==2)
+					{
+						echo("HomeController/viewMainPage");
+					}
+					elseif($_SESSION['user_access_level'] ==3)
+					{
+						echo("HomeController/viewMainPage");
+					}
+					
+				}
+				else
+				{
+					echo(false);
+					
+				}
+			}
+		}
+		
+		public function viewLogout($page = 'homepage')
+		{
+			$this->load->library('session');
+			unset($_SESSION['uid']);
+			unset($_SESSION['user_access_level']);
+			redirect("HomeController/viewHomePage");
+		}
+		
 		public function viewNav()
 		{
 			$this->load->library('session');
@@ -46,8 +278,44 @@
                         </ul>';
 				
 				$data['small_state'] = '<button class="mobileLoginBtn" onclick="logout()">'.$user_name.'</button>';
-                   $data["admin_state"] = "<div>";
-				if(($_SESSION['user_access_level'] == 2) || ($_SESSION['user_access_level'] == 1))
+				$data["admin_state"] = "<div>";
+				
+				if($_SESSION['user_access_level'] == 1)
+				{
+					//$data['large_state']='<button class="navLoginBtn" onclick="logout()"><img src="'.base_url().'assets/images/loginIcon.png" width="8%" class="loginIcon">Admin Logout</button>';  
+					$data['large_state'] = '
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a class="deskLoginBtn dropdown-toggle" id="deskLogin" data-toggle="dropdown">ADMIN PROFILE</a>
+                                <ul class="dropdown-menu dropdown-lr pull-left profile-settings" role="menu">
+                                    <div class="text-center">
+                                        <h4 class="settingtitle"><b>User Settings</b></h4>
+                                    </div>
+                                        <button class="settings" id="setting1">Settings</button>
+                                        <button class="settings" id="setting2" onclick="modalPop(1)">Change Password</button>
+                                        <button class="settings" id="setting3" onclick="logout()">Logout</button>
+                                </ul>
+                            </li>
+                        </ul>';
+					
+					$data['small_state'] = '
+                    <div class="nav-item dropdown">
+                      <a class="mobileLoginBtn dropdown-toggle" id="adminProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        ADMIN PROFILE
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="adminProfile" id="settingsMenu">
+                        <h2 class="dropdown-header">User Settings</h2>
+                        <button class="dropdown-item" type="button">Settings</button>
+                        <button class="dropdown-item" type="button" onclick="modalPop(1)">Change Password</button>
+                        <button class="dropdown-item" type="button" onclick="logout()">Logout</button>
+                      </div>
+                    </div>';
+                    $data["admin_state"] = "<div id='content'>";
+					$data["main_page_controller"] = "adminHomeController/viewMainPage";
+					$data["big_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage" id="nav1">View As Supervisor<span class="sr-only">(current)</span></a>';									
+					$data["small_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage" id="n-nav1">View As Supervisor<span class="sr-only">(current)</span></a>';
+				}
+				elseif(($_SESSION['user_access_level'] == 2) || ($_SESSION['user_access_level'] == 1))
 				{
 					if($_SESSION['user_access_level'] == 1)
 					{
@@ -138,17 +406,17 @@
 				}
 			}
 				
-			if(isset($_SESSION["cookie_user_id"])) 
+			if(isset($_COOKIE["cookie_user_id"])) 
 			{
-				$data["cookie_user_id"] = $_SESSION["cookie_user_id"];
+				$data["cookie_user_id"] = $_COOKIE["cookie_user_id"];
 			}
 			else
 			{
 				$data["cookie_user_id"] = '';
 			}
-			if(isset($_SESSION["cookie_password"])) 
+			if(isset($_COOKIE["cookie_password"]))
 			{
-				$data["cookie_password"] = $_SESSION['cookie_password'];
+				$data["cookie_password"] = $_COOKIE['cookie_password'];
 			}
 			else
 			{
