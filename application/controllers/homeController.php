@@ -436,10 +436,6 @@
 				
 			$this->load->view('templates/header',$data);
 			$this->load->view("templates/popupforms",$data);
-			if(Empty($_SESSION['uid']))
-			{
-				$this->load->view("templates/popupforms",$data);
-			}
 		}
 		public function viewHomePage($page = 'homepage')
 		{
