@@ -22,7 +22,6 @@ function validateAll_login(dataAndDataFieldArray,errorMessageField,phpUrl)
 		}
 		
 		fd.append("remember",remember);
-		console.log(remember);
 		
 		$.ajax({
 			url:phpUrl,
@@ -64,5 +63,7 @@ function logout()
 {
 	var baseURL = $("#baseURL").val();
 	targetUrl = baseURL + "HomeController/viewLogout"
+	console.log(targetUrl);
 	window.location.href =targetUrl;
 }
+

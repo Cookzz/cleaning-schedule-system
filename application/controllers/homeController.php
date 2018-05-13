@@ -269,15 +269,26 @@
                                         <h4 class="settingtitle"><b>User Settings</b></h4>
                                     </div>
                                     <form id="ajax-login-form" role="form" autocomplete="off">
-                                            <button class="settings" id="setting1">Settings</button>
-                                            <button class="settings" id="setting2" onclick="modalPop(1)">Change Password</button>
-                                            <button class="settings" id="setting3" onclick="logout()">Logout</button>
+                                            <button type="button" class="settings" id="setting1" onclick="javascript:window.location.href='."'".base_url().'HomeController/viewUserSetting'."'".'"'.'>User Settings</button>
+                                            <button type="button" class="settings" id="setting2" onclick="modalPop(1)">Change Password</button>
+                                            <button type="button" class="settings" id="setting3" onclick="logout()">Logout</button>
                                     </form>
                                 </ul>
                             </li>
                         </ul>';
 				
-				$data['small_state'] = '<button class="mobileLoginBtn" onclick="logout()">'.$user_name.'</button>';
+				$data['small_state'] = '
+                    <div class="nav-item dropdown">
+						<a class="mobileLoginBtn dropdown-toggle" id="adminProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							ADMIN PROFILE
+						</a>
+						<div class="dropdown-menu" aria-labelledby="adminProfile" id="settingsMenu">
+							<h2 class="dropdown-header">User Settings</h2>
+							<button class="dropdown-item" type="button" onclick="javascript:window.location.href='."'".base_url().'HomeController/viewUserSetting'."'".'"'.'>User Settings</button>
+							<button class="dropdown-item" type="button" onclick="modalPop(1)">Change Password</button>
+							<button class="dropdown-item" type="button" onclick="logout()">Logout</button>
+						</div>
+					</div>';
 				$data["admin_state"] = "<div>";
 				
 				if($_SESSION['user_access_level'] == 1)
@@ -424,6 +435,7 @@
 			}
 				
 			$this->load->view('templates/header',$data);
+			$this->load->view("templates/popupforms",$data);
 			if(Empty($_SESSION['uid']))
 			{
 				$this->load->view("templates/popupforms",$data);

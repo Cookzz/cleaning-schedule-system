@@ -32,9 +32,9 @@
                                     <div class="text-center">
                                         <h4 class="settingtitle"><b>User Settings</b></h4>
                                     </div>
-                                        <button class="settings" id="setting1">Settings</button>
-                                        <button class="settings" id="setting2" onclick="modalPop(1)">Change Password</button>
-                                        <button class="settings" id="setting3" onclick="logout()">Logout</button>
+                                        <button type="button" class="settings" id="setting1" onclick="javascript:window.location.href='."'".base_url().'adminHomeController/viewUserSetting'."'".'"'.'>User Settings</button>
+                                        <button type="button" class="settings" id="setting2" onclick="modalPop(1)">Change Password</button>
+                                        <button type="button" class="settings" id="setting3" onclick="logout()">Logout</button>
                                 </ul>
                             </li>
                         </ul>';
@@ -46,7 +46,7 @@
                       </a>
                       <div class="dropdown-menu" aria-labelledby="adminProfile" id="settingsMenu">
                         <h2 class="dropdown-header">User Settings</h2>
-                        <button class="dropdown-item" type="button">Settings</button>
+                        <button class="dropdown-item" type="button" onclick="javascript:window.location.href='."'".base_url().'adminHomeController/viewUserSetting'."'".'"'.'>User Settings</button>
                         <button class="dropdown-item" type="button" onclick="modalPop(1)">Change Password</button>
                         <button class="dropdown-item" type="button" onclick="logout()">Logout</button>
                       </div>
@@ -133,10 +133,36 @@
 			
 			$this->viewNav();
 			$this->load->view("templates/sidenav");
+			$this->load->view("templates/popupforms");
 			$this->load->view('admin/'.$page,$data);
 			$this->load->view('templates/footer',$data);
 		}
-	
+		
+		public function viewUserSetting($page = "user_setting")
+		{
+			$this->load->library('session');
+			if(Empty($_SESSION['uid']))
+			{
+				redirect("HomeController/viewHomePage");
+			}
+			else
+			{
+				$this->load->model("main_model");
+				
+				$uid = $_SESSION['uid'];
+				
+				$uid = array("id" => $uid);
+				$query = $this->main_model->get_specify_data("*","id",$uid,"users");
+				$data['user_data'] = $query->row_array();
+				
+				$this->viewNav();
+				$this->load->view("templates/sidenav");
+				$this->load->view("templates/popupforms");
+				$this->load->view('admin/'.$page,$data);
+				$this->load->view('templates/footer');
+			}
+			
+		}
 	}
 	
 	
