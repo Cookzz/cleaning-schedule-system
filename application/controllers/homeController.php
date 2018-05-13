@@ -291,42 +291,7 @@
 					</div>';
 				$data["admin_state"] = "<div>";
 				
-				if($_SESSION['user_access_level'] == 1)
-				{
-					//$data['large_state']='<button class="navLoginBtn" onclick="logout()"><img src="'.base_url().'assets/images/loginIcon.png" width="8%" class="loginIcon">Admin Logout</button>';  
-					$data['large_state'] = '
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown">
-                                <a class="deskLoginBtn dropdown-toggle" id="deskLogin" data-toggle="dropdown">ADMIN PROFILE</a>
-                                <ul class="dropdown-menu dropdown-lr pull-left profile-settings" role="menu">
-                                    <div class="text-center">
-                                        <h4 class="settingtitle"><b>User Settings</b></h4>
-                                    </div>
-                                        <button class="settings" id="setting1">Settings</button>
-                                        <button class="settings" id="setting2" onclick="modalPop(1)">Change Password</button>
-                                        <button class="settings" id="setting3" onclick="logout()">Logout</button>
-                                </ul>
-                            </li>
-                        </ul>';
-					
-					$data['small_state'] = '
-                    <div class="nav-item dropdown">
-                      <a class="mobileLoginBtn dropdown-toggle" id="adminProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        ADMIN PROFILE
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="adminProfile" id="settingsMenu">
-                        <h2 class="dropdown-header">User Settings</h2>
-                        <button class="dropdown-item" type="button">Settings</button>
-                        <button class="dropdown-item" type="button" onclick="modalPop(1)">Change Password</button>
-                        <button class="dropdown-item" type="button" onclick="logout()">Logout</button>
-                      </div>
-                    </div>';
-                    $data["admin_state"] = "<div id='content'>";
-					$data["main_page_controller"] = "adminHomeController/viewMainPage";
-					$data["big_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage" id="nav1">View As Supervisor<span class="sr-only">(current)</span></a>';									
-					$data["small_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage" id="n-nav1">View As Supervisor<span class="sr-only">(current)</span></a>';
-				}
-				elseif(($_SESSION['user_access_level'] == 2) || ($_SESSION['user_access_level'] == 1))
+				if(($_SESSION['user_access_level'] == 2) || ($_SESSION['user_access_level'] == 1))
 				{
 					if($_SESSION['user_access_level'] == 1)
 					{
