@@ -27,6 +27,7 @@
 			{	
 				$user_id = $_POST["user_id"];
 				$password = $_POST["passwords"];
+				$remember = $_POST["remember"];
 				
 				$inputErr = array();
 				//vaidate username
@@ -71,7 +72,39 @@
 				if(empty($inputErr))
 				{	
 					$this->load->library('session');
+					$this->load->helper('cookie');
 					
+					
+					//set cookie or remember me function
+					if($remember == "true")
+					{
+						setcookie ("user_id", $user_id, time() + (10 * 365 * 24 * 60 * 60));
+						setcookie ("password", $password, time() + (10 * 365 * 24 * 60 * 60));
+						$_SESSION['cookie_user_id'] = $_COOKIE['user_id'];
+						$_SESSION['cookie_password'] = $_COOKIE['password'];
+					}
+					if($remember == "false")
+					{
+						unset($_COOKIE['user_id']);
+						unset($_COOKIE['password']);
+						$_SESSION['cookie_user_id'] = "";
+						$_SESSION['cookie_password'] = "";
+					}
+					
+				/**	if((isset($_COOKIE['user_id'])) && (isset($_COOKIE['password'])))
+					{
+						$_SESSION['cookie_user_id'] = $_COOKIE['user_id'];
+						$_SESSION['cookie_password'] = $_COOKIE['password'];
+						//print_r("aaqqqqa");
+					}
+					else
+					{
+						unset($_SESSION['cookie_user_id']);
+						unset($_SESSION['cookie_password']);
+						//print_r("aaa");
+					}**/
+										
+					//databases functions
 					$data = array('user_id' => $user_id);
 					$query = $this->main_model->get_specify_data("id","id",$data,"users");
 					$uid = $query->row()->id;	
@@ -218,6 +251,8 @@
 			$this->load->library('session');
 			unset($_SESSION['uid']);
 			unset($_SESSION['user_access_level']);
+		//	unset($_SESSION['cookie_user_id']);
+		//	unset($_SESSION['cookie_password']);
 			redirect("HomeController/viewHomePage");
 		}
 		
