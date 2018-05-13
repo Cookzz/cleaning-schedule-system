@@ -2,6 +2,16 @@ function validateAll_login(dataAndDataFieldArray,errorMessageField,phpUrl)
 	{
 		var data = new Array();
 		var baseURL = $("#baseURL").val();
+		var remember;
+		
+		if($("#remember").is(":checked"))
+		{
+			remember = "true";
+		}
+		else
+		{
+			remember = "false";
+		}
 		
 		var fd = new FormData();
 		
@@ -10,6 +20,9 @@ function validateAll_login(dataAndDataFieldArray,errorMessageField,phpUrl)
 			data[i] = $(dataAndDataFieldArray[1][i]).val();
 			fd.append(dataAndDataFieldArray[0][i], data[i]);
 		}
+		
+		fd.append("remember",remember);
+		console.log(remember);
 		
 		$.ajax({
 			url:phpUrl,

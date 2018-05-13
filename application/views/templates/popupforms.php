@@ -9,12 +9,12 @@
                    <center><img src="<?php echo base_url(); ?>assets/images/FFF_Logo.png" class="loginFormPic">
                        <p class="loginTitle">LOGIN INFO</p>
                     <label><h5>User ID</h5></label>
-                    <input id="user_id_field" type="text" placeholder="Enter User ID e.g: 16123456" name="user_id" required>
+                    <input id="user_id_field" type="text" placeholder="Enter User ID e.g: 16123456" name="user_id" value="<?= $cookie_user_id?>" required>
                     
 
                     <label><h5>Password</h5></label></center>
-                    <input id="password_field" type="password" placeholder="Enter Password e.g: @abc123" name="password" required>
-                    <label class="rememberLabel"><input type="checkbox" checked="checked" class="remember">Remember Username & Password</label>
+                    <input id="password_field" type="password" placeholder="Enter Password e.g: @abc123" name="password" value="<?= $cookie_password?>" required>
+                    <label class="rememberLabel"><input type="checkbox" id="remember" class="remember" <?php if(($_SESSION["cookie_user_id"]) != ""){echo("checked");}?>>Remember Username & Password</label>
                     <center><label id="errorMessage"></label></center>
 
                     <div class="clearfix">

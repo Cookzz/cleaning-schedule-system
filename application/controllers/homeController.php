@@ -10,6 +10,7 @@
 		public function viewNav()
 		{
 			$this->load->library('session');
+			$this->load->helper('cookie');
 			if((Empty($_SESSION['uid']))&&(Empty($_SESSION['user_access_level'])))
 			{
 				$data['large_state']='<button class="deskLoginBtn" onclick="popoutLogin()"><img src="'.base_url().'assets/images/loginIcon.png" width="30px" class="loginIcon"> Login</button>';  
@@ -135,11 +136,28 @@
 												<a class="nav-item nav-link active" href="#">Contact Us</a>';
 				}
 			}
-			
+				
+			if(isset($_SESSION["cookie_user_id"])) 
+			{
+				$data["cookie_user_id"] = $_SESSION["cookie_user_id"];
+			}
+			else
+			{
+				$data["cookie_user_id"] = '';
+			}
+			if(isset($_SESSION["cookie_password"])) 
+			{
+				$data["cookie_password"] = $_SESSION['cookie_password'];
+			}
+			else
+			{
+				$data["cookie_password"] = '';
+			}
+				
 			$this->load->view('templates/header',$data);
 			if(Empty($_SESSION['uid']))
 			{
-				$this->load->view("templates/popupforms");
+				$this->load->view("templates/popupforms",$data);
 			}
 		}
 		public function viewHomePage($page = 'homepage')
@@ -178,6 +196,7 @@
 			}
 			
 			$this->load->library('session');
+			$this->load->helper('cookie');
 			
 			if(Empty($_SESSION['uid']))
 			{
