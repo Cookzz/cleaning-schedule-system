@@ -8,35 +8,44 @@ body {
     letter-spacing: .6px;
 }
 
+.footer {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    line-height: 20px;
+    background-color: $themecolor;
+        
+    .footermaincontent {
+        float: left;
+        margin-top: 10px;
+    }
+    
+    .footericon {
+        float: right;
+    }
+}
 
 /* ---------------------------------------------------
     BROWSER RESIZING STYLE
 ----------------------------------------------------- */
 
 //For screens bigger than a tablet
-@media (min-width: 769px) { 
-    .background{
-        max-width: 100%;
-    }
-    
+@media (min-width: 769px) {   
     /* Modal Content/Box */
     .modal-content {
         @include modalContent();
+    }
+    .footericon, .footercontent {
+        width: 3%;
+        cursor: pointer;
+        border-radius: 50%;
+        padding: 5px;
     }
 }
 
 //For phones and tablets
 @media (max-width: 768px) { 
-    .container {
-        margin: 0px;
-        max-width: 100%;
-        
-        .background {
-            overflow-x: auto;
-            max-width: 100%;
-        }
-    }
-    
     .changePassPic {
         width: 100%;
     }
@@ -55,6 +64,13 @@ body {
     #next {
         width: 100%;
         border: 2px solid slategray;
+    }
+    
+    .footericon, .footercontent {
+        width: 10%;
+        cursor: pointer;
+        border-radius: 50%;
+        padding: 5px;
     }
 }
 

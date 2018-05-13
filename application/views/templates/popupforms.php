@@ -54,6 +54,9 @@
                     <center><img src="<?php echo base_url(); ?>assets/images/password.png" class="changePassPic">
                     <h2 class="forgotPassTitle">Change Password</h2>
                         <p>Note: For best password protection, use at least one uppercase letter, lowercase letter and a number for your password</p>
+                    <label><h5>Old Password</h5></label>
+                    <input type="text" placeholder="Enter your old passowrd" name="oldpass" required>    
+                        
                     <label><h5>New Password</h5></label>
                     <input type="text" placeholder="Enter new password" name="newpass" required>
                     
