@@ -28,6 +28,7 @@
 		<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/login.js"></script>
     </head>
     <body>
+      <main id="maincontent">
        <?= $admin_state ?>
       <!-- Desktop navbar -->
             <div class="d-none d-lg-block">

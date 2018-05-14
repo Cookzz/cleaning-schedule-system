@@ -1,5 +1,6 @@
 
-         <footer class="footer">
+         </main>
+           <footer class="footer">
             <span class="footermaincontent">Copyright © 2018 FFF</span>
              
             <span class="footercontent"><img class="footericon" src="<?php echo base_url(); ?>assets/images/fbicon.png"></span>
