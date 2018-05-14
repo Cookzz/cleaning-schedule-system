@@ -135,7 +135,7 @@
 			$this->load->view("templates/sidenav");
 			$this->load->view("templates/popupforms");
 			$this->load->view('admin/'.$page,$data);
-			$this->load->view('templates/footer',$data);
+			$this->load->view('templates/footer',$data); 
 		}
 		
 		public function viewUserSetting($page = "user_setting")
