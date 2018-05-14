@@ -8,9 +8,13 @@ body {
     letter-spacing: .6px;
 }
 
-#maincontent {
+#subcontent {
     min-height: 100%;
     position: relative;
+}
+
+.container-fluid {
+    max-width: 1400px;
 }
 
 .footer {

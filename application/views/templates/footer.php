@@ -1,5 +1,6 @@
 
-         </main>
+         </div>
+          </main>
            <footer class="footer">
             <span class="footermaincontent">Copyright © 2018 FFF</span>
              
