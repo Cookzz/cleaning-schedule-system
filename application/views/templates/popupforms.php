@@ -1,6 +1,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/popUpFormStyle.css">
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/change_password.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/forgot_password.js"></script>
 </head>
        <!--Login Modal-->
         <div id="loginForm" class="modal">
@@ -37,8 +38,10 @@
                     <h2 class="forgotPassTitle">Forgot Password?</h2>
                         <p>Just type in your User ID and we will email a new password for you</p>
                     <label><h5>User ID</h5></label></center>
-                    <input type="text" placeholder="Enter User ID e.g: 16123456" name="userid" required>
-
+                    <input type="text" id="forgot_user_id" placeholder="Enter User ID e.g: 16123456" name="userid" required>
+					
+					<center><label id="forgotError" style="color:red"></label></center>
+					
                     <div class="clearfix">
                         <button type="submit" class="forgotbtn" name="forgot" value="Submit">Confirm</button>
                     </div>
