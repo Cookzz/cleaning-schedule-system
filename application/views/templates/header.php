@@ -10,6 +10,7 @@
         <!-- Normal CSS -->
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/mainStyle.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/navigationBarStyle.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/sideNavStyle.css">
         
         <!-- FontAwesome library -->
         <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
@@ -28,8 +29,8 @@
 		<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/login.js"></script>
     </head>
     <body>
-      <main id="subcontent">
        <?= $admin_state ?>
+       <main id="subcontent">
       <!-- Desktop navbar -->
             <div class="d-none d-lg-block">
                 <nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top" id="desknav">

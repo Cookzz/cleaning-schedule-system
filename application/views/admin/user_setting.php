@@ -33,7 +33,7 @@
 		<td>User Picture</td>
 		<td><img src="<?php echo base_url();?>assets/images/<?= $user_data["user_picture"]?>" width="100px"></td>	
 	</tr>
-<table>
+    </table>
 <br />
 <div>
 <h5>Upload New Profile Picture</h5>

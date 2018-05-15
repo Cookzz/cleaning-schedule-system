@@ -29,7 +29,7 @@ body {
   letter-spacing: .6px; }
 
 #subcontent {
-  min-height: 150%;
+  min-height: 100%;
   position: relative; }
 
 .container-fluid {
