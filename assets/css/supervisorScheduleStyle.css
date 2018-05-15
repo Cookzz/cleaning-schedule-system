@@ -106,11 +106,13 @@
   background: #0066CC;
   padding: 10px;
   border-radius: 5px;
-  margin-top: 3px; }
+  margin-top: 3px;
+  color: white; }
   .nextWeekBtn:link, .scheduleFormBtn:link {
     color: white;
     text-decoration: none; }
   .nextWeekBtn:visited, .scheduleFormBtn:visited {
+    color: white;
     text-decoration: none; }
   .nextWeekBtn.scheduleFormBtn, .scheduleFormBtn.scheduleFormBtn {
     margin-right: 10px; }
