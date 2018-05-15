@@ -1,5 +1,6 @@
 function validateAll_login(dataAndDataFieldArray,errorMessageField,phpUrl)
 	{
+		$("#preloader").css("display","normal");
 		var data = new Array();
 		var baseURL = $("#baseURL").val();
 		var remember;
@@ -34,10 +35,12 @@ function validateAll_login(dataAndDataFieldArray,errorMessageField,phpUrl)
 				var i = validation;
 				if(i == false)
 				{
+					$("#preloader").css("display","none");
 					$(errorMessageField).html("Incorrect Username or Password");
 				}
 				else
 				{
+					$("#preloader").css("display","none");
 					window.location.href = baseURL+i;
 				}
 				

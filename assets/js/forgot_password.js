@@ -1,5 +1,6 @@
 function postChangePasswordData()
 {
+	$("#preloader").show();
 	var baseUrl = $("#baseURL").val();
 	var url = baseUrl+"forgotPasswordController/forgotPassword";
 	var forgot_user_id = $("#forgot_user_id").val().trim();
@@ -16,11 +17,12 @@ function postChangePasswordData()
 		success: function(message){
 			if(message == true)
 			{
-				alert("ok");
-				//location.reload();
+				$("#preloader").hide();
+				$("#forgotError").text("We have send an email to your email address");
 			}
 			else
 			{
+				$("#preloader").hide();
 				$("#forgotError").text(message);
 			}
 		}
@@ -28,6 +30,7 @@ function postChangePasswordData()
 }
 
 $(document).ready(function(){
+	$("#preloader").hide();
 	$("#forgotForm").submit(function(event){
 		event.preventDefault();
 		postChangePasswordData();
