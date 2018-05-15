@@ -8,6 +8,10 @@ function validateData()
 	{
 		$("#changeError").text("The New Password Must More Than 6 Words");
 	}
+	else if(!(newPassword.match(/^([a-zA-Z0-9]+\s)*[a-zA-Z0-9]+$/)))
+	{
+		$("#changeError").text("Invalid Symbol Appear, Example @#$!");
+	}
 	else if(!(newPassword.match(/^.*(?=.{6,})(?=.*[a-zA-Z])[a-zA-Z0-9]+$/)))
 	{
 		$("#changeError").text("Invalid New Password, Please Include At Least One Letter");

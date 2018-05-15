@@ -16,7 +16,7 @@
                     <label><h5>Password</h5></label></center>
                     <input id="password_field" type="password" placeholder="Enter Password e.g: @abc123" name="password" value="<?= $cookie_password?>" required>
                     <label class="rememberLabel"><input type="checkbox" id="remember" class="remember" <?php if(isset($_COOKIE["cookie_user_id"])){echo("checked");}?>>Remember Username & Password</label>
-                    <center><label id="errorMessage"></label></center>
+                    <center><label style="color:red" id="errorMessage"></label></center>
 
                     <div class="clearfix">
                         <button type="submit" class="loginbtn" name="login" value="Submit">Login</button>
@@ -64,7 +64,7 @@
                     <label><h5>Confirm Password</h5></label></center>
                     <input type="text" id="confirmPassword" placeholder="Enter new password again" name="newpass2" required>
                     
-                    <center><label id="changeError"></label></center>
+                    <center><label id="changeError" style="color:red"></label></center>
 
                     <div class="clearfix">
                         <button type="submit" class="changebtn" name="change" value="Submit">Change</button>
