@@ -3,8 +3,10 @@
 /* ---------------------------------------------------
     MORNING TABLE STYLE
 ----------------------------------------------------- */
-.morningTable {
-    width: 90%;
+.morningTable,
+.afternoonTable{
+    width: 100%;
+    overflow-y: scroll;
     
     thead{
         font-family: $font;
@@ -17,21 +19,56 @@
                 
                 select {
                     background: #D0E4F5;
+                    
+                    option {
+                        background: white;
+                    }
                 }
-            }
+                
+                &.morningBtnRow {
+                    background: white;
+                    border-bottom: 1px solid white;
+                    border-left: 1px solid white;
+                    border-right: 1px solid white;
+                }
+                &.afternoonBtnRow {
+                    @extend .morningBtnRow;
+                }
+            } 
         }
         td {
             select {
                 border: 0px;
             }
         }
+        
+        .morningButtons,
+        .afternoonButtons{
+            float: right;
+        }
+        
+        .updateBtn, .deleteBtn {
+            padding: 10px;
+            margin: 3px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            
+            &.updateBtn {
+                background: $mainbuttontheme;
+                border: 1px solid $mainbuttontheme;
+                margin-right: 0px;
+            }
+            &.deleteBtn {
+                background: $secondarybuttontheme;
+                border: 1px solid $secondarybuttontheme;
+            }
+        }
     }
 }
-
-/* ---------------------------------------------------
-    AFTERNOON TABLE STYLE
------------------------------------------------------ */
-
+.stuffColumn, .remarkColumn {
+    width: 10%;
+}
 
 
 /* ---------------------------------------------------
@@ -39,15 +76,46 @@
 ----------------------------------------------------- */
 .scheduleHr {
     border: none;
-    height: 1px;
+    height: 2px;
     background-color: black;
     margin-left:0;
-    width: 70%;
+    width: 90%;
     
     margin-top: 0px;
     margin-bottom: 30px;
 }
 
+.titleHr {
+    margin-top: 0px;
+    height: 2px;
+    background: black;
+}
+
+.scheduleTitle {
+    letter-spacing: 5px;
+}
+
 .dayLabel {
-    margin-bottom: 3px;
+    font-weight: bold;
+}
+
+.nextWeekBtn, .scheduleFormBtn {
+    float: right;
+    background: $subbuttontheme;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 3px;
+    
+    &:link {
+        color: white;
+        text-decoration: none;
+    }
+    
+    &:visited {
+        text-decoration: none;
+    }
+    
+    &.scheduleFormBtn {
+        margin-right: 10px;
+    }
 }

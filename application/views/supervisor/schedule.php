@@ -6,18 +6,24 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/supervisorScheduleStyle.css">
 </head>
 <body>  
+<div>
+<a class="nextWeekBtn" href="<?php echo base_url();?>HomeController/viewNextWeekSchedulePage">Next Week Schedule ▶</a>
+<a class="scheduleFormBtn" href="<?php echo base_url();?>HomeController/viewScheduleFormPage">Schedule Form</a>
+</div>
+<h2 class="scheduleTitle"><b>This Week's Schedule</b></h2>
+<h2>Date: <?= $date?></h2>
+<hr class="titleHr">
 
-<a href="<?php echo base_url();?>HomeController/viewNextWeekSchedulePage">Next Week Schedule</a>
-<h2><?= $date?>Schedule</h2><hr/>
 
 <!--The area of morning schedule , too complicated i will explain face to face-->
 <!--Front ender just put the class name to every td or tr-->
 <h3 class="dayLabel">Morning</h3>
 <hr class="scheduleHr">
 <form id="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<div class="table-responsive">
 	<table border="1" style="width:90%" class="morningTable">
 		<thead>
-			<tr><th>Stuff</th>	
+			<tr><th class="stuffColumn">Stuff</th>	
 			<th>Monday</th>
 			<th>Tuesday</th>
 			<th>Wednesday</th>
@@ -25,13 +31,13 @@
 			<th>Friday</th>
 			<th>Saturday</th>
 			<th>Sunday</th>
-			<th>Remark</th></tr>
+			<th class="remarkColumn">Remark</th></tr>
 		</thead>
 		<tbody>
 			<?php $check="";foreach($stuffs as $stuff):?>
 			<?php foreach($morning_schedules as $morning_schedule): if($stuff['stuff'] == $morning_schedule['stuff']){$check = true;break;}else{$check = false;}endforeach;if($check == true) {?>
 			<tr>
-				<td><?php echo $stuff['stuff'];?></td>
+				<td class="stuffColumn"><?php echo $stuff['stuff'];?></td>
 				<td><select style="width:100%" id="<?=$stuff['stuff_id']."_1_morning";?>" ><option value="<?=$morning_schedule['monday']?>"><?=$morning_schedule['monday']?></option>		<option value="NA">NA</option><?php foreach($cleaners as $cleaner): ?><option value="<?=$cleaner['user_id']."_".$cleaner['user_name']?>"><?=$cleaner['user_id']."_".$cleaner['user_name']?></option><?php endforeach; ?></select></td>
 				<td><select style="width:100%" id="<?=$stuff['stuff_id']."_2_morning";?>" ><option value="<?=$morning_schedule['tuesday']?>"><?=$morning_schedule['tuesday']?></option>	<option value="NA">NA</option><?php foreach($cleaners as $cleaner): ?><option value="<?=$cleaner['user_id']."_".$cleaner['user_name']?>"><?=$cleaner['user_id']."_".$cleaner['user_name']?></option><?php endforeach; ?></select></td>
 				<td><select style="width:100%" id="<?=$stuff['stuff_id']."_3_morning";?>" ><option value="<?=$morning_schedule['wednesday']?>"><?=$morning_schedule['wednesday']?></option><option value="NA">NA</option><?php foreach($cleaners as $cleaner): ?><option value="<?=$cleaner['user_id']."_".$cleaner['user_name']?>"><?=$cleaner['user_id']."_".$cleaner['user_name']?></option><?php endforeach; ?></select></td>
@@ -62,19 +68,24 @@
 			</tr>
 			<?php }?>
 			<?php endforeach; ?>
-			<button id="updateMorningSchedule" style="float:right" type="button">Update Schedule</button><button id="deleteMorningSchedule" style="float:right" type="button">Delete Schedule</button>
+			<tr class="morningBtnRow">
+			    <td colspan="9"><button id="updateMorningSchedule" class="morningButtons updateBtn" type="button">Update Schedule</button><button id="deleteMorningSchedule" class="morningButtons deleteBtn" type="button">Delete Schedule</button></td>
+			</tr>
 		</tbody>
 	</table>
+	</div>
 </form>
+
 
 <!--The area of afternoon schedule , too complicated i will explain face to face-->
 <!--Front ender just put the class name to every td or tr-->
 <h3 class="dayLabel">Afternoon</h3>
 <hr class="scheduleHr">
 <form id="form2" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<div class="table-responsive">
 	<table border="1" style="width:90%" class="afternoonTable">
 		<thead>
-			<tr><th>Stuff</th>	
+			<tr><th class="stuffColumn">Stuff</th>	
 			<th>Monday</th>
 			<th>Tueasday</th>
 			<th>Wednesday</th>
@@ -82,7 +93,7 @@
 			<th>Friday</th>
 			<th>Saturday</th>
 			<th>Sunday</th>
-			<th>Remark</th></tr>
+			<th class="remarkColumn">Remark</th></tr>
 		</thead>
 		<tbody>
 			<?php $check="";foreach($stuffs as $stuff):?>
@@ -119,11 +130,11 @@
 			</tr>
 			<?php }?>
 			<?php endforeach; ?>
-			<tr><td colspan="9"><button id="updateAfternoonSchedule" style="float:right" type="button">Update Schedule</button><button id="deleteAfternoonSchedule" style="float:right" type="button">Delete Schedule</button></td></tr>
+			<tr class="afternoonBtnRow"><td colspan="9"><button id="updateAfternoonSchedule" class="afternoonButtons updateBtn" type="button">Update Schedule</button><button id="deleteAfternoonSchedule" class="afternoonButtons deleteBtn" type="button">Delete Schedule</button></td></tr>
 		</tbody>
 	</table>
+    </div>
 </form>
-<a href="<?php echo base_url();?>HomeController/viewScheduleFormPage">Schedule Form</a>
 
 <!--boundary (below are hidden value to external js)-->
 <input id="baseURL" type=hidden value="<?=base_url()?>">

@@ -112,8 +112,8 @@
 			</center>
 		</td>
 	</tr>
-	<tr><td colspan="2"><center><button id="save_schedule">save</button><button id="delete_schedule">delete</button><center></td></tr>
-	</tbody>
+        <tr><td colspan="2"><center><button id="save_schedule">save</button><button id="delete_schedule">delete</button></center></td></tr>
+    </tbody>
 </table>
 </form>
 
