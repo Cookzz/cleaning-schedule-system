@@ -1,5 +1,6 @@
 <head>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/popUpFormStyle.css">
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/change_password.js"></script>
 </head>
        <!--Login Modal-->
         <div id="loginForm" class="modal">
@@ -53,15 +54,15 @@
                    <span><button type="button" onclick="modalPop(0)" class="backbtn"><img src="<?php echo base_url(); ?>assets/images/backarrow.png" class="backarrowbtn"></button></span>
                     <center><img src="<?php echo base_url(); ?>assets/images/password.png" class="changePassPic">
                     <h2 class="forgotPassTitle">Change Password</h2>
-                        <p>Note: For best password protection, use at least one uppercase letter, lowercase letter and a number for your password</p>
+                        <p>Note: For best password protection, use at least one letter and a number for your new password (include uppercase)</p>
                     <label><h5>Old Password</h5></label>
-                    <input type="text" placeholder="Enter your old passowrd" name="oldpass" required>    
+                    <input type="text" id="oldPassword" placeholder="Enter your old passowrd" name="oldpass" required>    
                         
                     <label><h5>New Password</h5></label>
-                    <input type="text" placeholder="Enter new password" name="newpass" required>
+                    <input type="text" id="newPassword" placeholder="Enter new password" name="newpass" required>
                     
                     <label><h5>Confirm Password</h5></label></center>
-                    <input type="text" placeholder="Enter new password again" name="newpass2" required>
+                    <input type="text" id="confirmPassword" placeholder="Enter new password again" name="newpass2" required>
                     
                     <center><label id="changeError"></label></center>
 

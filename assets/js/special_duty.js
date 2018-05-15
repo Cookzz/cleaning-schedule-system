@@ -8,6 +8,7 @@ function insert_back_table(message)
 	special_duty_data.forEach(function(special_duty_data){
 		var newRow = table.row.add( [
 			i,
+			special_duty_data["special_duty_title"],
 			special_duty_data["special_duty_detail"],
 			special_duty_data["special_duty_time"],
 			special_duty_data["special_duty_date"],
@@ -17,10 +18,11 @@ function insert_back_table(message)
 		i++;
 		
 		$(newRow).attr("id",special_duty_data["stuff_id"]);
-					
-		$("#"+special_duty_data["stuff_id"]).find('td:eq(1)').attr('id',special_duty_data["stuff_id"]+"_special_duty_detail");
-		$("#"+special_duty_data["stuff_id"]).find('td:eq(2)').attr('id',special_duty_data["stuff_id"]+"_special_duty_time");
-		$("#"+special_duty_data["stuff_id"]).find('td:eq(3)').attr('id',special_duty_data["stuff_id"]+"_special_duty_date");	
+			
+		$("#"+special_duty_data["stuff_id"]).find('td:eq(1)').attr('id',special_duty_data["stuff_id"]+"_special_duty_title");			
+		$("#"+special_duty_data["stuff_id"]).find('td:eq(2)').attr('id',special_duty_data["stuff_id"]+"_special_duty_detail");
+		$("#"+special_duty_data["stuff_id"]).find('td:eq(3)').attr('id',special_duty_data["stuff_id"]+"_special_duty_time");
+		$("#"+special_duty_data["stuff_id"]).find('td:eq(4)').attr('id',special_duty_data["stuff_id"]+"_special_duty_date");	
 				
 	});
 	table.draw( false );
