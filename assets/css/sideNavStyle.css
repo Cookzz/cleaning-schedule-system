@@ -32,6 +32,9 @@
       color: #7386D5;
       background: #fff; }
 
+#sideBarCollapse {
+  float: right; }
+
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
@@ -39,10 +42,7 @@
   width: 100%;
   min-height: 100vh;
   transition: all 0.3s;
-  position: absolute;
   top: 0;
   right: 0; }
-  #content.active {
-    width: calc(100% - 250px); }
 
 /*# sourceMappingURL=sideNavStyle.css.map */
