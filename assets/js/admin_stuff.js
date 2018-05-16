@@ -1,57 +1,3 @@
-function insert_back_table(message)
-{
-	var stuff_data = JSON.parse(message);
-	var table = $('#stuff_table').DataTable();
-	table.clear();
-	var i = 1;
-	stuff_data.forEach(function(stuff_data){
-		var newRow = table.row.add( [
-			i,
-			stuff_data["stuff"],
-			"<button type='button' id='"+stuff_data["stuff_id"]+"_update' class='update'>Update</button>",
-			"<center><button style='width:80px;height:30px' type='button' id='"+stuff_data["stuff_id"]+"_delete' class='w3-text-red fa fa-trash delete'></button></center>"
-		]).draw( false ).node();
-		i++;
-		
-		$(newRow).attr("id",stuff_data["stuff_id"]);
-					
-		$("#"+stuff_data["stuff_id"]).find('td:eq(1)').attr('id',stuff_data["stuff_id"]+"_stuff");			
-		$("#"+stuff_data["stuff_id"]).find('td:eq(1)').attr('contenteditable',true);
-			
-		table.draw( false );
-				
-	});
-}
-
-function postStuff()
-{
-	var baseUrl = $("#baseURL").val();
-	var url = baseUrl+"stuffController/setNewStuff";
-	var newStuff = $("#newStuffField").val();
-	var fd = new FormData();
-	fd.append('newStuff',newStuff);
-
-	$.ajax({
-		url: url,
-		data: fd,
-		processData: false,
-		contentType: false,
-		type: 'POST',
-		success: function(message){
-			if(message == false)
-			{
-				alert("Insert Uncompleted,Invalid or Duplicate Stuff");
-			}
-			else
-			{
-				alert("Insert Success");
-				insert_back_table(message);
-				$("#newStuffField").val("");
-			}
-		}
-	});	
-}
-
 function delete_stuff(stuff_id)
 {
 	var baseUrl = $("#baseURL").val();
@@ -69,7 +15,6 @@ function delete_stuff(stuff_id)
 		success: function(message)
 		{
 			alert("Delete Success");
-			insert_back_table(message);
 		}	
 	});	
 }
@@ -111,16 +56,34 @@ function update_stuff(stuff_id)
 
 $(document).ready(function(){
 	
+	var d= new Date();
+	
 	$('#stuff_table').DataTable({
-		"paging": false,
-		"info": false,
+		"pageLength": 10,
 		"order": [[ 1, "asc" ]],
+		"dom": 'Bfrtip',
+        "buttons": [
+            {
+				extend: 'print',
+				autoPrint: true,
+                exportOptions: {columns: '0,1'},
+				title:'Stuff Location Table',
+				messageTop:"Print Date : " + d.getDate() + " / " + (d.getMonth()+1) +' / '+ d.getFullYear(),
+				customize: function ( win ) {
+                    $(win.document.body)
+                        .css( 'font-size', '12pt' );
+
+ 
+                    $(win.document.body).find( 'table' )
+                        .addClass('compact')
+                        .css( 'font-size', 'inherit' );
+                }
+			}
+		]
 	});
 	
 	$("form").submit(function(event){
 		event.preventDefault();
-		
-		postStuff();
 	
 	});
 	
@@ -130,6 +93,13 @@ $(document).ready(function(){
 			var txt = $(this).attr("id");
 			var stuff_id = txt.match(/\d/g);
 			stuff_id = stuff_id.join("");
+			
+			var table = $('#stuff_table').DataTable();
+			table
+				.row( $(this).parents('tr') )
+				.remove()
+				.draw(false);
+				
 			delete_stuff(stuff_id);
 		}
 		
@@ -146,8 +116,6 @@ $(document).ready(function(){
 		
 	});
 });
-
-
 
 
 

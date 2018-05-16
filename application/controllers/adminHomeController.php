@@ -138,6 +138,177 @@
 			$this->load->view('templates/footer',$data); 
 		}
 		
+		public function viewStuffLocationPage($page = 'admin_stuff')
+		{
+			$this->load->library('session');
+			if(empty($_SESSION['user_access_level']))
+			{
+				redirect("HomeController/viewHomePage");
+			}
+			if($_SESSION['user_access_level'] != 1)
+			{
+				redirect("HomeController/viewHomePage");
+			}
+			
+			$this->load->model("main_model");
+			$query = $this->main_model->get_data_order("*","stuff","stuff");
+			$data['stuffs'] = $query->result_array();
+				
+			$this->viewNav();
+			$this->load->view("templates/sidenav");
+			$this->load->view("templates/popupforms");
+			$this->load->view('admin/'.$page,$data);
+			$this->load->view('templates/footer',$data); 
+		}
+		
+		public function viewSubStuffPage($page = 'admin_substuff')
+		{
+			$this->load->library('session');
+			if(empty($_SESSION['user_access_level']))
+			{
+				redirect("HomeController/viewHomePage");
+			}
+			if($_SESSION['user_access_level'] != 1)
+			{
+				redirect("HomeController/viewHomePage");
+			}
+			
+			$this->load->model("main_model");
+			$query = $this->main_model->get_data_order("*","sub_stuff","sub_stuff");
+			$data['sub_stuffs'] = $query->result_array();
+				
+			$this->viewNav();
+			$this->load->view("templates/sidenav");
+			$this->load->view("templates/popupforms");
+			$this->load->view('admin/'.$page,$data);
+			$this->load->view('templates/footer',$data); 
+		}
+		
+		public function viewDutyPage($page = 'admin_duty')
+		{
+			$this->load->library('session');
+			if(empty($_SESSION['user_access_level']))
+			{
+				redirect("HomeController/viewHomePage");
+			}
+			if($_SESSION['user_access_level'] != 1)
+			{
+				redirect("HomeController/viewHomePage");
+			}
+			
+			$this->load->model("main_model");
+				
+			$query = $this->main_model->get_data_order("*","duty_stuff","duty");
+			$data['duties'] = $query->result_array();
+				
+			$query = $this->main_model->get_data_order("*","stuff","stuff");
+			$data['stuffs'] = $query->result_array();
+				
+			$query = $this->main_model->get_data_order("*","sub_stuff","sub_stuff");
+			$data['sub_stuffs'] = $query->result_array();
+				
+			$this->viewNav();
+			$this->load->view("templates/sidenav");
+			$this->load->view("templates/popupforms");
+			$this->load->view('admin/'.$page,$data);
+			$this->load->view('templates/footer',$data); 
+			
+		}
+		
+		public function viewMorningSchedulePage($page = 'admin_morning_schedule')
+		{
+			$this->load->library('session');
+			if(empty($_SESSION['user_access_level']))
+			{
+				redirect("HomeController/viewHomePage");
+			}
+			if($_SESSION['user_access_level'] != 1)
+			{
+				redirect("HomeController/viewHomePage");
+			}
+			$this->load->model("main_model");
+				
+			$week_number = array("week_number" => date("W"));
+			$get_morning_schedule_query = $this->main_model->get_data("*","morning_schedule");
+			$data['morning_schedules'] = $get_morning_schedule_query->result_array();
+					
+			$this->viewNav();
+			$this->load->view("templates/sidenav");
+			$this->load->view("templates/popupforms");
+			$this->load->view('admin/'.$page,$data);
+			$this->load->view('templates/footer',$data); 
+		}
+		
+		public function viewAfternoonSchedulePage($page = 'admin_afternoon_schedule')
+		{
+			$this->load->library('session');
+			if(empty($_SESSION['user_access_level']))
+			{
+				redirect("HomeController/viewHomePage");
+			}
+			if($_SESSION['user_access_level'] != 1)
+			{
+				redirect("HomeController/viewHomePage");
+			}
+			$this->load->model("main_model");
+				
+			$week_number = array("week_number" => date("W"));
+			$get_morning_schedule_query = $this->main_model->get_data("*","afternoon_schedule");
+			$data['afternoon_schedules'] = $get_morning_schedule_query->result_array();
+					
+			$this->viewNav();
+			$this->load->view("templates/sidenav");
+			$this->load->view("templates/popupforms");
+			$this->load->view('admin/'.$page,$data);
+			$this->load->view('templates/footer',$data); 
+		}
+		
+		public function viewPendingDutyPage($page = 'admin_pending_duty')
+		{
+			$this->load->library('session');
+			if(empty($_SESSION['user_access_level']))
+			{
+				redirect("HomeController/viewHomePage");
+			}
+			if($_SESSION['user_access_level'] != 1)
+			{
+				redirect("HomeController/viewHomePage");
+			}
+			$this->load->model("main_model");
+				
+			$query = $this->main_model->get_data("*","pending_duty");			
+			$data['pending_duties'] = $query->result_array();
+					
+			$this->viewNav();
+			$this->load->view("templates/sidenav");
+			$this->load->view("templates/popupforms");
+			$this->load->view('admin/'.$page,$data);
+			$this->load->view('templates/footer',$data); 
+		}
+		
+		public function viewCompleteDutyPage($page = 'admin_Complete_duty')
+		{
+			$this->load->library('session');
+			if(empty($_SESSION['user_access_level']))
+			{
+				redirect("HomeController/viewHomePage");
+			}
+			if($_SESSION['user_access_level'] != 1)
+			{
+				redirect("HomeController/viewHomePage");
+			}
+			$this->load->model("main_model");
+				
+			$query = $this->main_model->get_data("*","complete_duty");			
+			$data['complete_duties'] = $query->result_array();
+					
+			$this->viewNav();
+			$this->load->view("templates/sidenav");
+			$this->load->view("templates/popupforms");
+			$this->load->view('admin/'.$page,$data);
+			$this->load->view('templates/footer',$data); 
+		}
+		
 		public function viewUserSetting($page = "user_setting")
 		{
 			$this->load->library('session');

@@ -1,57 +1,3 @@
-function insert_back_table(message)
-{
-	var sub_stuff_data = JSON.parse(message);
-	var table = $('#sub_stuff_table').DataTable();
-	table.clear();
-	var i = 1;
-	sub_stuff_data.forEach(function(sub_stuff_data){
-		var newRow = table.row.add( [
-			i,
-			sub_stuff_data["sub_stuff"],
-			"<button type='button' id='"+sub_stuff_data["sub_stuff_id"]+"_update' class='update'>Update</button>",
-			"<center><button style='width:80px;height:30px' type='button' id='"+sub_stuff_data["sub_stuff_id"]+"_delete' class='w3-text-red fa fa-trash delete'></button></center>"
-		]).draw( false ).node();
-		i++;
-		
-		$(newRow).attr("id",sub_stuff_data["sub_stuff_id"]);
-					
-		$("#"+sub_stuff_data["sub_stuff_id"]).find('td:eq(1)').attr('id',sub_stuff_data["sub_stuff_id"]+"_sub_stuff");			
-		$("#"+sub_stuff_data["sub_stuff_id"]).find('td:eq(1)').attr('contenteditable',true);
-			
-		table.draw( false );
-				
-	});
-}
-
-function postStuff()
-{
-	var baseUrl = $("#baseURL").val();
-	var url = baseUrl+"subStuffController/setNewSubStuff";
-	var newSubStuff = $("#newSubStuffField").val();
-	var fd = new FormData();
-	fd.append('newSubStuff',newSubStuff);
-
-	$.ajax({
-		url: url,
-		data: fd,
-		processData: false,
-		contentType: false,
-		type: 'POST',
-		success: function(message){
-			if(message == false)
-			{
-				alert("Insert Uncompleted,Invalid or Duplicate Stuff");
-			}
-			else
-			{
-				alert("Insert Success");	
-				insert_back_table(message);
-				$("#newSubStuffField").val("");
-			}
-		}
-	});	
-}
-
 function delete_sub_stuff(sub_stuff_id)
 {
 	var baseUrl = $("#baseURL").val();
@@ -69,7 +15,6 @@ function delete_sub_stuff(sub_stuff_id)
 		success: function(message)
 		{
 			alert("Delete Success");
-			insert_back_table(message);
 		}	
 	});	
 }
@@ -108,16 +53,34 @@ function update_sub_stuff(sub_stuff_id)
 
 $(document).ready(function(){
 	
+	var d= new Date();
+	
 	$('#sub_stuff_table').DataTable({
-		"paging": false,
-		"order": [[ 0, "asc" ]],
-		"info":false,
+		"pageLength": 10,
+		"order": [[ 1, "asc" ]],
+		"dom": 'Bfrtip',
+        "buttons": [
+            {
+				extend: 'print',
+				autoPrint: true,
+                exportOptions: {columns: '0,1'},
+				title:'Substuff Table',
+				messageTop:"Print Date : " + d.getDate() + " / " + (d.getMonth()+1) +' / '+ d.getFullYear(),
+				customize: function ( win ) {
+                    $(win.document.body)
+                        .css( 'font-size', '12pt' );
+
+ 
+                    $(win.document.body).find( 'table' )
+                        .addClass('compact')
+                        .css( 'font-size', 'inherit' );
+                }
+			}
+		]
 	});
 	
 	$("form").submit(function(event){
 		event.preventDefault();
-		
-		postStuff();
 	
 	});
 	
@@ -127,6 +90,13 @@ $(document).ready(function(){
 			var txt = $(this).attr("id");
 			var sub_stuff_id = txt.match(/\d/g);
 			sub_stuff_id = sub_stuff_id.join("");
+			
+			var table = $('#sub_stuff_table').DataTable();
+			table
+				.row( $(this).parents('tr') )
+				.remove()
+				.draw(false);
+				
 			delete_sub_stuff(sub_stuff_id);
 		}
 		

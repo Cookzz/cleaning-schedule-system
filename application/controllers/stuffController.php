@@ -50,7 +50,8 @@
 										'friday'=>'NA',
 										'saturday'=>'NA',
 										'sunday'=>'NA',
-										'remark'=>'active');
+										'remark'=>'active',
+										'week_number'=>date('W'));
 						$table = "morning_schedule";
 						$insert_query = $this->main_model->insert_data($table,$data);
 						$table = "afternoon_schedule";
@@ -137,8 +138,8 @@
 						$update_query = $this->main_model->update_data("stuff_id",$stuff_id,$data,"stuff");
 						
 						$schedule_data = array("stuff"=>$update_stuff);
-						$delete_schedule_query = $this->main_model->update_data("stuff",$original_stuff,$data,"morning_schedule");
-						$delete_schedule_query = $this->main_model->update_data("stuff",$original_stuff,$data,"afternoon_schedule");
+						$update_schedule_query = $this->main_model->update_data("stuff",$original_stuff,$data,"morning_schedule");
+						$update_schedule_query = $this->main_model->update_data("stuff",$original_stuff,$data,"afternoon_schedule");
 				
 						$duty_data = array("duty_stuff"=>$update_stuff);
 						$update_duty_query = $this->main_model->update_data("duty_stuff",$original_stuff,$duty_data,"duty");

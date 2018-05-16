@@ -233,7 +233,7 @@ $(document).ready(function(){
 				autoPrint: true,
                 exportOptions: {columns: '0,1,2,3,4,5,7,8'},
 				title:'User Table',
-				messageTop:"Print Date : " + d.getDate() + " / " + d.getMonth()+1 +' / '+ d.getFullYear(),
+				messageTop:"Print Date : " + d.getDate() + " / " + (d.getMonth()+1) +' / '+ d.getFullYear(),
 				customize: function ( win ) {
                     $(win.document.body)
                         .css( 'font-size', '12pt' );
