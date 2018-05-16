@@ -2,7 +2,7 @@
     SIDEBAR STYLE
 ----------------------------------------------------- */
 #sidebar {
-    width: 250px;
+    width: 300px;
     position: fixed;
     top: 0;
     left: 0;
@@ -11,7 +11,8 @@
     background: #7386D5;
     color: #fff !important;
     transition: all 0.3s;
-    margin-left: -250px;
+    margin-left: -300px;
+    overflow-y: scroll;
         
     &.active {
         margin-left: 0px;
@@ -28,15 +29,20 @@
     }
     
     ul {
-        p {
+        h4 {
             color: #fff;
             padding: 10px;
+            margin-bottom: 0px;
+        }
+        
+        .sideNavHeading {
+            margin-top: 0px;
         }
         
         li {
             a {
                 padding: 10px;
-                font-size: 1.1em;
+                font-size: 1.0em;
                 display: block;
                 color: white;
                 

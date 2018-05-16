@@ -15,14 +15,5 @@
 	</button>
 </div> 
 
-<p><a href="<?php echo base_url();?>adminHomeController/viewUserPage">User Table</a></p>
-<p><a href="<?php echo base_url();?>adminHomeController/viewStuffLocationPage">Stuff Location Table</a></p>
-<p><a href="<?php echo base_url();?>adminHomeController/viewSubStuffPage">Sub_Stuff Table</a></p>
-<p><a href="<?php echo base_url();?>adminHomeController/viewDutyPage">Duty Table</a></p>
-<p><a href="<?php echo base_url();?>adminHomeController/viewMorningSchedulePage">Morning Schedule Table</a></p>
-<p><a href="<?php echo base_url();?>adminHomeController/viewAfternoonSchedulePage">Afternoon Schedule Table</a></p>
-<p><a href="<?php echo base_url();?>adminHomeController/viewPendingDutyPage">Pending Duty Table</a></p>
-<p><a href="<?php echo base_url();?>adminHomeController/viewCompleteDutyPage">Complete Duty Table</a></p>
-
 </body>
 </html>
