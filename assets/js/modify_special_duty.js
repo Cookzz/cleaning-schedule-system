@@ -36,13 +36,6 @@ function validateDate(special_duty_id,cleaners,numberOfCleaner)
 		$("#special_duty_dutyTitle_error").show();
 		$("#special_duty_dutyTitle_error").text("Invalid Title");
 	}
-	else if(!($("#special_duty_dutyDetail").val().trim().match(/^([a-zA-Z0-9]+\s)*[a-zA-Z0-9]+$/)))
-	{
-		$("#special_duty_dutyTitle_error").hide();
-		$("#special_duty_date_error").hide();
-		$("#special_duty_dutyDetail_error").show();
-		$("#special_duty_dutyDetail_error").text("Invalid Location");
-	}
 	else if (special_duty_date < TodayDate) 
 	{
 		$("#special_duty_dutyDetail_error").hide();

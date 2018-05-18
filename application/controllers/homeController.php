@@ -339,13 +339,13 @@
 					$data["big_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage">Home<span class="sr-only">(current)</span></a>
 											<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage">Schedule</a>
 											<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewOwnDutyPage">Duty</a>
-											<a class="nav-item nav-link active" href="forum.php">Special Stuff</a>
+											<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewOwnSpecialDuty">Special Stuff</a>
 											<a class="nav-item nav-link active" href="#">Contact Us</a>';
 										
 					$data["small_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage">Home<span class="sr-only">(current)</span></a>
 												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage">Schedule</a>
 												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewOwnDutyPage">Duty</a>
-												<a class="nav-item nav-link active" href="#">Special Stuff</a>
+												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewOwnSpecialDuty">Special Stuff</a>
 												<a class="nav-item nav-link active" href="#">Contact Us</a>';
 				}
 				elseif($_SESSION['user_access_level'] == 4)
@@ -1021,6 +1021,65 @@
 					$this->load->view('supervisor/view_specify_special_duty.php',$data);
 					$this->load->view('templates/footer');
 				}
+			}
+			
+		}
+		
+		public function viewOwnSpecialDuty($page = "own_special_duty")
+		{
+			$this->load->library('session');
+			if(Empty($_SESSION['uid']))
+			{
+				redirect("HomeController/viewHomePage");
+			}
+			elseif( $_SESSION['user_access_level']!=3 )
+			{
+				redirect("HomeController/viewMainPage");
+			}
+			else
+			{	
+				$this->load->model("main_model");
+				
+				$user_id = array('id' => $_SESSION['uid']);
+				
+				$query = $this->main_model->get_specify_data("user_name","user_name",$user_id,"users");
+				$user_name = $query->row()->user_name;
+				$query = $this->main_model->get_specify_data("user_id","user_id",$user_id,"users");
+				$user_id = $query->row()->user_id;
+				
+				$special_duty_date = array("special_duty_date" => date("Y-m-d"));
+				$query = $this->main_model->get_specify_data("special_duty_id","special_duty_id",$special_duty_date,"special_duty");
+				$special_duties_id = $query->result_array();
+				
+				$special_duties_id_array = array();
+				foreach ($special_duties_id as $special_duty_id)
+				{
+					array_push($special_duties_id_array,$special_duty_id['special_duty_id']);
+				}
+
+				$cleaner = array("special_duty_cleaner"=> $user_id."_".$user_name);
+				$query = $this->main_model->get_specify_data3("special_duty_id","special_duty_cleaner_id DESC",$cleaner,"special_duty_id",$special_duties_id_array,"special_duty_cleaner");
+				$special_duties_id = $query->result_array();
+				
+				$special_duties_id_array = array();
+				foreach ($special_duties_id as $special_duty_id)
+				{
+					array_push($special_duties_id_array,$special_duty_id['special_duty_id']);
+				}
+				
+				$special_duty_date = array("special_duty_date" => date("Y-m-d"));
+				$special_duties_id = array("special_duties_id" => $special_duties_id);
+				$query = $this->main_model->get_specify_data3("*","special_duty_time ASC",$special_duty_date,"special_duty_id",$special_duties_id_array,"special_duty");
+				$special_duties = $query->result_array();
+				$special_duties_count = $query->num_rows();
+				
+				$data["special_duties"] = $special_duties;
+				$data["special_duties_count"] = $special_duties_count;
+				$data["date"] = date("Y/m/d");
+				
+				$this->viewNav();
+				$this->load->view('cleaner/'.$page,$data);
+				$this->load->view('templates/footer');
 			}
 			
 		}

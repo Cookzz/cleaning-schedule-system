@@ -33,6 +33,16 @@
 			return $query;
 		}
 		
+
+		public function get_specify_data($selectField,$oderField,$data,$table)
+		{
+			$this->db->select($selectField);
+			$this->db->order_by($oderField, "asc");
+			$query = $query = $this->db->get_where($table,$data);
+			
+			return $query;
+		}
+				
 		public function get_specify_data2($selectField,$oderField,$data,$table)
 		{
 			$this->db->select($selectField);
@@ -42,11 +52,13 @@
 			return $query;
 		}
 		
-		public function get_specify_data($selectField,$oderField,$data,$table)
+		public function get_specify_data3($selectField,$oderField,$data,$dataField,$data2,$table)
 		{
 			$this->db->select($selectField);
-			$this->db->order_by($oderField, "asc");
-			$query = $query = $this->db->get_where($table,$data);
+			$this->db->order_by($oderField);
+			$this->db->where($data);
+			$this->db->where_in($dataField,$data2);
+			$query = $query = $this->db->get($table);
 			
 			return $query;
 		}

@@ -48,8 +48,8 @@
 				$this->load->model("main_model");
 				
 				$data = array("special_duty_id"=>$special_duty_id);
-				
 				$delete_query = $this->main_model->delete_data("special_duty",$data);
+				$delete_query = $this->main_model->delete_data("special_duty_cleaner",$data);
 				
 				$get_query = $this->main_model->get_data_order("*","special_duty_id","special_duty");
 				$special_duty_data = $get_query->result_array();
