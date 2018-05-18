@@ -19,15 +19,17 @@
 				if($week == "this")
 				{
 					$week_number = date("W");
+					$schedule_id = $time."_schedule_id";
 				}
 				elseif($week == "next")
 				{
 					$nextWeek = strtotime('+1 week');
 					$week_number = date('W', $nextWeek);
+					$schedule_id = $time."_schedule_id";
 				}
 				$stuff = array("stuff" => $stuff , "week_number" => $week_number);
 				$table = $time."_schedule";
-				$get_query = $this->main_model->get_specify_data("*","schedule_id",$stuff,$table);
+				$get_query = $this->main_model->get_specify_data("*",$schedule_id,$stuff,$table);
 				$row_count = $get_query->num_rows();
 				
 				if($row_count >=1 )

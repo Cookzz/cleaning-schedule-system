@@ -35,8 +35,8 @@
 		<th>Day:</th>
 		<td>
 			<center>
-				<input id="Morning" type="radio" name="week" value="this" checked>This Week
-				<input id="Afternoon" type="radio" name="week" value="next">Next Week
+				<input id="thisWeek" type="radio" name="week" value="this" checked>This Week
+				<input id="nextWeek" type="radio" name="week" value="next">Next Week
 			</center>
 		</td>
 	</tr>
