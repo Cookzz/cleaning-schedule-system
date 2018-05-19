@@ -309,6 +309,29 @@
 			$this->load->view('templates/footer',$data); 
 		}
 		
+		public function viewSpecialDutyPage($page = 'admin_special_duty')
+		{
+			$this->load->library('session');
+			if(empty($_SESSION['user_access_level']))
+			{
+				redirect("HomeController/viewHomePage");
+			}
+			if($_SESSION['user_access_level'] != 1)
+			{
+				redirect("HomeController/viewHomePage");
+			}
+			$this->load->model("main_model");
+				
+			$query = $this->main_model->get_data("*","special_duty");			
+			$data['special_duties'] = $query->result_array();
+					
+			$this->viewNav();
+			$this->load->view("templates/sidenav");
+			$this->load->view("templates/popupforms");
+			$this->load->view('admin/'.$page,$data);
+			$this->load->view('templates/footer',$data); 
+		}
+		
 		public function viewUserSetting($page = "user_setting")
 		{
 			$this->load->library('session');

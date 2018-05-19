@@ -1,9 +1,9 @@
-function update_user_data(id)
+function update_complete_duty_data(id)
 {
 	if(confirm("Do you confirm want to update?"))
 	{
 		var baseUrl = $("#baseURL").val();
-		var url = baseUrl+"completeDutyController/updateCompleteDutyData";
+		var url = baseUrl+"specialDutyController/updateSpecialDutyData";
 		var complete_duty_comment = $("#"+id+"_complete_duty_comment").text();
 	
 		var fd = new FormData();
@@ -76,7 +76,7 @@ $(document).ready(function(){
 		var txt = $(this).attr("id");
 		var id = txt.match(/\d/g);
 		id = id.join("");
-		update_user_data(id);
+		update_complete_duty_data(id);
 	});
 
 });

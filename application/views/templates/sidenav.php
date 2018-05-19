@@ -32,6 +32,9 @@
                 <li>
                     <a href="<?php echo base_url();?>adminHomeController/viewCompleteDutyPage">Complete Duty Table</a>
                 </li>
+				<li>
+                    <a href="<?php echo base_url();?>adminHomeController/viewSpecialDutyPage">Special Duty Table</a>
+                </li>
             </ul>
         </nav>
 
