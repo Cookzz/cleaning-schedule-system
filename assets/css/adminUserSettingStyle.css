@@ -1,0 +1,34 @@
+.profilePicture {
+  display: inline-block;
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  object-fit: cover; }
+
+.pageTitle {
+  margin-bottom: 0px;
+  margin-top: 16px;
+  letter-spacing: 10px;
+  font-weight: bold; }
+
+.pageTitleHr {
+  margin-top: 8px; }
+
+.profPicRow .profPicLabel {
+  font-weight: bold;
+  font-size: 21px;
+  margin-top: 0px;
+  margin-bottom: 0px; }
+.profPicRow hr {
+  margin-top: 0px; }
+
+.settingLabel {
+  font-weight: bold;
+  font-size: 21px;
+  margin-top: 0px;
+  margin-bottom: 0px; }
+
+.otherHr {
+  margin-top: 0px; }
+
+/*# sourceMappingURL=adminUserSettingStyle.css.map */
