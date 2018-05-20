@@ -15,6 +15,9 @@ body {
 
 .container-fluid {
     max-width: 1400px;
+    border-radius: 10px;
+    
+    background-color: rgba(230,230,230,1);
 }
 
 .footer {
@@ -32,6 +35,17 @@ body {
         float: right;
     }
 }
+
+.loginIcon {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    
+    object-fit: cover;
+}
+
+
 
 /* ---------------------------------------------------
     BROWSER RESIZING STYLE

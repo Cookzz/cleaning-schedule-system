@@ -5,21 +5,35 @@
   border-radius: 50%;
   object-fit: cover; }
 
+.previewCol {
+  margin-top: -20px; }
+  .previewCol #output {
+    display: inline-block;
+    width: 128px;
+    height: 128px;
+    object-fit: cover;
+    margin-top: -5px; }
+
 .pageTitle {
   margin-bottom: 0px;
-  margin-top: 16px;
+  padding-top: 16px;
   letter-spacing: 10px;
   font-weight: bold; }
 
 .pageTitleHr {
   margin-top: 8px; }
 
-.profPicRow .profPicLabel {
+.userSettingList td label {
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 1px; }
+
+.profPicCol .profPicLabel {
   font-weight: bold;
   font-size: 21px;
   margin-top: 0px;
   margin-bottom: 0px; }
-.profPicRow hr {
+.profPicCol hr {
   margin-top: 0px; }
 
 .settingLabel {
