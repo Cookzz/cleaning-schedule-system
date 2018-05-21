@@ -10,6 +10,10 @@
     
     thead{
         font-family: $font;
+        
+        th {
+            background: white;
+        }
     }
     
     tbody{
@@ -35,6 +39,9 @@
                     @extend .morningBtnRow;
                 }
             } 
+            &:nth-child(even) {
+                background: white;
+            }
         }
         td {
             select {

@@ -6,7 +6,7 @@
 </head>
 <body>  
 
-<h2>Today Special Duty</h2><h5><?= $date?></h4>
+<h2>Today Special Duty</h2><h5><?= $date?></h5>
 <!--This is the body of own special duty page, It allow cleaner to see thier special duty-->
 <p>
 <!--This is the start to show the special duty-->
@@ -21,7 +21,7 @@ Detail : <?= $special_duty["special_duty_detail"]?>
 <?php endforeach; ?>
 <!--The else statement will be active when the total of pending duty is 0 -->
 <?php }else{?>
-<h6>You had completed every duty</h6>
+<h6>You Do Not Have Any Special Duty</h6>
 <?php }?>
 </p>
 <!--This end of pending duty area-->

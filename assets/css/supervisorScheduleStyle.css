@@ -31,6 +31,9 @@
   .morningTable thead,
   .afternoonTable thead {
     font-family: "News Cycle"; }
+    .morningTable thead th,
+    .afternoonTable thead th {
+      background: white; }
   .morningTable tbody tr:nth-child(odd),
   .afternoonTable tbody tr:nth-child(odd) {
     background: #D0E4F5; }
@@ -47,6 +50,9 @@
       border-bottom: 1px solid white;
       border-left: 1px solid white;
       border-right: 1px solid white; }
+  .morningTable tbody tr:nth-child(even),
+  .afternoonTable tbody tr:nth-child(even) {
+    background: white; }
   .morningTable tbody td select,
   .afternoonTable tbody td select {
     border: 0px; }

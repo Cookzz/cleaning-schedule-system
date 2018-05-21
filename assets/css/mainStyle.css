@@ -34,8 +34,7 @@ body {
 
 .container-fluid {
   max-width: 1400px;
-  border-radius: 10px;
-  background-color: #e6e6e6; }
+  border-radius: 10px; }
 
 .footer {
   position: absolute;

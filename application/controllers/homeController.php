@@ -1051,7 +1051,7 @@
 				$query = $this->main_model->get_specify_data("special_duty_id","special_duty_id",$special_duty_date,"special_duty");
 				$special_duties_id = $query->result_array();
 				
-				$special_duties_id_array = array();
+				$special_duties_id_array = array("default");
 				foreach ($special_duties_id as $special_duty_id)
 				{
 					array_push($special_duties_id_array,$special_duty_id['special_duty_id']);
@@ -1061,7 +1061,7 @@
 				$query = $this->main_model->get_specify_data3("special_duty_id","special_duty_cleaner_id DESC",$cleaner,"special_duty_id",$special_duties_id_array,"special_duty_cleaner");
 				$special_duties_id = $query->result_array();
 				
-				$special_duties_id_array = array();
+				$special_duties_id_array = array("default");
 				foreach ($special_duties_id as $special_duty_id)
 				{
 					array_push($special_duties_id_array,$special_duty_id['special_duty_id']);

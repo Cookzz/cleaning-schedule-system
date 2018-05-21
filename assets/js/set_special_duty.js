@@ -18,9 +18,11 @@ function insert_cleaner_dropdown(numberOfCleaner)
 
 function validateDate(cleaners,numberOfCleaner)
 {
-	var TodayDate = new Date();
-	var special_duty_date = new Date(Date.parse($("#special_duty_date").val()));
-	
+	var d = new Date();
+    var TodayDate = d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate();
+	var special_d = new Date(Date.parse($("#special_duty_date").val()));
+    var special_duty_date = special_d.getFullYear() + "-" + (special_d.getMonth()+1) + "-" +                               special_d.getDate();
+    
 	if(!($("#special_duty_dutyTitle").val().trim().match(/^([a-zA-Z0-9]+\s)*[a-zA-Z0-9]+$/)))
 	{
 		$("#special_duty_dutyDetail_error").hide();
@@ -138,6 +140,7 @@ function postSpecialDutyData(cleaners)
 $(document).ready(function(){
 	
 	var numberOfCleaner = 1;
+
 	
 	$("newSpecialDutyForm").submit(function(event){
 		event.preventDefault();
