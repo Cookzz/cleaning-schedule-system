@@ -17,6 +17,10 @@
     &.active {
         margin-left: 0px;
     }
+    
+    &.inactive {
+        margin-left: -300px;
+    }
 
     .sidebar-header {
         padding: 20px;

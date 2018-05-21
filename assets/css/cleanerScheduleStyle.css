@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css?family=News+Cycle:700,1000");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Cairo");
+/* ---------------------------------------------------
+    Navigation Bar Values
+----------------------------------------------------- */
+/* ---------------------------------------------------
+    ANIMATION
+----------------------------------------------------- */
+@-webkit-keyframes sk-rotateplane {
+  0% {
+    -webkit-transform: perspective(120px); }
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg); }
+  100% {
+    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg); } }
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(180px) rotateX(0deg) rotateY(0deg); }
+  50% {
+    transform: perspective(180px) rotateX(0deg) rotateY(180deg); }
+  100% {
+    transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
+/* ---------------------------------------------------
+    MORNING TABLE STYLE
+----------------------------------------------------- */
+.morningTable,
+.afternoonTable {
+  width: 100%;
+  overflow-y: scroll; }
+  .morningTable thead,
+  .afternoonTable thead {
+    font-family: "News Cycle"; }
+    .morningTable thead th,
+    .afternoonTable thead th {
+      background: white; }
+  .morningTable tbody tr:nth-child(odd),
+  .afternoonTable tbody tr:nth-child(odd) {
+    background: #D0E4F5; }
+  .morningTable tbody tr:nth-child(even),
+  .afternoonTable tbody tr:nth-child(even) {
+    background: white; }
+
+/* ---------------------------------------------------
+    GENERAL STYLE
+----------------------------------------------------- */
+.scheduleHr {
+  border: none;
+  height: 2px;
+  background-color: black;
+  margin-left: 0;
+  width: 90%;
+  margin-top: 0px;
+  margin-bottom: 30px; }
+
+.titleHr {
+  margin-top: 0px;
+  height: 2px;
+  background: black; }
+
+.scheduleTitle {
+  letter-spacing: 5px; }
+
+.dayLabel {
+  font-weight: bold; }
+
+.stuffColumn {
+  width: 10%; }
+
+/*# sourceMappingURL=cleanerScheduleStyle.css.map */

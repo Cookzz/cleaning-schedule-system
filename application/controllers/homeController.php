@@ -305,17 +305,25 @@
 					$data["big_selector"] = '
                     <a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage" id="nav1">Home<span class="sr-only">(current)</span></a>
 				        <a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage">Schedule</a>
-                            <li class="nav-item dropdown" id="deskDropDown">
-                                <a class="nav-link dropdown-toggle active" id="deskToggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <li class="nav-item dropdown" id="stuffDropDown">
+                                <a class="nav-link dropdown-toggle active" id="stuffToggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Stuff
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="deskToggle" id="deskMenu">
+                                <div class="dropdown-menu" aria-labelledby="stuffToggle" id="stuffMenu">
                                     <a class="dropdown-item" href="'.base_url().'HomeController/viewStuffLocationPage">Stuff</a>
 								    <a class="dropdown-item" href="'.base_url().'HomeController/viewSubStuffPage">Substuff</a>
 								    <a class="dropdown-item" href="'.base_url().'HomeController/viewDutyPage">Duty</a>
                                 </div>
                             </li>
-				            <a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSetSpecialDutyPage">Special Duty</a>
+                            <li class="nav-item dropdown" id="dutyDropDown">
+                                <a class="nav-link dropdown-toggle active" id="dutyToggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Special Duties
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dutyToggle" id="dutyMenu">
+                                    <a class="dropdown-item" href="'.base_url().'HomeController/viewAllSpecialDutyPage">View Special Duties</a>
+                                    <a class="dropdown-item" href="'.base_url().'HomeController/viewSetSpecialDutyPage">Create New Special Duty</a>
+                                </div>
+                            </li>
 				            <a class="nav-item nav-link active" href="'.base_url().'HomeController/viewPendingDutyPage">Attendance</a>'.$extra_selector."";
 											
 										

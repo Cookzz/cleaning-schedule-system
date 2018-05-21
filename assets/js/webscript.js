@@ -3,9 +3,21 @@ $(document).ready(function() {
         $("#settingsMenu").slideToggle("fast"); 
     });
     
-    $('#sidebarCollapse').on('click', function() {
-        $('#sidebar, #content').toggleClass('active');
+    $('#sidebarCollapse').on('click', function(e) {
+        //$('#sidebar, #content').toggleClass('active');
         //$('.collapse.in').toggleClass('in');
+    });
+    
+    $("body").click(function(event){
+        var elementClass = event.target.className;
+        var elementId = event.target.id;
+        
+        if (elementClass == "togglespan" || elementId == "sidebarCollapse") {
+            $('#sidebar, #content').toggleClass('active');
+        }
+        else {
+            $('#sidebar, #content').removeClass('active');
+        }
     });
     
     $("#loginForm").click(function (e) {

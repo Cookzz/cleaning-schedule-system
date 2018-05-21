@@ -1,11 +1,11 @@
 function insert_cleaner_dropdown(numberOfCleaner)
 {
-	$( "#cleaners_area" ).prepend("<tr><td>"+numberOfCleaner+"</td>"+
+	$( "#cleaners_area" ).prepend("<tr><td class='cleanerLabel'>"+numberOfCleaner+"</td>"+
 								"<td><input id='cleaner_"+numberOfCleaner+"' type='text' list='cleaners'></td>");
 	
 	$("#addCleaner").click(function(){
 		numberOfCleaner++;
-		$( "#cleaners_area" ).append("<tr><td>"+numberOfCleaner+"</td>"+
+		$( "#cleaners_area" ).append("<tr><td class='cleanerLabel'>"+numberOfCleaner+"</td>"+
 								"<td><input id='cleaner_"+numberOfCleaner+"' type='text' list='cleaners'></td>");
 		
 	});

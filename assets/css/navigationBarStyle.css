@@ -104,10 +104,12 @@
   #desknav .nav-item {
     padding-left: 50px;
     padding-right: 50px; }
-  #desknav #deskDropDown .dropdown-menu {
-    color: white;
+  #desknav #stuffDropDown .dropdown-menu {
     padding-left: 40px;
     padding-right: 30px; }
+  #desknav #dutyDropDown .dropdown-menu {
+    padding-left: 20px;
+    padding-right: 15px; }
 
 #mobilenav, #navbarNavAltMarkup1 {
   padding-top: 7px;

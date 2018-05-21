@@ -1,0 +1,91 @@
+@import "global.scss";
+/* ---------------------------------------------------
+    Form Style
+----------------------------------------------------- */
+#newSpecialDutyForm {
+    #special_duty_table {
+        width: 100%;
+        
+        .dutyLabel {
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-size: 18px;
+            width: 10%;
+        }
+        
+        .inputCol {
+            width: 45%;
+        }
+        
+        textarea {
+            resize: none;
+            width: 100%;
+        }
+        
+        #special_duty_dutyTitle, #special_duty_dutyDetail, #special_duty_date, #special_duty_time {
+            padding: 5px;
+        }
+        
+        .submitRow {
+            input {
+                float: right;
+                background: $mainbuttontheme;
+                border: 1px solid $mainbuttontheme;
+                padding: 10px 30px 10px 30px;
+                border-radius: 5px;
+                margin-top: 3px;
+                color: white;
+            }
+        }
+    }
+}
+
+/* ---------------------------------------------------
+    ADD CLEANER TABLE STYLE
+----------------------------------------------------- */
+.addCleanerTable {
+    width: 30%;
+    
+    .tableTitle {
+        td {
+            font-weight: bold;
+        }
+    }
+    #cleaners_area {
+        tr {
+            .cleanerLabel {
+                
+            }
+            input {
+                margin: 0px;
+                padding: 5px;
+                border: 1px solid white;
+            }
+        }
+    }
+    .addBtnCol {
+        border-bottom: 1px solid white;
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+        
+        #addCleaner {
+            float: right;
+            background: $mainbuttontheme;
+            border: 1px solid $mainbuttontheme;
+            padding: 10px 30px 10px 30px;
+            border-radius: 5px;
+            margin-top: 3px;
+            color: white;
+        }
+    }
+}
+
+
+/* ---------------------------------------------------
+    GENERAL STYLE
+----------------------------------------------------- */
+.pageTitle {
+    margin-top: 10px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}

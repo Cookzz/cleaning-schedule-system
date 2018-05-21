@@ -89,12 +89,16 @@
         padding-right: 50px;
     }
     
-    #deskDropDown {
+    #stuffDropDown {
         .dropdown-menu {
-            color: white;
-
             padding-left: 40px;
             padding-right: 30px;
+        }
+    }
+    #dutyDropDown {
+        .dropdown-menu {
+            padding-left: 20px;
+            padding-right: 15px;
         }
     }
 }

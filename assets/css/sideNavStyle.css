@@ -15,6 +15,8 @@
   overflow-y: scroll; }
   #sidebar.active {
     margin-left: 0px; }
+  #sidebar.inactive {
+    margin-left: -300px; }
   #sidebar .sidebar-header {
     padding: 20px;
     background: #6d7fcc; }

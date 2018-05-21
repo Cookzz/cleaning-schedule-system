@@ -2,17 +2,20 @@
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/supervisorScheduleStyle.css">
 </head>
 <body>  
 
-<h2>Set Schedule</h2><hr/>
-<h3>Morning</h3>
+<h2 class="scheduleTitle">Cleaner's Schedule</h2>
+<hr class="titleHr">
 
+<h3 class="dayLabel">Morning</h3>
+<hr class="scheduleHr">
 <!--The table to show the schedule table, this table body consisder by 2 foreach loop-->
-<table border="1">
+<table border="1" class="morningTable">
 	<thead>
 		<tr>
-			<th>Stuff</th>	
+			<th class="stuffColumn">Stuff</th>	
 			<th>Monday</th>
 			<th>Tueasday</th>
 			<th>Wednesday</th>
@@ -50,12 +53,14 @@
 	</tbody>
 </table>
 <!--The end of morning schedule table-->
-
+<br>
+<h3 class="dayLabel">Afternoon</h3>
+<hr class="scheduleHr">
 <!--Now this the afternoon schecule table the concept is same with morning schedule-->
-<table border="1">
+<table border="1" class="afternoonTable">
 	<thead>
 		<tr>
-			<th>Stuff</th>	
+			<th class="stuffColumn">Stuff</th>	
 			<th>Monday</th>
 			<th>Tueasday</th>
 			<th>Wednesday</th>

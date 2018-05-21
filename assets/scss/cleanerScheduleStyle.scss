@@ -1,0 +1,60 @@
+@import "global.scss";
+/* ---------------------------------------------------
+    MORNING TABLE STYLE
+----------------------------------------------------- */
+.morningTable,
+.afternoonTable{
+    width: 100%;
+    overflow-y: scroll;
+    
+    thead{
+        font-family: $font;
+        
+        th {
+            background: white;
+        }
+    }
+    
+    tbody{
+        tr {
+            &:nth-child(odd) {
+                background: #D0E4F5;
+            } 
+            &:nth-child(even) {
+                background: white;
+            }
+        }
+    }
+}
+
+/* ---------------------------------------------------
+    GENERAL STYLE
+----------------------------------------------------- */
+.scheduleHr {
+    border: none;
+    height: 2px;
+    background-color: black;
+    margin-left:0;
+    width: 90%;
+    
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.titleHr {
+    margin-top: 0px;
+    height: 2px;
+    background: black;
+}
+
+.scheduleTitle {
+    letter-spacing: 5px;
+}
+
+.dayLabel {
+    font-weight: bold;
+}
+
+.stuffColumn {
+    width: 10%;
+}
