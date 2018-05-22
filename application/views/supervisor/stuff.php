@@ -40,7 +40,7 @@
 			<tr>
 				<td><?php echo $i ?></td><td id="<?php echo($stuff["stuff_id"])?>_stuff" contenteditable="true"><?php echo $stuff["stuff"]; ?></td>
 				<td><center><button type="button" id="<?php echo $stuff["stuff_id"];?>_update" class="update">Update</button></center></td>
-				<td><center><button style="width:80px;height:30px" type="button" id="<?php echo $stuff["stuff_id"];?>_delete" class="w3-text-red fa fa-trash delete"></button></center></td>
+				<td><center><button type="button" id="<?php echo $stuff["stuff_id"];?>_delete" class="w3-text-red fa fa-trash delete"></button></center></td>
 			</tr>
 			<?php $i = $i+1?><?php endforeach; ?>	
 		</tbody>

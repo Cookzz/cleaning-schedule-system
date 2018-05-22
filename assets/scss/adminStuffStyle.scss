@@ -1,0 +1,5 @@
+@import "supervisorStuffStyle.scss";
+
+#admin_stuff_table {
+    @extend #stuff_table;
+}
