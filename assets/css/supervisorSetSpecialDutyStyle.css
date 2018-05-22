@@ -51,13 +51,19 @@
     ADD CLEANER TABLE STYLE
 ----------------------------------------------------- */
 .addCleanerTable {
-  width: 30%; }
+  width: 55%; }
+  .addCleanerTable .tableTitle .noOfCleanerTitle {
+    width: 21%; }
   .addCleanerTable .tableTitle td {
     font-weight: bold; }
-  .addCleanerTable #cleaners_area tr input {
-    margin: 0px;
-    padding: 5px;
-    border: 1px solid white; }
+  .addCleanerTable #cleaners_area {
+    width: 50%; }
+    .addCleanerTable #cleaners_area tr .cleanerLabel {
+      align-content: center; }
+    .addCleanerTable #cleaners_area tr input {
+      margin: 0px;
+      padding: 5px;
+      border: 1px solid white; }
   .addCleanerTable .addBtnCol {
     border-bottom: 1px solid white;
     border-left: 1px solid white;
