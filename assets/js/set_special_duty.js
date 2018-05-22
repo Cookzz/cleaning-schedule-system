@@ -5,7 +5,7 @@ function insert_cleaner_dropdown(numberOfCleaner)
 	
 	$("#addCleaner").click(function(){
 		numberOfCleaner++;
-		$( "#cleaners_area" ).append("<tr><td class='cleanerLabel'>"+numberOfCleaner+"</td>"+
+		$( "#cleaners_area" ).append("<tr><td class='cleanerLabel'><center>"+numberOfCleaner+"</center></td>"+
 								"<td><input id='cleaner_"+numberOfCleaner+"' type='text' list='cleaners'></td>");
 		
 	});
@@ -39,9 +39,9 @@ function validateDate(cleaners,numberOfCleaner)
 	}
 	else
 	{
-		$("#special_duty_date_error").hide();
-		$("#special_duty_dutyTitle_error").hide();
-		$("#special_duty_dutyDetail_error").hide();
+		$("#special_duty_date_error").val("");
+		$("#special_duty_dutyTitle_error").val("");
+		$("#special_duty_dutyDetail_error").val("");
 		if(confirm("Do you confrim to add the new special duty?"))
 		{
 			var allCleaners = $("#cleaners_string").val();
@@ -142,7 +142,7 @@ $(document).ready(function(){
 	var numberOfCleaner = 1;
 
 	
-	$("newSpecialDutyForm").submit(function(event){
+	$("#newSpecialDutyForm").submit(function(event){
 		event.preventDefault();
 	});
 	
