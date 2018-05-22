@@ -109,7 +109,7 @@
 					{
 						$day = strtolower(date("l"));
 						$week = date("W");
-						$week_number = array("week_number" => $week);
+						$week_number = array("week_number" => $week,"remark" => "active");
 						
 						//Select morning schedule and insert to pending order
 						$query = $this->main_model->get_specify_data("*","stuff",$week_number,"morning_schedule");
@@ -204,6 +204,10 @@
 							}
 							
 						}
+						
+						$new_remark = array("remark" => "active");
+						$query = $this->main_model->update_data("remark","repair",$new_remark,"morning_schedule");
+						$query = $this->main_model->update_data("remark","repair",$new_remark,"afternoon_schedule");
 						
 					}
 					
