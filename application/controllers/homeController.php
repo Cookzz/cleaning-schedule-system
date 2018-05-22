@@ -80,8 +80,6 @@
 					{
 						setcookie ("cookie_user_id", $user_id, time() + (10 * 365 * 24 * 60 * 60));
 						setcookie ("cookie_password", $password, time() + (10 * 365 * 24 * 60 * 60));
-					//	$_SESSION['cookie_user_id'] = $_COOKIE['user_id'];
-					//	$_SESSION['cookie_password'] = $_COOKIE['password'];
 					}
 					if($remember == "false")
 					{
@@ -221,7 +219,10 @@
 					{
 						echo("HomeController/viewMainPage");
 					}
-					
+					elseif($_SESSION['user_access_level'] ==4)
+					{
+						echo("HomeController/viewRatingPage");
+					}	
 				}
 				else
 				{
@@ -350,35 +351,9 @@
 				}
 				elseif($_SESSION['user_access_level'] == 4)
 				{
-					$data["big_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage">Home<span class="sr-only">(current)</span></a>
-											<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage">Schedule</a>
-											<li class="nav-item dropdown" id="deskDropDown">
-                                                <a class="nav-link dropdown-toggle active" id="deskToggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    Stuff
-                                                </a>
-                                                <div class="dropdown-menu" aria-labelledby="deskToggle" id="deskMenu">
-                                                    <a class="dropdown-item" href="'.base_url().'HomeController/viewStuffLocationPage">Stuff</a>
-                                                    <a class="dropdown-item" href="'.base_url().'HomeController/viewSubStuffPage">Substuff</a>
-                                                    <a class="dropdown-item" href="'.base_url().'HomeController/viewDutyPage">Duty</a>
-                                                </div>
-                                            </li>
-											<a class="nav-item nav-link active" href="forum.php">Special Stuff</a>
-											<a class="nav-item nav-link active" href="#">Contact Us</a>';
+					$data["big_selector"] = '<span class="nav-link active">FFF Cleaning System</span>';
 										
-					$data["small_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage">Home<span class="sr-only">(current)</span></a>
-												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage">Schedule</a>
-												<li class="nav-item dropdown" id="mobileDropDown">
-                                                    <a class="nav-link dropdown-toggle active" id="mobileToggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Stuff
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="mobileToggle" id="mobileMenu">
-                                                        <a class="dropdown-item" href="'.base_url().'HomeController/viewStuffLocationPage">Stuff</a>
-                                                        <a class="dropdown-item" href="'.base_url().'HomeController/viewSubStuffPage">Substuff</a>
-                                                        <a class="dropdown-item" href="'.base_url().'HomeController/viewDutyPage">Duty</a>
-                                                    </div>
-                                                </li>
-												<a class="nav-item nav-link active" href="#">Special Stuff</a>
-												<a class="nav-item nav-link active" href="#">Contact Us</a>';
+					$data["small_selector"] = '<a class="nav-item nav-link active" href="#">Rating<span class="sr-only">(current)</span></a>';
 				}
 			}
 				
@@ -1079,6 +1054,31 @@
 				
 				$this->viewNav();
 				$this->load->view('cleaner/'.$page,$data);
+				$this->load->view('templates/footer');
+			}
+			
+		}
+		
+		public function viewRatingPage($page = "rating")
+		{
+			$this->load->library('session');
+			if(Empty($_SESSION['uid']))
+			{
+				redirect("HomeController/viewHomePage");
+			}
+			elseif( $_SESSION['user_access_level']!=4 )
+			{
+				redirect("HomeController/viewMainPage");
+			}
+			else
+			{	
+				$this->load->model("main_model");
+				
+				$query = $this->main_model->get_data_order("*","stuff","stuff");
+				$data['stuffs'] = $query->result_array();
+				
+				$this->viewNav();
+				$this->load->view('customer/'.$page,$data);
 				$this->load->view('templates/footer');
 			}
 			
