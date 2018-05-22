@@ -10,7 +10,6 @@
 <div class="navbar-header">
 <!--This this sidebar button-->
 	<button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-		<i class="glyphicon glyphicon glyphicon-play"></i>
 		<span class="togglespan">Toggle Sidebar</span>
 	</button>
 </div> 

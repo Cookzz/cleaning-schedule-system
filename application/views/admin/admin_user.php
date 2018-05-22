@@ -15,52 +15,49 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/print.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/adminUserPageStyle.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>  
 
-
-
-<h2>User</h2><hr/>
+<div class="navbar-header">
+<!--This this sidebar button-->
+	<button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+		<span class="togglespan">Toggle Sidebar</span>
+	</button>
+</div>
+<h2 class="pageTitle">Admin's User Page</h2><hr class="userTitleHr">
 
 <!--This this admin user page body-->
-<!--This this sidebar button-->
-<div class="navbar-header">
-	<button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-		<i class="glyphicon glyphicon glyphicon-play"></i>
-		<span>Toggle Sidebar</span>
-	</button>
-</div> 
 
 <!--This this the from to insert new user record, it include two table-->
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 <!--First table is form table, allow admin to insert new user record-->
-	<table class="table-responsive">
-		<tr><td>New User:</td></tr>
+	<table class="table-responsive adminUserTable">
+		<tr><td><label class="newUserTitle">Add New User</label></td></tr>
+		<tr><td colspan="2"><hr class="newUserHr"></td></tr>
 		<tr>
-		<tr>
-			<td>User Name</td>
+			<td><label>Username:</label></td>
 			<td><input id="newUserNameField" type="text" value="" name="newUserName"></td>
 			<td id="UsernameErrorMessage"></td>
 		</tr>
 		<tr>
-			<td>Type of authentication</td>
+			<td><label>Authentication Type:</label></td>
 			<td>
-				<input id="IC" type="radio" name="IcOrPassport" value="1" checked>IC/No
-				<br>
+				<input id="IC" type="radio" name="IcOrPassport" value="1" checked>IC/No &nbsp;
 				<input id="Passport" type="radio" name="IcOrPassport" value="2">Passport/No
 			</td>
 		</tr>
 		<tr>
-			<td>User IC.No / Passport.No</td>
+			<td><label>IC No / Passport No:</label></td>
 			<td><input id="newUserICField" type="text" value="" name="newUserIC" maxlength=12></td>
 			<td id="UsernameErrorMessage"></td>
 			<td id="UserICErrorMessage"></td>
 		</tr>	
 		<tr>
-			<td>User Position</td>
+			<td><label>User Position:</label></td>
 			<td>
 			<select id="newUserPositionField">
 				<?php foreach($positions as $position):?>
@@ -69,8 +66,8 @@
 			</select>
 			</td>
 		</tr>
-		
-		<td><input style="float:right"type="submit" value="Add"></td>
+		<tr>
+		<td colspan="2"><input class="addNewUserBtn" type="submit" value="Add"></td>
 		</tr>
 		<tr>
 		<td></td>
@@ -87,7 +84,7 @@
 					<th>User ID</th>
 					<th>User Name</th>
 					<th>User Password</th>
-					<th>User IC/No></th>
+					<th>User IC/No</th>
 					<th>User Email</th>
 					<th>User Position</th>
 					<th>User Position</th>
@@ -111,7 +108,7 @@
 					<td><select id="<?php echo $user["id"];?>_user_position_selector"><option value="<?php echo $user["user_position"];?>"><?php echo $user["user_position"];?></option><?php foreach($positions as $position):?><option value="<?php echo($position["position_name"])?>"><?php echo($position["position_name"])?></option><?php endforeach; ?></select></td>
 					<td id="<?php echo $user["id"];?>_user_access_level"><?php echo $user["user_access_level"];?></td>
 					<td id="<?php echo $user["id"];?>_join_date"><?php echo $user["join_date"];?></td>
-					<td><center><button id="<?php echo $user["id"];?>update" class="update btn btn-default" type="button">Update</button><center></td>
+                    <td><center><button id="<?php echo $user["id"];?>update" class="update btn btn-default" type="button">Update</button></center></td>
 					<td><center><button style="width:80px;height:30px" id="<?php echo $user["id"];?>delete" class="w3-text-red fa fa-trash delete" type="button"></button></center></td>
 				</tr>
 				<?php endforeach; ?>

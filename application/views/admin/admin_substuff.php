@@ -21,6 +21,12 @@
 </head>
 <body>  
 
+<div class="navbar-header">
+<!--This this sidebar button-->
+	<button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+		<span class="togglespan">Toggle Sidebar</span>
+	</button>
+</div>
 <h2>Sub Stuff</h2><hr/>
 
 <!--This form got one table, one is to let user to insert new stuff, one is to display the substuff table-->
@@ -30,7 +36,7 @@
 		<table id="sub_stuff_table" class="table table-striped table-bordered" border="1">
 			<thead>
 				<tr>
-					<th>No.</th><th>Sub Stuff</th><th>Update</th><th>Delete</th>
+					<th class="titleLabel">No.</th><th>Sub Stuff</th><th>Update</th><th>Delete</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -38,7 +44,7 @@
 				<tr>
 					<td><?php echo $i ?></td><td id="<?php echo($sub_stuff["sub_stuff_id"])?>_sub_stuff" contenteditable="true"><?php echo $sub_stuff["sub_stuff"]; ?></td>
 					<td><center><button type="button" id="<?php echo $sub_stuff["sub_stuff_id"];?>_update" class="update">Update</button></center></td>
-					<td><center><button style="width:80px;height:30px" type="button" id="<?php echo $sub_stuff["sub_stuff_id"];?>_delete" class="w3-text-red fa fa-trash delete"></button></center></td>
+					<td><center><button type="button" id="<?php echo $sub_stuff["sub_stuff_id"];?>_delete" class="w3-text-red fa fa-trash delete"></button></center></td>
 				</tr>
 				<?php $i = $i+1?><?php endforeach; ?>	
 			</tbody>
