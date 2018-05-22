@@ -40,7 +40,7 @@
 </form>
 <table border="1" class="addCleanerTable">
 	<tr class="tableTitle">
-		<td><center>Number of Cleaner</center></td>
+		<td class="noOfCleanerTitle"><center>Number of Cleaner</center></td>
         <td><center>Cleaner</center></td>
 	</tr>
 	<tbody id="cleaners_area">

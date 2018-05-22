@@ -11,8 +11,9 @@ $(document).ready(function() {
     $("body").click(function(event){
         var elementClass = event.target.className;
         var elementId = event.target.id;
+        var test = $(event.target).parentsUntil("#sidebar"); //this
         
-        if (elementClass == "togglespan" || elementId == "sidebarCollapse") {
+        if (elementClass == "togglespan" || elementId == "sidebarCollapse" || elementId == "sidebar") {
             $('#sidebar, #content').toggleClass('active');
         }
         else {

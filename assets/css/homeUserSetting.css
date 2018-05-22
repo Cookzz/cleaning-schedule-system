@@ -18,10 +18,12 @@
   margin-bottom: 0px;
   padding-top: 16px;
   letter-spacing: 10px;
-  font-weight: bold; }
+  font-weight: bold;
+  width: 10%; }
 
 .pageTitleHr {
-  margin-top: 8px; }
+  margin-top: 8px;
+  width: 10%; }
 
 .userSettingList td label {
   font-weight: bold;
