@@ -1,6 +1,6 @@
     <!-- Sidebar Holder -->
         <nav id="sidebar">
-            <div class="sidebar-header">
+            <div id="sidebar-header" class="sidebar-header">
                 <h3>Admin's Navigation Panel</h3>
             </div>
 

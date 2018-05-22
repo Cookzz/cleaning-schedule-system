@@ -11,10 +11,10 @@ $(document).ready(function() {
     $("body").click(function(event){
         var elementClass = event.target.className;
         var elementId = event.target.id;
-        var test = $(event.target).parentsUntil("#sidebar"); //this
-        
-        if (elementClass == "togglespan" || elementId == "sidebarCollapse" || elementId == "sidebar") {
-            $('#sidebar, #content').toggleClass('active');
+        var parentId = $(event.target).closest('nav').attr('id'); //this
+		
+        if (elementClass == "togglespan" || elementId == "sidebarCollapse" || parentId == "sidebar") {
+            $('#sidebar, #content').prop('class','active');
         }
         else {
             $('#sidebar, #content').removeClass('active');
