@@ -13,6 +13,8 @@
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
 
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/supervisorStuffStyle.css">
+
 </head>
 <body>  
 
@@ -27,10 +29,10 @@
 	</table>
 	<!--This is the end of first table-->
 	<!--Second Table is to output the data which by controller and delete,update button-->
-	<table id="stuff_table" style="width:40%" class="table table-striped table-bordered" border="1">
+	<table id="stuff_table" class="table table-striped table-bordered" border="1">
 		<thead>
 			<tr>
-				<th>No.</th><th>Stuff Location</th><th>Update</th><th>Delete</th>
+				<th class="titleLabel">No.</th><th>Stuff Location</th><th>Update</th><th>Delete</th>
 			</tr>
 		</thead>
 		<tbody>

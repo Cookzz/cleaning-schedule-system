@@ -14,16 +14,17 @@
     object-fit: cover;
     margin-top: -5px; }
 
+table {
+  width: 40%; }
+
 .pageTitle {
   margin-bottom: 0px;
   padding-top: 16px;
   letter-spacing: 10px;
-  font-weight: bold;
-  width: 10%; }
+  font-weight: bold; }
 
 .pageTitleHr {
-  margin-top: 8px;
-  width: 10%; }
+  margin-top: 8px; }
 
 .userSettingList td label {
   font-weight: bold;

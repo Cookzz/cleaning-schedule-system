@@ -13,7 +13,7 @@
 
 <h2 class="pageTitle">User Setting</h2><hr class="pageTitleHr">
 
-<table>
+<table class="userSettingsTable">
    <tr>
        <td colspan="2" class="profPicCol"><label class="profPicLabel">Profile Picture</label><hr></td>
    </tr>
