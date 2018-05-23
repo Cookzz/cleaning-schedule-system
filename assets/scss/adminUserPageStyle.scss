@@ -8,15 +8,15 @@
 
     th {
         color: white;
-        background: #1E88E5;
-        border: 1px solid #1E88E5;
+        background: $tableheadertheme;
+        border: 1px solid $tableheadertheme;
     }
     
     #user_table_body {
         td {
             .update {
-                background: #3498DB;
-                border: 1px solid #3498DB;
+                background: $tableupdatebtntheme;
+                border: 1px solid $tableupdatebtntheme;
                 color: white;
                 padding: 10px 30px 10px 30px;
                 border-radius: 5px;
@@ -66,6 +66,8 @@
                 color: white;
                 background: $mainbuttontheme;
                 border: 1px solid $mainbuttontheme;
+                
+                cursor: pointer;
             }
         }
     }

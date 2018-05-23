@@ -61,6 +61,8 @@
             color: white;
             font-weight: bold;
             
+            cursor: pointer;
+            
             &.updateBtn {
                 background: $mainbuttontheme;
                 border: 1px solid $mainbuttontheme;
