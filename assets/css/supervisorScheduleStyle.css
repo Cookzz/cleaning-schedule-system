@@ -68,7 +68,8 @@
     margin: 3px;
     border-radius: 5px;
     color: white;
-    font-weight: bold; }
+    font-weight: bold;
+    cursor: pointer; }
     .morningTable tbody .updateBtn.updateBtn, .morningTable tbody .deleteBtn.updateBtn,
     .afternoonTable tbody .updateBtn.updateBtn,
     .afternoonTable tbody .deleteBtn.updateBtn {
