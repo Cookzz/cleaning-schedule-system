@@ -28,8 +28,8 @@
 		</select>
 		<br />
 		<a id="bad" href="#" style="font-size:200%;">&#x1F641;Bad</a>
-		<a id="normal" href="#" style="font-size:200%;">&#x1F636;Normal</a>
-		<a id="good" href="#" style="font-size:200%;">&#x1F642;Good</a>
+		<a id="normal" href="#" style="font-size:200%;">&#x1F642;Average</a>
+		<a id="good" href="#" style="font-size:200%;">&#x1F603;Good</a>
 		<br />
 		<br />
 		<br />
