@@ -1,12 +1,12 @@
-function postStuff(stuff,time,week)
+function postTask(task,time,week)
 {
 	var baseUrl = $("#baseURL").val();
-	var url = baseUrl+"scheduleFormController/checkStuffLocation";
+	var url = baseUrl+"scheduleFormController/checkTaskLocation";
 	var fd = new FormData();
-	var stuff = stuff;
+	var task = task;
 	var time = time;
 	var week = week;
-	fd.append('stuff',stuff);
+	fd.append('task',task);
 	fd.append('time',time);
 	fd.append('week',week);
 
@@ -49,12 +49,12 @@ function deleteSchedule()
 {			
 	var baseUrl = $("#baseURL").val();
 	var url = baseUrl+"scheduleFormController/deleteSchedule";
-	var stuff = $("#stuff").val();
+	var task = $("#task").val();
 	var fd = new FormData();
-	var stuff = stuff;
+	var task = task;
 	var time = $("input[name='time']:checked").val();
 	var week = $("input[name='week']:checked").val();
-	fd.append('stuff',stuff);
+	fd.append('task',task);
 	fd.append('time',time);
 	fd.append('week',week);
 	
@@ -135,7 +135,7 @@ function saveSchedule()
 	else
 	{
 		var scheduleObject = {
-			"stuff":$("#stuff").val(),
+			"task":$("#task").val(),
 			"time":$("input[name='time']:checked").val().trim(),
 			"monday":$("#monday").val().trim(),
 			"tuesday":$("#tuesday").val().trim(),
@@ -180,25 +180,25 @@ $(document).ready(function(){
 	 $("#save_schedule").prop('disabled', true);
 	 $("#delete_schedule").prop('disabled', true);
 	 
-	$("#stuff").keyup(function(){
-		var stuff = $(this).val();
+	$("#task").keyup(function(){
+		var task = $(this).val();
 		var time = $("input[name='time']:checked").val();
 		var week = $("input[name='week']:checked").val();
-		postStuff(stuff,time,week);
+		postTask(task,time,week);
 	});
 	
 	$("input[name='time']").change(function() {
-		var stuff = $("#stuff").val();
+		var task = $("#task").val();
 		var time = $("input[name='time']:checked").val();
 		var week = $("input[name='week']:checked").val();
-		postStuff(stuff,time,week);
+		postTask(task,time,week);
 	});
 	
 	$("input[name='week']").change(function() {
-		var stuff = $("#stuff").val();
+		var task = $("#task").val();
 		var time = $("input[name='time']:checked").val();
 		var week = $("input[name='week']:checked").val();
-		postStuff(stuff,time,week);
+		postTask(task,time,week);
 	});
 	
 	$("#save_schedule").click(function(){

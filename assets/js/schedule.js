@@ -1,19 +1,19 @@
 function getSchedule(time)
 {			
-	var numberOfStuff = $("#numberOfStuff").val();
-	var stuffs = [];
-	var stuffs_id = [];	
+	var numberOfTask = $("#numberOfTask").val();
+	var tasks = [];
+	var tasks_id = [];	
 	
 	var ii=0;
-	for(var i = 1; i<=numberOfStuff;i++)
+	for(var i = 1; i<=numberOfTask;i++)
 	{
-		stuffs[ii] = $("#stuff"+i.toString()).val();
-		stuffs_id[ii] = $("#stuff_id"+i.toString()).val();
+		tasks[ii] = $("#task"+i.toString()).val();
+		tasks_id[ii] = $("#task_id"+i.toString()).val();
 		ii++;
 	}
 	
 	var scheduleObject = {
-			"stuff":[],
+			"task":[],
 			"monday":[],
 			"tuesday":[],
 			"wednesday":[],
@@ -27,17 +27,17 @@ function getSchedule(time)
 	var ii=0;
 	
 	
-	for(var i=1;i<=numberOfStuff;i++)
+	for(var i=1;i<=numberOfTask;i++)
 	{
-		scheduleObject.stuff[ii] = stuffs[ii];
-		scheduleObject.monday[ii] = $("#"+stuffs_id[ii]+"_"+"1_"+time+" option:selected").val();
-		scheduleObject.tuesday[ii] = $("#"+stuffs_id[ii]+"_"+"2_"+time+" option:selected").val();
-		scheduleObject.wednesday[ii] = $("#"+stuffs_id[ii]+"_"+"3_"+time+" option:selected").val();
-		scheduleObject.thursday[ii] = $("#"+stuffs_id[ii]+"_"+"4_"+time+" option:selected").val();
-		scheduleObject.friday[ii] = $("#"+stuffs_id[ii]+"_"+"5_"+time+" option:selected").val();
-		scheduleObject.saturday[ii] = $("#"+stuffs_id[ii]+"_"+"6_"+time+" option:selected").val();
-		scheduleObject.sunday[ii] = $("#"+stuffs_id[ii]+"_"+"7_"+time+" option:selected").val();
-		scheduleObject.remark[ii] = $("#"+stuffs_id[ii]+"_remark_"+time+" option:selected").val();
+		scheduleObject.task[ii] = tasks[ii];
+		scheduleObject.monday[ii] = $("#"+tasks_id[ii]+"_"+"1_"+time+" option:selected").val();
+		scheduleObject.tuesday[ii] = $("#"+tasks_id[ii]+"_"+"2_"+time+" option:selected").val();
+		scheduleObject.wednesday[ii] = $("#"+tasks_id[ii]+"_"+"3_"+time+" option:selected").val();
+		scheduleObject.thursday[ii] = $("#"+tasks_id[ii]+"_"+"4_"+time+" option:selected").val();
+		scheduleObject.friday[ii] = $("#"+tasks_id[ii]+"_"+"5_"+time+" option:selected").val();
+		scheduleObject.saturday[ii] = $("#"+tasks_id[ii]+"_"+"6_"+time+" option:selected").val();
+		scheduleObject.sunday[ii] = $("#"+tasks_id[ii]+"_"+"7_"+time+" option:selected").val();
+		scheduleObject.remark[ii] = $("#"+tasks_id[ii]+"_remark_"+time+" option:selected").val();
 		ii++;
 	}
 	

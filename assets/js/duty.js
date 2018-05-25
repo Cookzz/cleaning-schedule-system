@@ -3,13 +3,13 @@
 	var duty_data = JSON.parse(message);
 	$("#duty_table").empty();
 				
-	$( "#duty_table" ).append("<td>No.</td><td>Duty Stuff</td><td>Duty Sub Stuff</td>");		
+	$( "#duty_table" ).append("<td>No.</td><td>Duty Task</td><td>Duty Sub Task</td>");		
 				
 	var i =1;
 	duty_data.forEach(function(duty_data){
 		$( "#duty_table" ).append("<tr><td>"+i+"</td>"+
-		"<td id='"+duty_data["duty_id"]+"_stuff' contenteditable='true'>"+duty_data["duty_stuff"]+"</td>"+
-		"<td id='"+duty_data["duty_id"]+"_stuff' contenteditable='true'>"+duty_data["duty_sub_stuff"]+"</td>"+
+		"<td id='"+duty_data["duty_id"]+"_task' contenteditable='true'>"+duty_data["duty_task"]+"</td>"+
+		"<td id='"+duty_data["duty_id"]+"_task' contenteditable='true'>"+duty_data["duty_sub_task"]+"</td>"+
 		"<td><button type='button' id='"+duty_data["duty_id"]+"_delete' class='delete'>Delete</button></td>/tr>");
 		i++;
 	});
@@ -24,18 +24,18 @@ function insert_back_table(message)
 	duty_data.forEach(function(duty_data){
 		var newRow = table.row.add( [
 			i,
-			duty_data["duty_stuff"],
-			duty_data["duty_sub_stuff"],
+			duty_data["duty_task"],
+			duty_data["duty_sub_task"],
 			"<center><button style='width:80px;height:30px' type='button' id='"+duty_data["duty_id"]+"_delete' class='w3-text-red fa fa-trash delete'></button></center>"
 		]).draw( false ).node();
 		i++;
 		
 		$(newRow).attr("id",duty_data["duty_id"]);
 					
-		$("#"+duty_data["duty_id"]).find('td:eq(1)').attr('id',duty_data["duty_id"]+"_stuff");			
+		$("#"+duty_data["duty_id"]).find('td:eq(1)').attr('id',duty_data["duty_id"]+"_task");			
 		$("#"+duty_data["duty_id"]).find('td:eq(1)').attr('contenteditable',true);
 		
-		$("#"+duty_data["duty_id"]).find('td:eq(2)').attr('id',duty_data["duty_id"]+"_sub_stuff");			
+		$("#"+duty_data["duty_id"]).find('td:eq(2)').attr('id',duty_data["duty_id"]+"_sub_task");			
 		$("#"+duty_data["duty_id"]).find('td:eq(2)').attr('contenteditable',true);
 			
 		table.draw( false );
@@ -47,11 +47,11 @@ function postDuty()
 {
 	var baseUrl = $("#baseURL").val();
 	var url = baseUrl+"dutyController/setNewDuty";
-	var newDuty_stuff = $("#newDuty_stuff").val();
-	var newDuty_sub_stuff = $("#newDuty_sub_stuff").val();
+	var newDuty_task = $("#newDuty_task").val();
+	var newDuty_sub_task = $("#newDuty_sub_task").val();
 	var fd = new FormData();
-	fd.append('newDuty_stuff',newDuty_stuff);
-	fd.append('newDuty_sub_stuff',newDuty_sub_stuff);
+	fd.append('newDuty_task',newDuty_task);
+	fd.append('newDuty_sub_task',newDuty_sub_task);
 
 	$.ajax({
 		url: url,
@@ -68,7 +68,7 @@ function postDuty()
 			{
 				alert("Insert Success");
 				insert_back_table(message);
-				$("#newDuty_sub_stuff").val("");
+				$("#newDuty_sub_task").val("");
 			}
 		}
 	});	
@@ -112,7 +112,7 @@ $(document).ready(function(){
 	});
 	
 	$(document).on('click','.delete',function(){
-		if(confirm("Do you confirm want to delete the stuff?"))
+		if(confirm("Do you confirm want to delete the task?"))
 		{
 			var txt = $(this).attr("id");
 			var duty_id = txt.match(/\d/g);

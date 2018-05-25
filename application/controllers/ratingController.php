@@ -9,15 +9,15 @@
 		
 		public function ratingMark()
 		{
-			if((isset($_POST['mark'])) && (isset($_POST["stuff"])))
+			if((isset($_POST['mark'])) && (isset($_POST["task"])))
 			{
 				$this->load->model("main_model");
 				
-				$stuff = $_POST["stuff"];
+				$task = $_POST["task"];
 				$mark = $_POST["mark"];
 				
-				$rating_stuff = array("rating_stuff" => $stuff);
-				$query = $this->main_model->get_specify_data("rating_mark","rating_id",$rating_stuff,"rating");
+				$rating_task = array("rating_task" => $task);
+				$query = $this->main_model->get_specify_data("rating_mark","rating_id",$rating_task,"rating");
 				$count = $query->num_rows();
 				
 				if($count > 0)
@@ -25,11 +25,11 @@
 					$original_mark = $query->row_array()['rating_mark'];
 					$update_mark = $original_mark + $mark;
 					$update_data = array("rating_mark" => $update_mark);
-					$query = $this->main_model->update_data("rating_stuff",$stuff,$update_data,"rating");
+					$query = $this->main_model->update_data("rating_task",$task,$update_data,"rating");
 				}
 				else
 				{
-					$rating_data = array("rating_mark" => $mark , "rating_stuff" => $stuff);
+					$rating_data = array("rating_mark" => $mark , "rating_task" => $task);
 					$query = $this->main_model->insert_data("rating",$rating_data);
 				}
 			}

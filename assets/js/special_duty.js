@@ -17,18 +17,18 @@ function insert_back_table(message)
 		]).draw( false ).node();
 		i++;
 		
-		$(newRow).attr("id",special_duty_data["stuff_id"]);
+		$(newRow).attr("id",special_duty_data["task_id"]);
 			
-		$("#"+special_duty_data["stuff_id"]).find('td:eq(1)').attr('id',special_duty_data["stuff_id"]+"_special_duty_title");			
-		$("#"+special_duty_data["stuff_id"]).find('td:eq(2)').attr('id',special_duty_data["stuff_id"]+"_special_duty_detail");
-		$("#"+special_duty_data["stuff_id"]).find('td:eq(3)').attr('id',special_duty_data["stuff_id"]+"_special_duty_time");
-		$("#"+special_duty_data["stuff_id"]).find('td:eq(4)').attr('id',special_duty_data["stuff_id"]+"_special_duty_date");	
+		$("#"+special_duty_data["task_id"]).find('td:eq(1)').attr('id',special_duty_data["task_id"]+"_special_duty_title");			
+		$("#"+special_duty_data["task_id"]).find('td:eq(2)').attr('id',special_duty_data["task_id"]+"_special_duty_detail");
+		$("#"+special_duty_data["task_id"]).find('td:eq(3)').attr('id',special_duty_data["task_id"]+"_special_duty_time");
+		$("#"+special_duty_data["task_id"]).find('td:eq(4)').attr('id',special_duty_data["task_id"]+"_special_duty_date");	
 				
 	});
 	table.draw( false );
 }
 
-function delete_stuff(special_duty_id)
+function delete_task(special_duty_id)
 {
 	var baseUrl = $("#baseURL").val();
 	var url = baseUrl+"specialDutyController/deleteSpecialDuty";		
@@ -63,18 +63,18 @@ $(document).ready(function(){
 			var txt = $(this).attr("id");
 			var special_duty_id = txt.match(/\d/g);
 			special_duty_id = special_duty_id.join("");
-			delete_stuff(special_duty_id);
+			delete_task(special_duty_id);
 		}
 		
 	});
 	
 	$(document).on('click','.modify',function(){
-		if(confirm("Do you confirm want to update the stuff?"))
+		if(confirm("Do you confirm want to update the task?"))
 		{
 			var txt = $(this).attr("id");
-			var stuff_id = txt.match(/\d/g);
-			stuff_id = stuff_id.join("");
-			update_stuff(stuff_id);
+			var task_id = txt.match(/\d/g);
+			task_id = task_id.join("");
+			update_task(task_id);
 		}
 		
 	});

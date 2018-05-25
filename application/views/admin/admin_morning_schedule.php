@@ -23,14 +23,14 @@
 
 <h2>Morning Schedule Table</h2><hr/>
 
-<!--This form got one table, one is to let user to insert new stuff, one is to display the stuff table-->
+<!--This form got one table, one is to let user to insert new task, one is to display the task table-->
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 	<div class="table-responsive">
 		<table id="morning_schedule_table" class="table table-striped table-bordered" border="1">
 			<thead>
 				<tr>
 					<th>No.</th>
-					<th>Stuff Location</th>
+					<th>Task Location</th>
 					<th>Monday</th>
 					<th>Tuesday</th>
 					<th>Wednesday</th>
@@ -48,7 +48,7 @@
 				<?php $i = 1?><?php foreach($morning_schedules as $morning_schedule):?>
 				<tr>
 					<td><?php echo $i ?></td>
-					<td id="<?php echo($morning_schedule["morning_schedule_id"])?>_stuff" contenteditable="true"><?php echo $morning_schedule["stuff"]; ?></td>
+					<td id="<?php echo($morning_schedule["morning_schedule_id"])?>_task" contenteditable="true"><?php echo $morning_schedule["task"]; ?></td>
 					<td id="<?php echo($morning_schedule["morning_schedule_id"])?>_monday" contenteditable="true"><?php echo $morning_schedule["monday"]; ?></td>
 					<td id="<?php echo($morning_schedule["morning_schedule_id"])?>_tuesday" contenteditable="true"><?php echo $morning_schedule["tuesday"]; ?></td>
 					<td id="<?php echo($morning_schedule["morning_schedule_id"])?>_wednesday" contenteditable="true"><?php echo $morning_schedule["wednesday"]; ?></td>

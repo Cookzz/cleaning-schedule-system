@@ -7,8 +7,8 @@ function update_user_data(pending_duty_id)
 	
 		var pendingDutyObject = {
 			"pending_duty_id":pending_duty_id,
-			"pending_duty_stuff":$("#"+pending_duty_id+"_pending_duty_stuff").text().trim(),
-			"pending_duty_substuff":$("#"+pending_duty_id+"_pending_duty_substuff").text().trim(),
+			"pending_duty_task":$("#"+pending_duty_id+"_pending_duty_task").text().trim(),
+			"pending_duty_subtask":$("#"+pending_duty_id+"_pending_duty_subtask").text().trim(),
 			"pending_duty_cleaner":$("#"+pending_duty_id+"_pending_duty_cleaner").text().trim(),
 			"pending_duty_comment":$("#"+pending_duty_id+"_pending_duty_comment").text().trim(),
 			"pending_duty_schedule":$("#"+pending_duty_id+"_pending_duty_schedule").text().trim(),

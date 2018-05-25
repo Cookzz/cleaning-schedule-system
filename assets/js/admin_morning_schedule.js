@@ -25,7 +25,7 @@ function update_morning_schedule(morning_schedule_id)
 		
 		var mondayScheduleObject = {
 			"morning_schedule_id":morning_schedule_id,
-			"stuff":$("#"+morning_schedule_id+"_stuff").text().trim(),
+			"task":$("#"+morning_schedule_id+"_task").text().trim(),
 			"monday":$("#"+morning_schedule_id+"_monday").text().trim(),
 			"tuesday":$("#"+morning_schedule_id+"_tuesday").text().trim(),
 			"wednesday":$("#"+morning_schedule_id+"_wednesday").text().trim(),
@@ -92,7 +92,7 @@ $(document).ready(function(){
 	});
 	
 	$(document).on('click','.delete',function(){
-		if(confirm("Do you confirm want to delete the stuff?"))
+		if(confirm("Do you confirm want to delete the task?"))
 		{
 			var txt = $(this).attr("id");
 			var morning_schedule_id = txt.match(/\d/g);
@@ -110,7 +110,7 @@ $(document).ready(function(){
 	});
 	
 	$(document).on('click','.update',function(){
-		if(confirm("Do you confirm want to update the stuff?"))
+		if(confirm("Do you confirm want to update the task?"))
 		{
 			var txt = $(this).attr("id");
 			var morning_schedule_id = txt.match(/\d/g);

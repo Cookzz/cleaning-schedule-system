@@ -20,9 +20,9 @@
 				//convert JSON_string back to JSON_object 
 				$schedule = json_decode($_POST["schedule"], false);
 
-				for($i=0;$i<sizeof($schedule->stuff);$i++)
+				for($i=0;$i<sizeof($schedule->task);$i++)
 				{
-					$stuff = $schedule->stuff[$i];
+					$task = $schedule->task[$i];
 					$monday = $schedule->monday[$i];
 					$tuesday = $schedule->tuesday[$i];
 					$wednesday = $schedule->wednesday[$i];
@@ -32,7 +32,7 @@
 					$sunday = $schedule->sunday[$i];
 					$remark = $schedule->remark[$i];
 					
-					$data = array('stuff' => $stuff,
+					$data = array('task' => $task,
 								  'monday' => $monday,
 								  'tuesday' => $tuesday,
 								  'wednesday' => $wednesday,
@@ -62,9 +62,9 @@
 				//convert JSON_string back to JSON_object 
 				$schedule = json_decode($_POST["schedule"], false);
 
-				for($i=0;$i<sizeof($schedule->stuff);$i++)
+				for($i=0;$i<sizeof($schedule->task);$i++)
 				{
-					$stuff = $schedule->stuff[$i];
+					$task = $schedule->task[$i];
 					$monday = $schedule->monday[$i];
 					$tuesday = $schedule->tuesday[$i];
 					$wednesday = $schedule->wednesday[$i];
@@ -74,7 +74,7 @@
 					$sunday = $schedule->sunday[$i];
 					$remark = $schedule->remark[$i];
 					
-					$data = array('stuff' => $stuff,
+					$data = array('task' => $task,
 								  'monday' => $monday,
 								  'tuesday' => $tuesday,
 								  'wednesday' => $wednesday,
@@ -122,12 +122,12 @@
 			$this->main_model->delete_data("morning_schedule",$data);
 			
 			$week_number = array("week_number" => date("W"));
-			$get_morning_schedule_query = $this->main_model->get_specify_data("*","stuff",$week_number,"morning_schedule");
+			$get_morning_schedule_query = $this->main_model->get_specify_data("*","task",$week_number,"morning_schedule");
 			$morning_schedules = $get_morning_schedule_query->result_array();
 			
 			for($i=0;$i<sizeof($morning_schedules);$i++)
 			{
-				$stuff = $morning_schedules[$i]['stuff'];
+				$task = $morning_schedules[$i]['task'];
 				$monday = $morning_schedules[$i]['monday'];
 				$tuesday = $morning_schedules[$i]['tuesday'];
 				$wednesday = $morning_schedules[$i]['wednesday'];
@@ -137,7 +137,7 @@
 				$sunday = $morning_schedules[$i]['sunday'];
 				$remark = $morning_schedules[$i]['remark'];
 					
-				$data = array('stuff' => $stuff,
+				$data = array('task' => $task,
 							  'monday' => $monday,
 							  'tuesday' => $tuesday,
 							  'wednesday' => $wednesday,
@@ -166,12 +166,12 @@
 			$this->main_model->delete_data("afternoon_schedule",$data);
 			
 			$week_number = array("week_number" => date("W"));
-			$get_afternoon_schedule_query = $this->main_model->get_specify_data("*","stuff",$week_number,"afternoon_schedule");
+			$get_afternoon_schedule_query = $this->main_model->get_specify_data("*","task",$week_number,"afternoon_schedule");
 			$afternoon_schedules = $get_afternoon_schedule_query->result_array();
 			
 			for($i=0;$i<sizeof($afternoon_schedules);$i++)
 			{
-				$stuff = $afternoon_schedules[$i]['stuff'];
+				$task = $afternoon_schedules[$i]['task'];
 				$monday = $afternoon_schedules[$i]['monday'];
 				$tuesday = $afternoon_schedules[$i]['tuesday'];
 				$wednesday = $afternoon_schedules[$i]['wednesday'];
@@ -181,7 +181,7 @@
 				$sunday = $afternoon_schedules[$i]['sunday'];
 				$remark = $afternoon_schedules[$i]['remark'];
 					
-				$data = array('stuff' => $stuff,
+				$data = array('task' => $task,
 							  'monday' => $monday,
 							  'tuesday' => $tuesday,
 							  'wednesday' => $wednesday,

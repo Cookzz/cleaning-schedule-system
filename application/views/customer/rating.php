@@ -18,12 +18,12 @@
 
 <h2>Rating</h2><hr/>
 
-<!--This form got two table, one is to let user to insert new stuff, one is to display the stuff table-->
+<!--This form got two table, one is to let user to insert new task, one is to display the task table-->
 <center>
 	<form id="rating" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-		<select id="stuff">
-			<?php foreach($stuffs as $stuff):?>
-				<option value="<?= $stuff["stuff"]?>"><?= $stuff["stuff"]?></option>
+		<select id="task">
+			<?php foreach($tasks as $task):?>
+				<option value="<?= $task["task"]?>"><?= $task["task"]?></option>
 			<?php endforeach;?>
 		</select>
 		<br />
@@ -34,7 +34,7 @@
 		<br />
 		<br />
 		<br />
-		<button type="button" id="fixStuff">Fix Location</button>
+		<button type="button" id="fixTask">Fix Location</button>
 		<input type="text" id="staff_id" placeholder="Enter a staff ID to fix or unfix the location">
 	</form>
 </center>

@@ -1,9 +1,9 @@
-function delete_sub_stuff(sub_stuff_id)
+function delete_task(task_id)
 {
 	var baseUrl = $("#baseURL").val();
-	var url = baseUrl+"subStuffController/deleteSubStuff";		
+	var url = baseUrl+"taskController/deleteTask";		
 	var fd = new FormData();
-	fd.append('sub_stuff_id',sub_stuff_id);
+	fd.append('task_id',task_id);
 
 		
 	$.ajax({
@@ -19,15 +19,18 @@ function delete_sub_stuff(sub_stuff_id)
 	});	
 }
 
-function update_sub_stuff(sub_stuff_id)
+function update_task(task_id)
 {
 		var baseUrl = $("#baseURL").val();
-		var url = baseUrl+"subStuffController/updateSubStuffData";
-		var update_sub_stuff = $("#"+sub_stuff_id+"_sub_stuff").text().trim();
+		var url = baseUrl+"taskController/updateTaskData";
+		var update_task = $("#"+task_id+"_task").text().trim();
+		var test_update_task = $("#"+task_id+"_task").text();
+		console.log(update_task);
+		console.log(test_update_task);
 		var fd = new FormData();
-		
-		fd.append('update_sub_stuff',update_sub_stuff);
-		fd.append('sub_stuff_id',sub_stuff_id);
+
+		fd.append('update_task',update_task);
+		fd.append('task_id',task_id);
 
 		$.ajax({
 			url: url,
@@ -44,7 +47,7 @@ function update_sub_stuff(sub_stuff_id)
 				{
 					var data = message;
 					alert("Update Incomplete, Duplicate or Invalid Data Appear");
-					$("#"+sub_stuff_id+"_sub_stuff").text(message);
+					$("#"+task_id+"_task").text(message);
 				}
 				
 			}
@@ -55,7 +58,7 @@ $(document).ready(function(){
 	
 	var d= new Date();
 	
-	$('#sub_stuff_table').DataTable({
+	$('#task_table').DataTable({
 		"pageLength": 10,
 		"order": [[ 1, "asc" ]],
 		"dom": 'Bfrtip',
@@ -64,7 +67,7 @@ $(document).ready(function(){
 				extend: 'print',
 				autoPrint: true,
                 exportOptions: {columns: '0,1'},
-				title:'Substuff Table',
+				title:'Task Location Table',
 				messageTop:"Print Date : " + d.getDate() + " / " + (d.getMonth()+1) +' / '+ d.getFullYear(),
 				customize: function ( win ) {
                     $(win.document.body)
@@ -85,36 +88,34 @@ $(document).ready(function(){
 	});
 	
 	$(document).on('click','.delete',function(){
-		if(confirm("Do you confirm want to delete the stuff?"))
-		{		
+		if(confirm("Do you confirm want to delete the task?"))
+		{
 			var txt = $(this).attr("id");
-			var sub_stuff_id = txt.match(/\d/g);
-			sub_stuff_id = sub_stuff_id.join("");
+			var task_id = txt.match(/\d/g);
+			task_id = task_id.join("");
 			
-			var table = $('#sub_stuff_table').DataTable();
+			var table = $('#task_table').DataTable();
 			table
 				.row( $(this).parents('tr') )
 				.remove()
 				.draw(false);
 				
-			delete_sub_stuff(sub_stuff_id);
+			delete_task(task_id);
 		}
 		
 	});
 	
 	$(document).on('click','.update',function(){
-		if(confirm("Do you confirm want to update the stuff?"))
+		if(confirm("Do you confirm want to update the task?"))
 		{
 			var txt = $(this).attr("id");
-			var sub_stuff_id = txt.match(/\d/g);
-			sub_stuff_id = sub_stuff_id.join("");
-			update_sub_stuff(sub_stuff_id);
+			var task_id = txt.match(/\d/g);
+			task_id = task_id.join("");
+			update_task(task_id);
 		}
 		
 	});
 });
-
-
 
 
 

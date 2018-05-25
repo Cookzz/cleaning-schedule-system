@@ -3,7 +3,7 @@
 <head>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/sub_stuff.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/sub_task.js"></script>
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -17,29 +17,29 @@
 </head>
 <body>  
 
-<h2>Sub Stuff</h2><hr/>
+<h2>Sub Task</h2><hr/>
 
-<!--This form got two table, one is to let user to insert new stuff, one is to display the substuff table-->
+<!--This form got two table, one is to let user to insert new task, one is to display the subtask table-->
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 	<!--First table to display the form element like input box and button-->
 	<table>
-			<tr><td>New Sub Stuff:</td><td><input id="newSubStuffField" type="text" value="" name="newStaff" maxlength="30"></td></tr>
+			<tr><td>New Sub Task:</td><td><input id="newSubTaskField" type="text" value="" name="newStaff" maxlength="30"></td></tr>
 			<tr><td colspan="3"><input style="float:right"type="submit" value="Add"></td></tr>
 	</table>
 	<!--This is the end of first table-->
 	<!--Second Table is to output the data which by controller and delete,update button-->
-	<table id="sub_stuff_table" class="table table-striped table-bordered" style="width:40%" border="1">
+	<table id="sub_task_table" class="table table-striped table-bordered" style="width:40%" border="1">
 		<thead>
 			<tr>
-				<th>No.</th><th>Sub Stuff</th><th>Update</th><th>Delete</th>
+				<th>No.</th><th>Sub Task</th><th>Update</th><th>Delete</th>
 			</tr>
 		</thead>
 		<tbody>
-			<?php $i = 1?><?php foreach($sub_stuffs as $sub_stuff):?>
+			<?php $i = 1?><?php foreach($sub_tasks as $sub_task):?>
 			<tr>
-				<td><?php echo $i ?></td><td id="<?php echo($sub_stuff["sub_stuff_id"])?>_sub_stuff" contenteditable="true"><?php echo $sub_stuff["sub_stuff"]; ?></td>
-				<td><center><button type="button" id="<?php echo $sub_stuff["sub_stuff_id"];?>_update" class="update">Update</button></center></td>
-                <td><center><button style="width:80px;height:30px" type="button" id="<?php echo $sub_stuff["sub_stuff_id"];?>_delete" class="w3-text-red fa fa-trash delete"></button></center></td>
+				<td><?php echo $i ?></td><td id="<?php echo($sub_task["sub_task_id"])?>_sub_task" contenteditable="true"><?php echo $sub_task["sub_task"]; ?></td>
+				<td><center><button type="button" id="<?php echo $sub_task["sub_task_id"];?>_update" class="update">Update</button></center></td>
+                <td><center><button style="width:80px;height:30px" type="button" id="<?php echo $sub_task["sub_task_id"];?>_delete" class="w3-text-red fa fa-trash delete"></button></center></td>
 			</tr>
 			<?php $i = $i+1?><?php endforeach; ?>	
 		</tbody>

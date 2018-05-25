@@ -24,7 +24,7 @@ function postPendingDuty(pending_duty_id)
 $(document).ready(function(){
 	
 	$(document).on('click','.complete',function(){
-		if(confirm("Do you complete the stuff?"))
+		if(confirm("Do you complete the task?"))
 		{
 			var txt = $(this).attr("id");
 			var pending_duty_id = txt.match(/\d/g);

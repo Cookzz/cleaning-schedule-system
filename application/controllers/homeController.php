@@ -112,15 +112,15 @@
 						$week_number = array("week_number" => $week,"remark" => "active");
 						
 						//Select morning schedule and insert to pending order
-						$query = $this->main_model->get_specify_data("*","stuff",$week_number,"morning_schedule");
+						$query = $this->main_model->get_specify_data("*","task",$week_number,"morning_schedule");
 						$schedule_results = $query->result_array();
 						
 						foreach($schedule_results as $schedule_result)
 						{
-							$stuff = $schedule_result["stuff"];
+							$task = $schedule_result["task"];
 							
-							$data = array("duty_stuff"=>$stuff);
-							$query = $this->main_model->get_specify_data("*","duty_stuff",$data,"duty");
+							$data = array("duty_task"=>$task);
+							$query = $this->main_model->get_specify_data("*","duty_task",$data,"duty");
 							$duty_results = $query->result_array();
 							$duty_number = $query->num_rows();
 							if($duty_number != 0)
@@ -129,10 +129,10 @@
 								{
 									if((!empty($schedule_result[$day])) && ($schedule_result[$day] != "NA"))
 									{
-										$duty_sub_stuff = $duty_result['duty_sub_stuff'];
+										$duty_sub_task = $duty_result['duty_sub_task'];
 									
-										$data = array("pending_duty_stuff"=>$stuff,
-												"pending_duty_substuff"=>$duty_sub_stuff,
+										$data = array("pending_duty_task"=>$task,
+												"pending_duty_subtask"=>$duty_sub_task,
 												"pending_duty_cleaner"=>$schedule_result[$day],
 												"pending_duty_schedule"=>"morning",
 												"pending_duty_date"=>date("Y/m/d"));
@@ -146,8 +146,8 @@
 							{
 								if((!empty($schedule_result[$day])) && ($schedule_result[$day] != "NA"))
 								{										
-									$data = array("pending_duty_stuff"=>$stuff,
-											"pending_duty_substuff"=>"No any substuff",
+									$data = array("pending_duty_task"=>$task,
+											"pending_duty_subtask"=>"No any subtask",
 											"pending_duty_cleaner"=>$schedule_result[$day],
 											"pending_duty_schedule"=>"morning",
 											"pending_duty_date"=>date("Y/m/d"));
@@ -159,15 +159,15 @@
 						}
 						
 						//Select afternoon schedule and insert to pending order
-						$query = $this->main_model->get_specify_data("*","stuff",$week_number,"afternoon_schedule");
+						$query = $this->main_model->get_specify_data("*","task",$week_number,"afternoon_schedule");
 						$schedule_results = $query->result_array();
 						
 						foreach($schedule_results as $schedule_result)
 						{
-							$stuff = $schedule_result["stuff"];
+							$task = $schedule_result["task"];
 							
-							$data = array("duty_stuff"=>$stuff);
-							$query = $this->main_model->get_specify_data("*","duty_stuff",$data,"duty");
+							$data = array("duty_task"=>$task);
+							$query = $this->main_model->get_specify_data("*","duty_task",$data,"duty");
 							$duty_results = $query->result_array();
 							$duty_number = $query->num_rows();
 							if($duty_number != 0)
@@ -176,10 +176,10 @@
 								{
 									if((!empty($schedule_result[$day])) && ($schedule_result[$day] != "NA"))
 									{
-										$duty_sub_stuff = $duty_result['duty_sub_stuff'];
+										$duty_sub_task = $duty_result['duty_sub_task'];
 									
-										$data = array("pending_duty_stuff"=>$stuff,
-												"pending_duty_substuff"=>$duty_sub_stuff,
+										$data = array("pending_duty_task"=>$task,
+												"pending_duty_subtask"=>$duty_sub_task,
 												"pending_duty_cleaner"=>$schedule_result[$day],
 												"pending_duty_schedule"=>"afternoon",
 												"pending_duty_date"=>date("Y/m/d"));
@@ -193,8 +193,8 @@
 							{
 								if((!empty($schedule_result[$day])) && ($schedule_result[$day] != "NA"))
 								{
-									$data = array("pending_duty_stuff"=>$stuff,
-											"pending_duty_substuff"=>"No any substuff",
+									$data = array("pending_duty_task"=>$task,
+											"pending_duty_subtask"=>"No any subtask",
 											"pending_duty_cleaner"=>$schedule_result[$day],
 											"pending_duty_schedule"=>"afternoon",
 											"pending_duty_date"=>date("Y/m/d"));
@@ -310,13 +310,13 @@
 					$data["big_selector"] = '
                     <a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage" id="nav1">Home<span class="sr-only">(current)</span></a>
 				        <a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage">Schedule</a>
-                            <li class="nav-item dropdown" id="stuffDropDown">
-                                <a class="nav-link dropdown-toggle active" id="stuffToggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Stuff
+                            <li class="nav-item dropdown" id="taskDropDown">
+                                <a class="nav-link dropdown-toggle active" id="taskToggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Task
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="stuffToggle" id="stuffMenu">
-                                    <a class="dropdown-item" href="'.base_url().'HomeController/viewStuffLocationPage">Stuff</a>
-								    <a class="dropdown-item" href="'.base_url().'HomeController/viewSubStuffPage">Substuff</a>
+                                <div class="dropdown-menu" aria-labelledby="taskToggle" id="taskMenu">
+                                    <a class="dropdown-item" href="'.base_url().'HomeController/viewTaskLocationPage">Task</a>
+								    <a class="dropdown-item" href="'.base_url().'HomeController/viewSubTaskPage">Subtask</a>
 								    <a class="dropdown-item" href="'.base_url().'HomeController/viewDutyPage">Duty</a>
                                 </div>
                             </li>
@@ -336,11 +336,11 @@
 												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage">Schedule</a>
 												<li class="nav-item dropdown" id="mobileDropDown">
                                                     <a class="nav-link dropdown-toggle active" id="mobileToggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Stuff
+                                                        Task
                                                     </a>
                                                     <div class="dropdown-menu" aria-labelledby="mobileToggle" id="mobileMenu">
-                                                        <a class="dropdown-item" href="'.base_url().'HomeController/viewStuffLocationPage">Stuff</a>
-                                                        <a class="dropdown-item" href="'.base_url().'HomeController/viewSubStuffPage">Substuff</a>
+                                                        <a class="dropdown-item" href="'.base_url().'HomeController/viewTaskLocationPage">Task</a>
+                                                        <a class="dropdown-item" href="'.base_url().'HomeController/viewSubTaskPage">Subtask</a>
                                                         <a class="dropdown-item" href="'.base_url().'HomeController/viewDutyPage">Duty</a>
                                                     </div>
                                                 </li>
@@ -352,13 +352,13 @@
 					$data["big_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage">Home<span class="sr-only">(current)</span></a>
 											<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage">Schedule</a>
 											<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewOwnDutyPage">Duty</a>
-											<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewOwnSpecialDuty">Special Stuff</a>
+											<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewOwnSpecialDuty">Special Task</a>
 											<a class="nav-item nav-link active" href="#">Contact Us</a>';
 										
 					$data["small_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage">Home<span class="sr-only">(current)</span></a>
 												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage">Schedule</a>
 												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewOwnDutyPage">Duty</a>
-												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewOwnSpecialDuty">Special Stuff</a>
+												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewOwnSpecialDuty">Special Task</a>
 												<a class="nav-item nav-link active" href="#">Contact Us</a>';
 				}
 				elseif($_SESSION['user_access_level'] == 4)
@@ -443,7 +443,7 @@
 			}
 		}
 		
-		public function viewStuffLocationPage($page = 'stuff')
+		public function viewTaskLocationPage($page = 'task')
 		{
 			$this->load->library('session');
 			
@@ -458,8 +458,8 @@
 			else
 			{
 				$this->load->model("main_model");
-				$query = $this->main_model->get_data_order("*","stuff","stuff");
-				$data['stuffs'] = $query->result_array();
+				$query = $this->main_model->get_data_order("*","task","task");
+				$data['tasks'] = $query->result_array();
 				
 				$this->viewNav();
 				if(($_SESSION['user_access_level'] == 2) || ($_SESSION['user_access_level'] == 1))
@@ -470,7 +470,7 @@
 			}
 		}
 		
-		public function viewSubStuffPage($page = 'sub_stuff')
+		public function viewSubTaskPage($page = 'sub_task')
 		{
 			$this->load->library('session');
 			
@@ -485,8 +485,8 @@
 			else
 			{
 				$this->load->model("main_model");
-				$query = $this->main_model->get_data_order("*","sub_stuff","sub_stuff");
-				$data['sub_stuffs'] = $query->result_array();
+				$query = $this->main_model->get_data_order("*","sub_task","sub_task");
+				$data['sub_tasks'] = $query->result_array();
 				
 				$this->viewNav();
 				if(($_SESSION['user_access_level'] == 2) || ($_SESSION['user_access_level'] == 1))
@@ -513,14 +513,14 @@
 			{
 				$this->load->model("main_model");
 				
-				$query = $this->main_model->get_data_order("*","duty_stuff","duty");
+				$query = $this->main_model->get_data_order("*","duty_task","duty");
 				$data['duties'] = $query->result_array();
 				
-				$query = $this->main_model->get_data_order("*","stuff","stuff");
-				$data['stuffs'] = $query->result_array();
+				$query = $this->main_model->get_data_order("*","task","task");
+				$data['tasks'] = $query->result_array();
 				
-				$query = $this->main_model->get_data_order("*","sub_stuff","sub_stuff");
-				$data['sub_stuffs'] = $query->result_array();
+				$query = $this->main_model->get_data_order("*","sub_task","sub_task");
+				$data['sub_tasks'] = $query->result_array();
 				
 				$this->viewNav();
 				if(($_SESSION['user_access_level'] == 2) || ($_SESSION['user_access_level'] == 1))
@@ -556,14 +556,14 @@
 				$get_cleaner_query = $this->main_model->get_specify_data("*","id",$user_access_level,"users");
 				$data['cleaners'] = $get_cleaner_query->result_array();
 				
-				$get_stuff_query = $this->main_model->get_data_order("*","stuff","stuff");
-				$data['stuffs'] = $get_stuff_query->result_array();
+				$get_task_query = $this->main_model->get_data_order("*","task","task");
+				$data['tasks'] = $get_task_query->result_array();
 				
 				$week_number = array("week_number" => date("W"));
-				$get_morning_schedule_query = $this->main_model->get_specify_data("*","stuff",$week_number,"morning_schedule");
+				$get_morning_schedule_query = $this->main_model->get_specify_data("*","task",$week_number,"morning_schedule");
 				$data['morning_schedules'] = $get_morning_schedule_query->result_array();
 				
-				$get_afternoon_schedule_query = $this->main_model->get_specify_data("*","stuff",$week_number,"afternoon_schedule");
+				$get_afternoon_schedule_query = $this->main_model->get_specify_data("*","task",$week_number,"afternoon_schedule");
 				$data['afternoon_schedules'] = $get_afternoon_schedule_query->result_array();
 					
 				$this->viewNav();
@@ -604,14 +604,14 @@
 				$get_cleaner_query = $this->main_model->get_specify_data("*","id",$user_access_level,"users");
 				$data['cleaners'] = $get_cleaner_query->result_array();
 				
-				$get_stuff_query = $this->main_model->get_data_order("*","stuff","stuff");
-				$data['stuffs'] = $get_stuff_query->result_array();
+				$get_task_query = $this->main_model->get_data_order("*","task","task");
+				$data['tasks'] = $get_task_query->result_array();
 				
 				$week_number = array("week_number" => ((date("W"))+1));
-				$get_morning_schedule_query = $this->main_model->get_specify_data("*","stuff",$week_number,"morning_schedule");
+				$get_morning_schedule_query = $this->main_model->get_specify_data("*","task",$week_number,"morning_schedule");
 				$data['morning_schedules'] = $get_morning_schedule_query->result_array();
 				
-				$get_afternoon_schedule_query = $this->main_model->get_specify_data("*","stuff",$week_number,"afternoon_schedule");
+				$get_afternoon_schedule_query = $this->main_model->get_specify_data("*","task",$week_number,"afternoon_schedule");
 				$data['afternoon_schedules'] = $get_afternoon_schedule_query->result_array();
 					
 				$this->viewNav();
@@ -648,8 +648,8 @@
 				$data['cleaners'] = $get_cleaner_query->result_array();
 				$data['cleaners_string'] = json_encode($data['cleaners']);
 				
-				$get_stuff_query = $this->main_model->get_data_order("*","stuff","stuff");
-				$data['stuffs'] = $get_stuff_query->result_array();
+				$get_task_query = $this->main_model->get_data_order("*","task","task");
+				$data['tasks'] = $get_task_query->result_array();
 					
 				$this->viewNav();
 				if(($_SESSION['user_access_level'] == 2) || ($_SESSION['user_access_level'] == 1))
@@ -692,7 +692,7 @@
 					$time = "afternoon";
 				}
 				$cleaner = array("pending_duty_cleaner" => $user_id."_".$user_name , "pending_duty_date" => date("Y/m/d"), "pending_duty_schedule" => $time);
-				$get_pending_query = $this->main_model->get_specify_data("*","pending_duty_stuff",$cleaner,"pending_duty");
+				$get_pending_query = $this->main_model->get_specify_data("*","pending_duty_task",$cleaner,"pending_duty");
 				$pending_duties = $get_pending_query->result_array();
 				$pending_duty_count = $get_pending_query->num_rows();
 				
@@ -700,13 +700,13 @@
 				
 				foreach($pending_duties as $pending_duty)
 				{
-					$pending_duties_group[$pending_duty['pending_duty_stuff']][]= $pending_duty;
+					$pending_duties_group[$pending_duty['pending_duty_task']][]= $pending_duty;
 				}
 				//______________
 				
 				//Select complete duty from complete table
 				$cleaner = array("complete_duty_cleaner" => $user_id."_".$user_name , "complete_duty_date" => date("Y/m/d"));
-				$get_complete_query = $this->main_model->get_specify_data("*","complete_duty_stuff",$cleaner,"complete_duty");
+				$get_complete_query = $this->main_model->get_specify_data("*","complete_duty_task",$cleaner,"complete_duty");
 				$complete_duties = $get_complete_query->result_array();
 				$complete_duty_count = $get_complete_query->num_rows();
 				
@@ -714,7 +714,7 @@
 				
 				foreach($complete_duties as $complete_duty)
 				{
-					$complete_duties_group[$complete_duty['complete_duty_stuff']][]= $complete_duty;
+					$complete_duties_group[$complete_duty['complete_duty_task']][]= $complete_duty;
 				}
 				//________________
 				
@@ -757,7 +757,7 @@
 				}
 				
 				$date = array("pending_duty_date" => date("Y/m/d") , "pending_duty_schedule" => $time);
-				$orderBy = ("pending_duty_cleaner asc,pending_duty_stuff asc");
+				$orderBy = ("pending_duty_cleaner asc,pending_duty_task asc");
 				$query = $this->main_model->get_specify_data2("*",$orderBy,$date,"pending_duty");	
 			
 				$data['pending_duties'] = $query->result_array();
@@ -798,7 +798,7 @@
 				}
 				
 				$date = array("complete_duty_date" => date("Y/m/d"));
-				$orderBy = ("complete_duty_cleaner asc,complete_duty_stuff asc");
+				$orderBy = ("complete_duty_cleaner asc,complete_duty_task asc");
 				$query = $this->main_model->get_specify_data2("*",$orderBy,$date,"complete_duty");	
 			
 				$data['complete_duties'] = $query->result_array();
@@ -839,7 +839,7 @@
 				}
 				
 				$date = array("pending_duty_date !=" => date("Y/m/d"));
-				$orderBy = ("pending_duty_cleaner asc,pending_duty_stuff asc");
+				$orderBy = ("pending_duty_cleaner asc,pending_duty_task asc");
 				$query = $this->main_model->get_specify_data2("*",$orderBy,$date,"pending_duty");	
 			
 				$data['pending_duties'] = $query->result_array();
@@ -879,7 +879,7 @@
 					$time = "afternoon";
 				}
 				
-				$orderBy = ("complete_duty_cleaner,complete_duty_stuff");
+				$orderBy = ("complete_duty_cleaner,complete_duty_task");
 				$query = $this->main_model->get_data_order("*",$orderBy,"complete_duty");	
 			
 				$data['complete_duties'] = $query->result_array();
@@ -1086,8 +1086,8 @@
 			{	
 				$this->load->model("main_model");
 				
-				$query = $this->main_model->get_data_order("*","stuff","stuff");
-				$data['stuffs'] = $query->result_array();
+				$query = $this->main_model->get_data_order("*","task","task");
+				$data['tasks'] = $query->result_array();
 				
 				$this->viewNav();
 				$this->load->view('customer/'.$page,$data);

@@ -29,8 +29,8 @@
 			<tr>
 				<th>No</th>
 				<th>Cleaner</th>
-				<th>Stuff Location</th>
-				<th>Sub Stuff</th>
+				<th>Task Location</th>
+				<th>Sub Task</th>
 				<th>Complete In</th>
 				<th>Comment</th>
 				<th>Time</th>
@@ -47,8 +47,8 @@
 			<tr id="<?php echo $complete_duty["complete_duty_id"];?>">
 				<td><?= $i?></td>
 				<td id="<?php echo $complete_duty["complete_duty_id"];?>_complete_duty_cleaner" contenteditable="true"><?php echo $complete_duty["complete_duty_cleaner"];?></td>
-				<td id="<?php echo $complete_duty["complete_duty_id"];?>_complete_duty_stuff" contenteditable="true"><?php echo $complete_duty["complete_duty_stuff"];?></td>
-				<td id="<?php echo $complete_duty["complete_duty_id"];?>_complete_duty_substuff" contenteditable="true"><?php echo $complete_duty["complete_duty_substuff"];?></td>
+				<td id="<?php echo $complete_duty["complete_duty_id"];?>_complete_duty_task" contenteditable="true"><?php echo $complete_duty["complete_duty_task"];?></td>
+				<td id="<?php echo $complete_duty["complete_duty_id"];?>_complete_duty_subtask" contenteditable="true"><?php echo $complete_duty["complete_duty_subtask"];?></td>
 				<td id="<?php echo $complete_duty["complete_duty_id"];?>_complete_duty_time" contenteditable="true"><?php echo $complete_duty["complete_duty_time"];?></td>
 				<td id="<?php echo $complete_duty["complete_duty_id"];?>_complete_duty_comment" contenteditable="true"><?php echo $complete_duty["complete_duty_comment"];?></td>
 				<td id="<?php echo $complete_duty["complete_duty_id"];?>_complete_duty_schedule" contenteditable="true"><?php echo $complete_duty["complete_duty_schedule"];?></td>

@@ -51,7 +51,7 @@ $(document).ready(function(){
 	});
 	
 	$(document).on('click','.delete',function(){
-		if(confirm("Do you confirm want to delete the stuff?"))
+		if(confirm("Do you confirm want to delete the task?"))
 		{
 			var txt = $(this).attr("id");
 			var duty_id = txt.match(/\d/g);

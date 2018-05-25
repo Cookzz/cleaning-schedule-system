@@ -7,8 +7,8 @@ function update_user_data(complete_duty_id)
 	
 		var completeDutyObject = {
 			"complete_duty_id":complete_duty_id,
-			"complete_duty_stuff":$("#"+complete_duty_id+"_complete_duty_stuff").text().trim(),
-			"complete_duty_substuff":$("#"+complete_duty_id+"_complete_duty_substuff").text().trim(),
+			"complete_duty_task":$("#"+complete_duty_id+"_complete_duty_task").text().trim(),
+			"complete_duty_subtask":$("#"+complete_duty_id+"_complete_duty_subtask").text().trim(),
 			"complete_duty_cleaner":$("#"+complete_duty_id+"_complete_duty_cleaner").text().trim(),
 			"complete_duty_comment":$("#"+complete_duty_id+"_complete_duty_comment").text().trim(),
 			"complete_duty_schedule":$("#"+complete_duty_id+"_complete_duty_schedule").text().trim(),

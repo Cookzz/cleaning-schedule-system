@@ -12,12 +12,12 @@
 <form id="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 <table>
 	<tr>
-		<th>Stuff Location:</th>
+		<th>Task Location:</th>
 		<td>
 			<center>
-				<input id="stuff" type="text" list="stuffs"> <!--Textfield/textbox -->
-                <datalist id="stuffs"> <!--Lists/combobox of categories (autocompletes when typed) -->
-                    <?php foreach($stuffs as $stuff):?><option value="<?= $stuff['stuff']?>"></option><?php endforeach?>
+				<input id="task" type="text" list="tasks"> <!--Textfield/textbox -->
+                <datalist id="tasks"> <!--Lists/combobox of categories (autocompletes when typed) -->
+                    <?php foreach($tasks as $task):?><option value="<?= $task['task']?>"></option><?php endforeach?>
                 </datalist>
 			</center>
 		</td>

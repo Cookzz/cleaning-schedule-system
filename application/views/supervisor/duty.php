@@ -24,8 +24,8 @@
 	<!--First table to display the form element like input box and button-->
 	<table>
 		<tr><td>New Duty:</td>
-		<td><select id="newDuty_stuff"><?php foreach($stuffs as $stuff):?><option value="<?php echo $stuff["stuff"]?>"><?php echo $stuff["stuff"]?></option><?php endforeach?></select></td>
-		<td><select id="newDuty_sub_stuff"><?php foreach($sub_stuffs as $sub_stuff):?><option value="<?php echo $sub_stuff["sub_stuff"]?>"><?php echo $sub_stuff["sub_stuff"]?></option><?php endforeach?></select></td>
+		<td><select id="newDuty_task"><?php foreach($tasks as $task):?><option value="<?php echo $task["task"]?>"><?php echo $task["task"]?></option><?php endforeach?></select></td>
+		<td><select id="newDuty_sub_task"><?php foreach($sub_tasks as $sub_task):?><option value="<?php echo $sub_task["sub_task"]?>"><?php echo $sub_task["sub_task"]?></option><?php endforeach?></select></td>
 		</tr>
 		<tr><td colspan="3"><input style="float:right"type="submit" value="Add"></td></tr>
 	</table>
@@ -34,15 +34,15 @@
 	<table id="duty_table" class="table table-striped table-bordered" style="width:40%" border="1">
 		<thead>
 			<tr>
-				<th>No.</th><th>Duty Stuff</th><th>Duty Sub Stuff</th><th>Delete</th>
+				<th>No.</th><th>Duty Task</th><th>Duty Sub Task</th><th>Delete</th>
 			</tr>
 		</thead>
 		<tbody>
 			<?php $i = 1?><?php foreach($duties as $duty):?>
 			<tr>
 				<td><?php echo $i ?></td>
-				<td id="<?php echo($duty["duty_id"])?>_stuff"><?php echo $duty["duty_stuff"]; ?></td>
-				<td id="<?php echo($duty["duty_id"])?>_sub_stuff"><?php echo $duty["duty_sub_stuff"]; ?></td>
+				<td id="<?php echo($duty["duty_id"])?>_task"><?php echo $duty["duty_task"]; ?></td>
+				<td id="<?php echo($duty["duty_id"])?>_sub_task"><?php echo $duty["duty_sub_task"]; ?></td>
 				<td><center><button style="width:80px;height:30px" type="button" id="<?php echo $duty["duty_id"];?>_delete" class="w3-text-red fa fa-trash delete"></button></center></td>
 			</tr>
 			<?php $i = $i+1?><?php endforeach; ?>	

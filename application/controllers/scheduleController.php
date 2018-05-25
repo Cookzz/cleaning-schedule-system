@@ -18,9 +18,9 @@
 				//convert JSON_string back to JSON_object 
 				$schedule = json_decode($_POST["schedule"], false);
 
-				for($i=0;$i<sizeof($schedule->stuff);$i++)
+				for($i=0;$i<sizeof($schedule->task);$i++)
 				{
-					$stuff = $schedule->stuff[$i];
+					$task = $schedule->task[$i];
 					$monday = $schedule->monday[$i];
 					$tuesday = $schedule->tuesday[$i];
 					$wednesday = $schedule->wednesday[$i];
@@ -30,7 +30,7 @@
 					$sunday = $schedule->sunday[$i];
 					$remark = $schedule->remark[$i];
 					
-					$data = array('stuff' => $stuff,
+					$data = array('task' => $task,
 								  'monday' => $monday,
 								  'tuesday' => $tuesday,
 								  'wednesday' => $wednesday,
@@ -58,9 +58,9 @@
 				//convert JSON_string back to JSON_object 
 				$schedule = json_decode($_POST["schedule"], false);
 
-				for($i=0;$i<sizeof($schedule->stuff);$i++)
+				for($i=0;$i<sizeof($schedule->task);$i++)
 				{
-					$stuff = $schedule->stuff[$i];
+					$task = $schedule->task[$i];
 					$monday = $schedule->monday[$i];
 					$tuesday = $schedule->tuesday[$i];
 					$wednesday = $schedule->wednesday[$i];
@@ -70,7 +70,7 @@
 					$sunday = $schedule->sunday[$i];
 					$remark = $schedule->remark[$i];
 					
-					$data = array('stuff' => $stuff,
+					$data = array('task' => $task,
 								  'monday' => $monday,
 								  'tuesday' => $tuesday,
 								  'wednesday' => $wednesday,

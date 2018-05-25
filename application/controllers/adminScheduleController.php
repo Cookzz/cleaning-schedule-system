@@ -15,7 +15,7 @@
 				$mondaySchedule = json_decode($_POST["mondayScheduleString"], false);
 
 				$morning_schedule_id = $mondaySchedule->morning_schedule_id;
-				$stuff = $mondaySchedule->stuff;
+				$task = $mondaySchedule->task;
 				$monday = $mondaySchedule->monday;
 				$tuesday = $mondaySchedule->tuesday;
 				$wednesday = $mondaySchedule->wednesday;
@@ -26,7 +26,7 @@
 				$remark = $mondaySchedule->remark;
 				$week_number = $mondaySchedule->week_number;
 					
-				$data = array('stuff' => $stuff,
+				$data = array('task' => $task,
 							  'monday' => $monday,
 							  'tuesday' => $tuesday,
 							  'wednesday' => $wednesday,
@@ -63,7 +63,7 @@
 				$afternoonSchedule = json_decode($_POST["afternoonScheduleString"], false);
 
 				$afternoon_schedule_id = $afternoonSchedule->afternoon_schedule_id;
-				$stuff = $afternoonSchedule->stuff;
+				$task = $afternoonSchedule->task;
 				$monday = $afternoonSchedule->monday;
 				$tuesday = $afternoonSchedule->tuesday;
 				$wednesday = $afternoonSchedule->wednesday;
@@ -74,7 +74,7 @@
 				$remark = $afternoonSchedule->remark;
 				$week_number = $afternoonSchedule->week_number;
 					
-				$data = array('stuff' => $stuff,
+				$data = array('task' => $task,
 							  'monday' => $monday,
 							  'tuesday' => $tuesday,
 							  'wednesday' => $wednesday,

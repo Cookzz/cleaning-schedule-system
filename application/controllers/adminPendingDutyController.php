@@ -16,8 +16,8 @@
 
 				$pending_duty_id = $pendingDuty->pending_duty_id;
 					
-				$data = array('pending_duty_stuff' => $pendingDuty->pending_duty_stuff,
-							  'pending_duty_substuff' => $pendingDuty->pending_duty_substuff,
+				$data = array('pending_duty_task' => $pendingDuty->pending_duty_task,
+							  'pending_duty_subtask' => $pendingDuty->pending_duty_subtask,
 							  'pending_duty_cleaner' => $pendingDuty->pending_duty_cleaner,
 							  'pending_duty_comment' => $pendingDuty->pending_duty_comment,
 							  'pending_duty_schedule' => $pendingDuty->pending_duty_schedule,

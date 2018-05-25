@@ -7,13 +7,13 @@
                 date_default_timezone_set("Asia/Kuala_Lumpur");
         }
 		
-		public function checkStuffLocation()
+		public function checkTaskLocation()
 		{
 			$this->load->model("main_model");
 			
-			if((isset($_POST['stuff'])) && (isset($_POST['time'])) && (isset($_POST['week'])))
+			if((isset($_POST['task'])) && (isset($_POST['time'])) && (isset($_POST['week'])))
 			{
-				$stuff = $_POST['stuff'];
+				$task = $_POST['task'];
 				$time = $_POST['time'];
 				$week = $_POST['week'];	
 				if($week == "this")
@@ -27,9 +27,9 @@
 					$week_number = date('W', $nextWeek);
 					$schedule_id = $time."_schedule_id";
 				}
-				$stuff = array("stuff" => $stuff , "week_number" => $week_number);
+				$task = array("task" => $task , "week_number" => $week_number);
 				$table = $time."_schedule";
-				$get_query = $this->main_model->get_specify_data("*",$schedule_id,$stuff,$table);
+				$get_query = $this->main_model->get_specify_data("*",$schedule_id,$task,$table);
 				$row_count = $get_query->num_rows();
 				
 				if($row_count >=1 )
@@ -76,7 +76,7 @@
 							  
 								  
 				$table = $schedule->time."_schedule";
-				$where_field = array("stuff" => $schedule->stuff ,"week_number" => $week_number);
+				$where_field = array("task" => $schedule->task ,"week_number" => $week_number);
 				$this->main_model->update_data2($where_field,$data,$table);
 				
 				echo(true);
@@ -86,9 +86,9 @@
 		public function deleteSchedule()
 		{
 			$this->load->model("main_model");
-			if((isset($_POST['stuff'])) && (isset($_POST['time'])) && (isset($_POST['week'])))
+			if((isset($_POST['task'])) && (isset($_POST['time'])) && (isset($_POST['week'])))
 			{
-				$stuff = $_POST['stuff'];
+				$task = $_POST['task'];
 				$time = $_POST['time'];
 				$week = $_POST['week'];
 				if($week == "this")
@@ -114,12 +114,12 @@
 							  'remark' => "active");
 								  
 				$table = $time."_schedule";
-				$where_field = array("stuff" => $stuff ,"week_number" => $week_number);
+				$where_field = array("task" => $task ,"week_number" => $week_number);
 				$this->main_model->update_data2($where_field,$data,$table);
 				
-				$stuff = array("stuff" => $stuff,"week_number" => $week_number);
+				$task = array("task" => $task,"week_number" => $week_number);
 				$table = $time."_schedule";
-				$get_query = $this->main_model->get_specify_data("*","schedule_id",$stuff,$table);
+				$get_query = $this->main_model->get_specify_data("*","schedule_id",$task,$table);
 				
 				$schedule_data = $get_query->row_array();
 				echo json_encode($schedule_data);

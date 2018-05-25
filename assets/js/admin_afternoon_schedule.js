@@ -25,7 +25,7 @@ function update_afternoon_schedule(afternoon_schedule_id)
 		
 		var afternoonScheduleObject = {
 			"afternoon_schedule_id":afternoon_schedule_id,
-			"stuff":$("#"+afternoon_schedule_id+"_stuff").text().trim(),
+			"task":$("#"+afternoon_schedule_id+"_task").text().trim(),
 			"monday":$("#"+afternoon_schedule_id+"_monday").text().trim(),
 			"tuesday":$("#"+afternoon_schedule_id+"_tuesday").text().trim(),
 			"wednesday":$("#"+afternoon_schedule_id+"_wednesday").text().trim(),
@@ -92,7 +92,7 @@ $(document).ready(function(){
 	});
 	
 	$(document).on('click','.delete',function(){
-		if(confirm("Do you confirm want to delete the stuff?"))
+		if(confirm("Do you confirm want to delete the task?"))
 		{
 			var txt = $(this).attr("id");
 			var afternoon_schedule_id = txt.match(/\d/g);
@@ -110,7 +110,7 @@ $(document).ready(function(){
 	});
 	
 	$(document).on('click','.update',function(){
-		if(confirm("Do you confirm want to update the stuff?"))
+		if(confirm("Do you confirm want to update the task?"))
 		{
 			var txt = $(this).attr("id");
 			var afternoon_schedule_id = txt.match(/\d/g);

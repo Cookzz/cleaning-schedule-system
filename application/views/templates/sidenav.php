@@ -12,10 +12,10 @@
                   <a href="<?php echo base_url();?>adminHomeController/viewUserPage">User Table</a>
                 </li>
                 <li>
-                  <a href="<?php echo base_url();?>adminHomeController/viewStuffLocationPage">Stuff Location Table</a>
+                  <a href="<?php echo base_url();?>adminHomeController/viewTaskLocationPage">Task Location Table</a>
                 </li>
                 <li>
-                  <a href="<?php echo base_url();?>adminHomeController/viewSubStuffPage">Sub_Stuff Table</a>
+                  <a href="<?php echo base_url();?>adminHomeController/viewSubTaskPage">Sub_Task Table</a>
                 </li>
                 <li>
                   <a href="<?php echo base_url();?>adminHomeController/viewDutyPage">Duty Table</a>

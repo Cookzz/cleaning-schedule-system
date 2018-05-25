@@ -2,9 +2,9 @@ function post_rating(mark)
 {
 	var baseUrl = $("#baseURL").val();
 	var url = baseUrl+"ratingController/ratingMark";
-	var stuff = $("#stuff").val();
+	var task = $("#task").val();
 	var fd = new FormData();
-	fd.append('stuff',stuff);
+	fd.append('task',task);
 	fd.append('mark',mark);
 
 	$.ajax({
@@ -36,13 +36,13 @@ function post_staff_id()
 		success: function(message){
 			if(message == true)
 			{
-				if($('#stuff').prop('disabled'))
+				if($('#task').prop('disabled'))
 				{
-					$("#stuff").prop("disabled",false);
+					$("#task").prop("disabled",false);
 				}
 				else
 				{
-					$("#stuff").prop("disabled",true);
+					$("#task").prop("disabled",true);
 				}
 				
 				$("#staff_id").val("");
@@ -76,7 +76,7 @@ $(document).ready(function(){
 		
 	});
 	
-	$("#fixStuff").click(function(){
+	$("#fixTask").click(function(){
 		post_staff_id();
 		
 	});

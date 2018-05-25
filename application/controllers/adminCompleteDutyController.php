@@ -16,8 +16,8 @@
 
 				$complete_duty_id = $completeDuty->complete_duty_id;
 					
-				$data = array('complete_duty_stuff' => $completeDuty->complete_duty_stuff,
-							  'complete_duty_substuff' => $completeDuty->complete_duty_substuff,
+				$data = array('complete_duty_task' => $completeDuty->complete_duty_task,
+							  'complete_duty_subtask' => $completeDuty->complete_duty_subtask,
 							  'complete_duty_cleaner' => $completeDuty->complete_duty_cleaner,
 							  'complete_duty_comment' => $completeDuty->complete_duty_comment,
 							  'complete_duty_schedule' => $completeDuty->complete_duty_schedule,

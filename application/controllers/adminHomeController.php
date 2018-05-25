@@ -138,7 +138,7 @@
 			$this->load->view('templates/footer',$data); 
 		}
 		
-		public function viewStuffLocationPage($page = 'admin_stuff')
+		public function viewTaskLocationPage($page = 'admin_task')
 		{
 			$this->load->library('session');
 			if(empty($_SESSION['user_access_level']))
@@ -151,8 +151,8 @@
 			}
 			
 			$this->load->model("main_model");
-			$query = $this->main_model->get_data_order("*","stuff","stuff");
-			$data['stuffs'] = $query->result_array();
+			$query = $this->main_model->get_data_order("*","task","task");
+			$data['tasks'] = $query->result_array();
 				
 			$this->viewNav();
 			$this->load->view("templates/sidenav");
@@ -161,7 +161,7 @@
 			$this->load->view('templates/footer',$data); 
 		}
 		
-		public function viewSubStuffPage($page = 'admin_substuff')
+		public function viewSubTaskPage($page = 'admin_subtask')
 		{
 			$this->load->library('session');
 			if(empty($_SESSION['user_access_level']))
@@ -174,8 +174,8 @@
 			}
 			
 			$this->load->model("main_model");
-			$query = $this->main_model->get_data_order("*","sub_stuff","sub_stuff");
-			$data['sub_stuffs'] = $query->result_array();
+			$query = $this->main_model->get_data_order("*","sub_task","sub_task");
+			$data['sub_tasks'] = $query->result_array();
 				
 			$this->viewNav();
 			$this->load->view("templates/sidenav");
@@ -198,14 +198,14 @@
 			
 			$this->load->model("main_model");
 				
-			$query = $this->main_model->get_data_order("*","duty_stuff","duty");
+			$query = $this->main_model->get_data_order("*","duty_task","duty");
 			$data['duties'] = $query->result_array();
 				
-			$query = $this->main_model->get_data_order("*","stuff","stuff");
-			$data['stuffs'] = $query->result_array();
+			$query = $this->main_model->get_data_order("*","task","task");
+			$data['tasks'] = $query->result_array();
 				
-			$query = $this->main_model->get_data_order("*","sub_stuff","sub_stuff");
-			$data['sub_stuffs'] = $query->result_array();
+			$query = $this->main_model->get_data_order("*","sub_task","sub_task");
+			$data['sub_tasks'] = $query->result_array();
 				
 			$this->viewNav();
 			$this->load->view("templates/sidenav");
