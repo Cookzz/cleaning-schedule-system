@@ -21,26 +21,26 @@
     transform: perspective(180px) rotateX(0deg) rotateY(180deg); }
   100% {
     transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
-#stuff_table, #admin_stuff_table {
+#task_table {
   width: 100%; }
-  #stuff_table th, #admin_stuff_table th {
+  #task_table .tableTitle th {
     color: white;
     background: #1E88E5;
     border: 1px solid #1E88E5; }
-  #stuff_table .titleLabel, #admin_stuff_table .titleLabel {
-    width: 10%; }
-  #stuff_table td .update, #admin_stuff_table td .update {
+  #task_table .titleLabel {
+    width: 5%; }
+  #task_table td .update {
     background: #3498DB;
     border: 1px solid #3498DB;
     color: white;
     padding: 10px 30px 10px 30px;
     border-radius: 5px;
     cursor: pointer; }
-  #stuff_table td .delete, #admin_stuff_table td .delete {
+  #task_table td .delete {
     width: 80px;
     height: 30px;
     padding: 5px 30px 5px 30px;
     border-radius: 5px;
     cursor: pointer; }
 
-/*# sourceMappingURL=adminStuffStyle.css.map */
+/*# sourceMappingURL=supervisorTaskStyle.css.map */

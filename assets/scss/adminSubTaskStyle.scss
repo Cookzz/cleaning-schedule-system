@@ -1,0 +1,5 @@
+@import "supervisorSubTaskStyle.scss";
+
+#admin_sub_task_table {
+    @extend #sub_task_table;
+}

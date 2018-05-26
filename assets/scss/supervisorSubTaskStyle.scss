@@ -1,17 +1,23 @@
 @import "global.scss";
 
 //TABLE STYLE
-#stuff_table {
+#sub_task_table {
     width: 100%;
     
-    th {
-        color: white;
-        background: $tableheadertheme;
-        border: 1px solid $tableheadertheme;
-    }
-    
-    .titleLabel {
-        width: 10%;
+    .tableTitle {
+        th {
+            color: white;
+            background: $tableheadertheme;
+            border: 1px solid $tableheadertheme;
+        }
+        
+        .titleLabel {
+            width: 5%;
+        }
+        
+        .secondaryTitleLabel {
+            width: 40%;
+        }
     }
     
     td {

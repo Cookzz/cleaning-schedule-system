@@ -80,7 +80,7 @@
 	<div class="table-responsive">
 		<table id="user_table" class="table table-striped table-bordered display" style="width:100%" border="1">
 			<thead>
-				<tr>
+				<tr class="tableTitle">
 					<th>User ID</th>
 					<th>User Name</th>
 					<th>User Password</th>

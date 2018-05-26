@@ -19,7 +19,7 @@
 <a href="<?php echo base_url().$link;?>"><?= $link_word;?></a>
 <!--same concept with complete duty page, pls refer back it-->
 <h2><?= $title?></h2><hr/>
-<table id="pending_duty_table" class="table table-striped table-bordered" border="1">
+<table id="pending_duty_table" class="table table-striped table-bordered table-responsive" border="1">
 	<thead>
 		<tr>
 			<th>No</th>

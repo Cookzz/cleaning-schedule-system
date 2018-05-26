@@ -22,9 +22,9 @@
 
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 	<!--This Table is to output the data which by controller and delete,update button-->
-	<table id="special_duty_table" class="table table-striped table-bordered" border="1">
+	<table id="special_duty_table" class="table table-striped table-bordered table-responsive" border="1">
 		<thead>
-			<tr>
+			<tr class="tableTitle">
 				<th>No.</th>
 				<th>Special Duty Title</th>
 				<th>Special Duty Detail</th>

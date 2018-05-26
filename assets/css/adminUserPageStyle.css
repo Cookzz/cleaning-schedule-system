@@ -24,7 +24,7 @@
 /* ---------------------------------------------------
     TABLE STYLE
 ----------------------------------------------------- */
-#user_table th {
+#user_table .tableTitle th {
   color: white;
   background: #1E88E5;
   border: 1px solid #1E88E5; }

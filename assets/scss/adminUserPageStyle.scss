@@ -5,11 +5,12 @@
 
 //User table
 #user_table {
-
-    th {
-        color: white;
-        background: $tableheadertheme;
-        border: 1px solid $tableheadertheme;
+    .tableTitle {
+        th {
+            color: white;
+            background: $tableheadertheme;
+            border: 1px solid $tableheadertheme;
+        }
     }
     
     #user_table_body {
@@ -34,7 +35,6 @@
             }
         }
     }
-    
 }
 
 /* ---------------------------------------------------

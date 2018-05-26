@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/supervisorSubTaskStyle.css">
 
 <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
@@ -28,10 +29,10 @@
 	</table>
 	<!--This is the end of first table-->
 	<!--Second Table is to output the data which by controller and delete,update button-->
-	<table id="sub_task_table" class="table table-striped table-bordered" style="width:40%" border="1">
+	<table id="sub_task_table" class="table table-striped table-bordered table-responsive" border="1">
 		<thead>
-			<tr>
-				<th>No.</th><th>Sub Task</th><th>Update</th><th>Delete</th>
+			<tr class="tableTitle">
+				<th class="titleLabel">No.</th><th class="secondaryTitleLabel">Sub Task</th><th>Update</th><th>Delete</th>
 			</tr>
 		</thead>
 		<tbody>

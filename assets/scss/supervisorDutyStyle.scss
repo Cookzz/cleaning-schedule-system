@@ -1,0 +1,29 @@
+@import "global.scss";
+
+#duty_table {
+    width: 100%;
+    overflow-x: scroll;
+    
+    .tableTitle {
+        th {
+            color: white;
+            background: $tableheadertheme;
+            border: 1px solid $tableheadertheme;
+        }
+        
+        .titleLabel {
+            width: 5%;
+        }
+    }
+    
+        td {
+            .delete {
+                width: 80px;
+                height: 30px;
+                padding: 5px 30px 5px 30px;
+                border-radius: 5px;
+
+                cursor: pointer;
+            }
+        }
+    }

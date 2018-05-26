@@ -29,9 +29,9 @@
 	</table>
 	<!--This is the end of first table-->
 	<!--Second Table is to output the data which by controller and delete,update button-->
-	<table id="task_table" class="table table-striped table-bordered" border="1">
+	<table id="task_table" class="table table-striped table-bordered table-responsive" border="1">
 		<thead>
-			<tr>
+			<tr class="tableTitle">
 				<th class="titleLabel">No.</th><th>Task Location</th><th>Update</th><th>Delete</th>
 			</tr>
 		</thead>

@@ -17,6 +17,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/print.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/adminSubTaskStyle.css">
 
 </head>
 <body>  
@@ -33,9 +34,9 @@
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 	<div class="table-responsive">
 	<!--Table is to output the data which by controller and delete,update button-->
-		<table id="sub_task_table" class="table table-striped table-bordered" border="1">
+		<table id="sub_task_table" class="table table-striped table-bordered table-responsive" border="1">
 			<thead>
-				<tr>
+				<tr class="tableTitle">
 					<th class="titleLabel">No.</th><th>Sub Task</th><th>Update</th><th>Delete</th>
 				</tr>
 			</thead>

@@ -44,8 +44,8 @@
 <table border="1">
 	<tr>
 		<td><center>Number of Cleaner</center></td>
-		<td><center>Cleaner<center></td>
-		<td><center>Delete<center></td>
+        <td><center>Cleaner</center></td>
+        <td><center>Delete</center></td>
 	</tr>
 	<tbody id="original_cleaners_area">
 		<?php $i=0; foreach($special_duty_cleaners as $special_duty_cleaner): $i++;?>
@@ -62,7 +62,7 @@
 <table border="1">
 	<tr>
 		<td><center>Number of Cleaner</center></td>
-		<td><center>Cleaner<center></td>
+        <td><center>Cleaner</center></td>
 	</tr>
 	<tbody id="new_cleaners_area">
 		<!--Please the front ender go modify_special_duty.js insert_cleaner_dropdown function to design the tr td-->

@@ -21,20 +21,26 @@
     transform: perspective(180px) rotateX(0deg) rotateY(180deg); }
   100% {
     transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
-#duty_table {
-  width: 100%;
-  overflow-x: scroll; }
-  #duty_table .tableTitle th {
+#task_table, #admin_task_table {
+  width: 100%; }
+  #task_table .tableTitle th, #admin_task_table .tableTitle th {
     color: white;
     background: #1E88E5;
     border: 1px solid #1E88E5; }
-  #duty_table .tableTitle .titleLabel {
+  #task_table .titleLabel, #admin_task_table .titleLabel {
     width: 5%; }
-  #duty_table td .delete {
+  #task_table td .update, #admin_task_table td .update {
+    background: #3498DB;
+    border: 1px solid #3498DB;
+    color: white;
+    padding: 10px 30px 10px 30px;
+    border-radius: 5px;
+    cursor: pointer; }
+  #task_table td .delete, #admin_task_table td .delete {
     width: 80px;
     height: 30px;
     padding: 5px 30px 5px 30px;
     border-radius: 5px;
     cursor: pointer; }
 
-/*# sourceMappingURL=supervisorDutyStyle.css.map */
+/*# sourceMappingURL=adminTaskStyle.css.map */

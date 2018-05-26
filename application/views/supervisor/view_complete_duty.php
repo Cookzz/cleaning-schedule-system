@@ -19,7 +19,7 @@
 <a href="<?php echo base_url().$link;?>"><?= $link_word;?></a>
 <h2><?= $title?></h2><hr/>
 <!--Table to show complete duty table-->
-<table id="complete_duty_table" class="table table-striped table-bordered" border="1">
+<table id="complete_duty_table" class="table table-striped table-bordered table-responsive" border="1">
 	<thead>
 		<tr>
 			<th>No</th>

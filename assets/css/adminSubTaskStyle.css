@@ -21,26 +21,28 @@
     transform: perspective(180px) rotateX(0deg) rotateY(180deg); }
   100% {
     transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
-#stuff_table {
+#sub_task_table, #admin_sub_task_table {
   width: 100%; }
-  #stuff_table th {
+  #sub_task_table .tableTitle th, #admin_sub_task_table .tableTitle th {
     color: white;
     background: #1E88E5;
     border: 1px solid #1E88E5; }
-  #stuff_table .titleLabel {
-    width: 10%; }
-  #stuff_table td .update {
+  #sub_task_table .tableTitle .titleLabel, #admin_sub_task_table .tableTitle .titleLabel {
+    width: 5%; }
+  #sub_task_table .tableTitle .secondaryTitleLabel, #admin_sub_task_table .tableTitle .secondaryTitleLabel {
+    width: 40%; }
+  #sub_task_table td .update, #admin_sub_task_table td .update {
     background: #3498DB;
     border: 1px solid #3498DB;
     color: white;
     padding: 10px 30px 10px 30px;
     border-radius: 5px;
     cursor: pointer; }
-  #stuff_table td .delete {
+  #sub_task_table td .delete, #admin_sub_task_table td .delete {
     width: 80px;
     height: 30px;
     padding: 5px 30px 5px 30px;
     border-radius: 5px;
     cursor: pointer; }
 
-/*# sourceMappingURL=supervisorStuffStyle.css.map */
+/*# sourceMappingURL=adminSubTaskStyle.css.map */

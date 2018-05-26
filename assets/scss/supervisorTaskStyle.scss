@@ -1,6 +1,7 @@
 @import "global.scss";
 
-#special_duty_table {
+//TABLE STYLE
+#task_table {
     width: 100%;
     
     .tableTitle {
@@ -9,6 +10,10 @@
             background: $tableheadertheme;
             border: 1px solid $tableheadertheme;
         }
+    }
+    
+    .titleLabel {
+        width: 5%;
     }
     
     td {

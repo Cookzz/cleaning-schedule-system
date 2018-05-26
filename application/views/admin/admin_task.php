@@ -33,9 +33,9 @@
 <!--This form got one table, one is to let user to insert new task, one is to display the task table-->
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 	<div class="table-responsive">
-		<table id="admin_task_table" class="table table-striped table-bordered" border="1">
+		<table id="admin_task_table" class="table table-striped table-bordered table-responsive" border="1">
 			<thead>
-				<tr>
+				<tr class="tableTitle">
 					<th class="titleLabel">No.</th><th>Task Location</th><th>Update</th><th>Delete</th>
 				</tr>
 			</thead>
