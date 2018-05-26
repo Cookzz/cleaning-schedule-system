@@ -48,6 +48,11 @@
 				</tr>
 				<?php $i = $i+1?><?php endforeach; ?>	
 			</tbody>
+			<tfoot>
+				<tr>
+					<th class="titleLabel">No.</th><th>Task Location</th><th>Update</th><th>Delete</th>
+				</tr>
+			</tfoot>
 		</table>
 	</div>
 </form>

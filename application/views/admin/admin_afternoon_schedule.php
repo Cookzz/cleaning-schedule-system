@@ -63,6 +63,23 @@
 				</tr>
 				<?php $i = $i+1?><?php endforeach; ?>	
 			</tbody>
+			<tfoot>
+				<tr>
+					<th>No.</th>
+					<th>Task Location</th>
+					<th>Monday</th>
+					<th>Tuesday</th>
+					<th>Wednesday</th>
+					<th>Thursday</th>
+					<th>Friday</th>
+					<th>Saturday</th>
+					<th>Sunday</th>
+					<th>Remark</th>
+					<th>Week Number</th>
+					<th>Update</th>
+					<th>Delete</th>
+				</tr>
+			</tfoot>
 		</table>
 	</div>
 </form>

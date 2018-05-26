@@ -57,8 +57,16 @@ function update_task(task_id)
 $(document).ready(function(){
 	
 	var d= new Date();
+	var i =0;
 	
-	$('#task_table').DataTable({
+	$('#task_table tfoot th').each( function () {
+
+        var title = $(this).text();
+        $(this).html( '<input type="text" id="'+"column_search"+i+'" placeholder="Search '+title+'" />' );
+		i++;
+    } );
+	
+	var table = $('#task_table').DataTable({
 		"pageLength": 10,
 		"order": [[ 1, "asc" ]],
 		"dom": 'Bfrtip',
@@ -81,6 +89,18 @@ $(document).ready(function(){
 			}
 		]
 	});
+	
+	table.columns().every( function () {
+        var that = this;
+ 
+        $( 'input', this.footer() ).on( 'keyup change', function () {
+            if ( that.search() !== this.value ) {
+                that
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
 	
 	$("form").submit(function(event){
 		event.preventDefault();

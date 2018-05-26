@@ -61,6 +61,20 @@
 			<!--end of the foreach loop-->
 		</tbody>
 		<!--end of the tbody-->
+		<tfoot>
+			<tr>
+				<th>No</th>
+				<th>Cleaner</th>
+				<th>Task Location</th>
+				<th>Sub Task</th>
+				<th>Complete In</th>
+				<th>Comment</th>
+				<th>Time</th>
+				<th>Date</th>
+				<th>Update</th>
+				<th>Delete</th>
+			</tr>
+		</tfoot>
 	</table>
 </div>
 

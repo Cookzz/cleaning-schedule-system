@@ -61,8 +61,16 @@ function update_morning_schedule(morning_schedule_id)
 $(document).ready(function(){
 	
 	var d= new Date();
+	var i =0;
 	
-	$('#morning_schedule_table').DataTable({
+	$('#morning_schedule_table tfoot th').each( function () {
+
+        var title = $(this).text();
+        $(this).html( '<input type="text" id="'+"column_search"+i+'" placeholder="Search '+title+'" />' );
+		i++;
+    } );
+	
+	var table = $('#morning_schedule_table').DataTable({
 		"pageLength": 8,
 		"order": [[ 0, "asc" ]],
 		"dom": 'Bfrtip',
@@ -85,6 +93,18 @@ $(document).ready(function(){
 			}
 		]
 	});
+	
+	table.columns().every( function () {
+        var that = this;
+ 
+        $( 'input', this.footer() ).on( 'keyup change', function () {
+            if ( that.search() !== this.value ) {
+                that
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
 	
 	$("form").submit(function(event){
 		event.preventDefault();

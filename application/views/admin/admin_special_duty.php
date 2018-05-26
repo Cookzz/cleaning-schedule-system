@@ -55,6 +55,17 @@
 			<!--end of the foreach loop-->
 		</tbody>
 		<!--end of the tbody-->
+		<tfoot>
+			<tr>
+				<th>No</th>
+				<th>Special Duty Title</th>
+				<th>Special Duty Detail</th>
+				<th>Special Duty Time</th>
+				<th>Special Duty Date</th>
+				<th>Update</th>
+				<th>Delete</th>
+			</tr>
+		</tfoot>
 	</table>
 </div>
 

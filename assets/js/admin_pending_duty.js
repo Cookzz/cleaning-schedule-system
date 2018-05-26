@@ -40,8 +40,16 @@ function update_user_data(pending_duty_id)
 $(document).ready(function(){
 	
 	var d= new Date();
+	var i =0;
 	
-	$('#pending_duty_table').DataTable({
+	$('#pending_duty_table tfoot th').each( function () {
+
+        var title = $(this).text();
+        $(this).html( '<input type="text" id="'+"column_search"+i+'" placeholder="Search '+title+'" />' );
+		i++;
+    } );
+	
+	var table = $('#pending_duty_table').DataTable({
 		"pageLength": 8,
 		"order": [[ 0, "asc" ]],
 		"dom": 'Bfrtip',
@@ -64,6 +72,18 @@ $(document).ready(function(){
 			}
 		]
 	});
+	
+	table.columns().every( function () {
+        var that = this;
+ 
+        $( 'input', this.footer() ).on( 'keyup change', function () {
+            if ( that.search() !== this.value ) {
+                that
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
 	
 	$(document).on('click','.delete',function(){
 		var txt = $(this).attr("id");

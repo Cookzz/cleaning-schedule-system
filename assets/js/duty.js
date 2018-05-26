@@ -98,11 +98,32 @@ function delete_duty(duty_id)
 
 $(document).ready(function(){
 	
-	$('#duty_table').DataTable({
-		"paging": false,
+	var i =0;
+	
+	$('#duty_table tfoot th').each( function () {
+
+        var title = $(this).text();
+        $(this).html( '<input type="text" id="'+"column_search"+i+'" placeholder="Search '+title+'" />' );
+		i++;
+    } );
+	
+	var table = $('#duty_table').DataTable({
+		"pageLength": 8,
 		"info": false,
 		"order": [[ 1, "asc" ]],
 	});
+	
+	table.columns().every( function () {
+        var that = this;
+ 
+        $( 'input', this.footer() ).on( 'keyup change', function () {
+            if ( that.search() !== this.value ) {
+                that
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
 	
 	$("form").submit(function(event){
 		event.preventDefault();

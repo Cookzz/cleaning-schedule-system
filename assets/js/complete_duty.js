@@ -28,10 +28,31 @@ function update_complete_duty_data(id)
 
 $(document).ready(function(){
 	
-	$('#complete_duty_table').DataTable({
-		"pageLength": 10,
+	var i =0;
+	
+	$('#complete_duty_table tfoot th').each( function () {
+
+        var title = $(this).text();
+        $(this).html( '<input type="text" id="'+"column_search"+i+'" placeholder="Search '+title+'" />' );
+		i++;
+    } );
+	
+	var table = $('#complete_duty_table').DataTable({
+		"pageLength": 8,
 		"order": [[ 7, "desc" ]]
 	});
+	
+	table.columns().every( function () {
+        var that = this;
+ 
+        $( 'input', this.footer() ).on( 'keyup change', function () {
+            if ( that.search() !== this.value ) {
+                that
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
 	
 	$(document).on('click','.delete',function(){
 		var txt = $(this).attr("id");

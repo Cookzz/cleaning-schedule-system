@@ -108,11 +108,32 @@ function update_sub_task(sub_task_id)
 
 $(document).ready(function(){
 	
-	$('#sub_task_table').DataTable({
-		"paging": false,
+	var i =0;
+	
+	$('#sub_task_table tfoot th').each( function () {
+
+        var title = $(this).text();
+        $(this).html( '<input type="text" id="'+"column_search"+i+'" placeholder="Search '+title+'" />' );
+		i++;
+    } );
+	
+	var table = $('#sub_task_table').DataTable({
+		"pageLength": 8,
 		"order": [[ 0, "asc" ]],
 		"info":false,
 	});
+	
+	table.columns().every( function () {
+        var that = this;
+ 
+        $( 'input', this.footer() ).on( 'keyup change', function () {
+            if ( that.search() !== this.value ) {
+                that
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
 	
 	$("form").submit(function(event){
 		event.preventDefault();

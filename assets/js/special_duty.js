@@ -51,11 +51,32 @@ function delete_task(special_duty_id)
 
 $(document).ready(function(){
 	
-	$('#special_duty_table').DataTable({
-		"paging": false,
+	var i =0;
+	
+	$('#special_duty_table tfoot th').each( function () {
+
+        var title = $(this).text();
+        $(this).html( '<input type="text" id="'+"column_search"+i+'" placeholder="Search '+title+'" />' );
+		i++;
+    } );
+	
+	var table = $('#special_duty_table').DataTable({
+		"pageLength": 8,
 		"info": false,
 		"order": [[ 0, "asc" ]],
 	});
+	
+	table.columns().every( function () {
+        var that = this;
+ 
+        $( 'input', this.footer() ).on( 'keyup change', function () {
+            if ( that.search() !== this.value ) {
+                that
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
 	
 	$(document).on('click','.delete',function(){
 		if(confirm("Do you confirm want to delete this special duty?"))

@@ -115,6 +115,17 @@
 			</tbody>
 			<!--This is the end of foreach-->
 			<tfoot>
+				<th>User ID</th>
+				<th>User Name</th>
+				<th>User Password</th>
+				<th>User IC/No</th>
+				<th>User Email</th>
+				<th>User Position</th>
+				<th>User Position</th>
+				<th>User Access Level</th>
+				<th>Join Date</th>
+				<th>Update</th>
+				<th>Delete</th>
 			</tfoot>
 		</table>
 	</div>

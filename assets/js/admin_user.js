@@ -211,9 +211,20 @@ function update_user_data(id)
 	}
 }
 
+function dataTableSearch(table,columnNumber,columnSearch)
+{
+	$('#column_search'+columnNumber).on( 'keyup change', function () {
+    table
+        .columns( columnSearch )
+        .search( this.value )
+        .draw();
+	} );
+}
+
 $(document).ready(function(){
 	
 	var d= new Date();
+	var i = 0;
 	
 	$("#IC").click(function(){
 		 $('#newUserICField').attr('maxlength', '12');
@@ -223,29 +234,59 @@ $(document).ready(function(){
 		 $('#newUserICField').attr('maxlength', '20');
 	});
 	
+	$('#user_table tfoot th').each( function () {
+
+        var title = $(this).text();
+        $(this).html( '<input type="text" id="'+"column_search"+i+'" placeholder="Search '+title+'" />' );
+		i++;
+    } );
+	
 	var table = $('#user_table').DataTable({
-		"pageLength": 10,
+		"pageLength": 8,
 		"order": [[ 8, "desc" ]],
+		"columns": [
+						null,
+						null,
+						null,
+						null,
+						null,
+						null,
+						{"searchable": false},
+						null,
+						null,
+						{"searchable": false},
+						{"searchable": false}	
+					],
 		"dom": 'Bfrtip',
         "buttons": [
-            {
-				extend: 'print',
-				autoPrint: true,
-                exportOptions: {columns: '0,1,2,3,4,5,7,8'},
-				title:'User Table',
-				messageTop:"Print Date : " + d.getDate() + " / " + (d.getMonth()+1) +' / '+ d.getFullYear(),
-				customize: function ( win ) {
-                    $(win.document.body)
-                        .css( 'font-size', '12pt' );
+				{
+					extend: 'print',
+					autoPrint: true,
+					exportOptions: {columns: '0,1,2,3,4,5,7,8'},
+					title:'User Table',
+					messageTop:"Print Date : " + d.getDate() + " / " + (d.getMonth()+1) +' / '+ d.getFullYear(),
+					customize: function ( win ) {
+						$(win.document.body)
+							.css( 'font-size', '12pt' );
 
- 
-                    $(win.document.body).find( 'table' )
-                        .addClass('compact')
-                        .css( 'font-size', 'inherit' );
-                }
-			}
-		]
-	});
+	 
+						$(win.document.body).find( 'table' )
+							.addClass('compact')
+							.css( 'font-size', 'inherit' );
+					}
+				}
+			]     
+    } );
+
+	dataTableSearch(table,6,5);
+	dataTableSearch(table,0,0);
+	dataTableSearch(table,1,1);
+	dataTableSearch(table,2,2);
+	dataTableSearch(table,3,3);
+	dataTableSearch(table,4,4);
+	dataTableSearch(table,7,7);
+	dataTableSearch(table,8,8);
+	
 	table.column( 5 ).visible( false );
 	
 	$("form").submit(function(event){

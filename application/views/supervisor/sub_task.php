@@ -43,6 +43,11 @@
 			</tr>
 			<?php $i = $i+1?><?php endforeach; ?>	
 		</tbody>
+		<tfoot>
+			<tr>
+				<th>No.</th><th>Sub Task</th><th>Update</th><th>Delete</th>
+			</tr>
+		</tfoot>
 	</table>
 	<!--This is the end of second table-->
 </form>

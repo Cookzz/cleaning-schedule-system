@@ -50,6 +50,19 @@
 		<?php $i++;?>
 		<?php endforeach; ?>
 	</tbody>
+	<tfoot>
+		<tr>
+			<th>No</th>
+			<th>Cleaner</th>
+			<th>Task Location</th>
+			<th>Sub Task</th>
+			<th>Comment</th>
+			<th>Time</th>
+			<th>Date</th>
+			<th>Update</th>
+			<th>Delete</th>
+		</tr>
+	</tfoot>
 </table>
 
 <!--Hidden value to external js file-->
