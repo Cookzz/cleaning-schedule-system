@@ -1,3 +1,49 @@
+@import url("https://fonts.googleapis.com/css?family=News+Cycle:700,1000");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Cairo");
+/* ---------------------------------------------------
+    Navigation Bar Values
+----------------------------------------------------- */
+/* ---------------------------------------------------
+    ANIMATION
+----------------------------------------------------- */
+@-webkit-keyframes sk-rotateplane {
+  0% {
+    -webkit-transform: perspective(120px); }
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg); }
+  100% {
+    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg); } }
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(180px) rotateX(0deg) rotateY(0deg); }
+  50% {
+    transform: perspective(180px) rotateX(0deg) rotateY(180deg); }
+  100% {
+    transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
+#pending_duty_table {
+  width: 100%;
+  overflow-x: scroll; }
+  #pending_duty_table .tableTitle th {
+    color: white;
+    background: #1E88E5;
+    border: 1px solid #1E88E5; }
 
+.viewOutstandingBtn {
+  float: right;
+  background: #0066CC;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 3px;
+  color: white; }
+  .viewOutstandingBtn:link {
+    color: white;
+    text-decoration: none; }
+  .viewOutstandingBtn:visited {
+    color: white;
+    text-decoration: none; }
+
+.pageTitle {
+  margin-bottom: 0px; }
 
 /*# sourceMappingURL=supervisorPendingDutyStyle.css.map */

@@ -1,0 +1,37 @@
+@import "global.scss";
+
+#pending_duty_table {
+    width: 100%;
+    overflow-x: scroll;
+    
+    .tableTitle {
+        th {
+            color: white;
+            background: $tableheadertheme;
+            border: 1px solid $tableheadertheme;
+        }
+    }
+}
+
+.viewOutstandingBtn {
+    float: right;
+    background: $subbuttontheme;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 3px;
+    color: white;
+    
+    &:link {
+        color: white;
+        text-decoration: none;
+    }
+    
+    &:visited {
+        color: white;
+        text-decoration: none;
+    }
+}
+
+.pageTitle {
+    margin-bottom: 0px;
+}
