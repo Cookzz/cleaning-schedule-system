@@ -114,95 +114,113 @@
 						//Select morning schedule and insert to pending order
 						$query = $this->main_model->get_specify_data("*","task",$week_number,"morning_schedule");
 						$schedule_results = $query->result_array();
+						$morning_schedule_results_count = $query->num_rows();
 						
-						foreach($schedule_results as $schedule_result)
+						if($morning_schedule_results_count > 0)
 						{
-							$task = $schedule_result["task"];
-							
-							$data = array("duty_task"=>$task);
-							$query = $this->main_model->get_specify_data("*","duty_task",$data,"duty");
-							$duty_results = $query->result_array();
-							$duty_number = $query->num_rows();
-							if($duty_number != 0)
+							foreach($schedule_results as $schedule_result)
 							{
-								foreach($duty_results as $duty_result)
+								$task = $schedule_result["task"];
+								
+								$data = array("duty_task"=>$task);
+								$query = $this->main_model->get_specify_data("*","duty_task",$data,"duty");
+								$duty_results = $query->result_array();
+								$duty_number = $query->num_rows();
+								if($duty_number != 0)
+								{
+									foreach($duty_results as $duty_result)
+									{
+										if((!empty($schedule_result[$day])) && ($schedule_result[$day] != "NA"))
+										{
+											$duty_sub_task = $duty_result['duty_sub_task'];
+										
+											$data = array("pending_duty_task"=>$task,
+													"pending_duty_subtask"=>$duty_sub_task,
+													"pending_duty_cleaner"=>$schedule_result[$day],
+													"pending_duty_schedule"=>"morning",
+													"pending_duty_date"=>date("Y/m/d"));
+													
+											$query = $this->main_model->insert_data("pending_duty",$data);
+										}
+										
+									}
+								}
+								else
 								{
 									if((!empty($schedule_result[$day])) && ($schedule_result[$day] != "NA"))
-									{
-										$duty_sub_task = $duty_result['duty_sub_task'];
-									
+									{										
 										$data = array("pending_duty_task"=>$task,
-												"pending_duty_subtask"=>$duty_sub_task,
+												"pending_duty_subtask"=>"No any subtask",
 												"pending_duty_cleaner"=>$schedule_result[$day],
 												"pending_duty_schedule"=>"morning",
 												"pending_duty_date"=>date("Y/m/d"));
 												
 										$query = $this->main_model->insert_data("pending_duty",$data);
 									}
-									
 								}
+								
 							}
-							else
-							{
-								if((!empty($schedule_result[$day])) && ($schedule_result[$day] != "NA"))
-								{										
-									$data = array("pending_duty_task"=>$task,
-											"pending_duty_subtask"=>"No any subtask",
-											"pending_duty_cleaner"=>$schedule_result[$day],
-											"pending_duty_schedule"=>"morning",
-											"pending_duty_date"=>date("Y/m/d"));
-											
-									$query = $this->main_model->insert_data("pending_duty",$data);
-								}
-							}
-							
 						}
+						
+						
 						
 						//Select afternoon schedule and insert to pending order
 						$query = $this->main_model->get_specify_data("*","task",$week_number,"afternoon_schedule");
 						$schedule_results = $query->result_array();
+						$afternoon_schedule_results_count = $query->num_rows();
 						
-						foreach($schedule_results as $schedule_result)
+						if($afternoon_schedule_results_count > 0)
 						{
-							$task = $schedule_result["task"];
-							
-							$data = array("duty_task"=>$task);
-							$query = $this->main_model->get_specify_data("*","duty_task",$data,"duty");
-							$duty_results = $query->result_array();
-							$duty_number = $query->num_rows();
-							if($duty_number != 0)
+							foreach($schedule_results as $schedule_result)
 							{
-								foreach($duty_results as $duty_result)
+								$task = $schedule_result["task"];
+								
+								$data = array("duty_task"=>$task);
+								$query = $this->main_model->get_specify_data("*","duty_task",$data,"duty");
+								$duty_results = $query->result_array();
+								$duty_number = $query->num_rows();
+								if($duty_number != 0)
+								{
+									foreach($duty_results as $duty_result)
+									{
+										if((!empty($schedule_result[$day])) && ($schedule_result[$day] != "NA"))
+										{
+											$duty_sub_task = $duty_result['duty_sub_task'];
+										
+											$data = array("pending_duty_task"=>$task,
+													"pending_duty_subtask"=>$duty_sub_task,
+													"pending_duty_cleaner"=>$schedule_result[$day],
+													"pending_duty_schedule"=>"afternoon",
+													"pending_duty_date"=>date("Y/m/d"));
+													
+											$query = $this->main_model->insert_data("pending_duty",$data);
+										}
+										
+									}
+								}
+								else
 								{
 									if((!empty($schedule_result[$day])) && ($schedule_result[$day] != "NA"))
 									{
-										$duty_sub_task = $duty_result['duty_sub_task'];
-									
 										$data = array("pending_duty_task"=>$task,
-												"pending_duty_subtask"=>$duty_sub_task,
+												"pending_duty_subtask"=>"No any subtask",
 												"pending_duty_cleaner"=>$schedule_result[$day],
 												"pending_duty_schedule"=>"afternoon",
 												"pending_duty_date"=>date("Y/m/d"));
 												
 										$query = $this->main_model->insert_data("pending_duty",$data);
 									}
-									
 								}
+								
 							}
-							else
-							{
-								if((!empty($schedule_result[$day])) && ($schedule_result[$day] != "NA"))
-								{
-									$data = array("pending_duty_task"=>$task,
-											"pending_duty_subtask"=>"No any subtask",
-											"pending_duty_cleaner"=>$schedule_result[$day],
-											"pending_duty_schedule"=>"afternoon",
-											"pending_duty_date"=>date("Y/m/d"));
-											
-									$query = $this->main_model->insert_data("pending_duty",$data);
-								}
-							}
-							
+						}
+						
+						if($afternoon_schedule_results_count == 0 && $afternoon_schedule_results_count == 0)
+						{
+							$data = array("complete_duty_task"=>"This day don't have any duty",
+									"complete_duty_date"=>date("Y/m/d"));
+												
+							$query = $this->main_model->insert_data("complete_duty",$data);
 						}
 						
 						$new_remark = array("remark" => "active");
