@@ -43,28 +43,33 @@ body {
     object-fit: cover;
 }
 
+.footericon, .footercontent {
+    width: 3%;
+    @include footerValues();
+}
 
+#mobilenav {
+    .mobileLoginBtn {
+        color: white;
+    }
+}
 
 /* ---------------------------------------------------
     BROWSER RESIZING STYLE
 ----------------------------------------------------- */
 
-//For screens bigger than a tablet
-@media (min-width: 769px) {   
-    /* Modal Content/Box */
-    .modal-content {
-        @include modalContent();
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+    #mobilenav {
+        .mobileLoginBtn {
+            color: white;
+        }
     }
-    .footericon, .footercontent {
-        width: 3%;
-        cursor: pointer;
-        border-radius: 50%;
-        padding: 5px;
+    
+    .cancelbtn, .forgotbtn {
+        width: 100%;
     }
-}
-
-//For phones and tablets
-@media (max-width: 768px) { 
+    
     .changePassPic {
         width: 100%;
     }
@@ -87,19 +92,64 @@ body {
     
     .footericon, .footercontent {
         width: 10%;
-        cursor: pointer;
-        border-radius: 50%;
-        padding: 5px;
+        @include footerValues();
     }
     .userSettingsTable {
         width: 5%;
     }
 }
 
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-    .cancelbtn, .forgotbtn {
-        width: 100%;
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .modal-content {
+        @include modalContent();
+    }
+    
+    .footericon, .footercontent {
+        width: 7%;
+        @include footerValues();
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { 
+     /* Modal Content/Box */
+    .modal-content {
+        @include modalContent();
+    }
+    
+    .footericon, .footercontent {
+        width: 5%;
+        cursor: pointer;
+        border-radius: 50%;
+        padding: 5px;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .footericon, .footercontent {
+        width: 5%;
+        @include footerValues();
+    }
+    
+    #desknav {
+        .nav-item {
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }   
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+    #desknav {
+        .nav-item {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
     }
 }
 

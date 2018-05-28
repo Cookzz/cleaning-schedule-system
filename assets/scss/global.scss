@@ -35,6 +35,12 @@ $tableupdatebtntheme: #3498DB;
     width: 50%; /* Could be more or less, depending on screen size */
 }
 
+@mixin footerValues() {
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 5px;
+}
+
 /* ---------------------------------------------------
     ANIMATION
 ----------------------------------------------------- */

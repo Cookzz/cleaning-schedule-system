@@ -13,6 +13,7 @@
 
 <h2 class="pageTitle">User Setting</h2><hr class="pageTitleHr">
 
+<div class="table-responsive">
 <table class="userSettingsTable">
    <tr>
        <td colspan="2" class="profPicCol"><label class="profPicLabel">Profile Picture</label><hr></td>
@@ -49,6 +50,7 @@
        <td colspan="2"><hr></td>
    </tr>
     </table>
+    </div>
 <br />
 <div>
 

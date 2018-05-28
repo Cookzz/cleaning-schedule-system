@@ -39,11 +39,9 @@
                         <!--Add picture here-->
                         <img src="<?php echo base_url(); ?>assets/images/FFF_Logo.png" class="pageIcon">
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
                             <ul class="navbar-nav mr-auto">
                                 <?= $big_selector?>
                             </ul>
-                        </div>
                     </div>
                     <!--<button class="navLoginBtn" onclick="popoutLogin()"><img src="<?php echo base_url(); ?>assets/images/loginIcon.png" width="8%" class="loginIcon"> Login</button>-->
 						<?= $large_state?>
