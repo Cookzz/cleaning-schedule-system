@@ -138,7 +138,7 @@
 
 <!--boundary (below are hidden value to external js)-->
 <input id="baseURL" type=hidden value="<?=base_url()?>">
-<input id="numberOfStuff" type=hidden value="<?php echo(sizeof($tasks))?>">
+<input id="numberOfTask" type=hidden value="<?php echo(sizeof($tasks))?>">
 <?php for ($i = 0; $i <= (sizeof($tasks)-1); $i++) { ?>
 <input id="task_id<?php echo($i+1)?>" type=hidden value="<?php echo($tasks[$i]['task_id'])?>">
 <input id="task<?php echo($i+1)?>" type=hidden value="<?php echo($tasks[$i]['task'])?>">
