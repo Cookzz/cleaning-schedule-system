@@ -54,6 +54,10 @@ body {
     }
 }
 
+.modal-content {
+    @include modalContent();
+}
+
 /* ---------------------------------------------------
     BROWSER RESIZING STYLE
 ----------------------------------------------------- */
@@ -101,10 +105,6 @@ body {
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) and (max-width: 767.98px) { 
-    .modal-content {
-        @include modalContent();
-    }
-    
     .footericon, .footercontent {
         width: 7%;
         @include footerValues();
@@ -113,11 +113,6 @@ body {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) and (max-width: 991.98px) { 
-     /* Modal Content/Box */
-    .modal-content {
-        @include modalContent();
-    }
-    
     .footericon, .footercontent {
         width: 5%;
         cursor: pointer;
@@ -135,8 +130,8 @@ body {
     
     #desknav {
         .nav-item {
-            padding-left: 10px;
-            padding-right: 10px;
+            padding-left: 8px;
+            padding-right: 8px;
             margin-top: 10px;
             margin-bottom: 10px;
         }   
