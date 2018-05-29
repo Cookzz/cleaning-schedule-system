@@ -15,18 +15,24 @@
 		<tbody>
 			<tr>
 				<td class="dutyLabel">Duty Title:</td>
-				<td class="inputCol"><input type="text" id="special_duty_dutyTitle" required></td>
-				<td id="special_duty_dutyTitle_error" style="color:red"></td>
+                <td class="inputCol"><input type="text" id="special_duty_dutyTitle" required></td>
+			</tr>
+			<tr>
+			    <td id="special_duty_dutyTitle_error" class="dutyError"></td>
 			</tr>
 			<tr>
 				<td class="dutyLabel">Duty Detail:</td>
 				<td class="inputCol"><textarea type="text" id="special_duty_dutyDetail" required></textarea></td>
-				<td id="special_duty_dutyDetail_error" style="color:red"></td>
+			</tr>
+			<tr>
+			    <td id="special_duty_dutyDetail_error" class="dutyError"></td>
 			</tr>
 			<tr>
 				<td class="dutyLabel">Date:</td>
 				<td class="inputCol"><input type="date" id="special_duty_date" required></td>
-				<td id="special_duty_date_error" style="color:red"></td>
+			</tr>
+			<tr>
+			    <td colspan="2" id="special_duty_date_error" class="dutyError"></td>
 			</tr>
 			<tr>
 				<td class="dutyLabel">Time:</td>

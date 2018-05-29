@@ -17,9 +17,10 @@
 </head>
 <body>  
 
-<a class="viewOutstandingBtn" href="<?php echo base_url().$link;?>"><?= $link_word;?></a>
 <!--same concept with complete duty page, pls refer back it-->
-<h2 class="pageTitle"><?= $title?></h2><hr/>
+<a class="viewOutstandingBtn" href="<?php echo base_url().$link;?>"><?= $link_word;?></a>
+<h2 class="pageTitle"><?= $title?></h2>
+<hr/>
 <table id="pending_duty_table" class="table table-striped table-bordered table-responsive" border="1">
 	<thead>
 		<tr class="tableTitle">

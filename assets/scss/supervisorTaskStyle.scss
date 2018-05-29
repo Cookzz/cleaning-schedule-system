@@ -37,3 +37,35 @@
         }
     }
 }
+
+#newTaskTable {
+    width: 50%;
+    
+    margin-bottom: 10px;
+    
+    @media (orientation:portrait){
+        width: 100%;
+    }
+    
+    .newTaskText {
+        @media (orientation:portrait){
+            text-align: center;
+        }
+    }
+    
+    .submitNewTaskBtn {
+        background: $mainbuttontheme;
+        border: 1px solid $mainbuttontheme;
+        color: white;
+        cursor: pointer;
+        
+        padding: 10px 30px 10px 30px;
+        border-radius: 5px;
+        float: left;
+        
+        @media (orientation:portrait){
+            float: none;
+            width: 100%;
+        }
+    }
+}

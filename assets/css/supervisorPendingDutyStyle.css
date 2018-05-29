@@ -28,6 +28,19 @@
     color: white;
     background: #1E88E5;
     border: 1px solid #1E88E5; }
+  #pending_duty_table .pending_table_body td .update {
+    background: #3498DB;
+    border: 1px solid #3498DB;
+    color: white;
+    padding: 10px 30px 10px 30px;
+    border-radius: 5px;
+    cursor: pointer; }
+  #pending_duty_table .pending_table_body td .delete {
+    width: 80px;
+    height: 30px;
+    padding: 5px 30px 5px 30px;
+    border-radius: 5px;
+    cursor: pointer; }
 
 .viewOutstandingBtn {
   float: right;
@@ -42,8 +55,17 @@
   .viewOutstandingBtn:visited {
     color: white;
     text-decoration: none; }
+  @media (orientation: portrait) {
+    .viewOutstandingBtn {
+      text-align: center;
+      display: block;
+      float: none; } }
 
 .pageTitle {
   margin-bottom: 0px; }
+  @media (orientation: portrait) {
+    .pageTitle {
+      margin-top: 1px;
+      text-align: center; } }
 
 /*# sourceMappingURL=supervisorPendingDutyStyle.css.map */

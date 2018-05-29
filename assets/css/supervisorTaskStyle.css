@@ -43,4 +43,26 @@
     border-radius: 5px;
     cursor: pointer; }
 
+#newTaskTable {
+  width: 50%;
+  margin-bottom: 10px; }
+  @media (orientation: portrait) {
+    #newTaskTable {
+      width: 100%; } }
+  @media (orientation: portrait) {
+    #newTaskTable .newTaskText {
+      text-align: center; } }
+  #newTaskTable .submitNewTaskBtn {
+    background: #003366;
+    border: 1px solid #003366;
+    color: white;
+    cursor: pointer;
+    padding: 10px 30px 10px 30px;
+    border-radius: 5px;
+    float: left; }
+    @media (orientation: portrait) {
+      #newTaskTable .submitNewTaskBtn {
+        float: none;
+        width: 100%; } }
+
 /*# sourceMappingURL=supervisorTaskStyle.css.map */

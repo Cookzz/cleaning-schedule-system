@@ -92,20 +92,38 @@
     
     margin-top: 0px;
     margin-bottom: 30px;
+    
+    @media (orientation:portrait){
+        width: 100%;
+    }
 }
 
 .titleHr {
     margin-top: 0px;
-    height: 2px;
+    height: 1px;
     background: black;
 }
 
 .scheduleTitle {
     letter-spacing: 5px;
+    
+    @media (orientation:portrait){
+        text-align: center;
+    }
+}
+
+.scheduleDate {
+    @media (orientation:portrait){
+        text-align: center;
+    }
 }
 
 .dayLabel {
     font-weight: bold;
+    
+    @media (orientation:portrait){
+        text-align: center;
+    }
 }
 
 .nextWeekBtn, .scheduleFormBtn {
@@ -128,5 +146,13 @@
     
     &.scheduleFormBtn {
         margin-right: 10px;
+    }
+    
+    @media (orientation:portrait){
+        float: none;
+        
+        width: 100%;    
+        display: inline-block;
+        text-align: center;
     }
 }

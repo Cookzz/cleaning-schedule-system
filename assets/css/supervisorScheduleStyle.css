@@ -96,17 +96,30 @@
   width: 90%;
   margin-top: 0px;
   margin-bottom: 30px; }
+  @media (orientation: portrait) {
+    .scheduleHr {
+      width: 100%; } }
 
 .titleHr {
   margin-top: 0px;
-  height: 2px;
+  height: 1px;
   background: black; }
 
 .scheduleTitle {
   letter-spacing: 5px; }
+  @media (orientation: portrait) {
+    .scheduleTitle {
+      text-align: center; } }
+
+@media (orientation: portrait) {
+  .scheduleDate {
+    text-align: center; } }
 
 .dayLabel {
   font-weight: bold; }
+  @media (orientation: portrait) {
+    .dayLabel {
+      text-align: center; } }
 
 .nextWeekBtn, .scheduleFormBtn {
   float: right;
@@ -123,5 +136,11 @@
     text-decoration: none; }
   .nextWeekBtn.scheduleFormBtn, .scheduleFormBtn.scheduleFormBtn {
     margin-right: 10px; }
+  @media (orientation: portrait) {
+    .nextWeekBtn, .scheduleFormBtn {
+      float: none;
+      width: 100%;
+      display: inline-block;
+      text-align: center; } }
 
 /*# sourceMappingURL=supervisorScheduleStyle.css.map */

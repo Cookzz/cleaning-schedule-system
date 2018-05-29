@@ -25,7 +25,9 @@
     Form Style
 ----------------------------------------------------- */
 #newSpecialDutyForm #special_duty_table {
-  width: 100%; }
+  width: 60%; }
+  #newSpecialDutyForm #special_duty_table .dutyError {
+    color: red; }
   #newSpecialDutyForm #special_duty_table .dutyLabel {
     font-weight: bold;
     letter-spacing: 1px;
@@ -46,12 +48,20 @@
     border-radius: 5px;
     margin-top: 3px;
     color: white; }
+  @media (orientation: portrait) {
+    #newSpecialDutyForm #special_duty_table .dutyLabel {
+      width: 30%; }
+    #newSpecialDutyForm #special_duty_table .inputCol {
+      width: 65%; } }
 
 /* ---------------------------------------------------
     ADD CLEANER TABLE STYLE
 ----------------------------------------------------- */
 .addCleanerTable {
-  width: 55%; }
+  width: 60%; }
+  @media (orientation: portrait) {
+    .addCleanerTable {
+      width: 95%; } }
   .addCleanerTable .tableTitle .noOfCleanerTitle {
     width: 21%; }
   .addCleanerTable .tableTitle td {
