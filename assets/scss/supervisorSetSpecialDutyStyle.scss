@@ -4,8 +4,11 @@
 ----------------------------------------------------- */
 #newSpecialDutyForm {
     #special_duty_table {
-        width: 100%;
+        width: 60%;
         
+        .dutyError {
+            color: red;
+        }
         .dutyLabel {
             font-weight: bold;
             letter-spacing: 1px;
@@ -37,6 +40,15 @@
                 color: white;
             }
         }
+        
+        @media (orientation:portrait){
+            .dutyLabel {
+                width: 30%;
+            }
+            .inputCol {
+                width: 65%;
+            }
+        }
     }
 }
 
@@ -44,7 +56,11 @@
     ADD CLEANER TABLE STYLE
 ----------------------------------------------------- */
 .addCleanerTable {
-    width: 55%;
+    width: 60%;
+    
+    @media (orientation:portrait){
+        width: 95%;
+    }
     
     .tableTitle {
         .noOfCleanerTitle {

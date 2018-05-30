@@ -11,7 +11,7 @@
 <a class="scheduleFormBtn" href="<?php echo base_url();?>HomeController/viewScheduleFormPage">Schedule Form</a>
 </div>
 <h2 class="scheduleTitle"><b>This Week's Schedule</b></h2>
-<h2>Date: <?= $date?></h2>
+<h2 class="scheduleDate">Date: <?= $date?></h2>
 <hr class="titleHr">
 
 

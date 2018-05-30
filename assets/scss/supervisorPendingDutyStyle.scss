@@ -1,0 +1,71 @@
+@import "global.scss";
+
+#pending_duty_table {
+    width: 100%;
+    overflow-x: scroll;
+    
+    .tableTitle {
+        th {
+            color: white;
+            background: $tableheadertheme;
+            border: 1px solid $tableheadertheme;
+        }
+    }
+    
+    .pending_table_body {
+        td {
+            .update {
+                background: $tableupdatebtntheme;
+                border: 1px solid $tableupdatebtntheme;
+                color: white;
+                padding: 10px 30px 10px 30px;
+                border-radius: 5px;
+
+                cursor: pointer;
+            }
+
+            .delete {
+                width: 80px;
+                height: 30px;
+                padding: 5px 30px 5px 30px;
+                border-radius: 5px;
+
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.viewOutstandingBtn {
+    float: right;
+    background: $subbuttontheme;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 3px;
+    color: white;
+    
+    &:link {
+        color: white;
+        text-decoration: none;
+    }
+    
+    &:visited {
+        color: white;
+        text-decoration: none;
+    }
+    
+    @media (orientation:portrait){
+        text-align: center; 
+        display: block;
+        float: none;
+    }
+}
+
+.pageTitle {
+    margin-bottom: 0px;
+    
+    @media (orientation:portrait) {
+        margin-top: 1px;
+        text-align: center;
+    }
+}

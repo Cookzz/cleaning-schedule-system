@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/supervisorPendingDutyStyle.css">
 
 <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
@@ -16,12 +17,13 @@
 </head>
 <body>  
 
-<a href="<?php echo base_url().$link;?>"><?= $link_word;?></a>
 <!--same concept with complete duty page, pls refer back it-->
-<h2><?= $title?></h2><hr/>
+<a class="viewOutstandingBtn" href="<?php echo base_url().$link;?>"><?= $link_word;?></a>
+<h2 class="pageTitle"><?= $title?></h2>
+<hr/>
 <table id="pending_duty_table" class="table table-striped table-bordered table-responsive" border="1">
 	<thead>
-		<tr>
+		<tr class="tableTitle">
 			<th>No</th>
 			<th>Cleaner</th>
 			<th>Task Location</th>

@@ -3,11 +3,6 @@ $(document).ready(function() {
         $("#settingsMenu").slideToggle("fast"); 
     });
     
-    $('#sidebarCollapse').on('click', function(e) {
-        //$('#sidebar, #content').toggleClass('active');
-        //$('.collapse.in').toggleClass('in');
-    });
-    
     $("body").click(function(event){
         var elementClass = event.target.className;
         var elementId = event.target.id;

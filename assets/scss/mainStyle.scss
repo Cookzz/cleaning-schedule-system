@@ -89,6 +89,7 @@ body {
     .loginTitle {
         font-size: 21px;
     }
+    
     #next {
         width: 100%;
         border: 2px solid slategray;
@@ -98,9 +99,16 @@ body {
         width: 10%;
         @include footerValues();
     }
+    
     .userSettingsTable {
         width: 5%;
     }
+    
+    @media (orientation:portrait) {
+        .dataTables_length, .dataTables_filter {
+            float: left !important;
+        }
+    } 
 }
 
 // Small devices (landscape phones, 576px and up)
