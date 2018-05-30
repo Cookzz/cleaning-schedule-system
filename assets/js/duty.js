@@ -1,20 +1,3 @@
-/**function insert_back_table(message)
-{
-	var duty_data = JSON.parse(message);
-	$("#duty_table").empty();
-				
-	$( "#duty_table" ).append("<td>No.</td><td>Duty Task</td><td>Duty Sub Task</td>");		
-				
-	var i =1;
-	duty_data.forEach(function(duty_data){
-		$( "#duty_table" ).append("<tr><td>"+i+"</td>"+
-		"<td id='"+duty_data["duty_id"]+"_task' contenteditable='true'>"+duty_data["duty_task"]+"</td>"+
-		"<td id='"+duty_data["duty_id"]+"_task' contenteditable='true'>"+duty_data["duty_sub_task"]+"</td>"+
-		"<td><button type='button' id='"+duty_data["duty_id"]+"_delete' class='delete'>Delete</button></td>/tr>");
-		i++;
-	});
-}**/
-
 function insert_back_table(message)
 {
 	var duty_data = JSON.parse(message);

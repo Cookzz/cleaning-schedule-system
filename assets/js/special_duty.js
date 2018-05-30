@@ -12,8 +12,8 @@ function insert_back_table(message)
 			special_duty_data["special_duty_detail"],
 			special_duty_data["special_duty_time"],
 			special_duty_data["special_duty_date"],
-			"<button type='button' id='"+special_duty_data["special_duty_id"]+"_modify' class='modify'>Update</button>",
-			"<button type='button' id='"+special_duty_data["special_duty_id"]+"_delete' class='delete'>Delete</button>"
+			"<center><button type='button' id='"+special_duty_data["special_duty_id"]+"_modify' class='modify'>Update</button></center>",
+			"<center><button type='button' id='"+special_duty_data["special_duty_id"]+"_delete' class='delete'>Delete</button></center>"
 		]).draw( false ).node();
 		i++;
 		

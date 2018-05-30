@@ -8,7 +8,7 @@ function insert_back_table(message)
 		var newRow = table.row.add( [
 			i,
 			sub_task_data["sub_task"],
-			"<button type='button' id='"+sub_task_data["sub_task_id"]+"_update' class='update'>Update</button>",
+			"<center><button type='button' id='"+sub_task_data["sub_task_id"]+"_update' class='update'>Update</button></center>",
 			"<center><button style='width:80px;height:30px' type='button' id='"+sub_task_data["sub_task_id"]+"_delete' class='w3-text-red fa fa-trash delete'></button></center>"
 		]).draw( false ).node();
 		i++;
