@@ -347,7 +347,8 @@
                                     <a class="dropdown-item" href="'.base_url().'HomeController/viewSetSpecialDutyPage">Create New Special Duty</a>
                                 </div>
                             </li>
-				            <a class="nav-item nav-link active" href="'.base_url().'HomeController/viewPendingDutyPage">Attendance</a>'.$extra_selector."";
+				            <a class="nav-item nav-link active" href="'.base_url().'HomeController/viewPendingDutyPage">Attendance</a>
+							<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewViewRatingPage">Rating</a>'.$extra_selector."";
 											
 										
 					$data["small_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage">Home<span class="sr-only">(current)</span></a>
@@ -850,16 +851,18 @@
 				if(date("G") < 13)
 				{
 					$time = "morning";
+					$date = array("pending_duty_date !=" => date("Y/m/d"));
+					$orderBy = ("pending_duty_date desc");
+					$query = $this->main_model->get_specify_data2("*",$orderBy,$date,"pending_duty");	
 				}
 				else
 				{
 					$time = "afternoon";
+					$date = array("pending_duty_date !=" => date("Y/m/d") , "pending_duty_date !=" => $time);
+					$orderBy = ("pending_duty_date desc");
+					$query = $this->main_model->get_specify_data2("*",$orderBy,$date,"pending_duty");	
 				}
 				
-				$date = array("pending_duty_date !=" => date("Y/m/d"));
-				$orderBy = ("pending_duty_cleaner asc,pending_duty_task asc");
-				$query = $this->main_model->get_specify_data2("*",$orderBy,$date,"pending_duty");	
-			
 				$data['pending_duties'] = $query->result_array();
 				$data["time"] = $time;
 				$data['link'] = "HomeController/viewPendingDutyPage";
@@ -1109,6 +1112,26 @@
 				
 				$this->viewNav();
 				$this->load->view('customer/'.$page,$data);
+				$this->load->view('templates/footer');
+			}
+			
+		}
+		
+		public function viewViewRatingPage($page = "view_rating")
+		{
+			$this->load->library('session');
+			if(Empty($_SESSION['uid']))
+			{
+				redirect("HomeController/viewHomePage");
+			}
+			elseif($_SESSION['user_access_level'] == 3 || ($_SESSION['user_access_level'] == 4))
+			{
+				redirect("HomeController/viewMainPage");
+			}
+			else
+			{
+				$this->viewNav();
+				$this->load->view('supervisor/'.$page);
 				$this->load->view('templates/footer');
 			}
 			

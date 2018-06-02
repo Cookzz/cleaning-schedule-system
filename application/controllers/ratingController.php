@@ -7,6 +7,16 @@
                 date_default_timezone_set("Asia/Kuala_Lumpur");
         }
 		
+		public function getRating()
+		{
+			$this->load->model("main_model");
+				
+			$query = $this->main_model->get_data("*","rating");
+			$ratingData = $query->result_array();	
+			
+			echo json_encode($ratingData);
+		}
+		
 		public function ratingMark()
 		{
 			if((isset($_POST['mark'])) && (isset($_POST["task"])))
