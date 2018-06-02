@@ -152,6 +152,11 @@ body {
         .nav-item {
             padding-left: 40px;
             padding-right: 40px;
+            
+            @media (orientation:landscape) and (max-width: 1400px){
+                padding-left: 30px;
+                padding-right: 30px;
+            }
         }
     }
 }

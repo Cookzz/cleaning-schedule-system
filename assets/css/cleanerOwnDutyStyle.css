@@ -43,4 +43,10 @@
 .pendingDutyTable, .completedDutyTable {
   overflow-y: scroll; }
 
+.nav .nav-item a {
+  color: black; }
+.nav .nav-item .active {
+  background: #003366;
+  color: white; }
+
 /*# sourceMappingURL=cleanerOwnDutyStyle.css.map */

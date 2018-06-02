@@ -142,5 +142,9 @@ body {
   #desknav .nav-item {
     padding-left: 40px;
     padding-right: 40px; } }
+  @media (min-width: 1200px) and (orientation: landscape) and (max-width: 1400px) {
+    #desknav .nav-item {
+      padding-left: 30px;
+      padding-right: 30px; } }
 
 /*# sourceMappingURL=mainStyle.css.map */

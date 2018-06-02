@@ -2,7 +2,7 @@
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/supervisorScheduleStyle.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/cleanerScheduleStyle.css">
 </head>
 <body>  
 
@@ -12,6 +12,7 @@
 <h3 class="dayLabel">Morning</h3>
 <hr class="scheduleHr">
 <!--The table to show the schedule table, this table body consisder by 2 foreach loop-->
+<div class="morning">
 <table border="1" class="morningTable">
 	<thead>
 		<tr>
@@ -52,11 +53,13 @@
 		<?php endforeach; ?>
 	</tbody>
 </table>
+</div>
 <!--The end of morning schedule table-->
 <br>
 <h3 class="dayLabel">Afternoon</h3>
 <hr class="scheduleHr">
 <!--Now this the afternoon schecule table the concept is same with morning schedule-->
+<div class="afternoon">
 <table border="1" class="afternoonTable">
 	<thead>
 		<tr>
@@ -92,6 +95,7 @@
 		<?php endforeach; ?>
 	</tbody>
 </table>
+</div>
 
 </body>
 </html>
