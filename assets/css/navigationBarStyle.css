@@ -52,6 +52,10 @@
   background-color: #2196F3;
   padding: 0px;
   border: 0.1px solid #2196F3; }
+  .navbar .nav-item:hover, #navbarNavAltMarkup1 .nav-item:hover {
+    background-color: #033C73;
+    color: white;
+    cursor: pointer; }
 
 .deskLoginBtn {
   background-color: #2196F3;
@@ -125,10 +129,5 @@
     #navbarNavAltMarkup1 #mobileDropDown #mobileMenu .dropdown-item:hover {
       background-color: white;
       color: black; }
-
-.nav-item:hover {
-  background-color: #033C73;
-  color: white;
-  cursor: pointer; }
 
 /*# sourceMappingURL=navigationBarStyle.css.map */

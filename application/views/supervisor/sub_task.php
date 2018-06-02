@@ -23,9 +23,10 @@
 <!--This form got two table, one is to let user to insert new task, one is to display the subtask table-->
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 	<!--First table to display the form element like input box and button-->
-	<table>
-			<tr><td>New Sub Task:</td><td><input id="newSubTaskField" type="text" value="" name="newStaff" maxlength="30"></td></tr>
-			<tr><td colspan="3"><input style="float:right"type="submit" value="Add"></td></tr>
+	<table class="newSubTaskTable">
+			<tr><td class="newSubTaskText"><b>New Sub Task:</b></td></tr>
+			<tr><td><input id="newSubTaskField" type="text" value="" name="newStaff" maxlength="30"></td></tr>
+			<tr><td colspan="3"><input class="submitNewSubTaskBtn" type="submit" value="Add"></td></tr>
 	</table>
 	<!--This is the end of first table-->
 	<!--Second Table is to output the data which by controller and delete,update button-->

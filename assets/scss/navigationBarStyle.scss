@@ -40,6 +40,13 @@
     padding: 0px;
 
     border: 0.1px solid $themecolor;
+    
+    .nav-item:hover{
+        background-color: $secondarycolor;
+        color: white;
+
+        cursor: pointer;
+    }
 }
     
 .deskLoginBtn {
@@ -131,11 +138,4 @@
             }
         }
     }
-}
-
-.nav-item:hover{
-    background-color: $secondarycolor;
-    color: white;
-    
-    cursor: pointer;
 }
