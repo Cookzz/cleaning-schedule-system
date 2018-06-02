@@ -11,7 +11,7 @@
 
 <h2>Location's Rank</h2>
 
-<div id="barRating" class="responsive" style="height: 90%; width: 100%;">
+<div id="barRating" class="responsive" style="height: <?= $countOfRating*8?>%; width: 100%;">
 	
 </div>
 

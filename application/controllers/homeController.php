@@ -1130,8 +1130,13 @@
 			}
 			else
 			{
+				$this->load->model("main_model");
+				
+				$query = $this->main_model->get_data("*","rating");
+				$data['countOfRating'] = $query->num_rows();	
+				
 				$this->viewNav();
-				$this->load->view('supervisor/'.$page);
+				$this->load->view('supervisor/'.$page,$data);
 				$this->load->view('templates/footer');
 			}
 			
