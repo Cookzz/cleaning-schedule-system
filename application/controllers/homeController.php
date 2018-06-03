@@ -287,7 +287,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
                                 <a class="deskLoginBtn dropdown-toggle" id="deskLogin" data-toggle="dropdown"><img src="'.base_url().'assets/images/'.$user_picture.'" class="loginIcon">'.$user_name.'</a>
-                                <ul class="dropdown-menu dropdown-lr pull-left profile-settings" role="menu">
+                                <ul class="dropdown-menu dropdown-lr profile-settings" role="menu">
                                     <div class="text-center">
                                         <h4 class="settingtitle"><b>User Settings</b></h4>
                                     </div>
@@ -301,7 +301,7 @@
                         </ul>';
 				
 				$data['small_state'] = '
-                    <div class="nav-item dropdown">
+                    <div class="nav-item dropdown adminProfileDropdown">
 						<a class="mobileLoginBtn dropdown-toggle" id="adminProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							ADMIN PROFILE
 						</a>
@@ -344,27 +344,52 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dutyToggle" id="dutyMenu">
                                     <a class="dropdown-item" href="'.base_url().'HomeController/viewAllSpecialDutyPage">View Special Duties</a>
-                                    <a class="dropdown-item" href="'.base_url().'HomeController/viewSetSpecialDutyPage">Create New Special Duty</a>
+                                    <a class="dropdown-item" href="'.base_url().'HomeController/viewSetSpecialDutyPage">New Special Duty</a>
                                 </div>
                             </li>
-				            <a class="nav-item nav-link active" href="'.base_url().'HomeController/viewPendingDutyPage">Attendance</a>
+                            <li class="nav-item dropdown" id="attendanceDropDown">
+                                <a class="nav-link dropdown-toggle active" id="attendanceToggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Attendance
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="attendanceToggle" id="attendanceMenu">
+                                    <a class="dropdown-item" href="'.base_url().'HomeController/viewPendingDutyPage">Pending Duties</a>
+                                    <a class="dropdown-item" href="'.base_url().'HomeController/viewSetSpecialDutyPage">Completed Duties</a>
+                                </div>
+                            </li>
+				            
 							<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewViewRatingPage">Rating</a>'.$extra_selector."";
 											
 										
 					$data["small_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage">Home<span class="sr-only">(current)</span></a>
 												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSchedulePage">Schedule</a>
-												<li class="nav-item dropdown" id="mobileDropDown">
-                                                    <a class="nav-link dropdown-toggle active" id="mobileToggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												<li class="nav-item dropdown" id="mobileTaskDropDown">
+                                                    <a class="nav-link dropdown-toggle active" id="mobileTaskToggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                         Task
                                                     </a>
-                                                    <div class="dropdown-menu" aria-labelledby="mobileToggle" id="mobileMenu">
+                                                    <div class="dropdown-menu mobileMenu" aria-labelledby="mobileTaskToggle" id="mobileTaskMenu">
                                                         <a class="dropdown-item" href="'.base_url().'HomeController/viewTaskLocationPage">Task</a>
                                                         <a class="dropdown-item" href="'.base_url().'HomeController/viewSubTaskPage">Subtask</a>
                                                         <a class="dropdown-item" href="'.base_url().'HomeController/viewDutyPage">Duty</a>
                                                     </div>
                                                 </li>
-												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSetSpecialDutyPage">Special Duty</a>
-												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewPendingDutyPage">Attendance</a>'.$extra_selector."";
+                                                <li class="nav-item dropdown" id="mobileDutyDropDown">
+                                                    <a class="nav-link dropdown-toggle active" id="mobileDutyToggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Special Duties
+                                                    </a>
+                                                    <div class="dropdown-menu mobileMenu" aria-labelledby="mobileDutyToggle" id="mobileDutyMenu">
+                                                        <a class="dropdown-item" href="'.base_url().'HomeController/viewAllSpecialDutyPage">View Special Duties</a>
+                                                        <a class="dropdown-item" href="'.base_url().'HomeController/viewSetSpecialDutyPage">Create New Special Duty</a>
+                                                    </div>
+                                                </li>
+                                                <li class="nav-item dropdown" id="mobileAttendanceDropDown">
+                                                    <a class="nav-link dropdown-toggle active" id="mobileAttendanceToggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Attendance
+                                                    </a>
+                                                    <div class="dropdown-menu" aria-labelledby="mobileAttendanceToggle" id="mobileAttendanceMenu">
+                                                        <a class="dropdown-item" href="'.base_url().'HomeController/viewPendingDutyPage">Pending Duties</a>
+                                                        <a class="dropdown-item" href="'.base_url().'HomeController/viewSetSpecialDutyPage">Completed Duties</a>
+                                                    </div>
+                                                </li>';
 				}
 				elseif($_SESSION['user_access_level'] == 3)
 				{

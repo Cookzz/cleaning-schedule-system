@@ -144,13 +144,22 @@ body {
     padding-right: 8px;
     margin-top: 10px;
     margin-bottom: 10px; } }
+  @media (min-width: 992px) and (max-width: 1199.98px) and (orientation: portrait) {
+    #desknav .nav-item {
+      padding-left: 5px;
+      padding-right: 5px; } }
+  @media (min-width: 992px) and (max-width: 1199.98px) and (orientation: landscape) and (max-width: 1030px) {
+    #desknav .nav-item {
+      padding-left: 5px;
+      padding-right: 5px; } }
+
 @media (min-width: 1200px) {
   #desknav .nav-item {
-    padding-left: 40px;
-    padding-right: 40px; } }
+    padding-left: 35px;
+    padding-right: 35px; } }
   @media (min-width: 1200px) and (orientation: landscape) and (max-width: 1400px) {
     #desknav .nav-item {
-      padding-left: 30px;
-      padding-right: 30px; } }
+      padding-left: 28px;
+      padding-right: 28px; } }
 
 /*# sourceMappingURL=mainStyle.css.map */

@@ -61,3 +61,12 @@
 .stuffColumn {
     width: 10%;
 }
+
+@media (orientation:portrait) and (max-width: 360px){
+    .nav-tabs {
+        .nav-link, .nav-item {
+            text-align: center;
+            width: 100%;
+        }
+    }
+}
