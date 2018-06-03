@@ -1,7 +1,7 @@
 function renderBarChart()
 {
 	var baseUrl = $("#baseURL").val();
-	var url = baseUrl+"ratingController/getRating";
+	var url = baseUrl+"graphController/getRating";
 
 	$.ajax({
 		url: url,
@@ -10,7 +10,6 @@ function renderBarChart()
 		type: 'POST',
 		success: function(ratingData){
 			
-			console.log(ratingData);
 			var ratingData = JSON.parse(ratingData);
 			var dataPoint = [];
 			
@@ -22,15 +21,15 @@ function renderBarChart()
 					"y": parseInt(ratingData['rating_mark'])
 				};
 				
-				console.log(ratingData['rating_task'] +"____" + ratingData['rating_mark']);
 				dataPoint.push(ratingDataObject);
 			});
-			
-			console.log(ratingData);
 			
 			var chart = new CanvasJS.Chart("barRating", {
 				animationEnabled: true,
 				theme: "light1",
+				title: {
+					text: "Customer Rating"
+				},
 				axisX:{
 					interval: 1,
 					title: "Location",
@@ -62,9 +61,61 @@ function renderBarChart()
 	});	
 }
 
+function renderPieChart()
+{
+	var baseUrl = $("#baseURL").val();
+	var url = baseUrl+"graphController/getDuty";
+
+	$.ajax({
+		url: url,
+		processData: false,
+		contentType: false,
+		type: 'POST',
+		success: function(dutyDataArray){
+			
+			var dutyData = JSON.parse(dutyDataArray);
+			var dataPoint = [];
+			
+			var i = 0;
+			
+			var ratingDataObject = {
+				'label': "Pending Duty",
+				"y": parseInt(dutyData['pendingDutyPercent'])
+			};
+				
+			dataPoint.push(ratingDataObject);
+			
+			var ratingDataObject = {
+				'label': "Complete Duty",
+				"y": parseInt(dutyData['completeDutyPercent'])
+			};
+				
+			dataPoint.push(ratingDataObject);
+			
+			var chart = new CanvasJS.Chart("pieDuty", {
+				animationEnabled: true,
+				title: {
+					text: "Completion Of Duty"
+				},
+				data: [{
+					type: "pie",
+					startAngle: 240,
+					yValueFormatString: "##0.00\"%\"",
+					indexLabel: "{label} {y}",
+					dataPoints: dataPoint
+					}]
+				});
+				
+			chart.render();
+		}
+			
+	});	
+}
+
 window.onload = function () {
 	
 	renderBarChart();
+	renderPieChart();
 	
 };
 
