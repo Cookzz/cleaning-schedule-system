@@ -111,6 +111,19 @@ body {
     } 
 }
 
+.nav {
+    .nav-item {
+        a {
+            color: black;
+        }
+        
+        .active {
+            background: $mainbuttontheme;
+            color: white;
+        }
+    }
+}
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) and (max-width: 767.98px) { 
     .footericon, .footercontent {
