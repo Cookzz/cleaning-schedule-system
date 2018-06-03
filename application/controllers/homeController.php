@@ -357,7 +357,7 @@
                                 </div>
                             </li>
 				            
-							<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewViewRatingPage">Rating</a>'.$extra_selector."";
+							<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewGraphPage">Graph</a>'.$extra_selector."";
 											
 										
 					$data["small_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage">Home<span class="sr-only">(current)</span></a>
@@ -389,7 +389,8 @@
                                                         <a class="dropdown-item" href="'.base_url().'HomeController/viewPendingDutyPage">Pending Duties</a>
                                                         <a class="dropdown-item" href="'.base_url().'HomeController/viewSetSpecialDutyPage">Completed Duties</a>
                                                     </div>
-                                                </li>';
+                                                </li>
+												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewGraphPage">Graph</a>';
 				}
 				elseif($_SESSION['user_access_level'] == 3)
 				{
