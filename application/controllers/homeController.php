@@ -348,7 +348,7 @@
                                 </div>
                             </li>
 				            <a class="nav-item nav-link active" href="'.base_url().'HomeController/viewPendingDutyPage">Attendance</a>
-							<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewViewRatingPage">Rating</a>'.$extra_selector."";
+							<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewGraphPage">Graph</a>'.$extra_selector."";
 											
 										
 					$data["small_selector"] = '<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewMainPage">Home<span class="sr-only">(current)</span></a>
@@ -364,7 +364,8 @@
                                                     </div>
                                                 </li>
 												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewSetSpecialDutyPage">Special Duty</a>
-												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewPendingDutyPage">Attendance</a>'.$extra_selector."";
+												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewPendingDutyPage">Attendance</a>
+												<a class="nav-item nav-link active" href="'.base_url().'HomeController/viewGraphPage">Graph<span class="sr-only">(current)</span></a>'.$extra_selector."";
 				}
 				elseif($_SESSION['user_access_level'] == 3)
 				{
@@ -1117,7 +1118,7 @@
 			
 		}
 		
-		public function viewViewRatingPage($page = "view_rating")
+		public function viewGraphPage($page = "view_graph")
 		{
 			$this->load->library('session');
 			if(Empty($_SESSION['uid']))
