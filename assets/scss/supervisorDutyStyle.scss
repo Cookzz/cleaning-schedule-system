@@ -26,4 +26,33 @@
                 cursor: pointer;
             }
         }
+}
+
+.newDutyTable {
+    width: 50%;
+    .newDutySelect {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        
+        select {
+            height: 40px;
+            width: 100%;
+        }
     }
+    
+    .newDutyBtn {
+        background: $mainbuttontheme;
+        border: 1px solid $mainbuttontheme;
+        color: white;
+        cursor: pointer;
+        
+        padding: 10px 30px 10px 30px;
+        border-radius: 5px;
+        float: left;
+        
+        @media (orientation:portrait){
+            float: none;
+            width: 100%;
+        }
+    }
+}

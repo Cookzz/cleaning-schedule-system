@@ -23,12 +23,12 @@
 <!--This form got two table, one is to let user to insert new duty, one is to display the duty table-->
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 	<!--First table to display the form element like input box and button-->
-	<table>
-		<tr><td>New Duty:</td>
-		<td><select id="newDuty_task"><?php foreach($tasks as $task):?><option value="<?php echo $task["task"]?>"><?php echo $task["task"]?></option><?php endforeach?></select></td>
-		<td><select id="newDuty_sub_task"><?php foreach($sub_tasks as $sub_task):?><option value="<?php echo $sub_task["sub_task"]?>"><?php echo $sub_task["sub_task"]?></option><?php endforeach?></select></td>
+	<table class="newDutyTable">
+        <tr><td><b class="newDutyLabel">New Duty:</b></td></tr>
+		<tr><td class="newDutySelect"><select id="newDuty_task"><?php foreach($tasks as $task):?><option value="<?php echo $task["task"]?>"><?php echo $task["task"]?></option><?php endforeach?></select></td>
+		<td class="newDutySelect"><select id="newDuty_sub_task"><?php foreach($sub_tasks as $sub_task):?><option value="<?php echo $sub_task["sub_task"]?>"><?php echo $sub_task["sub_task"]?></option><?php endforeach?></select></td>
 		</tr>
-		<tr><td colspan="3"><input style="float:right"type="submit" value="Add"></td></tr>
+		<tr><td colspan="3"><input class="newDutyBtn" type="submit" value="Add"></td></tr>
 	</table>
 	<!--This is the end of first table-->
 	<!--Second Table is to output the data which by controller and delete,update button-->

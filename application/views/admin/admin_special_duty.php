@@ -15,6 +15,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/print.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/adminSpecialDutyStyle.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -25,7 +26,7 @@
 <!--Table to show complete duty table-->
 <div class="table-responsive">
 	<table id="special_duty_table" class="table table-striped table-bordered" border="1">
-		<thead>
+		<thead class="tableTitle">
 			<tr>
 				<th>No</th>
 				<th>Special Duty Title</th>
@@ -44,7 +45,7 @@
 			<tr id="<?php echo $special_duty["special_duty_id"];?>">
 				<td><?= $i?></td>
 				<td id="<?php echo $special_duty["special_duty_id"];?>_special_duty_title" contenteditable="true"><?php echo $special_duty["special_duty_title"];?></td>
-				<td id="<?php echo $special_duty["special_duty_id"];?>_special_duty_detail" contenteditable="true"><?php echo $special_duty["special_duty_detail"];?></td>
+				<td class="details" id="<?php echo $special_duty["special_duty_id"];?>_special_duty_detail" contenteditable="true"><span class="detailsLabel more"><?= $special_duty["special_duty_detail"]?></span></td>
 				<td id="<?php echo $special_duty["special_duty_id"];?>_special_duty_time" contenteditable="true"><?php echo $special_duty["special_duty_time"];?></td>
 				<td id="<?php echo $special_duty["special_duty_id"];?>_special_duty_date" contenteditable="true"><?php echo $special_duty["special_duty_date"];?></td>
 				<td><center><button id="<?php echo $special_duty["special_duty_id"];?>update" class="update btn btn-default" type="button">Update</button></center></td>

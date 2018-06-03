@@ -353,7 +353,7 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="attendanceToggle" id="attendanceMenu">
                                     <a class="dropdown-item" href="'.base_url().'HomeController/viewPendingDutyPage">Pending Duties</a>
-                                    <a class="dropdown-item" href="'.base_url().'HomeController/viewSetSpecialDutyPage">Completed Duties</a>
+                                    <a class="dropdown-item" href="'.base_url().'HomeController/viewCompleteDutyPage">Completed Duties</a>
                                 </div>
                             </li>
 				            
@@ -848,8 +848,8 @@
 			
 				$data['complete_duties'] = $query->result_array();
 				$data['link'] = "HomeController/viewAllCompleteDutyPage";
-				$data['link_word'] = "View all completed duty";
-				$data['title'] = "Today's Completed Duty";
+				$data['link_word'] = "View All Completed Duties";
+				$data['title'] = "Today's Completed Duties";
 				
 				
 				$this->viewNav();
@@ -892,7 +892,7 @@
 				$data['pending_duties'] = $query->result_array();
 				$data["time"] = $time;
 				$data['link'] = "HomeController/viewPendingDutyPage";
-				$data['link_word'] = "Back to today pending duty";
+				$data['link_word'] = "Back to Today's Pending Duties";
 				$data['title'] = "Outstanding Work";
 				
 				$this->viewNav();

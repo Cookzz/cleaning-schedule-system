@@ -22,11 +22,20 @@
   100% {
     transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
 #special_duty_table {
-  width: 100%; }
+  width: 100%;
+  table-layout: fixed; }
   #special_duty_table .tableTitle th {
     color: white;
     background: #1E88E5;
     border: 1px solid #1E88E5; }
+  #special_duty_table .tableTitle .noLabel {
+    width: 5% !important; }
+  #special_duty_table .tableTitle .specialDutyLabel {
+    width: 18% !important; }
+  #special_duty_table .tableTitle .specialDutyDetail {
+    width: 40% !important; }
+  #special_duty_table .tableTitle .timeLabel, #special_duty_table .tableTitle .dateLabel {
+    width: 15% !important; }
   #special_duty_table td .update {
     background: #3498DB;
     border: 1px solid #3498DB;
@@ -40,5 +49,12 @@
     padding: 5px 30px 5px 30px;
     border-radius: 5px;
     cursor: pointer; }
+  #special_duty_table .details {
+    overflow: hidden; }
+    #special_duty_table .details a.morelink {
+      text-decoration: none;
+      outline: none; }
+    #special_duty_table .details .morecontent span {
+      display: none; }
 
 /*# sourceMappingURL=supervisorViewSpecialDutyStyle.css.map */

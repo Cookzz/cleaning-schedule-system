@@ -25,12 +25,13 @@
 	<table id="special_duty_table" class="table table-striped table-bordered table-responsive" border="1">
 		<thead>
 			<tr class="tableTitle">
-				<th>No.</th>
-				<th>Special Duty Title</th>
-				<th>Special Duty Detail</th>
-				<th>Special Duty Time</th>
-				<th>Special Duty Date</th><th>Modify</th>
-				<th>Delete</th>
+				<th class="noLabel">No.</th>
+				<th class="specialDutyLabel">Special Duty Title</th>
+				<th class="specialDutyDetail">Special Duty Detail</th>
+				<th class="timeLabel">Special Duty Time</th>
+				<th class="dateLabel">Special Duty Date</th>
+				<th class="modifyLabel">Modify</th>
+				<th class="deleteLabel">Delete</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -38,7 +39,7 @@
 			<tr>
 				<td><?php echo $i ?></td>
 				<td id="<?php echo($special_duty["special_duty_id"])?>_special_duty_title"><?php echo $special_duty["special_duty_title"]; ?></td>
-				<td id="<?php echo($special_duty["special_duty_id"])?>_special_duty_detail"><?php echo $special_duty["special_duty_detail"]; ?></td>
+				<td id="<?php echo($special_duty["special_duty_id"])?>_special_duty_detail" class="details"><span class="detailsLabel more"><?= $special_duty["special_duty_detail"]?></span></td>
 				<td id="<?php echo($special_duty["special_duty_id"])?>_special_duty_time"><?php echo $special_duty["special_duty_time"]; ?></td>
 				<td id="<?php echo($special_duty["special_duty_id"])?>_special_duty_date"><?php echo $special_duty["special_duty_date"]; ?></td>
 				<td><center><button type="button" onclick="window.location.href='<?php echo base_url(); ?>HomeController/viewSpecifySpecialDutyPage/<?php echo $special_duty["special_duty_id"];?>'" class="update">Modify</button></center></td>

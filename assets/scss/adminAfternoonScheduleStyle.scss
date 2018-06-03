@@ -1,0 +1,42 @@
+@import "global.scss";
+
+#afternoon_schedule_table{
+    width: 100%;
+    overflow-y: scroll;
+    
+    thead{
+        font-family: $font;
+        
+        th {
+            background: white;
+        }
+    }
+    
+    tbody{
+        tr {
+            &:nth-child(odd) {
+                background: #D0E4F5;
+            } 
+            &:nth-child(even) {
+                background: white;
+            }
+        }
+        
+        .update {
+                background: $tableupdatebtntheme;
+                border: 1px solid $tableupdatebtntheme;
+                color: white;
+                padding: 10px 30px 10px 30px;
+                border-radius: 5px;
+
+                cursor: pointer;
+            }
+
+            .delete {
+                padding: 5px 30px 5px 30px;
+                border-radius: 5px;
+
+                cursor: pointer;
+            }
+    }
+}

@@ -15,6 +15,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/print.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/adminPendingDutyStyle.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -24,7 +25,7 @@
 <h2>Pending Duty Table</h2><hr/>
 <div class="table-responsive">
 	<table id="pending_duty_table" class="table table-striped table-bordered" border="1">
-		<thead>
+		<thead class="tableTitle">
 			<tr>
 				<th>No</th>
 				<th>Cleaner</th>

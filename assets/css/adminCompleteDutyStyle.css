@@ -21,41 +21,27 @@
     transform: perspective(180px) rotateX(0deg) rotateY(180deg); }
   100% {
     transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
-#duty_table {
+#complete_duty_table {
   width: 100%;
   overflow-x: scroll; }
-  #duty_table .tableTitle th {
+  #complete_duty_table .tableTitle th {
     color: white;
     background: #1E88E5;
     border: 1px solid #1E88E5; }
-  #duty_table .tableTitle .titleLabel {
+  #complete_duty_table .tableTitle .titleLabel {
     width: 5%; }
-  #duty_table td .delete {
+  #complete_duty_table td .update {
+    background: #3498DB;
+    border: 1px solid #3498DB;
+    color: white;
+    padding: 10px 30px 10px 30px;
+    border-radius: 5px;
+    cursor: pointer; }
+  #complete_duty_table td .delete {
     width: 80px;
     height: 30px;
     padding: 5px 30px 5px 30px;
     border-radius: 5px;
     cursor: pointer; }
 
-.newDutyTable {
-  width: 50%; }
-  .newDutyTable .newDutySelect {
-    padding-top: 12px;
-    padding-bottom: 12px; }
-    .newDutyTable .newDutySelect select {
-      height: 40px;
-      width: 100%; }
-  .newDutyTable .newDutyBtn {
-    background: #003366;
-    border: 1px solid #003366;
-    color: white;
-    cursor: pointer;
-    padding: 10px 30px 10px 30px;
-    border-radius: 5px;
-    float: left; }
-    @media (orientation: portrait) {
-      .newDutyTable .newDutyBtn {
-        float: none;
-        width: 100%; } }
-
-/*# sourceMappingURL=supervisorDutyStyle.css.map */
+/*# sourceMappingURL=adminCompleteDutyStyle.css.map */
