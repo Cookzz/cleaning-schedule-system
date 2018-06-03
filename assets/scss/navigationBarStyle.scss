@@ -9,8 +9,8 @@
 
 .profile-settings {
     width: 220px;
-    right: 5%;
     left: auto;
+    right: 0;
     
     .settingtitle {
         color: black;
@@ -31,6 +31,13 @@
     }
 }
 
+.adminProfileDropdown {
+    #settingsMenu {
+        left: auto;
+        right: 0;
+    }
+}
+
 /* ---------------------------------------------------
     GENERAL NAVBAR
 ----------------------------------------------------- */
@@ -44,6 +51,7 @@
     .nav-item:hover{
         background-color: $secondarycolor;
         color: white;
+        border-radius: 5px;
 
         cursor: pointer;
     }
@@ -91,16 +99,10 @@
         width: 4%;
     }
     
-    #stuffDropDown {
+    #taskDropDown, #dutyDropDown, #attendanceDropDown {
         .dropdown-menu {
-            padding-left: 40px;
-            padding-right: 30px;
-        }
-    }
-    #dutyDropDown {
-        .dropdown-menu {
-            padding-left: 20px;
-            padding-right: 15px;
+            width: 100%;
+            text-align: center;
         }
     }
 }
@@ -121,21 +123,5 @@
     .nav-item {
         padding-left: 40px;
         color: white;
-    }
-    
-    #mobileDropDown {
-        #mobileMenu {
-            background-color: black;
-            padding-left: 0px;
-
-            .dropdown-item {
-                color: white;
-
-                &:hover {
-                    background-color: white;
-                    color: black;
-                }
-            }
-        }
     }
 }

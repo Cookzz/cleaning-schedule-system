@@ -29,8 +29,8 @@
 
 .profile-settings {
   width: 220px;
-  right: 5%;
-  left: auto; }
+  left: auto;
+  right: 0; }
   .profile-settings .settingtitle {
     color: black;
     padding-bottom: 10px; }
@@ -44,6 +44,10 @@
       background-color: #033C73;
       color: white; }
 
+.adminProfileDropdown #settingsMenu {
+  left: auto;
+  right: 0; }
+
 /* ---------------------------------------------------
     GENERAL NAVBAR
 ----------------------------------------------------- */
@@ -55,6 +59,7 @@
   .navbar .nav-item:hover, #navbarNavAltMarkup1 .nav-item:hover {
     background-color: #033C73;
     color: white;
+    border-radius: 5px;
     cursor: pointer; }
 
 .deskLoginBtn {
@@ -105,12 +110,9 @@
   font-size: 120%; }
   #desknav .pageIcon {
     width: 4%; }
-  #desknav #stuffDropDown .dropdown-menu {
-    padding-left: 40px;
-    padding-right: 30px; }
-  #desknav #dutyDropDown .dropdown-menu {
-    padding-left: 20px;
-    padding-right: 15px; }
+  #desknav #taskDropDown .dropdown-menu, #desknav #dutyDropDown .dropdown-menu, #desknav #attendanceDropDown .dropdown-menu {
+    width: 100%;
+    text-align: center; }
 
 #mobilenav, #navbarNavAltMarkup1 {
   padding-top: 7px;
@@ -121,13 +123,5 @@
 #navbarNavAltMarkup1 .nav-item {
   padding-left: 40px;
   color: white; }
-#navbarNavAltMarkup1 #mobileDropDown #mobileMenu {
-  background-color: black;
-  padding-left: 0px; }
-  #navbarNavAltMarkup1 #mobileDropDown #mobileMenu .dropdown-item {
-    color: white; }
-    #navbarNavAltMarkup1 #mobileDropDown #mobileMenu .dropdown-item:hover {
-      background-color: white;
-      color: black; }
 
 /*# sourceMappingURL=navigationBarStyle.css.map */
