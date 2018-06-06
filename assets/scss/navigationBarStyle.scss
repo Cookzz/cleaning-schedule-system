@@ -48,12 +48,25 @@
 
     border: 0.1px solid $themecolor;
     
-    .nav-item:hover{
-        background-color: $secondarycolor;
-        color: white;
-        border-radius: 5px;
+    .nav-item{
+        &:hover {
+            background-color: $secondarycolor;
+            color: white;
+            border-radius: 5px;
 
-        cursor: pointer;
+            cursor: pointer;
+        }
+        
+        a {
+            color: white;
+        }
+        
+        .dropdown-menu {
+            a{
+                color: black;
+            }
+            
+        }
     }
 }
     
