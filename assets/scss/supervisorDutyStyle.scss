@@ -30,6 +30,11 @@
 
 .newDutyTable {
     width: 50%;
+    
+    @media (orientation: portrait){
+        width: 100%;
+    }
+    
     .newDutySelect {
         padding-top: 12px;
         padding-bottom: 12px;
