@@ -30,27 +30,29 @@
 	</table>
 	<!--This is the end of first table-->
 	<!--Second Table is to output the data which by controller and delete,update button-->
-	<table id="task_table" class="table table-striped table-bordered table-responsive" border="1">
-		<thead>
-			<tr class="tableTitle">
-				<th class="titleLabel">No.</th><th>Task Location</th><th>Update</th><th>Delete</th>
-			</tr>
-		</thead>
-		<tbody>
-			<?php $i = 1?><?php foreach($tasks as $task):?>
-			<tr>
-				<td><?php echo $i ?></td><td id="<?php echo($task["task_id"])?>_task" contenteditable="true"><?php echo $task["task"]; ?></td>
-				<td><center><button type="button" id="<?php echo $task["task_id"];?>_update" class="update">Update</button></center></td>
-				<td><center><button type="button" id="<?php echo $task["task_id"];?>_delete" class="w3-text-red fa fa-trash delete"></button></center></td>
-			</tr>
-			<?php $i = $i+1?><?php endforeach; ?>	
-		</tbody>
-		<tfoot>
-			<tr>
-				<th class="titleLabel">No.</th><th>Task Location</th><th>Update</th><th>Delete</th>
-			</tr>
-		</tfoot>
-	</table>
+	<div class="table-responsive">
+		<table id="task_table" class="table table-striped table-bordered" border="1">
+			<thead>
+				<tr class="tableTitle">
+					<th class="titleLabel">No.</th><th>Task Location</th><th>Update</th><th>Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php $i = 1?><?php foreach($tasks as $task):?>
+				<tr>
+					<td><?php echo $i ?></td><td id="<?php echo($task["task_id"])?>_task" contenteditable="true"><?php echo $task["task"]; ?></td>
+					<td><center><button type="button" id="<?php echo $task["task_id"];?>_update" class="update">Update</button></center></td>
+					<td><center><button type="button" id="<?php echo $task["task_id"];?>_delete" class="w3-text-red fa fa-trash delete"></button></center></td>
+				</tr>
+				<?php $i = $i+1?><?php endforeach; ?>	
+			</tbody>
+			<tfoot>
+				<tr>
+					<th class="titleLabel">No.</th><th>Task Location</th><th>Update</th><th>Delete</th>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
 	<!--This is the end of second table-->
 </form>
 
