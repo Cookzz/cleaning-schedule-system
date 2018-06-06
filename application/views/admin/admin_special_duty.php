@@ -24,7 +24,7 @@
 
 <h2>Special Duty Table</h2><hr/>
 <!--Table to show complete duty table-->
-
+<div class="table-responsive">
 	<table id="special_duty_table" class="table table-striped table-bordered" border="1">
 		<thead class="tableTitle">
 			<tr>
@@ -68,7 +68,7 @@
 			</tr>
 		</tfoot>
 	</table>
-
+</div>
 
 <!--Hidden value for external js file-->
 <input id="baseURL" type=hidden value="<?=base_url()?>">
