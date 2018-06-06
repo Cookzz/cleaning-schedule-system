@@ -32,28 +32,30 @@
 	</table>
 	<!--This is the end of first table-->
 	<!--Second Table is to output the data which by controller and delete,update button-->
-	<table id="duty_table" class="table table-striped table-bordered table-responsive" border="1">
-		<thead>
-			<tr class="tableTitle">
-				<th class="titleLabel">No.</th><th>Duty Task</th><th>Duty Sub Task</th><th>Delete</th>
-			</tr>
-		</thead>
-		<tbody>
-			<?php $i = 1?><?php foreach($duties as $duty):?>
-			<tr>
-				<td><?php echo $i ?></td>
-				<td id="<?php echo($duty["duty_id"])?>_task"><?php echo $duty["duty_task"]; ?></td>
-				<td id="<?php echo($duty["duty_id"])?>_sub_task"><?php echo $duty["duty_sub_task"]; ?></td>
-				<td><center><button style="width:80px;height:30px" type="button" id="<?php echo $duty["duty_id"];?>_delete" class="w3-text-red fa fa-trash delete"></button></center></td>
-			</tr>
-			<?php $i = $i+1?><?php endforeach; ?>	
-		</tbody>
-		<tfoot>
-			<tr>
-				<th>No.</th><th>Duty Task</th><th>Duty Sub Task</th><th>Delete</th>
-			</tr>
-		</tfoot>
-	</table>
+	<div class="table-responsive">
+		<table id="duty_table" class="table table-striped table-bordered table-responsive" border="1">
+			<thead>
+				<tr class="tableTitle">
+					<th class="titleLabel">No.</th><th>Duty Task</th><th>Duty Sub Task</th><th>Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php $i = 1?><?php foreach($duties as $duty):?>
+				<tr>
+					<td><?php echo $i ?></td>
+					<td id="<?php echo($duty["duty_id"])?>_task"><?php echo $duty["duty_task"]; ?></td>
+					<td id="<?php echo($duty["duty_id"])?>_sub_task"><?php echo $duty["duty_sub_task"]; ?></td>
+					<td><center><button style="width:80px;height:30px" type="button" id="<?php echo $duty["duty_id"];?>_delete" class="w3-text-red fa fa-trash delete"></button></center></td>
+				</tr>
+				<?php $i = $i+1?><?php endforeach; ?>	
+			</tbody>
+			<tfoot>
+				<tr>
+					<th>No.</th><th>Duty Task</th><th>Duty Sub Task</th><th>Delete</th>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
 	<!--This is the end of second table-->
 </form>
 
