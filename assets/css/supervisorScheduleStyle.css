@@ -53,6 +53,12 @@
   .morningTable tbody tr:nth-child(even),
   .afternoonTable tbody tr:nth-child(even) {
     background: white; }
+    .morningTable tbody tr:nth-child(even) select,
+    .afternoonTable tbody tr:nth-child(even) select {
+      background: white; }
+      .morningTable tbody tr:nth-child(even) select option,
+      .afternoonTable tbody tr:nth-child(even) select option {
+        background: white; }
   .morningTable tbody td select,
   .afternoonTable tbody td select {
     border: 0px; }
