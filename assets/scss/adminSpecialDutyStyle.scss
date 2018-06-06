@@ -12,20 +12,22 @@
             border: 1px solid $tableheadertheme;
         }
         
-        .noLabel {
-            width: 5% !important; //!important is used to override the style forced by element.style
-        }
-        
-        .specialDutyLabel {
-            width: 18% !important;
-        }
-        
-        .specialDutyDetail {
-            width: 40% !important;
-        }
-        
-        .timeLabel, .dateLabel {
-            width: 15% !important;
+        @media (orientation:landscape) and (max-width: 1400px){
+            .noLabel {
+                width: 5% !important; //!important is used to override the style forced by element.style
+            }
+
+            .specialDutyLabel {
+                width: 18% !important;
+            }
+
+            .specialDutyDetail {
+                width: 40% !important;
+            }
+
+            .timeLabel, .dateLabel {
+                width: 15% !important;
+            }
         }
         
         //37% left of width that can be used for other columns

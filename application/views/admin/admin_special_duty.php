@@ -24,8 +24,7 @@
 
 <h2>Special Duty Table</h2><hr/>
 <!--Table to show complete duty table-->
-
-	<table id="special_duty_table" class="table table-striped table-bordered" border="1">
+	<table id="special_duty_table" class="table table-striped table-bordered table-responsive" border="1">
 		<thead class="tableTitle">
 			<tr>
 				<th>No</th>

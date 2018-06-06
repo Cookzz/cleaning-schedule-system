@@ -29,14 +29,15 @@
     color: white;
     background: #1E88E5;
     border: 1px solid #1E88E5; }
-  #special_duty_table .tableTitle .noLabel {
-    width: 5% !important; }
-  #special_duty_table .tableTitle .specialDutyLabel {
-    width: 18% !important; }
-  #special_duty_table .tableTitle .specialDutyDetail {
-    width: 40% !important; }
-  #special_duty_table .tableTitle .timeLabel, #special_duty_table .tableTitle .dateLabel {
-    width: 15% !important; }
+  @media (orientation: landscape) and (max-width: 1400px) {
+    #special_duty_table .tableTitle .noLabel {
+      width: 5% !important; }
+    #special_duty_table .tableTitle .specialDutyLabel {
+      width: 18% !important; }
+    #special_duty_table .tableTitle .specialDutyDetail {
+      width: 40% !important; }
+    #special_duty_table .tableTitle .timeLabel, #special_duty_table .tableTitle .dateLabel {
+      width: 15% !important; } }
   #special_duty_table td .update {
     background: #3498DB;
     border: 1px solid #3498DB;
