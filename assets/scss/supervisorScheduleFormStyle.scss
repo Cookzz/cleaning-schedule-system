@@ -1,0 +1,68 @@
+@import "global.scss";
+
+.scheduleForm {
+    width: 50%;
+    
+    input {
+        padding: 5px;
+    }
+    
+    #save_schedule, #delete_schedule {
+        float: right;
+        padding: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin: 3px;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        
+        cursor: pointer;
+            
+        &#save_schedule {
+            background: $mainbuttontheme;
+            border: 1px solid $mainbuttontheme;
+            margin-right: 0px;
+        }
+        &#delete_schedule {
+            background: $secondarybuttontheme;
+            border: 1px solid $secondarybuttontheme;
+        }
+        
+        @media (orientation:portrait){
+            float: none;
+            width: 100%;
+        }
+    }
+    
+    @media (orientation:portrait){
+        width: 100%;
+    }
+}
+
+.previousBtn {
+    float: right;
+    background: $subbuttontheme;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 3px;
+    color: white;
+    
+    &:link {
+        color: white;
+        text-decoration: none;
+    }
+    
+    &:visited {
+        color: white;
+        text-decoration: none;
+    }
+    
+    @media (orientation:portrait){
+        float: none;
+        
+        width: 100%;    
+        display: inline-block;
+        text-align: center;
+    }
+}

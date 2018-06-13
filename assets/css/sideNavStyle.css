@@ -12,7 +12,8 @@
   color: #fff !important;
   transition: all 0.3s;
   margin-left: -300px;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  font-family: 'Cairo' !important; }
   #sidebar.active {
     margin-left: 0px; }
   #sidebar.inactive {
@@ -20,15 +21,25 @@
   #sidebar .sidebar-header {
     padding: 20px;
     background: #6d7fcc; }
+    #sidebar .sidebar-header h3 {
+      font-size: 1.75rem;
+      font-weight: 500;
+      line-height: 1.2;
+      font-family: 'Cairo' !important; }
   #sidebar .components {
     padding: 20px 0;
     border-bottom: 1px solid #47748b; }
   #sidebar ul h4 {
     color: #fff;
     padding: 10px;
-    margin-bottom: 0px; }
+    margin-bottom: 0px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    font-family: 'Cairo' !important; }
   #sidebar ul .sideNavHeading {
-    margin-top: 0px; }
+    margin-top: 0px;
+    border-top: 1px solid #557aa2; }
   #sidebar ul li a {
     padding: 10px;
     font-size: 1.0em;
@@ -36,7 +47,8 @@
     color: white; }
     #sidebar ul li a:hover {
       color: #7386D5;
-      background: #fff; }
+      background: #fff;
+      text-decoration: none; }
 
 #sideBarCollapse {
   float: right; }

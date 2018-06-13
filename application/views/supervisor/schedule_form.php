@@ -3,14 +3,16 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/schedule_form.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/supervisorScheduleFormStyle.css">
 </head>
 <body>  
 
+<a class="previousBtn" href="<?php echo base_url();?>HomeController/viewSchedulePage">◄ Go Back to Schedule</a>
 <h2>Set Schedule</h2><hr/>
 <h3>Schedule</h3>
 
 <form id="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-<table>
+<table class="scheduleForm">
 	<tr>
 		<th>Task Location:</th>
 		<td>
@@ -25,19 +27,17 @@
 	<tr>
 		<th>Time:</th>
 		<td>
-			<center>
-				<input id="Morning" type="radio" name="time" value="morning" checked>AM
-				<input id="Afternoon" type="radio" name="time" value="afternoon">PM
-			</center>
+            <input id="Morning" type="radio" name="time" value="morning" checked>AM&emsp;
+            <input id="Afternoon" type="radio" name="time" value="afternoon">PM
 		</td>
 	</tr>
 	<tr>
 		<th>Day:</th>
 		<td>
-			<center>
-				<input id="thisWeek" type="radio" name="week" value="this" checked>This Week
+			
+				<input id="thisWeek" type="radio" name="week" value="this" checked>This Week&emsp;
 				<input id="nextWeek" type="radio" name="week" value="next">Next Week
-			</center>
+			
 		</td>
 	</tr>
 	<tbody id="data_area">
@@ -103,16 +103,17 @@
 	<tr>
 		<th>Remark:</th>
 		<td>
-			<center>
+			
 			<select id="remark">
 				<option value="active">active</option>
 				<option value="repair">repair</option>
 				<option value="construction">construction</option>
 			</select>
-			</center>
+			
 		</td>
 	</tr>
-        <tr><td colspan="2"><center><button id="save_schedule">save</button><button id="delete_schedule">delete</button></center></td></tr>
+        <tr><td colspan="2"><button id="save_schedule">Save</button>
+        <button id="delete_schedule">Delete</button></td></tr>
     </tbody>
 </table>
 </form>
