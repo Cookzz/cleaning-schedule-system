@@ -110,8 +110,8 @@
 			$scheduleObject = new scheduleObject();
 					
 			$week_number = array("week_number" => date("W"));
-			$get_morning_schedule_query = $this->main_model->get_specify_data("*","task",$week_number,"afternoon_schedule");
-			$morning_schedules = $get_morning_schedule_query->result_array();
+			$get_afternoon_schedule_query = $this->main_model->get_specify_data("*","task",$week_number,"afternoon_schedule");
+			$afternoon_schedules = $get_afternoon_schedule_query->result_array();
 							
 			$task = array();
 			$monday = array();
@@ -122,16 +122,16 @@
 			$saturday = array();
 			$sunday = array();
 					
-			foreach($morning_schedules as $morning_schedule)
+			foreach($afternoon_schedules as $afternoon_schedule)
 			{
-				array_push($task,$morning_schedule['task']);
-				array_push($monday,$morning_schedule['monday']);
-				array_push($tuesday,$morning_schedule['tuesday']);
-				array_push($wednesday,$morning_schedule['wednesday']);
-				array_push($thursday,$morning_schedule['thursday']);
-				array_push($friday,$morning_schedule['friday']);
-				array_push($saturday,$morning_schedule['saturday']);
-				array_push($sunday,$morning_schedule['sunday']);
+				array_push($task,$afternoon_schedule['task']);
+				array_push($monday,$afternoon_schedule['monday']);
+				array_push($tuesday,$afternoon_schedule['tuesday']);
+				array_push($wednesday,$afternoon_schedule['wednesday']);
+				array_push($thursday,$afternoon_schedule['thursday']);
+				array_push($friday,$afternoon_schedule['friday']);
+				array_push($saturday,$afternoon_schedule['saturday']);
+				array_push($sunday,$afternoon_schedule['sunday']);
 			}
 					
 			$scheduleObject->setScheduleData($task,$monday,$tuesday,$wednesday,$thursday,$friday,$saturday,$sunday);
@@ -139,11 +139,11 @@
 			echo (json_encode($scheduleObject));
 			
 		}
-	}
+
 	
-	public function loadAfternoonScheduleData()
+		public function loadSpecialDutyData()
 		{
-			if(isset($_POST['user_id'])))	
+			if(isset($_POST['user_id']))	
 			{
 				$this->load->model("main_model");
 				
