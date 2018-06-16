@@ -21,7 +21,12 @@
 
 </head>
 <body>  
-
+<div class="navbar-header">
+<!--This this sidebar button-->
+	<button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+		<span class="togglespan">Toggle Sidebar</span>
+	</button>
+</div>
 <h2>Afternoon Schedule Table</h2><hr/>
 
 <!--This form got one table, one is to let user to insert new task, one is to display the task table-->

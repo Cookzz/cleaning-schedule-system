@@ -9,14 +9,27 @@
 </head>
 <body>  
 
-<h2>Location's Rank</h2>
+<h2>Graphs</h2>
 
-<div id="barRating" class="responsive" style="height: <?= $countOfRating*8?>%; width: 100%;">
-	
-</div>
 
-<div id="pieDuty" class="responsive" style="height:600px; width: 100%;">
-	
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" href="#ratingTab">Customer Total Ratings</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#dutiesTab">Duties</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane container active" id="ratingTab">
+    <div id="barRating" class="responsive" style="height: <?= $countOfRating*8?>%; width: 100%;">
+    </div>
+  </div>
+  <div class="tab-pane container fade" id="dutiesTab">
+        <div id="pieDuty" class="responsive" style="height:600px; width: 100%;">
+        </div>
+  </div>
 </div>
 
 <!--hidden value for external js file-->

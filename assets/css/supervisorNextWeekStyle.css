@@ -172,4 +172,24 @@
 .dayLabel {
   font-weight: bold; }
 
+.previousWeekBtn {
+  float: right;
+  background: #0066CC;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 3px;
+  color: white; }
+  .previousWeekBtn:link {
+    color: white;
+    text-decoration: none; }
+  .previousWeekBtn:visited {
+    color: white;
+    text-decoration: none; }
+  @media (orientation: portrait) {
+    .previousWeekBtn {
+      float: none;
+      width: 100%;
+      display: inline-block;
+      text-align: center; } }
+
 /*# sourceMappingURL=supervisorNextWeekStyle.css.map */

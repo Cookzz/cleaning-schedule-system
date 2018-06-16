@@ -7,7 +7,8 @@
 </head>
 <body>  
 
-<h2 class="scheduleTitle">Next Week Schedule</h2>
+<a class="previousWeekBtn" href="<?php echo base_url();?>HomeController/viewNextWeekSchedulePage">◀ Go back to this week's schedule</a>
+<h2 class="scheduleTitle">Next Week's Schedule</h2>
 <hr class="titleHr">
 
 <!--The area of morning schedule , too complicated i will explain face to face-->

@@ -7,7 +7,10 @@
             <ul class="list-unstyled components">
                 <h4>Admin's Table</h4>
                 <hr class="sideNavHeading">
-
+                
+                <li>
+                  <a href="<?php echo base_url();?>adminHomeController/viewMainPage">Homepage</a>
+                </li>
                 <li>
                   <a href="<?php echo base_url();?>adminHomeController/viewUserPage">User Table</a>
                 </li>

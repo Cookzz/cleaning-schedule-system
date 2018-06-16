@@ -13,6 +13,8 @@
     transition: all 0.3s;
     margin-left: -300px;
     overflow-y: scroll;
+    
+    font-family: 'Cairo' !important;
         
     &.active {
         margin-left: 0px;
@@ -25,6 +27,14 @@
     .sidebar-header {
         padding: 20px;
         background: #6d7fcc;
+        
+        h3 {
+            font-size: 1.75rem;
+            font-weight: 500;
+            line-height: 1.2;
+            font-family: 'Cairo' !important;
+        }
+        
     }
     
     .components {
@@ -37,10 +47,15 @@
             color: #fff;
             padding: 10px;
             margin-bottom: 0px;
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.2;
+            font-family: 'Cairo' !important;
         }
         
         .sideNavHeading {
             margin-top: 0px;
+            border-top: 1px solid #557aa2;
         }
         
         li {
@@ -53,6 +68,7 @@
                 &:hover{
                     color: #7386D5;
                     background: #fff;
+                    text-decoration: none;
                 }
             }
         } 
@@ -61,6 +77,11 @@
 
 #sideBarCollapse {
     float: right;
+    
+    @media (orientation: portrait){
+        float: none;
+        width: 100%;
+    }
 }
 /* ---------------------------------------------------
     CONTENT STYLE
