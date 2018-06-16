@@ -1,6 +1,7 @@
-.tabcontent .container {
-  overflow-y: scroll; }
-  .tabcontent .container #barRating, .tabcontent .container #pieDuty {
-    width: 100%; }
+#barRating, #pieDuty {
+  width: 100%; }
+  @media (orientation: portrait) {
+    #barRating, #pieDuty {
+      width: 50%; } }
 
 /*# sourceMappingURL=supervisorGraphStyle.css.map */
