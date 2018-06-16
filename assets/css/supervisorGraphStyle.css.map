@@ -1,7 +1,12 @@
 {
 "version": 3,
+<<<<<<< HEAD
 "mappings": "",
 "sources": [],
+=======
+"mappings": "AAAA,MAAO;EACH,UAAU,EAAE,MAAM;EAElB,kCAAqB;IACjB,KAAK,EAAE,IAAI",
+"sources": ["../scss/supervisorGraphStyle.scss"],
+>>>>>>> 814e6b8c97f478d5d6f6860f727a5610b3b4534e
 "names": [],
 "file": "supervisorGraphStyle.css"
 }
