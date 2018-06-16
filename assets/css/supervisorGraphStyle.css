@@ -1,3 +1,6 @@
-
+.graph {
+  overflow-y: scroll; }
+  .graph #barRating, .graph #pieDuty {
+    width: 100%; }
 
 /*# sourceMappingURL=supervisorGraphStyle.css.map */
