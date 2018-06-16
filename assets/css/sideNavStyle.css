@@ -52,6 +52,10 @@
 
 #sideBarCollapse {
   float: right; }
+  @media (orientation: portrait) {
+    #sideBarCollapse {
+      float: none;
+      width: 100%; } }
 
 /* ---------------------------------------------------
     CONTENT STYLE

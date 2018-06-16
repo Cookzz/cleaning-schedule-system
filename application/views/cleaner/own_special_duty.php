@@ -6,7 +6,7 @@
 </head>
 <body>  
 
-<h2>Today Special Duty</h2><h5><?= $date?></h5>
+<h2>Today's Special Duty</h2><h5><?= $date?></h5>
 <!--This is the body of own special duty page, It allow cleaner to see thier special duty-->
 <p>
 <!--This is the start to show the special duty-->

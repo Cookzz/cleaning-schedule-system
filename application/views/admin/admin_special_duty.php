@@ -21,7 +21,12 @@
 
 </head>
 <body>  
-
+<div class="navbar-header">
+<!--This this sidebar button-->
+	<button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+		<span class="togglespan">Toggle Sidebar</span>
+	</button>
+</div>
 <h2>Special Duty Table</h2><hr/>
 <!--Table to show complete duty table-->
 	<table id="special_duty_table" class="table table-striped table-bordered table-responsive" border="1">

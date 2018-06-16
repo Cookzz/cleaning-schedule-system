@@ -203,7 +203,7 @@
 									if((!empty($schedule_result[$day])) && ($schedule_result[$day] != "NA"))
 									{
 										$data = array("pending_duty_task"=>$task,
-												"pending_duty_subtask"=>"No any subtask",
+												"pending_duty_subtask"=>"Do not have any subtask currently",
 												"pending_duty_cleaner"=>$schedule_result[$day],
 												"pending_duty_schedule"=>"afternoon",
 												"pending_duty_date"=>date("Y/m/d"));
@@ -929,8 +929,8 @@
 			
 				$data['complete_duties'] = $query->result_array();
 				$data['link'] = "HomeController/viewCompleteDutyPage";
-				$data['link_word'] = "Back to today complete duty";
-				$data['title'] = "All Completed Duty";
+				$data['link_word'] = "Back to today's completed duties";
+				$data['title'] = "All Completed Duties";
 				
 				$this->viewNav();
 				$this->load->view('supervisor/'.$page,$data);
