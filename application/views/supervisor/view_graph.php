@@ -24,13 +24,6 @@
 
 <div class="tab-content">
   <div class="tab-pane container active" id="ratingTab">
-<<<<<<< HEAD
-    <div id="barRating" class="responsive" style="height: <?= $countOfRating*8?>%; width: 100%;">
-    </div>
-  </div>
-  <div class="tab-pane container fade" id="dutiesTab">
-        <div id="pieDuty" class="responsive" style="height:600px; width: 100%;">
-=======
    <div class="graph">
     <div id="barRating" style="height: <?= $countOfRating*8?>%;">
     </div>
@@ -40,7 +33,6 @@
        <div class="graph">
         <div id="pieDuty">
         </div>
->>>>>>> 814e6b8c97f478d5d6f6860f727a5610b3b4534e
         </div>
   </div>
 </div>
