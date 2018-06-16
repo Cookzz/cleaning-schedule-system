@@ -44,31 +44,37 @@
 				}
 				elseif($IcOrPassport == 1)
 				{	
-					if(strlen($newUserIC) < 12 || strlen($newUserIC) >12)
+					if(strlen($newUserIC) < 14 || strlen($newUserIC) >14)
 					{
 						$inputErr[] = $newUserIC;
 					}
-					elseif(!preg_match('/^[0-9\s]+$/', $IcOrPassport))
+					elseif(!preg_match("/^\d{6}\-\d{2}\-\d{4}$/", $newUserIC))
 					{
 						$inputErr[] = $newUserIC;
+					}
+					else
+					{
+						$data = array('user_IC' => $newUserIC);
+						$query = $this->main_model->get_specify_data("*","id",$data,"users");
+						$row_count = $query->num_rows();
+						
+						if($row_count >=1)
+						{
+							$inputErr[] = $newUserIC;
+						}
 					}
 				}
 				elseif($IcOrPassport == 2)
 				{	
-					
-				}
-				
-				else
-				{
 					$data = array('user_IC' => $newUserIC);
 					$query = $this->main_model->get_specify_data("*","id",$data,"users");
 					$row_count = $query->num_rows();
-					
+						
 					if($row_count >=1)
 					{
 						$inputErr[] = $newUserIC;
 					}
-				}
+				}				
 				
 				if(empty($inputErr))
 				{
@@ -122,32 +128,40 @@
 				}
 				elseif($IcOrPassport == 1)
 				{	
-					if(strlen($newUserIC) < 12 || strlen($newUserIC) >12)
+					if(strlen($newUserIC) < 14 || strlen($newUserIC) >14)
 					{
 						echo("Invalid User IC/No Format");
 					}
-					elseif(!preg_match('/^[0-9\s]+$/', $IcOrPassport))
+					elseif(!preg_match("/^\d{6}\-\d{2}\-\d{4}$/", $newUserIC))
 					{
 						echo("Invalid User IC/No Format");
+					}
+					else
+					{
+						$data = array('user_IC' => $newUserIC);
+						$query = $this->main_model->get_specify_data("*","id",$data,"users");
+						$row_count = $query->num_rows();
+						
+						if($row_count >=1)
+						{
+							echo("Duplicate User IC/No or Passport");
+						}
 					}
 				}
 				elseif($IcOrPassport == 2)
 				{	
-					
-				}
-				else
-				{
-					$data = array(
-								'user_IC' => $newUserIC
-								);
+				
+					$data = array('user_IC' => $newUserIC);
 					$query = $this->main_model->get_specify_data("*","id",$data,"users");
 					$row_count = $query->num_rows();
-					
+						
 					if($row_count >=1)
 					{
 						echo("Duplicate User IC/No or Passport");
 					}
+					
 				}
+				
 				
 			}
 			elseif(isset($_POST['newUsername']))

@@ -21,7 +21,7 @@ function validateDate(cleaners,numberOfCleaner)
 	var d = new Date();
     var TodayDate = d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate();
 	var special_d = new Date(Date.parse($("#special_duty_date").val()));
-    var special_duty_date = special_d.getFullYear() + "-" + (special_d.getMonth()+1) + "-" +                               special_d.getDate();
+    var special_duty_date = special_d.getFullYear() + "-" + (special_d.getMonth()+1) + "-" + special_d.getDate();
     
 	if(!($("#special_duty_dutyTitle").val().trim().match(/^([a-zA-Z0-9]+\s)*[a-zA-Z0-9]+$/)))
 	{
