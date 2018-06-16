@@ -1,9 +1,7 @@
-.tabcontent {
-    .container {
-        overflow-y: scroll;
-        
-        #barRating, #pieDuty {
-            width: 100%;
-        }
+#barRating, #pieDuty {
+    width: 100%;
+    
+    @media (orientation: portrait){
+        width: 50%;
     }
 }
