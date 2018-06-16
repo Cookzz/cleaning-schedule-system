@@ -1,6 +1,6 @@
-.graph {
+.tabcontent .container {
   overflow-y: scroll; }
-  .graph #barRating, .graph #pieDuty {
+  .tabcontent .container #barRating, .tabcontent .container #pieDuty {
     width: 100%; }
 
 /*# sourceMappingURL=supervisorGraphStyle.css.map */

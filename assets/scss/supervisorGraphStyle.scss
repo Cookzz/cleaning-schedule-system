@@ -1,7 +1,9 @@
-.graph {
-    overflow-y: scroll;
-    
-    #barRating, #pieDuty {
-        width: 100%;
+.tabcontent {
+    .container {
+        overflow-y: scroll;
+        
+        #barRating, #pieDuty {
+            width: 100%;
+        }
     }
 }

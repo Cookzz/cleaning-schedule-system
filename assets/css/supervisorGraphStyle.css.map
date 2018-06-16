@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,MAAO;EACH,UAAU,EAAE,MAAM;EAElB,kCAAqB;IACjB,KAAK,EAAE,IAAI",
+"mappings": "AACI,sBAAW;EACP,UAAU,EAAE,MAAM;EAElB,kEAAqB;IACjB,KAAK,EAAE,IAAI",
 "sources": ["../scss/supervisorGraphStyle.scss"],
 "names": [],
 "file": "supervisorGraphStyle.css"
