@@ -1,7 +1,3 @@
-#barRating, #pieDuty {
-  width: 100%; }
-  @media (orientation: portrait) {
-    #barRating, #pieDuty {
-      width: 50%; } }
+
 
 /*# sourceMappingURL=supervisorGraphStyle.css.map */
