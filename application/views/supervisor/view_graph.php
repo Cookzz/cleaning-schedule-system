@@ -24,11 +24,11 @@
 
 <div class="tab-content">
   <div class="tab-pane container active" id="ratingTab">
-    <div id="barRating" class="responsive" style="height: <?= $countOfRating*8?>%;">
+    <div id="barRating" class="responsive" style="width:100%; height: 100%;">
     </div>
   </div>
   <div class="tab-pane container fade" id="dutiesTab">
-        <div id="pieDuty" class="responsive">
+        <div id="pieDuty" class="responsive" style="width:100%; height: 100%;">
         </div>
   </div>
 </div>
