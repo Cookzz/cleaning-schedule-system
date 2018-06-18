@@ -147,7 +147,7 @@
 			{
 				$this->load->model("main_model");
 				
-				$user_id = array('id' => $_POST['user_id']);
+				$user_id = array('user_id' => $_POST['user_id']);
 				
 				$query = $this->main_model->get_specify_data("user_name","user_name",$user_id,"users");
 				$user_name = $query->row()->user_name;
