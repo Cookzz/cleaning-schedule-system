@@ -59,7 +59,7 @@ $(document).ready(function(){
 	var d= new Date();
 	var i =0;
 	
-	$('#task_table tfoot th').each( function () {
+	$('#admin_task_table tfoot th').each( function () {
 
         var title = $(this).text();
         $(this).html( '<input type="text" id="'+"column_search"+i+'" placeholder="Search '+title+'" />' );

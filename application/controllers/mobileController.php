@@ -35,8 +35,136 @@
 					{
 						if($user_access_level == 3)
 						{
-							//$_SESSION['mobile_uid'] = $query->row()->user_id;
-							echo("true");							
+							$data = array('pending_duty_date' => date("Y/m/d"));
+							$query = $this->main_model->get_specify_data("*","pending_duty_id",$data,"pending_duty");
+							$pending_duty_rows = $query->num_rows();
+							$data = array('complete_duty_date' => date("Y/m/d"));
+							$query = $this->main_model->get_specify_data("*","complete_duty_id",$data,"complete_duty");
+							$complete_duty_rows = $query->num_rows();
+							
+							if($pending_duty_rows <= 0 && $complete_duty_rows <=0 )
+							{
+								$day = strtolower(date("l"));
+								$week = date("W");
+								$week_number = array("week_number" => $week,"remark" => "active");
+								
+								//Select morning schedule and insert to pending order
+								$query = $this->main_model->get_specify_data("*","task",$week_number,"morning_schedule");
+								$schedule_results = $query->result_array();
+								$morning_schedule_results_count = $query->num_rows();
+								
+								if($morning_schedule_results_count > 0)
+								{
+									foreach($schedule_results as $schedule_result)
+									{
+										$task = $schedule_result["task"];
+										
+										$data = array("duty_task"=>$task);
+										$query = $this->main_model->get_specify_data("*","duty_task",$data,"duty");
+										$duty_results = $query->result_array();
+										$duty_number = $query->num_rows();
+										if($duty_number != 0)
+										{
+											foreach($duty_results as $duty_result)
+											{
+												if((!empty($schedule_result[$day])) && ($schedule_result[$day] != "NA"))
+												{
+													$duty_sub_task = $duty_result['duty_sub_task'];
+												
+													$data = array("pending_duty_task"=>$task,
+															"pending_duty_subtask"=>$duty_sub_task,
+															"pending_duty_cleaner"=>$schedule_result[$day],
+															"pending_duty_schedule"=>"morning",
+															"pending_duty_date"=>date("Y/m/d"));
+															
+													$query = $this->main_model->insert_data("pending_duty",$data);
+												}
+												
+											}
+										}
+										else
+										{
+											if((!empty($schedule_result[$day])) && ($schedule_result[$day] != "NA"))
+											{										
+												$data = array("pending_duty_task"=>$task,
+														"pending_duty_subtask"=>"No any subtask",
+														"pending_duty_cleaner"=>$schedule_result[$day],
+														"pending_duty_schedule"=>"morning",
+														"pending_duty_date"=>date("Y/m/d"));
+														
+												$query = $this->main_model->insert_data("pending_duty",$data);
+											}
+										}
+										
+									}
+								}
+								
+								
+								
+								//Select afternoon schedule and insert to pending order
+								$query = $this->main_model->get_specify_data("*","task",$week_number,"afternoon_schedule");
+								$schedule_results = $query->result_array();
+								$afternoon_schedule_results_count = $query->num_rows();
+								
+								if($afternoon_schedule_results_count > 0)
+								{
+									foreach($schedule_results as $schedule_result)
+									{
+										$task = $schedule_result["task"];
+										
+										$data = array("duty_task"=>$task);
+										$query = $this->main_model->get_specify_data("*","duty_task",$data,"duty");
+										$duty_results = $query->result_array();
+										$duty_number = $query->num_rows();
+										if($duty_number != 0)
+										{
+											foreach($duty_results as $duty_result)
+											{
+												if((!empty($schedule_result[$day])) && ($schedule_result[$day] != "NA"))
+												{
+													$duty_sub_task = $duty_result['duty_sub_task'];
+												
+													$data = array("pending_duty_task"=>$task,
+															"pending_duty_subtask"=>$duty_sub_task,
+															"pending_duty_cleaner"=>$schedule_result[$day],
+															"pending_duty_schedule"=>"afternoon",
+															"pending_duty_date"=>date("Y/m/d"));
+															
+													$query = $this->main_model->insert_data("pending_duty",$data);
+												}
+												
+											}
+										}
+										else
+										{
+											if((!empty($schedule_result[$day])) && ($schedule_result[$day] != "NA"))
+											{
+												$data = array("pending_duty_task"=>$task,
+														"pending_duty_subtask"=>"Do not have any subtask currently",
+														"pending_duty_cleaner"=>$schedule_result[$day],
+														"pending_duty_schedule"=>"afternoon",
+														"pending_duty_date"=>date("Y/m/d"));
+														
+												$query = $this->main_model->insert_data("pending_duty",$data);
+											}
+										}
+										
+									}
+								}
+								
+								if($afternoon_schedule_results_count == 0 && $afternoon_schedule_results_count == 0)
+								{
+									$data = array("complete_duty_task"=>"This day don't have any duty",
+											"complete_duty_date"=>date("Y/m/d"));
+														
+									$query = $this->main_model->insert_data("complete_duty",$data);
+								}
+								
+								$new_remark = array("remark" => "active");
+								$query = $this->main_model->update_data("remark","repair",$new_remark,"morning_schedule");
+								$query = $this->main_model->update_data("remark","repair",$new_remark,"afternoon_schedule");							
+							}
+							echo("true");
 						}
 						else
 						{				
@@ -193,12 +321,88 @@
 					array_push($special_duty_date,$special_duty['special_duty_date']);
 				}
 						
-				$specialScheduleObject = new specialScheduleObject();
-				$specialScheduleObject->setSpecialScheduleData($special_duty_title,$special_duty_detail,$special_duty_time,$special_duty_date);
+				$specialDutyObject = new specialDutyObject();
+				$specialDutyObject->setSpecialDutyData($special_duty_title,$special_duty_detail,$special_duty_time,$special_duty_date);
 				
-				echo (json_encode($specialScheduleObject));
+				echo (json_encode($specialDutyObject));
 			}	
 		}
+		
+		public function loadDailyDutyData()
+		{
+			if(isset($_POST['user_id']))	
+			{
+				$this->load->model("main_model");
+				
+				$user_id = array('user_id' => $_POST['user_id']);
+				$query = $this->main_model->get_specify_data("user_name","user_name",$user_id,"users");
+				$user_name = $query->row()->user_name;
+				$query = $this->main_model->get_specify_data("user_id","user_id",$user_id,"users");
+				$user_id = $query->row()->user_id;
+				
+				//Select pending duty from pending table
+				if(date("G") < 13)
+				{
+					$time = "morning";
+				}
+				else
+				{
+					$time = "afternoon";
+				}
+				$cleaner = array("pending_duty_cleaner" => $user_id."_".$user_name , "pending_duty_date" => date("Y/m/d"), "pending_duty_schedule" => $time);
+				$get_pending_query = $this->main_model->get_specify_data("*","pending_duty_task",$cleaner,"pending_duty");
+				$pending_duties = $get_pending_query->result_array();
+					
+				$daily_duty_task = array();
+				$daily_duty_subtask = array();
+				$daily_duty_comment = array();
+				$daily_duty_id = array();
+
+						
+				foreach($pending_duties as $pending_duty)
+				{
+					array_push($daily_duty_task,$pending_duty['pending_duty_task']);
+					array_push($daily_duty_subtask,$pending_duty['pending_duty_subtask']);
+					array_push($daily_duty_comment,$pending_duty['pending_duty_comment']);
+					array_push($daily_duty_id,$pending_duty['pending_duty_id']);
+				}
+						
+				$dailyDutyObject = new dailyDutyObject();
+				$dailyDutyObject->setDailyDutyData($daily_duty_task,$daily_duty_subtask,$daily_duty_comment,$daily_duty_id);
+				
+				echo (json_encode($dailyDutyObject));
+			}	
+		}
+		
+		public function completeOwnDuty()
+		{	
+			if(isset($_POST['pending_duty_id']))	
+			{
+				$this->load->model("main_model");
+							
+				$pending_duty_id = ($_POST['pending_duty_id']);
+				
+				$pending_duty_id = array('pending_duty_id' => $pending_duty_id);
+				$query = $this->main_model->get_specify_data("*","pending_duty_id",$pending_duty_id,"pending_duty");
+				$result = $query->row_array();
+				$this->main_model->delete_data("pending_duty",$pending_duty_id);
+				
+				$data = array('complete_duty_task' => $result["pending_duty_task"],
+								"complete_duty_subtask" => $result["pending_duty_subtask"],
+								"complete_duty_cleaner" => $result["pending_duty_cleaner"],
+								"complete_duty_schedule" => $result["pending_duty_schedule"],
+								"complete_duty_time" => date("G:i:s"),
+								"complete_duty_date" => date("Y/m/d"));
+				$query = $this->main_model->insert_data("complete_duty",$data);
+				
+				echo("true");
+			}
+			else		
+			{
+				echo("false");
+			}				
+		}
+		
 	}
 	
 	
@@ -228,9 +432,9 @@
 		}
 	}
 	
-	class specialScheduleObject
+	class specialDutyObject
 	{
-		function setSpecialScheduleData($special_duty_title,$special_duty_detail,$special_duty_time,$special_duty_date)
+		function setSpecialDutyData($special_duty_title,$special_duty_detail,$special_duty_time,$special_duty_date)
 		{
 			$this->special_duty_title = $special_duty_title;
 			$this->special_duty_detail = $special_duty_detail;
@@ -240,6 +444,17 @@
 		}
 	}
 
+	class dailyDutyObject
+	{
+		function setDailyDutyData($daily_duty_task,$daily_duty_subtask,$daily_duty_comment,$daily_duty_id)
+		{
+			$this->daily_duty_task = $daily_duty_task;
+			$this->daily_duty_subtask = $daily_duty_subtask;
+			$this->daily_duty_comment = $daily_duty_comment;
+			$this->daily_duty_id = $daily_duty_id;
+			
+		}
+	}
 
 ?>
 	
