@@ -25,7 +25,7 @@
 <div class="navbar-header">
 <!--This this sidebar button-->
 	<button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-		<span class="togglespan">Toggle Sidebar</span>
+		<span class="togglespan">Open/Close Admin Panel</span>
 	</button>
 </div>
 <h2 class="pageTitle">Admin's User Page</h2><hr class="userTitleHr">
@@ -76,8 +76,7 @@
 	</table>
 	<hr/>
 <!--This second table to display the user table information-->
-	<div class="table-responsive">
-		<table id="user_table" class="table table-striped table-bordered display" style="width:100%" border="1">
+		<table id="user_table" class="table table-striped table-bordered display table-responsive" style="width:100%" border="1">
 			<thead>
 				<tr class="tableTitle">
 					<th>User ID</th>
@@ -127,7 +126,6 @@
 				<th>Delete</th>
 			</tfoot>
 		</table>
-	</div>
 </form>
 <!--This is the end of form element-->
 		

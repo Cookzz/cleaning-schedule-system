@@ -24,7 +24,7 @@
 <div class="navbar-header">
 <!--This this sidebar button-->
 	<button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-		<span class="togglespan">Toggle Sidebar</span>
+		<span class="togglespan">Open/Close Admin Panel</span>
 	</button>
 </div>
 <h2>Special Duty Table</h2><hr/>

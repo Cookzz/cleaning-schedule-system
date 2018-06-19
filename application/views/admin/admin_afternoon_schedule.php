@@ -24,15 +24,14 @@
 <div class="navbar-header">
 <!--This this sidebar button-->
 	<button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-		<span class="togglespan">Toggle Sidebar</span>
+		<span class="togglespan">Open/Close Admin Panel</span>
 	</button>
 </div>
 <h2>Afternoon Schedule Table</h2><hr/>
 
 <!--This form got one table, one is to let user to insert new task, one is to display the task table-->
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-	<div class="table-responsive">
-		<table id="afternoon_schedule_table" class="table table-striped table-bordered" border="1">
+		<table id="afternoon_schedule_table" class="table table-striped table-bordered table-responsive" border="1">
 			<thead>
 				<tr>
 					<th>No.</th>
@@ -87,7 +86,6 @@
 				</tr>
 			</tfoot>
 		</table>
-	</div>
 </form>
 
 <input id="baseURL" type=hidden value="<?=base_url()?>">

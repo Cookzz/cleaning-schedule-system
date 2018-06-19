@@ -10,7 +10,12 @@
 
 </head>
 <body>  
-
+<div class="navbar-header">
+<!--This this sidebar button-->
+	<button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+		<span class="togglespan">Open/Close Admin Panel</span>
+	</button>
+</div>
 <h2 class="pageTitle">User Setting</h2><hr class="pageTitleHr">
 
 <div class="table-responsive">

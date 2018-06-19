@@ -26,8 +26,7 @@
 ----------------------------------------------------- */
 .morningTable,
 .afternoonTable {
-  width: 100%;
-  overflow-y: scroll; }
+  width: 100%; }
   .morningTable thead,
   .afternoonTable thead {
     font-family: "News Cycle"; }
@@ -61,7 +60,8 @@
         background: white; }
   .morningTable tbody td select,
   .afternoonTable tbody td select {
-    border: 0px; }
+    border: 0px;
+    width: 100%; }
   .morningTable tbody .morningButtons,
   .morningTable tbody .afternoonButtons,
   .afternoonTable tbody .morningButtons,

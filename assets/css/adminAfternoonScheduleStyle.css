@@ -22,8 +22,7 @@
   100% {
     transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
 #afternoon_schedule_table {
-  width: 100%;
-  overflow-y: scroll; }
+  width: 100%; }
   #afternoon_schedule_table thead {
     font-family: "News Cycle"; }
     #afternoon_schedule_table thead th {

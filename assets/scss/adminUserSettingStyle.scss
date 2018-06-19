@@ -33,6 +33,15 @@ table {
     padding-top: 16px;
     letter-spacing: 10px;
     font-weight: bold;
+    
+    @media (orientation: portrait){
+        text-align: center;
+        padding-top: 5px;
+    }
+}
+
+#sideBarCollapse{
+    margin-top: 16px;
 }
 
 .pageTitleHr {

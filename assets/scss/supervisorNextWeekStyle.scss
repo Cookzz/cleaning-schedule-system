@@ -3,7 +3,6 @@
 .nextWeekMorningTable,
 .nextWeekAfternoonTable{
     width: 100%;
-    overflow-y: scroll;
     
     thead{
         font-family: $font;
@@ -43,6 +42,7 @@
         td {
             select {
                 border: 0px;
+                width: 100%;
             }
         }
         
@@ -87,9 +87,6 @@
         }
     }
 }
-.taskColumn, .remarkColumn {
-    width: 10%;
-}
 
 
 /* ---------------------------------------------------
@@ -104,20 +101,33 @@
     
     margin-top: 0px;
     margin-bottom: 30px;
+    
+    @media (orientation: portrait) {
+        width: 100%;
+    }
 }
 
 .titleHr {
-    margin-top: 0px;
-    height: 2px;
+    margin-top: 15px;
+    height: 1px;
     background: black;
 }
 
 .scheduleTitle {
     letter-spacing: 5px;
+    margin-top: 5px;
+    
+    @media (orientation: portrait){
+        text-align: center;
+    }
 }
 
 .dayLabel {
     font-weight: bold;
+    
+    @media (orientation: portrait){
+        text-align: center;
+    }
 }
 
 .previousWeekBtn {
@@ -144,5 +154,11 @@
         width: 100%;    
         display: inline-block;
         text-align: center;
+    }
+}
+
+.taskCol, .remarkCol {
+    @media (orientation: landscape){
+        width: 10%;
     }
 }

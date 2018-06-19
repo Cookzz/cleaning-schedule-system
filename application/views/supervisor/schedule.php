@@ -21,7 +21,7 @@
 <hr class="scheduleHr">
 <form id="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 <div class="table-responsive">
-	<table border="1" style="width:90%" class="morningTable">
+	<table border="1" class="morningTable">
 		<thead>
 			<tr><th class="taskColumn">Stuff</th>	
 			<th>Monday</th>
@@ -46,7 +46,7 @@
 				<td><select style="width:100%" id="<?=$task['task_id']."_6_morning";?>" ><option value="<?=$morning_schedule['saturday']?>"><?=$morning_schedule['saturday']?></option>	<option value="NA">NA</option><?php foreach($cleaners as $cleaner): ?><option value="<?=$cleaner['user_id']."_".$cleaner['user_name']?>"><?=$cleaner['user_id']."_".$cleaner['user_name']?></option><?php endforeach; ?></select></td>
 				<td><select style="width:100%" id="<?=$task['task_id']."_7_morning";?>" ><option value="<?=$morning_schedule['sunday']?>"><?=$morning_schedule['sunday']?></option>		<option value="NA">NA</option><?php foreach($cleaners as $cleaner): ?><option value="<?=$cleaner['user_id']."_".$cleaner['user_name']?>"><?=$cleaner['user_id']."_".$cleaner['user_name']?></option><?php endforeach; ?></select></td>
 				<td>
-					<select style="width:100%" id="<?=$task['task_id']."_remark_morning";?>">
+					<select id="<?=$task['task_id']."_remark_morning";?>">
 						<option value="<?=$morning_schedule['remark']?>"><?=$morning_schedule['remark']?></option>
 						<option value="active">active</option>
 						<option value="repair">repair</option>
@@ -83,7 +83,7 @@
 <hr class="scheduleHr">
 <form id="form2" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 <div class="table-responsive">
-	<table border="1" style="width:90%" class="afternoonTable">
+	<table border="1" class="afternoonTable">
 		<thead>
 			<tr><th class="taskColumn">Stuff</th>	
 			<th>Monday</th>
@@ -108,7 +108,7 @@
 			<td><select style="width:100%" id="<?=$task['task_id']."_6_afternoon";?>" ><option value="<?=$afternoon_schedule['saturday']?>"><?=$afternoon_schedule['saturday']?></option>	<option value="NA">NA</option><?php foreach($cleaners as $cleaner): ?><option value="<?=$cleaner['user_id']."_".$cleaner['user_name']?>"><?=$cleaner['user_id']."_".$cleaner['user_name']?></option><?php endforeach; ?></select></td>
 			<td><select style="width:100%" id="<?=$task['task_id']."_7_afternoon";?>" ><option value="<?=$afternoon_schedule['sunday']?>"><?=$afternoon_schedule['sunday']?></option>		<option value="NA">NA</option><?php foreach($cleaners as $cleaner): ?><option value="<?=$cleaner['user_id']."_".$cleaner['user_name']?>"><?=$cleaner['user_id']."_".$cleaner['user_name']?></option><?php endforeach; ?></select></td>
 			<td>
-				<select style="width:100%" id="<?=$task['task_id']."_remark_afternoon";?>">
+				<select id="<?=$task['task_id']."_remark_afternoon";?>">
 					<option value="<?=$afternoon_schedule['remark']?>"><?=$afternoon_schedule['remark']?></option>
 					<option value="active">active</option>
 					<option value="repair">repair</option>

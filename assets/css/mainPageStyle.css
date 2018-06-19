@@ -8,6 +8,9 @@
   @media (orientation: portrait) {
     .mainPage .titleHr {
       width: 100%; } }
+  @media (orientation: landscape) and (max-width: 1022px) {
+    .mainPage .titleHr {
+      width: 65%; } }
 @media (orientation: portrait) {
   .mainPage .titleLabel {
     text-align: center; } }
@@ -57,5 +60,8 @@
   font-weight: bold;
   margin-bottom: 20px;
   text-decoration: underline; }
+  @media (orientation: portrait) {
+    .pageTitle {
+      text-align: center; } }
 
 /*# sourceMappingURL=mainPageStyle.css.map */

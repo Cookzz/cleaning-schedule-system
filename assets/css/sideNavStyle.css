@@ -55,7 +55,8 @@
   @media (orientation: portrait) {
     #sideBarCollapse {
       float: none;
-      width: 100%; } }
+      width: 100%;
+      margin-top: 5px; } }
 
 /* ---------------------------------------------------
     CONTENT STYLE

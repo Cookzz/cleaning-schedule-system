@@ -7,7 +7,7 @@
 </head>
 <body>  
 
-<a class="previousWeekBtn" href="<?php echo base_url();?>HomeController/viewNextWeekSchedulePage">◀ Go back to this week's schedule</a>
+<a class="previousWeekBtn" href="<?php echo base_url();?>HomeController/viewSchedulePage">◀ Go back to this week's schedule</a>
 <h2 class="scheduleTitle">Next Week's Schedule</h2>
 <hr class="titleHr">
 
@@ -16,9 +16,10 @@
 <h3 class="dayLabel">Morning</h3>
 <hr class="scheduleHr">
 <form id="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<div class="table-responsive">
 	<table border="1" class="nextWeekMorningTable">
 		<thead>
-			<tr><th>Task</th>	
+			<tr><th class="taskCol">Task</th>	
 			<th>Monday</th>
 			<th>Tueasday</th>
 			<th>Wednesday</th>
@@ -26,7 +27,7 @@
 			<th>Friday</th>
 			<th>Saturday</th>
 			<th>Sunday</th>
-			<th>Remark</th></tr>
+			<th class="remarkCol">Remark</th></tr>
 		</thead>
 		<tbody>
 			<?php $check="";foreach($tasks as $task):?>
@@ -40,7 +41,7 @@
 				<td><select style="width:100%" id="<?=$task['task_id']."_5_morning";?>" ><option value="<?=$morning_schedule['friday']?>"><?=$morning_schedule['friday']?></option>		<option value="NA">NA</option><?php foreach($cleaners as $cleaner): ?><option value="<?=$cleaner['user_id']."_".$cleaner['user_name']?>"><?=$cleaner['user_id']."_".$cleaner['user_name']?></option><?php endforeach; ?></select></td>
 				<td><select style="width:100%" id="<?=$task['task_id']."_6_morning";?>" ><option value="<?=$morning_schedule['saturday']?>"><?=$morning_schedule['saturday']?></option>	<option value="NA">NA</option><?php foreach($cleaners as $cleaner): ?><option value="<?=$cleaner['user_id']."_".$cleaner['user_name']?>"><?=$cleaner['user_id']."_".$cleaner['user_name']?></option><?php endforeach; ?></select></td>
 				<td><select style="width:100%" id="<?=$task['task_id']."_7_morning";?>" ><option value="<?=$morning_schedule['sunday']?>"><?=$morning_schedule['sunday']?></option>		<option value="NA">NA</option><?php foreach($cleaners as $cleaner): ?><option value="<?=$cleaner['user_id']."_".$cleaner['user_name']?>"><?=$cleaner['user_id']."_".$cleaner['user_name']?></option><?php endforeach; ?></select></td>
-				<td class="remarkColumn">
+				<td>
 					<select id="<?=$task['task_id']."_remark_morning";?>">
 						<option value="<?=$morning_schedule['remark']?>"><?=$morning_schedule['remark']?></option>
 						<option value="active">active</option>
@@ -54,7 +55,7 @@
 			<td><?php echo $task['task'];?></td>
 			<?php for ($x = 1; $x <= 7; $x++) { ?><td><select style="width:100%" id="<?=$task['task_id']."_".$x."_morning"; ?>" ><option value="NA">NA</option><?php foreach($cleaners as $cleaner): ?><option value="<?=$cleaner['user_id']."_".$cleaner['user_name']?>"><?=$cleaner['user_id']."_".$cleaner['user_name']?></option><?php endforeach; ?></select></td><?php } ?>
 			<td>
-				<select style="width:100%" id="<?=$task['task_id']."_remark_morning";?>">
+				<select id="<?=$task['task_id']."_remark_morning";?>">
 					<option value="active">active</option>
 					<option value="repair">repair</option>
 					<option value="construction">construction</option>
@@ -66,6 +67,7 @@
 			<tr class="morningBtnRow"><td colspan="9" class="morningBtnRow"><button class="morningButtons" id="updateMorningSchedule" type="button">Update Schedule</button><button class="morningButtons" id="deleteMorningSchedule" type="button">Delete Schedule</button><button id="copyMorningSchedule">Copy Last Week's Morning Schedule</button></td></tr>
 		</tbody>
 	</table>
+	</div>
 </form>
 
 <!--The area of afternoon schedule , too complicated i will explain face to face-->
@@ -73,9 +75,10 @@
 <h3 class="dayLabel">Afternoon</h3>
 <hr class="scheduleHr">
 <form id="form2" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<div class="table-responsive">
 	<table border="1" class="nextWeekAfternoonTable">
 		<thead>
-			<tr><th>Task</th>	
+			<tr><th class="taskCol">Task</th>	
 			<th>Monday</th>
 			<th>Tueasday</th>
 			<th>Wednesday</th>
@@ -83,7 +86,7 @@
 			<th>Friday</th>
 			<th>Saturday</th>
 			<th>Sunday</th>
-			<th>Remark</th></tr>
+			<th class="remarkCol">Remark</th></tr>
 		</thead>
 		<tbody>
 			<?php $check="";foreach($tasks as $task):?>
@@ -98,7 +101,7 @@
 			<td><select style="width:100%" id="<?=$task['task_id']."_6_afternoon";?>" ><option value="<?=$afternoon_schedule['saturday']?>"><?=$afternoon_schedule['saturday']?></option>	<option value="NA">NA</option><?php foreach($cleaners as $cleaner): ?><option value="<?=$cleaner['user_id']."_".$cleaner['user_name']?>"><?=$cleaner['user_id']."_".$cleaner['user_name']?></option><?php endforeach; ?></select></td>
 			<td><select style="width:100%" id="<?=$task['task_id']."_7_afternoon";?>" ><option value="<?=$afternoon_schedule['sunday']?>"><?=$afternoon_schedule['sunday']?></option>		<option value="NA">NA</option><?php foreach($cleaners as $cleaner): ?><option value="<?=$cleaner['user_id']."_".$cleaner['user_name']?>"><?=$cleaner['user_id']."_".$cleaner['user_name']?></option><?php endforeach; ?></select></td>
 			<td>
-				<select style="width:100%" id="<?=$task['task_id']."_remark_afternoon";?>">
+				<select id="<?=$task['task_id']."_remark_afternoon";?>">
 					<option value="<?=$afternoon_schedule['remark']?>"><?=$afternoon_schedule['remark']?></option>
 					<option value="active">active</option>
 					<option value="repair">repair</option>
@@ -123,6 +126,7 @@
 			<tr class="afternoonBtnRow"><td colspan="9"><button id="copyAfternoonSchedule">Copy Last Week's Afternoon Schedule</button><button id="updateAfternoonSchedule" class="afternoonButtons" type="button">Update Schedule</button><button id="deleteAfternoonSchedule" class="afternoonButtons" type="button">Delete Schedule</button></td></tr>
 		</tbody>
 	</table>
+	</div>
 </form>
 <a href="<?php echo base_url();?>HomeController/viewScheduleFormPage">Schedule Form</a>
 

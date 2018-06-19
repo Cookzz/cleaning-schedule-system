@@ -6,7 +6,6 @@
 .morningTable,
 .afternoonTable{
     width: 100%;
-    overflow-y: scroll;
     
     thead{
         font-family: $font;
@@ -54,6 +53,7 @@
         td {
             select {
                 border: 0px;
+                width: 100%;
             }
         }
         

@@ -24,13 +24,12 @@
 <div class="navbar-header">
 <!--This this sidebar button-->
 	<button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-		<span class="togglespan">Toggle Sidebar</span>
+		<span class="togglespan">Open/Close Admin Panel</span>
 	</button>
 </div>
 <h2>Complete Duty Table</h2><hr/>
 <!--Table to show complete duty table-->
-<div class="table-responsive">
-	<table id="complete_duty_table" class="table table-striped table-bordered" border="1">
+	<table id="complete_duty_table" class="table table-striped table-bordered table-responsive" border="1">
 		<thead class="tableTitle">
 			<tr>
 				<th>No</th>
@@ -82,7 +81,6 @@
 			</tr>
 		</tfoot>
 	</table>
-</div>
 
 <!--Hidden value for external js file-->
 <input id="baseURL" type=hidden value="<?=base_url()?>">

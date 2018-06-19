@@ -23,8 +23,7 @@
     transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
 .nextWeekMorningTable,
 .nextWeekAfternoonTable {
-  width: 100%;
-  overflow-y: scroll; }
+  width: 100%; }
   .nextWeekMorningTable thead,
   .nextWeekAfternoonTable thead {
     font-family: "News Cycle"; }
@@ -52,7 +51,8 @@
     background: white; }
   .nextWeekMorningTable tbody td select,
   .nextWeekAfternoonTable tbody td select {
-    border: 0px; }
+    border: 0px;
+    width: 100%; }
   .nextWeekMorningTable tbody .morningButtons,
   .nextWeekMorningTable tbody .afternoonButtons,
   .nextWeekAfternoonTable tbody .morningButtons,
@@ -146,9 +146,6 @@
       border: 1px solid #0066CC;
       margin-left: 0px; }
 
-.taskColumn, .remarkColumn {
-  width: 10%; }
-
 /* ---------------------------------------------------
     GENERAL STYLE
 ----------------------------------------------------- */
@@ -160,17 +157,27 @@
   width: 90%;
   margin-top: 0px;
   margin-bottom: 30px; }
+  @media (orientation: portrait) {
+    .scheduleHr {
+      width: 100%; } }
 
 .titleHr {
-  margin-top: 0px;
-  height: 2px;
+  margin-top: 15px;
+  height: 1px;
   background: black; }
 
 .scheduleTitle {
-  letter-spacing: 5px; }
+  letter-spacing: 5px;
+  margin-top: 5px; }
+  @media (orientation: portrait) {
+    .scheduleTitle {
+      text-align: center; } }
 
 .dayLabel {
   font-weight: bold; }
+  @media (orientation: portrait) {
+    .dayLabel {
+      text-align: center; } }
 
 .previousWeekBtn {
   float: right;
@@ -191,5 +198,9 @@
       width: 100%;
       display: inline-block;
       text-align: center; } }
+
+@media (orientation: landscape) {
+  .taskCol, .remarkCol {
+    width: 10%; } }
 
 /*# sourceMappingURL=supervisorNextWeekStyle.css.map */

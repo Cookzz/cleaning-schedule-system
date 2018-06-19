@@ -10,6 +10,10 @@
         @media (orientation:portrait){
             width: 100%;
         }
+        
+        @media (orientation: landscape) and (max-width: 1022px){
+            width: 65%;
+        }
     }
     
     .titleLabel {
@@ -86,4 +90,8 @@
     font-weight: bold;
     margin-bottom: 20px;
     text-decoration: underline;
+    
+    @media (orientation: portrait){
+        text-align: center;
+    }
 }
