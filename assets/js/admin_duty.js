@@ -30,7 +30,7 @@ $(document).ready(function(){
 		i++;
     } );
 	
-	var table = $('#duty_table').DataTable({
+	var table = $('#admin_duty_table').DataTable({
 		"pageLength": 10,
 		"order": [[ 1, "asc" ]],
 		"dom": 'Bfrtip',
