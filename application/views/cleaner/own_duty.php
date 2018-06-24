@@ -33,12 +33,16 @@
         <ul>
             <!--This is the table to show out the pending duty data, it using php if-else to dicide which data need to out put-->
             <table class="pendingDutyTable">
-                <tr><th>Sub Task</th><th>Comment From Supervisor</th><th>State</th></tr>
+                <tr>
+                    <th class="subTaskCol">Sub Task</th>
+                    <th class="subCommentCol">Comment From Supervisor</th>
+                    <th class="subStateCol">State</th>
+                </tr>
             <!--This foreach loop will foreach loop the data which passed by the controller and decide the output-->
             <?php foreach($rows as $row) {?>		
                 <tr>
                     <td><?= $row["pending_duty_subtask"]?></td>
-                    <td><?php if(empty($row["pending_duty_comment"])){echo ("No Any Comment");}else{echo($row["pending_duty_comment"]);}?></td>
+                    <td><?php if(empty($row["pending_duty_comment"])){echo ("No Comments");}else{echo($row["pending_duty_comment"]);}?></td>
                     <td><input id="<?= $row["pending_duty_id"]?>" class="complete" type="checkbox" name="vehicle" value="Bike"></td>
                 </tr>	
             <?php }?>
@@ -63,7 +67,9 @@
         <ul>
             <!--This is the table to show out the complete duty data, it using php if-else to dicide which data need to out put-->
             <table class="completedDutyTable">
-                <tr><th>Sub Task</th><th>Comment From Supervisor</th></tr>
+                <tr><th>Sub Task</th>
+                <th>Comment From Supervisor</th>
+                </tr>
             <!--This foreach loop will foreach loop the data which passed by the controller and decide the output-->
             <?php foreach($rows as $row) {?>		
                 <tr>
