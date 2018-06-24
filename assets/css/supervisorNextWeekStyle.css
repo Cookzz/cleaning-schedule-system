@@ -36,7 +36,8 @@
     color: white; }
     .nextWeekMorningTable tbody tr:nth-child(odd) select,
     .nextWeekAfternoonTable tbody tr:nth-child(odd) select {
-      background: #003366; }
+      background: #003366;
+      color: white; }
       .nextWeekMorningTable tbody tr:nth-child(odd) select option,
       .nextWeekAfternoonTable tbody tr:nth-child(odd) select option {
         background: white; }
