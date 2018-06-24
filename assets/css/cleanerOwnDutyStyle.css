@@ -47,8 +47,11 @@
   padding-bottom: 0px; }
 
 .dutyTitle {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   background: #003366;
   color: white; }
 
@@ -56,14 +59,19 @@
   margin-top: 0px;
   padding-top: 0px; }
 
-.pendingDutyTable {
+.pendingDutyTab {
   width: 100%; }
-  .pendingDutyTable .subTaskCol {
-    width: 35% !important; }
-  .pendingDutyTable .subCommentCol {
-    width: 50% !important; }
-  .pendingDutyTable .subStateCol {
-    width: 15% !important; }
+  .pendingDutyTab .pendingDutyTable {
+    width: 100%; }
+    .pendingDutyTab .pendingDutyTable tr .subTaskCol {
+      width: 35%; }
+    .pendingDutyTab .pendingDutyTable tr .subCommentCol {
+      width: 50%; }
+    .pendingDutyTab .pendingDutyTable tr .subStateCol {
+      width: 15%; }
+    .pendingDutyTab .pendingDutyTable tr td {
+      padding: 10px;
+      padding-right: 30px; }
 
 .completedDutyTable {
   width: 100%; }
