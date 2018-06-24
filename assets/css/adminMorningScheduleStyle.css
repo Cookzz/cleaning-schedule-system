@@ -28,7 +28,7 @@
     #morning_schedule_table thead th {
       background: white; }
   #morning_schedule_table tbody tr:nth-child(odd) {
-    background: #D0E4F5; }
+    background: #003366; }
   #morning_schedule_table tbody tr:nth-child(even) {
     background: white; }
   #morning_schedule_table tbody .update {
