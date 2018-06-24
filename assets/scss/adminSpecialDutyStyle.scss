@@ -8,8 +8,8 @@
     .tableTitle {
         th {
             color: white;
-            background: $tableheadertheme;
-            border: 1px solid $tableheadertheme;
+            background: $tablemaintheme;
+            border: 1px solid $tablemaintheme;
         }
         
         @media (orientation:landscape) and (max-width: 1400px){

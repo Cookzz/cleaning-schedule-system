@@ -7,6 +7,29 @@
 /* ---------------------------------------------------
     ANIMATION
 ----------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css?family=News+Cycle:700,1000");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Cairo");
+@-webkit-keyframes sk-rotateplane {
+  0% {
+    -webkit-transform: perspective(120px); }
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg); }
+  100% {
+    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg); } }
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(180px) rotateX(0deg) rotateY(0deg); }
+  50% {
+    transform: perspective(180px) rotateX(0deg) rotateY(180deg); }
+  100% {
+    transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
+/* ---------------------------------------------------
+    Navigation Bar Values
+----------------------------------------------------- */
+/* ---------------------------------------------------
+    ANIMATION
+----------------------------------------------------- */
 @-webkit-keyframes sk-rotateplane {
   0% {
     -webkit-transform: perspective(120px); }
@@ -25,8 +48,8 @@
   width: 100%; }
   #task_table .tableTitle th {
     color: white;
-    background: #1E88E5;
-    border: 1px solid #1E88E5; }
+    background: #003366;
+    border: 1px solid #003366; }
   #task_table .titleLabel {
     width: 5%; }
   #task_table td .update {
@@ -69,8 +92,8 @@
   width: 100%; }
   #admin_task_table .tableTitle th {
     color: white;
-    background: #1E88E5;
-    border: 1px solid #1E88E5; }
+    background: #003366;
+    border: 1px solid #003366; }
   #admin_task_table .titleLabel {
     width: 5%; }
   #admin_task_table td .update {

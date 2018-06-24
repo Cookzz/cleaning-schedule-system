@@ -32,10 +32,11 @@
       background: white; }
   .nextWeekMorningTable tbody tr:nth-child(odd),
   .nextWeekAfternoonTable tbody tr:nth-child(odd) {
-    background: #D0E4F5; }
+    background: #003366;
+    color: white; }
     .nextWeekMorningTable tbody tr:nth-child(odd) select,
     .nextWeekAfternoonTable tbody tr:nth-child(odd) select {
-      background: #D0E4F5; }
+      background: #003366; }
       .nextWeekMorningTable tbody tr:nth-child(odd) select option,
       .nextWeekAfternoonTable tbody tr:nth-child(odd) select option {
         background: white; }

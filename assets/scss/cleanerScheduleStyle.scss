@@ -17,7 +17,8 @@
     tbody{
         tr {
             &:nth-child(odd) {
-                background: #D0E4F5;
+                background: $tablemaintheme;
+                color: white;
             } 
             &:nth-child(even) {
                 background: white;

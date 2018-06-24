@@ -35,7 +35,8 @@
       background: white; }
   .morningTable tbody tr:nth-child(odd),
   .afternoonTable tbody tr:nth-child(odd) {
-    background: #D0E4F5; }
+    background: #003366;
+    color: white; }
   .morningTable tbody tr:nth-child(even),
   .afternoonTable tbody tr:nth-child(even) {
     background: white; }

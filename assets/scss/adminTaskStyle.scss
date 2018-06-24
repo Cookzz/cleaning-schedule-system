@@ -1,3 +1,4 @@
+@import "global.scss";
 @import "supervisorTaskStyle.scss";
 
 #admin_task_table {
@@ -6,8 +7,8 @@
     .tableTitle {
         th {
             color: white;
-            background: $tableheadertheme;
-            border: 1px solid $tableheadertheme;
+            background: $tablemaintheme;
+            border: 1px solid $tablemaintheme;
         }
     }
     

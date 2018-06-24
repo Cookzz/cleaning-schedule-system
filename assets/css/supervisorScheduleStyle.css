@@ -35,7 +35,8 @@
       background: white; }
   .morningTable tbody tr:nth-child(odd),
   .afternoonTable tbody tr:nth-child(odd) {
-    background: #D0E4F5; }
+    background: #003366;
+    color: white; }
     .morningTable tbody tr:nth-child(odd) select,
     .afternoonTable tbody tr:nth-child(odd) select {
       background: #D0E4F5; }

@@ -27,8 +27,8 @@
   overflow-y: scroll; }
   #special_duty_table .tableTitle th {
     color: white;
-    background: #1E88E5;
-    border: 1px solid #1E88E5; }
+    background: #003366;
+    border: 1px solid #003366; }
   @media (orientation: landscape) and (max-width: 1400px) {
     #special_duty_table .tableTitle .noLabel {
       width: 5% !important; }

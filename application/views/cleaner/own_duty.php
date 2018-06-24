@@ -34,9 +34,9 @@
             <!--This is the table to show out the pending duty data, it using php if-else to dicide which data need to out put-->
             <table class="pendingDutyTable table-responsive">
                 <tr>
-                    <th class="subTaskCol" style="width:35%;">Sub Task</th>
-                    <th class="subCommentCol" style="width:50%;">Comment From Supervisor</th>
-                    <th class="subStateCol" style="width:15%;">State</th>
+                    <th class="subTaskCol">Sub Task</th>
+                    <th class="subCommentCol">Comment From Supervisor</th>
+                    <th class="subStateCol">State</th>
                 </tr>
             <!--This foreach loop will foreach loop the data which passed by the controller and decide the output-->
             <?php foreach($rows as $row) {?>		

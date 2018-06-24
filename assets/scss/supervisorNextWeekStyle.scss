@@ -15,10 +15,11 @@
     tbody{
         tr {
             &:nth-child(odd) {
-                background: #D0E4F5;
+                background: $tablemaintheme;
+                color: white;
                 
                 select {
-                    background: #D0E4F5;
+                    background: $tablemaintheme;
                     
                     option {
                         background: white;
