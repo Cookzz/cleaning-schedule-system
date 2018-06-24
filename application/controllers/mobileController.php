@@ -374,6 +374,50 @@
 			}	
 		}
 		
+		public function loadCompletedDutyData()
+		{
+			if(isset($_POST['user_id']))
+			{
+				$this->load->model("main_model");
+				
+				$user_id = array('user_id' => $_POST['user_id']);
+				$query = $this->main_model->get_specify_data("user_name","user_name",$user_id,"users");
+				$user_name = $query->row()->user_name;
+				$query = $this->main_model->get_specify_data("user_id","user_id",$user_id,"users");
+				$user_id = $query->row()->user_id;
+				
+				//Select pending duty from pending table
+				if(date("G") < 13)
+				{
+					$time = "morning";
+				}
+				else
+				{
+					$time = "afternoon";
+				}
+				$cleaner = array("complete_duty_cleaner" => $user_id."_".$user_name , "complete_duty_date" => date("Y/m/d"));
+				$get_complete_query = $this->main_model->get_specify_data("*","complete_duty_task",$cleaner,"complete_duty");
+				$completed_duties = $get_complete_query->result_array();
+					
+				$completed_duty_task = array();
+				$completed_duty_subtask = array();
+				$completed_duty_comment = array();
+
+						
+				foreach($completed_duties as $completed_duty)
+				{
+					array_push($completed_duty_task,$completed_duty['complete_duty_task']);
+					array_push($completed_duty_subtask,$completed_duty['complete_duty_subtask']);
+					array_push($completed_duty_comment,$completed_duty['complete_duty_comment']);
+				}
+						
+				$completedDutyObject = new completedDutyObject();
+				$completedDutyObject->setCompletedDutyData($completed_duty_task,$completed_duty_subtask,$completed_duty_comment);
+				
+				echo (json_encode($completedDutyObject));
+			}	
+		}
+		
 		public function completeOwnDuty()
 		{	
 			if(isset($_POST['pending_duty_id']))	
@@ -452,6 +496,17 @@
 			$this->daily_duty_subtask = $daily_duty_subtask;
 			$this->daily_duty_comment = $daily_duty_comment;
 			$this->daily_duty_id = $daily_duty_id;
+			
+		}
+	}
+	
+	class completedDutyObject
+	{
+		function setCompletedDutyData($completed_duty_task,$completed_duty_subtask,$completed_duty_comment)
+		{
+			$this->completed_duty_task = $completed_duty_task;
+			$this->completed_duty_subtask = $completed_duty_subtask;
+			$this->completed_duty_comment = $completed_duty_comment;
 			
 		}
 	}
