@@ -40,7 +40,8 @@
       color: white; }
       .nextWeekMorningTable tbody tr:nth-child(odd) select option,
       .nextWeekAfternoonTable tbody tr:nth-child(odd) select option {
-        background: white; }
+        background: white;
+        color: black; }
     .nextWeekMorningTable tbody tr:nth-child(odd).morningBtnRow, .nextWeekMorningTable tbody tr.afternoonBtnRow:nth-child(odd),
     .nextWeekAfternoonTable tbody tr:nth-child(odd).morningBtnRow,
     .nextWeekAfternoonTable tbody tr.afternoonBtnRow:nth-child(odd) {

@@ -26,9 +26,10 @@
   #morning_schedule_table thead {
     font-family: "News Cycle"; }
     #morning_schedule_table thead th {
-      background: white; }
+      background: #003366;
+      color: white; }
   #morning_schedule_table tbody tr:nth-child(odd) {
-    background: #003366;
+    background: #dee2e6;
     color: white; }
   #morning_schedule_table tbody tr:nth-child(even) {
     background: white; }

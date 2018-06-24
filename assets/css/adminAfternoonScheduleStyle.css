@@ -26,10 +26,11 @@
   #afternoon_schedule_table thead {
     font-family: "News Cycle"; }
     #afternoon_schedule_table thead th {
-      background: white; }
+      background: #003366;
+      color: white; }
   #afternoon_schedule_table tbody tr:nth-child(odd) {
-    background: #003366;
-    color: white; }
+    background: #dee2e6;
+    color: black; }
   #afternoon_schedule_table tbody tr:nth-child(even) {
     background: white; }
   #afternoon_schedule_table tbody .update {

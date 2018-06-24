@@ -7,14 +7,15 @@
         font-family: $font;
         
         th {
-            background: white;
+            background: $tablemaintheme;
+            color: white;
         }
     }
     
     tbody{
         tr {
             &:nth-child(odd) {
-                background: $tablemaintheme;
+                background: $admintabletheme;
                 color: white;
             } 
             &:nth-child(even) {
