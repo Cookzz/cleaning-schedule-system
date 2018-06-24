@@ -40,7 +40,32 @@
   .titleDate {
     text-align: center; } }
 
-.pendingDutyTable, .completedDutyTable {
-  overflow-y: scroll; }
+.topDutyTitleHr {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+
+.dutyTitle {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #003366;
+  color: white; }
+
+.bottomDutyTitleHr {
+  margin-top: 0px;
+  padding-top: 0px; }
+
+.pendingDutyTable {
+  width: 100%; }
+  .pendingDutyTable .subTaskCol {
+    width: 35% !important; }
+  .pendingDutyTable .subCommentCol {
+    width: 50% !important; }
+  .pendingDutyTable .subStateCol {
+    width: 15% !important; }
+
+.completedDutyTable {
+  width: 100%; }
 
 /*# sourceMappingURL=cleanerOwnDutyStyle.css.map */

@@ -27,12 +27,12 @@
       <!--Check the pending duty is 0 or more than 0-->
         <?php if($pending_duty_count > 0) {?>
         <?php foreach($pending_duties as $pending_duty => $rows):?>
-        <hr />
-        <h4><?= $pending_duty?></h4>
-        <hr />
+        <hr class="topDutyTitleHr" />
+        <h4 class="dutyTitle"><?= $pending_duty?></h4>
+        <hr class="bottomDutyTitleHr" />
         <ul>
             <!--This is the table to show out the pending duty data, it using php if-else to dicide which data need to out put-->
-            <table class="pendingDutyTable">
+            <table class="pendingDutyTable table-responsive">
                 <tr>
                     <th class="subTaskCol">Sub Task</th>
                     <th class="subCommentCol">Comment From Supervisor</th>
@@ -50,7 +50,6 @@
             </table>
             <!--This is the end of pending duty table-->
         </ul>
-        <hr />
         <?php endforeach; ?>
         <!--The else statement will be active when the total of pending duty is 0 -->
         <?php }else{?>
@@ -66,7 +65,7 @@
         <hr />
         <ul>
             <!--This is the table to show out the complete duty data, it using php if-else to dicide which data need to out put-->
-            <table class="completedDutyTable">
+            <table class="completedDutyTable table-responsive">
                 <tr><th>Sub Task</th>
                 <th>Comment From Supervisor</th>
                 </tr>

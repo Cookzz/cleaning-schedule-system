@@ -27,52 +27,42 @@
     }
 }
 
-.pendingDutyTable, .completedDutyTable {
-    overflow-y: scroll;
+.topDutyTitleHr {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
+
+.dutyTitle {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: $mainbuttontheme;
+    color: white;
+}
+
+.bottomDutyTitleHr {
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
 
 .pendingDutyTable {
     width: 100%;
     
     .subTaskCol {
-        width: 35%;
+        width: 35% !important;
     }
     
     .subCommentCol {
-        width: 50%;
+        width: 50% !important;
     }
     
     .subStateCol {
-        width: 15%;
-    }
-    
-    tr {    
-        &:nth-child(odd) {
-            background: #D0E4F5;
-        } 
-        &:nth-child(even) {
-            background: white;
-        }
-        
-        th {
-            background: white;
-        }
+        width: 15% !important;
     }
 }
 
 .completedDutyTable {
     width: 100%;
-    
-    tr {
-        &:nth-child(odd) {
-            background: #D0E4F5;
-        } 
-        &:nth-child(even) {
-            background: white;
-        }
-        
-        th {
-            background: white;
-        }
-    }
 }
