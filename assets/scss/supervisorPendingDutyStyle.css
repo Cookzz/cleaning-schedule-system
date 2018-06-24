@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css?family=News+Cycle:700,1000");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Cairo");
+/* ---------------------------------------------------
+    Navigation Bar Values
+----------------------------------------------------- */
+/* ---------------------------------------------------
+    ANIMATION
+----------------------------------------------------- */
+@-webkit-keyframes sk-rotateplane {
+  0% {
+    -webkit-transform: perspective(120px); }
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg); }
+  100% {
+    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg); } }
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(180px) rotateX(0deg) rotateY(0deg); }
+  50% {
+    transform: perspective(180px) rotateX(0deg) rotateY(180deg); }
+  100% {
+    transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
+#pending_duty_table {
+  width: 100%;
+  overflow-x: scroll; }
+  #pending_duty_table .tableTitle th {
+    color: white;
+    background: #003366;
+    border: 1px solid #003366; }
+  #pending_duty_table .pending_table_body td .update {
+    background: #3498DB;
+    border: 1px solid #3498DB;
+    color: white;
+    padding: 10px 30px 10px 30px;
+    border-radius: 5px;
+    cursor: pointer; }
+  #pending_duty_table .pending_table_body td .delete {
+    width: 80px;
+    height: 30px;
+    padding: 5px 30px 5px 30px;
+    border-radius: 5px;
+    cursor: pointer; }
+
+.viewOutstandingBtn {
+  float: right;
+  background: #0066CC;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 3px;
+  color: white; }
+  .viewOutstandingBtn:link {
+    color: white;
+    text-decoration: none; }
+  .viewOutstandingBtn:visited {
+    color: white;
+    text-decoration: none; }
+  @media (orientation: portrait) {
+    .viewOutstandingBtn {
+      text-align: center;
+      display: block;
+      float: none; } }
+
+.pageTitle {
+  margin-bottom: 0px; }
+  @media (orientation: portrait) {
+    .pageTitle {
+      margin-top: 1px;
+      text-align: center; } }

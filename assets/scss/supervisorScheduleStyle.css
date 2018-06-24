@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css?family=News+Cycle:700,1000");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Cairo");
+/* ---------------------------------------------------
+    Navigation Bar Values
+----------------------------------------------------- */
+/* ---------------------------------------------------
+    ANIMATION
+----------------------------------------------------- */
+@-webkit-keyframes sk-rotateplane {
+  0% {
+    -webkit-transform: perspective(120px); }
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg); }
+  100% {
+    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg); } }
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(180px) rotateX(0deg) rotateY(0deg); }
+  50% {
+    transform: perspective(180px) rotateX(0deg) rotateY(180deg); }
+  100% {
+    transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
+/* ---------------------------------------------------
+    MORNING TABLE STYLE
+----------------------------------------------------- */
+.morningTable,
+.afternoonTable {
+  width: 100%; }
+  .morningTable thead,
+  .afternoonTable thead {
+    font-family: "News Cycle"; }
+    .morningTable thead th,
+    .afternoonTable thead th {
+      background: white; }
+  .morningTable tbody tr:nth-child(odd),
+  .afternoonTable tbody tr:nth-child(odd) {
+    background: #003366;
+    color: white; }
+    .morningTable tbody tr:nth-child(odd) select,
+    .afternoonTable tbody tr:nth-child(odd) select {
+      background: #003366; }
+      .morningTable tbody tr:nth-child(odd) select option,
+      .afternoonTable tbody tr:nth-child(odd) select option {
+        background: white; }
+    .morningTable tbody tr:nth-child(odd).morningBtnRow, .morningTable tbody tr.afternoonBtnRow:nth-child(odd),
+    .afternoonTable tbody tr:nth-child(odd).morningBtnRow,
+    .afternoonTable tbody tr.afternoonBtnRow:nth-child(odd) {
+      background: white;
+      border-bottom: 1px solid white;
+      border-left: 1px solid white;
+      border-right: 1px solid white; }
+  .morningTable tbody tr:nth-child(even),
+  .afternoonTable tbody tr:nth-child(even) {
+    background: white; }
+    .morningTable tbody tr:nth-child(even) select,
+    .afternoonTable tbody tr:nth-child(even) select {
+      background: white; }
+      .morningTable tbody tr:nth-child(even) select option,
+      .afternoonTable tbody tr:nth-child(even) select option {
+        background: white; }
+  .morningTable tbody td select,
+  .afternoonTable tbody td select {
+    border: 0px;
+    width: 100%; }
+  .morningTable tbody .morningButtons,
+  .morningTable tbody .afternoonButtons,
+  .afternoonTable tbody .morningButtons,
+  .afternoonTable tbody .afternoonButtons {
+    float: right; }
+  .morningTable tbody .updateBtn, .morningTable tbody .deleteBtn,
+  .afternoonTable tbody .updateBtn,
+  .afternoonTable tbody .deleteBtn {
+    padding: 10px;
+    margin: 3px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer; }
+    .morningTable tbody .updateBtn.updateBtn, .morningTable tbody .deleteBtn.updateBtn,
+    .afternoonTable tbody .updateBtn.updateBtn,
+    .afternoonTable tbody .deleteBtn.updateBtn {
+      background: #003366;
+      border: 1px solid #003366;
+      margin-right: 0px; }
+    .morningTable tbody .updateBtn.deleteBtn, .morningTable tbody .deleteBtn.deleteBtn,
+    .afternoonTable tbody .updateBtn.deleteBtn,
+    .afternoonTable tbody .deleteBtn.deleteBtn {
+      background: #FF3366;
+      border: 1px solid #FF3366; }
+
+.taskColumn, .remarkColumn {
+  width: 10%; }
+
+/* ---------------------------------------------------
+    GENERAL STYLE
+----------------------------------------------------- */
+.scheduleHr {
+  border: none;
+  height: 2px;
+  background-color: black;
+  margin-left: 0;
+  width: 90%;
+  margin-top: 0px;
+  margin-bottom: 30px; }
+  @media (orientation: portrait) {
+    .scheduleHr {
+      width: 100%; } }
+
+.titleHr {
+  margin-top: 0px;
+  height: 1px;
+  background: black; }
+
+.scheduleTitle {
+  letter-spacing: 5px; }
+  @media (orientation: portrait) {
+    .scheduleTitle {
+      text-align: center; } }
+
+@media (orientation: portrait) {
+  .scheduleDate {
+    text-align: center; } }
+
+.dayLabel {
+  font-weight: bold; }
+  @media (orientation: portrait) {
+    .dayLabel {
+      text-align: center; } }
+
+.nextWeekBtn, .scheduleFormBtn {
+  float: right;
+  background: #0066CC;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 3px;
+  color: white; }
+  .nextWeekBtn:link, .scheduleFormBtn:link {
+    color: white;
+    text-decoration: none; }
+  .nextWeekBtn:visited, .scheduleFormBtn:visited {
+    color: white;
+    text-decoration: none; }
+  .nextWeekBtn.scheduleFormBtn, .scheduleFormBtn.scheduleFormBtn {
+    margin-right: 10px; }
+  @media (orientation: portrait) {
+    .nextWeekBtn, .scheduleFormBtn {
+      float: none;
+      width: 100%;
+      display: inline-block;
+      text-align: center; } }

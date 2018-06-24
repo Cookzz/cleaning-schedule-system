@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css?family=News+Cycle:700,1000");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Cairo");
+/* ---------------------------------------------------
+    Navigation Bar Values
+----------------------------------------------------- */
+/* ---------------------------------------------------
+    ANIMATION
+----------------------------------------------------- */
+@-webkit-keyframes sk-rotateplane {
+  0% {
+    -webkit-transform: perspective(120px); }
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg); }
+  100% {
+    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg); } }
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(180px) rotateX(0deg) rotateY(0deg); }
+  50% {
+    transform: perspective(180px) rotateX(0deg) rotateY(180deg); }
+  100% {
+    transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
+#special_duty_table {
+  width: 100%;
+  table-layout: fixed; }
+  #special_duty_table .tableTitle th {
+    color: white;
+    background: #003366;
+    border: 1px solid #003366; }
+  #special_duty_table .tableTitle .noLabel {
+    width: 5% !important; }
+  #special_duty_table .tableTitle .specialDutyLabel {
+    width: 18% !important; }
+  #special_duty_table .tableTitle .specialDutyDetail {
+    width: 40% !important; }
+  #special_duty_table .tableTitle .timeLabel, #special_duty_table .tableTitle .dateLabel {
+    width: 15% !important; }
+  #special_duty_table td .update {
+    background: #3498DB;
+    border: 1px solid #3498DB;
+    color: white;
+    padding: 10px 30px 10px 30px;
+    border-radius: 5px;
+    cursor: pointer; }
+  #special_duty_table td .delete {
+    width: 80px;
+    height: 30px;
+    padding: 5px 30px 5px 30px;
+    border-radius: 5px;
+    cursor: pointer; }
+  #special_duty_table .details {
+    overflow: hidden; }
+    #special_duty_table .details a.morelink {
+      text-decoration: none;
+      outline: none; }
+    #special_duty_table .details .morecontent span {
+      display: none; }

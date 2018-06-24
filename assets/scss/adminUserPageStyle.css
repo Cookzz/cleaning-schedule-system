@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css?family=News+Cycle:700,1000");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Cairo");
+/* ---------------------------------------------------
+    Navigation Bar Values
+----------------------------------------------------- */
+/* ---------------------------------------------------
+    ANIMATION
+----------------------------------------------------- */
+@-webkit-keyframes sk-rotateplane {
+  0% {
+    -webkit-transform: perspective(120px); }
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg); }
+  100% {
+    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg); } }
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(180px) rotateX(0deg) rotateY(0deg); }
+  50% {
+    transform: perspective(180px) rotateX(0deg) rotateY(180deg); }
+  100% {
+    transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
+/* ---------------------------------------------------
+    TABLE STYLE
+----------------------------------------------------- */
+#user_table .tableTitle th {
+  color: white;
+  background: #003366;
+  border: 1px solid #003366; }
+#user_table #user_table_body td .update {
+  background: #3498DB;
+  border: 1px solid #3498DB;
+  color: white;
+  padding: 10px 30px 10px 30px;
+  border-radius: 5px;
+  cursor: pointer; }
+#user_table #user_table_body td .delete {
+  width: 80px;
+  height: 30px;
+  padding: 5px 30px 5px 30px;
+  border-radius: 5px;
+  cursor: pointer; }
+
+/* ---------------------------------------------------
+    FORM STYLE
+----------------------------------------------------- */
+.adminUserTable {
+  width: 100%; }
+  .adminUserTable tr td label {
+    font-weight: bold;
+    padding-right: 20px; }
+  .adminUserTable tr td .newUserTitle {
+    letter-spacing: 1px;
+    font-size: 21px; }
+  .adminUserTable tr td .newUserHr {
+    margin-top: 0px;
+    width: 100%; }
+  .adminUserTable tr td .addNewUserBtn {
+    float: right;
+    padding: 10px 30px 10px 30px;
+    border-radius: 5px;
+    color: white;
+    background: #003366;
+    border: 1px solid #003366;
+    cursor: pointer; }
+
+/* ---------------------------------------------------
+    GENERAL STYLE
+----------------------------------------------------- */
+.pageTitle {
+  font-weight: bold;
+  margin-bottom: 5px;
+  letter-spacing: 5px; }
+
+.userTitleHr {
+  margin-top: 0px; }

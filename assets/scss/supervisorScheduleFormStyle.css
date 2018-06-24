@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css?family=News+Cycle:700,1000");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Cairo");
+/* ---------------------------------------------------
+    Navigation Bar Values
+----------------------------------------------------- */
+/* ---------------------------------------------------
+    ANIMATION
+----------------------------------------------------- */
+@-webkit-keyframes sk-rotateplane {
+  0% {
+    -webkit-transform: perspective(120px); }
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg); }
+  100% {
+    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg); } }
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(180px) rotateX(0deg) rotateY(0deg); }
+  50% {
+    transform: perspective(180px) rotateX(0deg) rotateY(180deg); }
+  100% {
+    transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
+.scheduleForm {
+  width: 50%; }
+  .scheduleForm input {
+    padding: 5px; }
+  .scheduleForm #save_schedule, .scheduleForm #delete_schedule {
+    float: right;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 3px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer; }
+    .scheduleForm #save_schedule#save_schedule, .scheduleForm #delete_schedule#save_schedule {
+      background: #003366;
+      border: 1px solid #003366;
+      margin-right: 0px; }
+    .scheduleForm #save_schedule#delete_schedule, .scheduleForm #delete_schedule#delete_schedule {
+      background: #FF3366;
+      border: 1px solid #FF3366; }
+    @media (orientation: portrait) {
+      .scheduleForm #save_schedule, .scheduleForm #delete_schedule {
+        float: none;
+        width: 100%; } }
+  @media (orientation: portrait) {
+    .scheduleForm {
+      width: 100%; } }
+
+.previousBtn {
+  float: right;
+  background: #0066CC;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 3px;
+  color: white; }
+  .previousBtn:link {
+    color: white;
+    text-decoration: none; }
+  .previousBtn:visited {
+    color: white;
+    text-decoration: none; }
+  @media (orientation: portrait) {
+    .previousBtn {
+      float: none;
+      width: 100%;
+      display: inline-block;
+      text-align: center; } }

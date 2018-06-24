@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css?family=News+Cycle:700,1000");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Cairo");
+/* ---------------------------------------------------
+    Navigation Bar Values
+----------------------------------------------------- */
+/* ---------------------------------------------------
+    ANIMATION
+----------------------------------------------------- */
+@-webkit-keyframes sk-rotateplane {
+  0% {
+    -webkit-transform: perspective(120px); }
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg); }
+  100% {
+    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg); } }
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(180px) rotateX(0deg) rotateY(0deg); }
+  50% {
+    transform: perspective(180px) rotateX(0deg) rotateY(180deg); }
+  100% {
+    transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
+.nextWeekMorningTable,
+.nextWeekAfternoonTable {
+  width: 100%; }
+  .nextWeekMorningTable thead,
+  .nextWeekAfternoonTable thead {
+    font-family: "News Cycle"; }
+    .nextWeekMorningTable thead th,
+    .nextWeekAfternoonTable thead th {
+      background: white; }
+  .nextWeekMorningTable tbody tr:nth-child(odd),
+  .nextWeekAfternoonTable tbody tr:nth-child(odd) {
+    background: #003366;
+    color: white; }
+    .nextWeekMorningTable tbody tr:nth-child(odd) select,
+    .nextWeekAfternoonTable tbody tr:nth-child(odd) select {
+      background: #003366;
+      color: white; }
+      .nextWeekMorningTable tbody tr:nth-child(odd) select option,
+      .nextWeekAfternoonTable tbody tr:nth-child(odd) select option {
+        background: white; }
+    .nextWeekMorningTable tbody tr:nth-child(odd).morningBtnRow, .nextWeekMorningTable tbody tr.afternoonBtnRow:nth-child(odd),
+    .nextWeekAfternoonTable tbody tr:nth-child(odd).morningBtnRow,
+    .nextWeekAfternoonTable tbody tr.afternoonBtnRow:nth-child(odd) {
+      background: white;
+      border-bottom: 1px solid white;
+      border-left: 1px solid white;
+      border-right: 1px solid white; }
+  .nextWeekMorningTable tbody tr:nth-child(even),
+  .nextWeekAfternoonTable tbody tr:nth-child(even) {
+    background: white; }
+  .nextWeekMorningTable tbody td select,
+  .nextWeekAfternoonTable tbody td select {
+    border: 0px;
+    width: 100%; }
+  .nextWeekMorningTable tbody .morningButtons,
+  .nextWeekMorningTable tbody .afternoonButtons,
+  .nextWeekAfternoonTable tbody .morningButtons,
+  .nextWeekAfternoonTable tbody .afternoonButtons {
+    float: right; }
+  .nextWeekMorningTable tbody #updateMorningSchedule, .nextWeekMorningTable tbody #updateAfternoonSchedule,
+  .nextWeekMorningTable .nextWeekAfternoonTable tbody #updateAfternoonSchedule,
+  .nextWeekAfternoonTable .nextWeekMorningTable tbody #updateAfternoonSchedule, .nextWeekMorningTable tbody #deleteMorningSchedule, .nextWeekMorningTable tbody #deleteAfternoonSchedule,
+  .nextWeekMorningTable .nextWeekAfternoonTable tbody #deleteAfternoonSchedule,
+  .nextWeekAfternoonTable .nextWeekMorningTable tbody #deleteAfternoonSchedule, .nextWeekMorningTable tbody #updateAfternoonSchedule, .nextWeekMorningTable tbody #deleteAfternoonSchedule, .nextWeekMorningTable tbody #copyMorningSchedule, .nextWeekMorningTable tbody #copyAfternoonSchedule,
+  .nextWeekMorningTable .nextWeekAfternoonTable tbody #copyAfternoonSchedule,
+  .nextWeekAfternoonTable .nextWeekMorningTable tbody #copyAfternoonSchedule, .nextWeekMorningTable tbody #copyAfternoonSchedule,
+  .nextWeekAfternoonTable tbody #updateMorningSchedule,
+  .nextWeekAfternoonTable .nextWeekMorningTable tbody #updateAfternoonSchedule,
+  .nextWeekMorningTable .nextWeekAfternoonTable tbody #updateAfternoonSchedule,
+  .nextWeekAfternoonTable tbody #updateAfternoonSchedule,
+  .nextWeekAfternoonTable tbody #deleteMorningSchedule,
+  .nextWeekAfternoonTable .nextWeekMorningTable tbody #deleteAfternoonSchedule,
+  .nextWeekMorningTable .nextWeekAfternoonTable tbody #deleteAfternoonSchedule,
+  .nextWeekAfternoonTable tbody #deleteAfternoonSchedule,
+  .nextWeekAfternoonTable tbody #updateAfternoonSchedule,
+  .nextWeekAfternoonTable tbody #deleteAfternoonSchedule,
+  .nextWeekAfternoonTable tbody #copyMorningSchedule,
+  .nextWeekAfternoonTable .nextWeekMorningTable tbody #copyAfternoonSchedule,
+  .nextWeekMorningTable .nextWeekAfternoonTable tbody #copyAfternoonSchedule,
+  .nextWeekAfternoonTable tbody #copyAfternoonSchedule,
+  .nextWeekAfternoonTable tbody #copyAfternoonSchedule {
+    padding: 10px;
+    margin: 3px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer; }
+    .nextWeekMorningTable tbody #updateMorningSchedule#updateMorningSchedule, .nextWeekMorningTable tbody #updateAfternoonSchedule,
+    .nextWeekMorningTable .nextWeekAfternoonTable tbody #updateAfternoonSchedule,
+    .nextWeekAfternoonTable .nextWeekMorningTable tbody #updateAfternoonSchedule, .nextWeekMorningTable tbody #deleteMorningSchedule#updateMorningSchedule, .nextWeekMorningTable tbody #updateAfternoonSchedule#updateMorningSchedule, .nextWeekMorningTable tbody #updateAfternoonSchedule,
+    .nextWeekMorningTable .nextWeekAfternoonTable tbody #updateAfternoonSchedule,
+    .nextWeekAfternoonTable .nextWeekMorningTable tbody #updateAfternoonSchedule, .nextWeekMorningTable tbody #deleteAfternoonSchedule#updateMorningSchedule, .nextWeekMorningTable tbody #copyMorningSchedule#updateMorningSchedule, .nextWeekMorningTable tbody #copyAfternoonSchedule#updateMorningSchedule,
+    .nextWeekAfternoonTable tbody #updateMorningSchedule#updateMorningSchedule,
+    .nextWeekAfternoonTable .nextWeekMorningTable tbody #updateAfternoonSchedule,
+    .nextWeekMorningTable .nextWeekAfternoonTable tbody #updateAfternoonSchedule,
+    .nextWeekAfternoonTable tbody #updateAfternoonSchedule,
+    .nextWeekAfternoonTable tbody #deleteMorningSchedule#updateMorningSchedule,
+    .nextWeekAfternoonTable tbody #updateAfternoonSchedule#updateMorningSchedule,
+    .nextWeekAfternoonTable .nextWeekMorningTable tbody #updateAfternoonSchedule,
+    .nextWeekMorningTable .nextWeekAfternoonTable tbody #updateAfternoonSchedule,
+    .nextWeekAfternoonTable tbody #updateAfternoonSchedule,
+    .nextWeekAfternoonTable tbody #deleteAfternoonSchedule#updateMorningSchedule,
+    .nextWeekAfternoonTable tbody #copyMorningSchedule#updateMorningSchedule,
+    .nextWeekAfternoonTable tbody #copyAfternoonSchedule#updateMorningSchedule {
+      background: #003366;
+      border: 1px solid #003366;
+      margin-right: 0px; }
+    .nextWeekMorningTable tbody #updateMorningSchedule#deleteMorningSchedule, .nextWeekMorningTable tbody #deleteMorningSchedule#deleteMorningSchedule, .nextWeekMorningTable tbody #deleteAfternoonSchedule,
+    .nextWeekMorningTable .nextWeekAfternoonTable tbody #deleteAfternoonSchedule,
+    .nextWeekAfternoonTable .nextWeekMorningTable tbody #deleteAfternoonSchedule, .nextWeekMorningTable tbody #updateAfternoonSchedule#deleteMorningSchedule, .nextWeekMorningTable tbody #deleteAfternoonSchedule#deleteMorningSchedule, .nextWeekMorningTable tbody #deleteAfternoonSchedule,
+    .nextWeekMorningTable .nextWeekAfternoonTable tbody #deleteAfternoonSchedule,
+    .nextWeekAfternoonTable .nextWeekMorningTable tbody #deleteAfternoonSchedule, .nextWeekMorningTable tbody #copyMorningSchedule#deleteMorningSchedule, .nextWeekMorningTable tbody #copyAfternoonSchedule#deleteMorningSchedule,
+    .nextWeekAfternoonTable tbody #updateMorningSchedule#deleteMorningSchedule,
+    .nextWeekAfternoonTable tbody #deleteMorningSchedule#deleteMorningSchedule,
+    .nextWeekAfternoonTable .nextWeekMorningTable tbody #deleteAfternoonSchedule,
+    .nextWeekMorningTable .nextWeekAfternoonTable tbody #deleteAfternoonSchedule,
+    .nextWeekAfternoonTable tbody #deleteAfternoonSchedule,
+    .nextWeekAfternoonTable tbody #updateAfternoonSchedule#deleteMorningSchedule,
+    .nextWeekAfternoonTable tbody #deleteAfternoonSchedule#deleteMorningSchedule,
+    .nextWeekAfternoonTable .nextWeekMorningTable tbody #deleteAfternoonSchedule,
+    .nextWeekMorningTable .nextWeekAfternoonTable tbody #deleteAfternoonSchedule,
+    .nextWeekAfternoonTable tbody #deleteAfternoonSchedule,
+    .nextWeekAfternoonTable tbody #copyMorningSchedule#deleteMorningSchedule,
+    .nextWeekAfternoonTable tbody #copyAfternoonSchedule#deleteMorningSchedule {
+      background: #FF3366;
+      border: 1px solid #FF3366; }
+    .nextWeekMorningTable tbody #updateMorningSchedule#copyMorningSchedule, .nextWeekMorningTable tbody #deleteMorningSchedule#copyMorningSchedule, .nextWeekMorningTable tbody #updateAfternoonSchedule#copyMorningSchedule, .nextWeekMorningTable tbody #deleteAfternoonSchedule#copyMorningSchedule, .nextWeekMorningTable tbody #copyMorningSchedule#copyMorningSchedule, .nextWeekMorningTable tbody #copyAfternoonSchedule,
+    .nextWeekMorningTable .nextWeekAfternoonTable tbody #copyAfternoonSchedule,
+    .nextWeekAfternoonTable .nextWeekMorningTable tbody #copyAfternoonSchedule, .nextWeekMorningTable tbody #copyAfternoonSchedule#copyMorningSchedule, .nextWeekMorningTable tbody #copyAfternoonSchedule,
+    .nextWeekMorningTable .nextWeekAfternoonTable tbody #copyAfternoonSchedule,
+    .nextWeekAfternoonTable .nextWeekMorningTable tbody #copyAfternoonSchedule,
+    .nextWeekAfternoonTable tbody #updateMorningSchedule#copyMorningSchedule,
+    .nextWeekAfternoonTable tbody #deleteMorningSchedule#copyMorningSchedule,
+    .nextWeekAfternoonTable tbody #updateAfternoonSchedule#copyMorningSchedule,
+    .nextWeekAfternoonTable tbody #deleteAfternoonSchedule#copyMorningSchedule,
+    .nextWeekAfternoonTable tbody #copyMorningSchedule#copyMorningSchedule,
+    .nextWeekAfternoonTable .nextWeekMorningTable tbody #copyAfternoonSchedule,
+    .nextWeekMorningTable .nextWeekAfternoonTable tbody #copyAfternoonSchedule,
+    .nextWeekAfternoonTable tbody #copyAfternoonSchedule,
+    .nextWeekAfternoonTable tbody #copyAfternoonSchedule#copyMorningSchedule,
+    .nextWeekAfternoonTable .nextWeekMorningTable tbody #copyAfternoonSchedule,
+    .nextWeekMorningTable .nextWeekAfternoonTable tbody #copyAfternoonSchedule,
+    .nextWeekAfternoonTable tbody #copyAfternoonSchedule {
+      background: #0066CC;
+      border: 1px solid #0066CC;
+      margin-left: 0px; }
+
+/* ---------------------------------------------------
+    GENERAL STYLE
+----------------------------------------------------- */
+.scheduleHr {
+  border: none;
+  height: 2px;
+  background-color: black;
+  margin-left: 0;
+  width: 90%;
+  margin-top: 0px;
+  margin-bottom: 30px; }
+  @media (orientation: portrait) {
+    .scheduleHr {
+      width: 100%; } }
+
+.titleHr {
+  margin-top: 15px;
+  height: 1px;
+  background: black; }
+
+.scheduleTitle {
+  letter-spacing: 5px;
+  margin-top: 5px; }
+  @media (orientation: portrait) {
+    .scheduleTitle {
+      text-align: center; } }
+
+.dayLabel {
+  font-weight: bold; }
+  @media (orientation: portrait) {
+    .dayLabel {
+      text-align: center; } }
+
+.previousWeekBtn {
+  float: right;
+  background: #0066CC;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 3px;
+  color: white; }
+  .previousWeekBtn:link {
+    color: white;
+    text-decoration: none; }
+  .previousWeekBtn:visited {
+    color: white;
+    text-decoration: none; }
+  @media (orientation: portrait) {
+    .previousWeekBtn {
+      float: none;
+      width: 100%;
+      display: inline-block;
+      text-align: center; } }
+
+@media (orientation: landscape) {
+  .taskCol, .remarkCol {
+    width: 10%; } }

@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css?family=News+Cycle:700,1000");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Cairo");
+/* ---------------------------------------------------
+    Navigation Bar Values
+----------------------------------------------------- */
+/* ---------------------------------------------------
+    ANIMATION
+----------------------------------------------------- */
+@-webkit-keyframes sk-rotateplane {
+  0% {
+    -webkit-transform: perspective(120px); }
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg); }
+  100% {
+    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg); } }
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(180px) rotateX(0deg) rotateY(0deg); }
+  50% {
+    transform: perspective(180px) rotateX(0deg) rotateY(180deg); }
+  100% {
+    transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
+/* ---------------------------------------------------
+    POPUP FORM STYLE
+----------------------------------------------------- */
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box; }
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #FF3366;
+  float: right; }
+
+/* New style for the login up button */
+.loginbtn {
+  background-color: #003366;
+  float: left; }
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .forgotbtn, .loginbtn, .changebtn {
+  color: white;
+  padding: 14px 20px;
+  margin: 8px -2px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  width: 50%; }
+
+.forgotbtn, .changebtn {
+  width: 100%;
+  background-color: #003366; }
+
+.backbtn {
+  cursor: pointer;
+  background-color: white;
+  border: 0px solid white; }
+
+.cancelbtn, .loginbtn {
+  margin-bottom: 0px; }
+
+/* Add padding to container elements */
+.container {
+  padding: 16px; }
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */ }
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  color: #000;
+  font-size: 40px;
+  font-weight: bold; }
+  .close:hover, .close:focus {
+    color: red;
+    cursor: pointer; }
+
+#next {
+  color: white;
+  background-color: slategray;
+  margin: 0px; }
+  @media (orientation: landscape) {
+    #next {
+      border: 5px solid slategray;
+      margin-right: -1px;
+      margin-bottom: -1px; } }
+
+/* Clear floats */
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: table; }
+
+.loginFormPic {
+  width: 25%; }
+  .loginFormPic:hover {
+    -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+    animation: sk-rotateplane 1.2s infinite ease-in-out; }
+
+.forgotPassPic, .changePassPic {
+  width: 25%; }
+
+h6, label {
+  margin-top: 10px; }
+  h6, h6 .forgotPassTitle, h6 h5, label, label .forgotPassTitle, label h5 {
+    margin-bottom: 0px; }
+
+.loginTitle {
+  letter-spacing: 10px;
+  font-size: 32px;
+  font-weight: bold; }
+
+.rememberLabel {
+  display: block;
+  padding-left: 15px;
+  text-indent: -15px;
+  margin-top: -5px;
+  margin-bottom: 15px; }
+  .rememberLabel .remember {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+    *overflow: hidden; }
