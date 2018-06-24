@@ -30,3 +30,49 @@
 .pendingDutyTable, .completedDutyTable {
     overflow-y: scroll;
 }
+
+.pendingDutyTable {
+    width: 100%;
+    
+    .subTaskCol {
+        width: 35%;
+    }
+    
+    .subCommentCol {
+        width: 50%;
+    }
+    
+    .subStateCol {
+        width: 15%;
+    }
+    
+    tr {    
+        &:nth-child(odd) {
+            background: #D0E4F5;
+        } 
+        &:nth-child(even) {
+            background: white;
+        }
+        
+        th {
+            background: white;
+        }
+    }
+}
+
+.completedDutyTable {
+    width: 100%;
+    
+    tr {
+        &:nth-child(odd) {
+            background: #D0E4F5;
+        } 
+        &:nth-child(even) {
+            background: white;
+        }
+        
+        th {
+            background: white;
+        }
+    }
+}
