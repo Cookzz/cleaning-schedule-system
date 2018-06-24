@@ -30,7 +30,7 @@
       color: white; }
   #morning_schedule_table tbody tr:nth-child(odd) {
     background: #dee2e6;
-    color: white; }
+    color: black; }
   #morning_schedule_table tbody tr:nth-child(even) {
     background: white; }
   #morning_schedule_table tbody .update {
