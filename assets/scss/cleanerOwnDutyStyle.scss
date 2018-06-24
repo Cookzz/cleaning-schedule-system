@@ -56,20 +56,20 @@
     
     .pendingDutyTable {
         width: 100%;
+        
+        .subTaskCol {
+            width: 35%;
+        }
+
+        .subCommentCol {
+            width: 50%;
+        }
+
+        .subStateCol {
+            width: 15%;
+        }
 
         tr {
-            .subTaskCol {
-                width: 35%;
-            }
-
-            .subCommentCol {
-                width: 50%;
-            }
-
-            .subStateCol {
-                width: 15%;
-            }
-            
             td {
                 padding: 10px;
                 padding-right: 30px;

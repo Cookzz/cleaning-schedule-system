@@ -63,11 +63,11 @@
   width: 100%; }
   .pendingDutyTab .pendingDutyTable {
     width: 100%; }
-    .pendingDutyTab .pendingDutyTable tr .subTaskCol {
+    .pendingDutyTab .pendingDutyTable .subTaskCol {
       width: 35%; }
-    .pendingDutyTab .pendingDutyTable tr .subCommentCol {
+    .pendingDutyTab .pendingDutyTable .subCommentCol {
       width: 50%; }
-    .pendingDutyTab .pendingDutyTable tr .subStateCol {
+    .pendingDutyTab .pendingDutyTable .subStateCol {
       width: 15%; }
     .pendingDutyTab .pendingDutyTable tr td {
       padding: 10px;
