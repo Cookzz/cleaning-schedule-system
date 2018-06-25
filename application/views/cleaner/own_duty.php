@@ -35,15 +35,15 @@
             <table class="pendingDutyTable table-responsive">
                 <tr>
                     <th class="subTaskCol">Sub Task<hr></th>
-                    <th class="subCommentCol">Comment From Supervisor<hr></th>
+                    <th class="subCommentCol">Supervisor Comment<hr></th>
                     <th class="subStateCol">State<hr></th>
                 </tr>
             <!--This foreach loop will foreach loop the data which passed by the controller and decide the output-->
             <?php foreach($rows as $row) {?>		
                 <tr>
-                    <td><?= $row["pending_duty_subtask"]?></td>
-                    <td><?php if(empty($row["pending_duty_comment"])){echo ("No Comments");}else{echo($row["pending_duty_comment"]);}?></td>
-                    <td><input id="<?= $row["pending_duty_id"]?>" class="complete" type="checkbox" name="vehicle" value="Bike"></td>
+                    <td class="pendingSubTask"><?= $row["pending_duty_subtask"]?></td>
+                    <td class="pendingComment"><?php if(empty($row["pending_duty_comment"])){echo ("No Comments");}else{echo($row["pending_duty_comment"]);}?></td>
+                    <td class="completePendingDuty"><input id="<?= $row["pending_duty_id"]?>" class="complete" type="checkbox" name="vehicle" value="Bike"></td>
                 </tr>	
             <?php }?>
             <!--This is the end of foreach loop-->
@@ -60,27 +60,27 @@
       <!--Check the complete duty is 0 or more than 0-->
         <?php if($complete_duty_count > 0) {?>
         <?php foreach($complete_duties as $complete_duty => $rows):?>
-        <hr />
-        <h4><?= $complete_duty?></h4>
-        <hr />
+        <hr class="topDutyTitleHr" />
+        <h4 class="dutyTitle"><?= $complete_duty?></h4>
+        <hr class="bottomDutyTitleHr" />
         <ul>
             <!--This is the table to show out the complete duty data, it using php if-else to dicide which data need to out put-->
             <table class="completedDutyTable table-responsive">
-                <tr><th>Sub Task</th>
-                <th>Comment From Supervisor</th>
+                <tr>
+                    <th class="completeTaskCol">Sub Task<hr></th>
+                    <th class="completeCommentCol">Supervisor Comment<hr></th>
                 </tr>
             <!--This foreach loop will foreach loop the data which passed by the controller and decide the output-->
             <?php foreach($rows as $row) {?>		
                 <tr>
-                    <td><?= $row["complete_duty_subtask"]?></td>
-                    <td><?php if(empty($row["complete_duty_comment"])){echo ("No Any Comment");}else{echo($row["complete_duty_comment"]);}?></td>
+                    <td class="completeSubTask"><?= $row["complete_duty_subtask"]?></td>
+                    <td class="completeComment"><?php if(empty($row["complete_duty_comment"])){echo ("No Any Comment");}else{echo($row["complete_duty_comment"]);}?></td>
                 </tr>	
             <?php }?>
             <!--This is the end of foreach loop-->
             </table>
             <!--This is the end of complete duty table-->
         </ul>
-        <hr />
         <?php endforeach; ?>
         <!--The else statement will be active when the total of complete duty is 0 -->
         <?php }else{?>

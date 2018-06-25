@@ -3,27 +3,29 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/own_duty.js"></script>
+<link rel="stylesheet" type="text/css" href="<?= base_url()?>assets/css/cleanerOwnSpecialDutyStyle.css">
 </head>
 <body>  
 
-<h2>Today's Special Duty</h2><h5><?= $date?></h5>
+<h2 class="pageTitle">Today's Special Duty</h2><hr class="titleHr" /><h3 class="titleDate">Date: <?= $date?></h3><br>
 <!--This is the body of own special duty page, It allow cleaner to see thier special duty-->
-<p>
+
 <!--This is the start to show the special duty-->
 <!--Check the special duty is 0 or more than 0-->
 <?php if($special_duties_count > 0) {?>
 <?php foreach($special_duties as $special_duty):?>
-<hr />
-<h3>Title : <?= $special_duty["special_duty_title"]?></h3>
-<h5>Time : <?= $special_duty["special_duty_time"]?></h5>
-Detail : <?= $special_duty["special_duty_detail"]?>
+<hr class="topTaskTitleHr" />
+    <h3 class="taskTitle"><?= $special_duty["special_duty_title"]?></h3>
+<hr class="bottomTaskTitleHr" />
+<h4 class="specialDutyLabel"><b>Time:</b> <?= $special_duty["special_duty_time"]?></h4>
+<h4 class="specialDutyLabel"><b>Detail:</b> <?= $special_duty["special_duty_detail"]?></h4>
 <hr />
 <?php endforeach; ?>
 <!--The else statement will be active when the total of pending duty is 0 -->
 <?php }else{?>
-<h6>You Do Not Have Any Special Duty</h6>
+<h6>You Do Not Have Any Special Duties</h6>
 <?php }?>
-</p>
+
 <!--This end of pending duty area-->
 
 <p>

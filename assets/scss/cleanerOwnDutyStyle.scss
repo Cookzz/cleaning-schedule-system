@@ -4,6 +4,131 @@
     PENDING DUTY TABLE STYLE
 ----------------------------------------------------- */
 
+#pendingDutyTab {
+    width: 100%;
+    
+    .pendingDutyTable {
+        tr {
+            .subTaskCol {
+                width: 30%;
+
+                hr {
+                    margin: 0px;
+                    padding: 0px;
+                    width: 100%;
+                }
+
+                @media (orientation:portrait) and (max-width:450px){
+                    text-align: center;
+                }
+            }
+
+            .subCommentCol {
+                width: 55%;
+
+                hr {
+                    margin: 0px;
+                    padding: 0px;
+                }
+
+                @media (orientation:portrait) and (max-width:450px){
+                    text-align: center;
+                }
+            }
+
+            .subStateCol {
+                width: 15%;
+
+                hr {
+                    margin: 0px;
+                    padding: 0px;
+                }
+
+                @media (orientation:portrait) and (max-width:450px){
+                    text-align: center;
+                }
+            }
+            
+            .pendingComment, .completePendingDuty, .pendingSubTask {
+                @media (orientation:portrait) and (max-width:450px){
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+
+
+/* ---------------------------------------------------
+    COMPLETED DUTY TABLE STYLE
+----------------------------------------------------- */
+
+#completedDutyTab {
+    .completedDutyTable {
+        width: 100%;
+        
+        tr {
+            .completeTaskCol {
+                width: 30%;
+
+                hr {
+                    margin: 0px;
+                    padding: 0px;
+                    width: 100%;
+                }
+
+                @media (orientation:portrait) and (max-width:450px){
+                    text-align: center;
+                }
+            }
+
+            .completeCommentCol {
+                width: 55%;
+
+                hr {
+                    margin: 0px;
+                    padding: 0px;
+                }
+
+                @media (orientation:portrait) and (max-width:450px){
+                    text-align: center;
+                }
+            }
+            
+            .completeComment, .completeSubTask {
+                @media (orientation:portrait) and (max-width:450px){
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------------------------------
+    GENERAL STYLE
+----------------------------------------------------- */
+
+tbody {
+    width: 100%;
+    display: table;
+    margin-bottom: 10px;
+}
+
+.container-fluid {
+    @media (orientation: portrait) and (max-width: 700px){
+        padding: 0px;
+    }
+}
+
+ul {
+    padding-left: 10px;
+    
+    @media (orientation:portrait) and (max-width: 500px){
+        padding-left: 0px;
+    }
+}
+
 .tab-content {
     .container {
         margin: 0px;
@@ -55,80 +180,6 @@
 .bottomDutyTitleHr {
     margin-top: 0px;
     padding-top: 0px;
+    margin-bottom: 5px;
 }
 
-.pendingDutyTab {
-    width: 100%;
-    
-    .pendingDutyTable {
-        width: 100%;
-
-        tr {
-            td {
-                padding: 10px;
-                padding-right: 30px;
-            }
-        }
-
-    }
-}
-
-/* ---------------------------------------------------
-    COMPLETED DUTY TABLE STYLE
------------------------------------------------------ */
-
-.completedDutyTab {
-    .completedDutyTable {
-        width: 100%;
-    }
-}
-
-/* ---------------------------------------------------
-    GENERAL STYLE
------------------------------------------------------ */
-
-tbody {
-    width: 100%;
-    display: table;
-}
-
-.subTaskCol {
-    width: 30%;
-    
-    hr {
-        margin: 0px;
-        padding: 0px;
-    }
-}
-
-.subCommentCol {
-    width: 55%;
-    
-    hr {
-        margin: 0px;
-        padding: 0px;
-    }
-}
-
-.subStateCol {
-    width: 15%;
-    
-    hr {
-        margin: 0px;
-        padding: 0px;
-    }
-}
-
-.container-fluid {
-    @media (orientation: portrait) and (max-width: 700px){
-        padding: 0px;
-    }
-}
-
-ul {
-    padding-left: 20px;
-    
-    @media (orientation:portrait) and (max-width: 500px){
-        padding-left: 10px;
-    }
-}

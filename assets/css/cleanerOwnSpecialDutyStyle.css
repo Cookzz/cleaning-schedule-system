@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css?family=News+Cycle:700,1000");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Cairo");
+/* ---------------------------------------------------
+    Navigation Bar Values
+----------------------------------------------------- */
+/* ---------------------------------------------------
+    ANIMATION
+----------------------------------------------------- */
+@-webkit-keyframes sk-rotateplane {
+  0% {
+    -webkit-transform: perspective(120px); }
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg); }
+  100% {
+    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg); } }
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(180px) rotateX(0deg) rotateY(0deg); }
+  50% {
+    transform: perspective(180px) rotateX(0deg) rotateY(180deg); }
+  100% {
+    transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
+.topTaskTitleHr {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+
+.taskTitle {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background: #003366;
+  color: white; }
+
+.bottomTaskTitleHr {
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 5px; }
+
+.pageTitle {
+  margin-top: 5px;
+  font-weight: bold;
+  letter-spacing: 5px; }
+  @media (orientation: portrait) {
+    .pageTitle {
+      margin-top: 1px;
+      text-align: center; } }
+
+.titleHr {
+  margin-top: 0px; }
+
+@media (orientation: portrait) {
+  .titleDate {
+    text-align: center; } }
+
+.specialDutyLabel {
+  margin-top: 15px;
+  margin-bottom: 15px; }
+
+/*# sourceMappingURL=cleanerOwnSpecialDutyStyle.css.map */
