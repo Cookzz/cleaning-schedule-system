@@ -69,6 +69,16 @@
                 
                 cursor: pointer;
             }
+            
+            .newUserPositionField {
+                margin-top: 10px;
+            }
+            
+            .authSpan {
+                @media (orientation: portrait) and (max-width: 450px){
+                    display: block;
+                }
+            }
         }
     }
 }
@@ -81,6 +91,10 @@
     font-weight: bold;
     margin-bottom: 5px;
     letter-spacing: 5px;
+    
+    @media (orientation: portrait) {
+        text-align: center;
+    }
 }
 
 .userTitleHr {

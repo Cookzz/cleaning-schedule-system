@@ -27,7 +27,7 @@
 		<span class="togglespan">Open/Close Admin Panel</span>
 	</button>
 </div>
-<h2>Pending Duty Table</h2><hr/>
+<h2 class="title">Pending Duty Table</h2><hr class="titleHr" />
 	<table id="pending_duty_table" class="table table-striped table-bordered table-responsive" border="1">
 		<thead class="tableTitle">
 			<tr>

@@ -60,4 +60,15 @@
     #special_duty_table .details .morecontent span {
       display: none; }
 
+.pageTitle {
+  font-weight: bold;
+  margin-bottom: 5px;
+  letter-spacing: 5px; }
+  @media (orientation: portrait) {
+    .pageTitle {
+      text-align: center; } }
+
+.titleHr {
+  margin-top: 0px; }
+
 /*# sourceMappingURL=adminSpecialDutyStyle.css.map */

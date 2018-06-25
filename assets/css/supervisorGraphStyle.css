@@ -1,3 +1,17 @@
+.title {
+  letter-spacing: 5px;
+  font-weight: bold;
+  margin-top: 5px; }
+  @media (orientation: portrait) {
+    .title {
+      text-align: center; } }
 
+.pageHr {
+  margin-top: 5px; }
+
+@media (orientation: portrait) and (max-width: 360px) {
+  .nav-tabs .nav-link, .nav-tabs .nav-item {
+    text-align: center;
+    width: 100%; } }
 
 /*# sourceMappingURL=supervisorGraphStyle.css.map */

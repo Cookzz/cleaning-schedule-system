@@ -792,11 +792,11 @@
 				
 				if(date("G") < 13)
 				{
-					$time = "morning";
+					$time = "Morning";
 				}
 				else
 				{
-					$time = "afternoon";
+					$time = "Afternoon";
 				}
 				
 				$date = array("pending_duty_date" => date("Y/m/d") , "pending_duty_schedule" => $time);
@@ -807,7 +807,7 @@
 				$data["time"] = $time;
 				$data['link'] = "HomeController/viewDidnDutyPage";
 				$data['link_word'] = "View Outstanding Work";
-				$data['title'] = "Today's Pending Duty(".$time.")";
+				$data['title'] = "Today's Pending Duty (".$time.")";
 				
 				$this->viewNav();
 				$this->load->view('supervisor/'.$page,$data);

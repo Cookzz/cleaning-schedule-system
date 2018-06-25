@@ -88,6 +88,17 @@
         float: none;
         width: 100%; } }
 
+.title {
+  letter-spacing: 5px;
+  font-weight: bold;
+  margin-top: 5px; }
+  @media (orientation: portrait) {
+    .title {
+      text-align: center; } }
+
+.pageHr {
+  margin-top: 5px; }
+
 #admin_task_table {
   width: 100%; }
   #admin_task_table .tableTitle th {
@@ -109,5 +120,16 @@
     padding: 5px 30px 5px 30px;
     border-radius: 5px;
     cursor: pointer; }
+
+.title {
+  letter-spacing: 5px;
+  font-weight: bold;
+  margin-top: 5px; }
+  @media (orientation: portrait) {
+    .title {
+      text-align: center; } }
+
+.pageHr {
+  margin-top: 5px; }
 
 /*# sourceMappingURL=adminTaskStyle.css.map */

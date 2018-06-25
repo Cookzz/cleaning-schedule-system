@@ -45,4 +45,15 @@
     border-radius: 5px;
     cursor: pointer; }
 
+.pageTitle {
+  font-weight: bold;
+  margin-bottom: 5px;
+  letter-spacing: 5px; }
+  @media (orientation: portrait) {
+    .pageTitle {
+      text-align: center; } }
+
+.titleHr {
+  margin-top: 0px; }
+
 /*# sourceMappingURL=adminMorningScheduleStyle.css.map */

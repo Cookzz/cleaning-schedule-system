@@ -18,7 +18,7 @@
 </head>
 <body>  
 
-<h2>Task Location</h2><hr/>
+<h2 class="title">Task Location</h2><hr class="pageHr" />
 
 <!--This form got two table, one is to let user to insert new task, one is to display the task table-->
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
