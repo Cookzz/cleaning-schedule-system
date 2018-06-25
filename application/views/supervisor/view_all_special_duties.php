@@ -18,7 +18,7 @@
 </head>
 <body>  
 
-<h2>All Special Duties</h2><hr/>
+<h2 class="title">All Special Duties</h2><hr class="pageHr" />
 
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 	<!--This Table is to output the data which by controller and delete,update button-->

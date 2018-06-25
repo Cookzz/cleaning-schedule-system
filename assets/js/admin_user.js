@@ -227,7 +227,7 @@ $(document).ready(function(){
 	var i = 0;
 	
 	$("#IC").click(function(){
-		 $('#newUserICField').attr('maxlength', '12');
+		 $('#newUserICField').attr('maxlength', '14');
 	});
 	
 	$("#Passport").click(function(){

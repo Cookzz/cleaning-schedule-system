@@ -27,7 +27,7 @@
 		<span class="togglespan">Open/Close Admin Panel</span>
 	</button>
 </div>
-<h2>Afternoon Schedule Table</h2><hr/>
+<h2 class="pageTitle">Afternoon Schedule Table</h2><hr class="titleHr"/>
 
 <!--This form got one table, one is to let user to insert new task, one is to display the task table-->
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">

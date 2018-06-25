@@ -26,11 +26,11 @@ function validateData()
 	}
 	else
 	{
-		postChangePasswordData(oldPassword,newPassword,confirmPassword);
+		postChangePasswordData2(oldPassword,newPassword,confirmPassword);
 	}
 }
 
-function postChangePasswordData(oldPassword,newPassword,confirmPassword)
+function postChangePasswordData2(oldPassword,newPassword,confirmPassword)
 {
 	var baseUrl = $("#baseURL").val();
 	var url = baseUrl+"changePasswordController/changePassword";

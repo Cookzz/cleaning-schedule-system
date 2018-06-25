@@ -5,7 +5,7 @@
 </head>
 <body>  
 
-<h2>Main Page</h2><hr/>
+<h2>Admin's Homepage</h2><hr/>
 <!--This this main page body-->
 <div class="navbar-header">
 <!--This this sidebar button-->
@@ -13,6 +13,10 @@
 		<span class="togglespan">Open/Close Admin Panel</span>
 	</button>
 </div> 
+<div class="container-fluid">
+    This page is intended to be empty until further notice.<br>
+    Please click the button on the right to access the admin panel.
+</div>
 
 </body>
 </html>

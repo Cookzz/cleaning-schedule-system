@@ -47,6 +47,7 @@
 			<td><label>Authentication Type:</label></td>
 			<td>
 				<input id="IC" type="radio" name="IcOrPassport" value="1" checked>IC/No &nbsp;
+				<span class="authSpan"></span>
 				<input id="Passport" type="radio" name="IcOrPassport" value="2">Passport/No
 			</td>
 		</tr>

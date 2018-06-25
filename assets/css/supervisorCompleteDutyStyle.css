@@ -62,7 +62,8 @@
       float: none; } }
 
 .pageTitle {
-  margin-bottom: 0px; }
+  margin-bottom: 0px;
+  font-weight: bold; }
   @media (orientation: portrait) {
     .pageTitle {
       margin-top: 1px;

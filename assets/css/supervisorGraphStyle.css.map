@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAA,MAAO;EACH,cAAc,EAAE,GAAG;EACnB,WAAW,EAAE,IAAI;EACjB,UAAU,EAAE,GAAG;EAEf,8BAA8B;IALlC,MAAO;MAMC,UAAU,EAAE,MAAM;;AAI1B,OAAQ;EACJ,UAAU,EAAE,GAAG;;AAGnB,qDAAoD;EAE5C,wCAAqB;IACjB,UAAU,EAAE,MAAM;IAClB,KAAK,EAAE,IAAI",
+"sources": ["../scss/supervisorGraphStyle.scss"],
 "names": [],
 "file": "supervisorGraphStyle.css"
 }

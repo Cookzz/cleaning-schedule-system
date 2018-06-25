@@ -112,7 +112,8 @@ input[type=text], input[type=password] {
     #next {
       border: 5px solid slategray;
       margin-right: -1px;
-      margin-bottom: -1px; } }
+      margin-bottom: -1px;
+      width: 101%; } }
 
 /* Clear floats */
 .clearfix:after {

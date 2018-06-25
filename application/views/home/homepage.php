@@ -17,26 +17,23 @@
 	</div>
 </div>
 
-<h2>Home Page</h2><hr/>
+<h2 class="homeTitle">Welcome to FFF's Cleaning Schedule Website!</h2><hr class="homeHr"/>
 <!-- Slideshow container -->
 <div class="slideshow-container">
   <!-- Full-width images with number and caption text -->
   <div class="homepageSlides slideFade">
     <div class="slideNumberText">1 / 3</div>
-    <img src="<?= base_url()?>assets/images/cleaner-schedule.png" class="sliderImage">
-    <div class="slideText">Caption Text</div>
+    <img src="<?= base_url()?>assets/images/schedulepage.png" class="sliderImage">
   </div>
 
   <div class="homepageSlides slideFade">
     <div class="slideNumberText">2 / 3</div>
-    <img src="<?= base_url()?>assets/images/cleaner-schedule.png" class="sliderImage">
-    <div class="slideText">Caption Two</div>
+    <img src="<?= base_url()?>assets/images/completeddutiespage.png" class="sliderImage">
   </div>
 
   <div class="homepageSlides slideFade">
     <div class="slideNumberText">3 / 3</div>
-    <img src="<?= base_url()?>assets/images/cleaner-schedule.png" class="sliderImage">
-    <div class="slideText">Caption Three</div>
+    <img src="<?= base_url()?>assets/images/dutypage.png" class="sliderImage">
   </div>
 
   <!-- Next and previous buttons -->
@@ -50,6 +47,14 @@
   <span id="slideDot1" class="slideDot"></span> 
   <span id="slideDot1" class="slideDot"></span> 
   <span id="slideDot1" class="slideDot"></span>
+</div>
+
+<div class="container-fluid">
+    <h3 class="topic">About Us</h3><hr class="topicHr"/>
+    <div class="content">
+        What our website generally does is to provide a system for organizations especially schools and colleges in order for them to have a digitized system in keeping cleaner's schedules: when and where they should work and attend their tasks.
+    </div>
+    
 </div>
 
 </body>

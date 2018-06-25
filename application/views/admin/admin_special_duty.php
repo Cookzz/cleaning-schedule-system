@@ -27,7 +27,7 @@
 		<span class="togglespan">Open/Close Admin Panel</span>
 	</button>
 </div>
-<h2>Special Duty Table</h2><hr/>
+<h2 class="title">Special Duty Table</h2><hr class="titleHr" />
 <!--Table to show complete duty table-->
 	<table id="special_duty_table" class="table table-striped table-bordered table-responsive" border="1">
 		<thead class="tableTitle">

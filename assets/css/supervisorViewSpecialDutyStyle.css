@@ -57,4 +57,15 @@
     #special_duty_table .details .morecontent span {
       display: none; }
 
+.title {
+  letter-spacing: 5px;
+  font-weight: bold;
+  margin-top: 5px; }
+  @media (orientation: portrait) {
+    .title {
+      text-align: center; } }
+
+.pageHr {
+  margin-top: 5px; }
+
 /*# sourceMappingURL=supervisorViewSpecialDutyStyle.css.map */

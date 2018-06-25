@@ -21,7 +21,7 @@
                   <a href="<?php echo base_url();?>adminHomeController/viewTaskLocationPage">Task Table</a>
                 </li>
                 <li>
-                  <a href="<?php echo base_url();?>adminHomeController/viewSubTaskPage">Sub_Task Table</a>
+                  <a href="<?php echo base_url();?>adminHomeController/viewSubTaskPage">Sub Task Table</a>
                 </li>
                 <li>
                   <a href="<?php echo base_url();?>adminHomeController/viewDutyPage">Duty Table</a>

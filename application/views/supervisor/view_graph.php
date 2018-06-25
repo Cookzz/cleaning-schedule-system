@@ -10,9 +10,8 @@
 </head>
 <body>  
 
-<h2>Graphs</h2>
-
-
+<h2 class="title">Graphs</h2><hr class="pageHr" />
+<br>
 <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link active" data-toggle="tab" href="#ratingTab">Customer Total Ratings</a>

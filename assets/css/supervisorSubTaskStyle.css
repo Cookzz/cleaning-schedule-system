@@ -67,4 +67,15 @@
         float: none;
         width: 100%; } }
 
+.title {
+  letter-spacing: 5px;
+  font-weight: bold;
+  margin-top: 5px; }
+  @media (orientation: portrait) {
+    .title {
+      text-align: center; } }
+
+.pageHr {
+  margin-top: 5px; }
+
 /*# sourceMappingURL=supervisorSubTaskStyle.css.map */

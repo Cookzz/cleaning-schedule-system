@@ -95,7 +95,7 @@
 								"user_name"=>trim($newUsername),
 								"user_password"=>$rand_num,
 								"user_IC"=>trim($newUserIC),
-								"user_email"=>$rand_num."@gmail.com",
+								"user_email"=>"fff".$rand_num."@gmail.com",
 								"user_position"=>$newUserPosition,
 								"user_access_level"=> $access_level,
 								"user_picture"=> "loginIcon.png");

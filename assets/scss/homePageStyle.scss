@@ -1,3 +1,7 @@
+/* ---------------------------------------------------
+    SLIDESHOW STYLE
+----------------------------------------------------- */
+
 * {
     box-sizing:border-box
 }
@@ -14,17 +18,6 @@
         
         .sliderImage {
             width: 100%
-        }
-        
-        /* Caption text */
-        .slideText {
-            color: black;
-            font-size: 21px;
-            padding: 8px 12px;
-            position: absolute;
-            bottom: 8px;
-            width: 100%;
-            text-align: center;
         }
 
         /* Number text (1/3 etc) */
@@ -107,5 +100,33 @@
     } 
     to {
         opacity: 1
+    }
+}
+
+/* ---------------------------------------------------
+    HOMEPAGE CONTENT STYLE
+----------------------------------------------------- */
+
+.homeHr {
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.topic, .content {
+    @media (orientation: portrait) and (max-width: 450px) {
+        text-align: center;
+    }
+}
+
+.topicHr {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.homeTitle {
+    margin-top: 5px;
+    
+    @media (orientation: portrait) and (max-width: 450px) {
+        text-align: center;
     }
 }

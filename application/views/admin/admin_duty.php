@@ -27,13 +27,12 @@
 		<span class="togglespan">Open/Close Admin Panel</span>
 	</button>
 </div>
-<h2>Duty</h2><hr/>
+<h2 class="title">Duty</h2><hr class="titleHr" />
 
 <!--This form got one table, one is to let user to insert new duty, one is to display the duty table-->
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 	<!--Table is to output the data which by controller and delete,update button-->
-	<div class="table-responsive">
-		<table id="admin_duty_table" class="table table-striped table-bordered" border="1">
+		<table id="admin_duty_table" class="table table-striped table-bordered table-responsive" border="1">
 			<thead>
 				<tr class="tableTitle">
 					<th class="titleLabel">No.</th><th>Duty Task</th><th>Duty Sub Task</th><th>Delete</th>
@@ -56,7 +55,6 @@
 			</tfoot>
 		</table>
 	<!--This is the end of second table-->
-	</div>
 </form>
 
 <input id="baseURL" type=hidden value="<?=base_url()?>">

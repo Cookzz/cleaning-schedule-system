@@ -8,8 +8,8 @@
 <body>  
 
 <a class="previousBtn" href="<?php echo base_url();?>HomeController/viewSchedulePage">◄ Go Back to Schedule</a>
-<h2>Set Schedule</h2><hr/>
-<h3>Schedule</h3>
+<h2 class="title">Set Schedule</h2><hr class="pageHr" />
+<h3><b>Schedule</b></h3>
 
 <form id="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 <table class="scheduleForm">

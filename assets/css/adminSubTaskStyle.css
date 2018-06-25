@@ -70,6 +70,17 @@
         float: none;
         width: 100%; } }
 
+.title {
+  letter-spacing: 5px;
+  font-weight: bold;
+  margin-top: 5px; }
+  @media (orientation: portrait) {
+    .title {
+      text-align: center; } }
+
+.pageHr {
+  margin-top: 5px; }
+
 /* ---------------------------------------------------
     Navigation Bar Values
 ----------------------------------------------------- */
@@ -90,5 +101,15 @@
     transform: perspective(180px) rotateX(0deg) rotateY(180deg); }
   100% {
     transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
+.title {
+  letter-spacing: 5px;
+  font-weight: bold;
+  margin-top: 5px; }
+  @media (orientation: portrait) {
+    .title {
+      text-align: center; } }
+
+.pageHr {
+  margin-top: 5px; }
 
 /*# sourceMappingURL=adminSubTaskStyle.css.map */

@@ -21,39 +21,44 @@
     transform: perspective(180px) rotateX(0deg) rotateY(180deg); }
   100% {
     transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
-#afternoon_schedule_table {
-  width: 100%; }
-  #afternoon_schedule_table thead {
-    font-family: "News Cycle"; }
-    #afternoon_schedule_table thead th {
-      background: #003366;
-      color: white; }
-  #afternoon_schedule_table tbody tr:nth-child(odd) {
-    background: #dee2e6;
-    color: black; }
-  #afternoon_schedule_table tbody tr:nth-child(even) {
-    background: white; }
-  #afternoon_schedule_table tbody .update {
-    background: #3498DB;
-    border: 1px solid #3498DB;
-    color: white;
-    padding: 10px 30px 10px 30px;
-    border-radius: 5px;
-    cursor: pointer; }
-  #afternoon_schedule_table tbody .delete {
-    padding: 5px 30px 5px 30px;
-    border-radius: 5px;
-    cursor: pointer; }
+.topTaskTitleHr {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+
+.taskTitle {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background: #003366;
+  color: white; }
+
+.bottomTaskTitleHr {
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 5px; }
 
 .pageTitle {
+  margin-top: 5px;
   font-weight: bold;
-  margin-bottom: 5px;
   letter-spacing: 5px; }
   @media (orientation: portrait) {
     .pageTitle {
+      margin-top: 1px;
       text-align: center; } }
 
 .titleHr {
   margin-top: 0px; }
 
-/*# sourceMappingURL=adminAfternoonScheduleStyle.css.map */
+@media (orientation: portrait) {
+  .titleDate {
+    text-align: center; } }
+
+.specialDutyLabel {
+  margin-top: 15px;
+  margin-bottom: 15px; }
+
+/*# sourceMappingURL=cleanerOwnSpecialDutyStyle.css.map */

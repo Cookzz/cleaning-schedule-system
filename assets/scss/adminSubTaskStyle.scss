@@ -4,3 +4,17 @@
 #admin_sub_task_table {
     @extend #sub_task_table;
 }
+
+.title {
+    letter-spacing: 5px;
+    font-weight: bold;
+    margin-top: 5px;
+    
+    @media (orientation: portrait){
+        text-align: center;
+    }
+}
+
+.pageHr {
+    margin-top: 5px;
+}

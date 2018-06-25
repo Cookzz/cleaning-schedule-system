@@ -3,7 +3,7 @@ function update_complete_duty_data(id)
 	if(confirm("Do you confirm want to update?"))
 	{
 		var baseUrl = $("#baseURL").val();
-		var url = baseUrl+"specialDutyController/updateSpecialDutyData";
+		var url = baseUrl+"completeDutyController/updateCompleteDutyData";
 		var complete_duty_comment = $("#"+id+"_complete_duty_comment").text();
 	
 		var fd = new FormData();
