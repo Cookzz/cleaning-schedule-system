@@ -21,8 +21,13 @@
     transform: perspective(180px) rotateX(0deg) rotateY(180deg); }
   100% {
     transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
+/* ---------------------------------------------------
+    PENDING DUTY TABLE STYLE
+----------------------------------------------------- */
 .tab-content .container {
-  margin: 0px; }
+  margin: 0px;
+  padding-left: 0px;
+  padding-right: 0px; }
 
 .pageTitle {
   margin-top: 5px;
@@ -63,17 +68,49 @@
   width: 100%; }
   .pendingDutyTab .pendingDutyTable {
     width: 100%; }
-    .pendingDutyTab .pendingDutyTable .subTaskCol {
-      width: 35%; }
-    .pendingDutyTab .pendingDutyTable .subCommentCol {
-      width: 50%; }
-    .pendingDutyTab .pendingDutyTable .subStateCol {
-      width: 15%; }
     .pendingDutyTab .pendingDutyTable tr td {
       padding: 10px;
       padding-right: 30px; }
 
-.completedDutyTable {
+/* ---------------------------------------------------
+    COMPLETED DUTY TABLE STYLE
+----------------------------------------------------- */
+.completedDutyTab .completedDutyTable {
   width: 100%; }
+
+/* ---------------------------------------------------
+    GENERAL STYLE
+----------------------------------------------------- */
+tbody {
+  width: 100%;
+  display: table; }
+
+.subTaskCol {
+  width: 30%; }
+  .subTaskCol hr {
+    margin: 0px;
+    padding: 0px; }
+
+.subCommentCol {
+  width: 55%; }
+  .subCommentCol hr {
+    margin: 0px;
+    padding: 0px; }
+
+.subStateCol {
+  width: 15%; }
+  .subStateCol hr {
+    margin: 0px;
+    padding: 0px; }
+
+@media (orientation: portrait) and (max-width: 700px) {
+  .container-fluid {
+    padding: 0px; } }
+
+ul {
+  padding-left: 20px; }
+  @media (orientation: portrait) and (max-width: 500px) {
+    ul {
+      padding-left: 10px; } }
 
 /*# sourceMappingURL=cleanerOwnDutyStyle.css.map */

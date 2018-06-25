@@ -1,8 +1,14 @@
 @import "global.scss";
 
+/* ---------------------------------------------------
+    PENDING DUTY TABLE STYLE
+----------------------------------------------------- */
+
 .tab-content {
     .container {
         margin: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
     }
 }
 
@@ -56,18 +62,6 @@
     
     .pendingDutyTable {
         width: 100%;
-        
-        .subTaskCol {
-            width: 35%;
-        }
-
-        .subCommentCol {
-            width: 50%;
-        }
-
-        .subStateCol {
-            width: 15%;
-        }
 
         tr {
             td {
@@ -79,7 +73,62 @@
     }
 }
 
+/* ---------------------------------------------------
+    COMPLETED DUTY TABLE STYLE
+----------------------------------------------------- */
 
-.completedDutyTable {
+.completedDutyTab {
+    .completedDutyTable {
+        width: 100%;
+    }
+}
+
+/* ---------------------------------------------------
+    GENERAL STYLE
+----------------------------------------------------- */
+
+tbody {
     width: 100%;
+    display: table;
+}
+
+.subTaskCol {
+    width: 30%;
+    
+    hr {
+        margin: 0px;
+        padding: 0px;
+    }
+}
+
+.subCommentCol {
+    width: 55%;
+    
+    hr {
+        margin: 0px;
+        padding: 0px;
+    }
+}
+
+.subStateCol {
+    width: 15%;
+    
+    hr {
+        margin: 0px;
+        padding: 0px;
+    }
+}
+
+.container-fluid {
+    @media (orientation: portrait) and (max-width: 700px){
+        padding: 0px;
+    }
+}
+
+ul {
+    padding-left: 20px;
+    
+    @media (orientation:portrait) and (max-width: 500px){
+        padding-left: 10px;
+    }
 }

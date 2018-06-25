@@ -286,7 +286,7 @@
 			$this->load->view('templates/footer',$data); 
 		}
 		
-		public function viewCompleteDutyPage($page = 'admin_Complete_duty')
+		public function viewCompleteDutyPage($page = 'admin_complete_duty')
 		{
 			$this->load->library('session');
 			if(empty($_SESSION['user_access_level']))

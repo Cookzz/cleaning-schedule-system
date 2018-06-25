@@ -80,8 +80,6 @@ function update_task(task_id)
 		var url = baseUrl+"taskController/updateTaskData";
 		var update_task = $("#"+task_id+"_task").text().trim();
 		var test_update_task = $("#"+task_id+"_task").text();
-		console.log(update_task);
-		console.log(test_update_task);
 		var fd = new FormData();
 
 		fd.append('update_task',update_task);
@@ -94,9 +92,9 @@ function update_task(task_id)
 			contentType: false,
 			type: 'POST',
 			success: function(message){
-				if(message === "Update Success")
+				if(message.trim() == "Update Success")
 				{
-					alert(message);
+					alert(message.trim());
 				}
 				else
 				{
