@@ -287,15 +287,15 @@
 						echo json_encode($result);
 					}
 					// check new User Password format
-					elseif($user_data->user_password == NULL)
+					elseif($user_data->user_passwords == NULL)
 					{
 						echo json_encode($result);
 					}
-					elseif(ctype_space($user_data->user_password))
+					elseif(ctype_space($user_data->user_passwords))
 					{
 						echo json_encode($result);
 					}
-					elseif(strlen($user_data->user_password) < 8)
+					elseif(strlen($user_data->user_passwords) < 8)
 					{
 						echo json_encode($result);
 					}
@@ -364,7 +364,7 @@
 						$data = array(
 							'user_id' => $user_data->user_id,
 							'user_name' => $user_data->user_name,
-							'user_password' => $user_data->user_password,
+							'user_password' => $user_data->user_passwords,
 							'user_IC' => $user_data->user_IC,
 							'user_email' => $user_data->user_email,
 							'user_position' => $user_data->user_position,

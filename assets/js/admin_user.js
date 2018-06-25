@@ -160,7 +160,7 @@ function update_user_data(id)
 				"id"				:id,
 				"user_id"			:$("#"+id+"_user_id").text(),
 				"user_name"			:$("#"+id+"_user_name").text(),
-				"user_password"		:$("#"+id+"_user_password").text(),
+				"user_passwords"		:$("#"+id+"_user_password").text(),
 				"user_IC"			:$("#"+id+"_user_IC").text(),
 				"user_email"		:$("#"+id+"_user_email").text(),
 				"user_position"		:$("#"+id+"_user_position_selector").val(),
