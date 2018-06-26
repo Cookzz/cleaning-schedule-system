@@ -70,7 +70,7 @@
                 cursor: pointer;
             }
             
-            .newUserPositionField {
+            #newUserPositionField {
                 margin-top: 10px;
             }
             
@@ -99,6 +99,10 @@
 
 .userTitleHr {
     margin-top: 0px;
+}
+
+#userICErrorMessage, #UsernameErrorMessage {
+    color: red;
 }
     
     

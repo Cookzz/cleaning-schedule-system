@@ -41,7 +41,7 @@
 		<tr>
 			<td><label>Username:</label></td>
 			<td><input id="newUserNameField" type="text" value="" name="newUserName"></td>
-			<td id="UsernameErrorMessage" style="color:red"></td>
+			<td id="UsernameErrorMessage"></td>
 		</tr>
 		<tr>
 			<td><label>Authentication Type:</label></td>
@@ -54,7 +54,7 @@
 		<tr>
 			<td><label>IC No / Passport No:</label></td>
 			<td><input id="newUserICField" type="text" value="" name="newUserIC" maxlength=14></td>
-			<td id="UserICErrorMessage" style="color:red"></td>
+			<td id="UserICErrorMessage"></td>
 		</tr>	
 		<tr>
 			<td><label>User Position:</label></td>
