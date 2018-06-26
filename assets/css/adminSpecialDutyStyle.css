@@ -23,8 +23,7 @@
     transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
 #special_duty_table {
   width: 100%;
-  table-layout: fixed;
-  overflow-y: scroll; }
+  table-layout: fixed; }
   #special_duty_table .tableTitle th {
     color: white;
     background: #003366;

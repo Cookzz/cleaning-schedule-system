@@ -53,7 +53,7 @@
 		</td>
 	</tr>
 	<tr>
-		<th>Tueasday:</th>
+		<th>Tuesday:</th>
 		<td>
 			<center>
 				<input id="tuesday" class="schedule_data" type="text" list="cleaners"> <!--Textfield/textbox -->
