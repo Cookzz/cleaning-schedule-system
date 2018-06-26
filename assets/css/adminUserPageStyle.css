@@ -64,7 +64,7 @@
     background: #003366;
     border: 1px solid #003366;
     cursor: pointer; }
-  .adminUserTable tr td .newUserPositionField {
+  .adminUserTable tr td #newUserPositionField {
     margin-top: 10px; }
   @media (orientation: portrait) and (max-width: 450px) {
     .adminUserTable tr td .authSpan {
@@ -83,5 +83,8 @@
 
 .userTitleHr {
   margin-top: 0px; }
+
+#userICErrorMessage, #UsernameErrorMessage {
+  color: red; }
 
 /*# sourceMappingURL=adminUserPageStyle.css.map */
