@@ -86,8 +86,8 @@ function insert_user_data()
 					$("#"+user_data["id"]).find('td:eq(3)').attr('contenteditable',true);
 					$("#"+user_data["id"]).find('td:eq(4)').attr('id',user_data["id"]+"_user_email");
 					$("#"+user_data["id"]).find('td:eq(4)').attr('contenteditable',true);
-					$("#"+user_data["id"]).find('td:eq(5)').attr('id',user_data["id"]+"_user_position");
-					$("#"+user_data["id"]).find('td:eq(5)').attr('contenteditable',true);
+					$("#"+user_data["id"]).find('td:eq(6)').attr('id',user_data["id"]+"_user_position");
+					$("#"+user_data["id"]).find('td:eq(6)').attr('contenteditable',true);
 					$("#"+user_data["id"]).find('td:eq(6)').attr('id',user_data["id"]+"_user_access_level");
 					$("#"+user_data["id"]).find('td:eq(7)').attr('id',user_data["id"]+"_join_date");
 					
