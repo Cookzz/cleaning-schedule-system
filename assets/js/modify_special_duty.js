@@ -187,7 +187,7 @@ $(document).ready(function(){
 	
 	insert_cleaner_dropdown(numberOfCleaner);
 	
-	$(document).on('click','.delete',function(){
+	$(document).on('click','.delete-cleaner',function(){
 		if(confirm("Do you confirm that you want to delete the cleaner?"))
 		{
 			var txt = $(this).attr("id");

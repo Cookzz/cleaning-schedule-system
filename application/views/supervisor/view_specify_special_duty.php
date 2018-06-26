@@ -36,7 +36,7 @@
 			</tr>
 		</tbody>
 		<tr>
-			<td class="submitRow" colspan="2"><input id="<?= $special_duty["special_duty_id"]?>" type="submit" ></td>
+			<td class="submitRow" colspan="2"><input id="" type="submit" ></td>
 		</tr>
 	</table>
 </form>
