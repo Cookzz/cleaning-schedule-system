@@ -150,7 +150,6 @@
 				}
 				elseif($IcOrPassport == 2)
 				{	
-				
 					$data = array('user_IC' => $newUserIC);
 					$query = $this->main_model->get_specify_data("*","id",$data,"users");
 					$row_count = $query->num_rows();

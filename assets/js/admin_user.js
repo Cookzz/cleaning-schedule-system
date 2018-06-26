@@ -186,8 +186,7 @@ function update_user_data(id)
 				var final_message = data[0];
 				var access_level = data[1];
 				if(final_message === "Update Success")
-				{
-					
+				{	
 					alert(final_message);
 					$("#"+id+"_user_position").text($("#"+id+"_user_position_selector").val());
 					$("#"+id+"_user_access_level").text(access_level);
