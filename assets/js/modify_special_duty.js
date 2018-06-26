@@ -2,7 +2,7 @@ function insert_cleaner_dropdown(numberOfCleaner)
 {
 	
 	numberOfCleaner++;
-	$( "#new_cleaners_area" ).append("<tr><td>"+numberOfCleaner+"</td>"+
+	$( "#new_cleaners_area" ).append("<tr><td class='cleanerLabel'>"+numberOfCleaner+"</td>"+
 								"<td><input id='cleaner_"+numberOfCleaner+"' type='text' list='cleaners'></td>");	
 
 	
@@ -10,7 +10,7 @@ function insert_cleaner_dropdown(numberOfCleaner)
 	
 	$("#addCleaner").click(function(){
 		numberOfCleaner++;
-		$( "#new_cleaners_area" ).append("<tr><td>"+numberOfCleaner+"</td>"+
+		$( "#new_cleaners_area" ).append("<tr><td class='cleanerLabel'>"+numberOfCleaner+"</td>"+
 								"<td><input id='cleaner_"+numberOfCleaner+"' type='text' list='cleaners'>");
 		
 	});
@@ -146,9 +146,9 @@ function insert_back_table(message)
 				
 	var i =1;
 	special_duty_cleaners.forEach(function(special_duty_cleaners){
-		$("#original_cleaners_area").append("<tr><td>"+i+"</td>"+
+		$("#original_cleaners_area").append("<tr><td class='cleanerLabel'>"+i+"</td>"+
 		"<td><input value='" +special_duty_cleaners["special_duty_cleaner"]+"' list='cleaners'></td>"+
-		"<td><button type='button' id='"+special_duty_cleaners["special_duty_cleaner_id"]+"_delete' class='delete'>Delete</button></td>/tr>");
+		"<td class='deleteBtnCol'><button type='button' id='"+special_duty_cleaners["special_duty_cleaner_id"]+"_delete' class='delete delete-cleaner'>Delete</button></td>/tr>");
 		i++;
 	});
 }
@@ -188,7 +188,7 @@ $(document).ready(function(){
 	insert_cleaner_dropdown(numberOfCleaner);
 	
 	$(document).on('click','.delete',function(){
-		if(confirm("Do you confirm want to delete the cleaner?"))
+		if(confirm("Do you confirm that you want to delete the cleaner?"))
 		{
 			var txt = $(this).attr("id");
 			var special_duty_cleaner_id = txt.match(/\d/g);

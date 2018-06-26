@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css?family=News+Cycle:700,1000");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Cairo");
+/* ---------------------------------------------------
+    Navigation Bar Values
+----------------------------------------------------- */
+/* ---------------------------------------------------
+    ANIMATION
+----------------------------------------------------- */
+@-webkit-keyframes sk-rotateplane {
+  0% {
+    -webkit-transform: perspective(120px); }
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg); }
+  100% {
+    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg); } }
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(180px) rotateX(0deg) rotateY(0deg); }
+  50% {
+    transform: perspective(180px) rotateX(0deg) rotateY(180deg); }
+  100% {
+    transform: perspective(180px) rotateX(0deg) rotateY(360deg); } }
+/* ---------------------------------------------------
+    Form Style
+----------------------------------------------------- */
+.specialDutyForm #special_duty_table {
+  width: 60%; }
+  .specialDutyForm #special_duty_table .dutyError {
+    color: red; }
+  .specialDutyForm #special_duty_table .dutyLabel {
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 18px;
+    width: 10%; }
+  .specialDutyForm #special_duty_table .inputCol {
+    width: 45%; }
+  .specialDutyForm #special_duty_table textarea {
+    resize: none;
+    width: 100%; }
+  .specialDutyForm #special_duty_table #special_duty_dutyTitle, .specialDutyForm #special_duty_table #special_duty_dutyDetail, .specialDutyForm #special_duty_table #special_duty_date, .specialDutyForm #special_duty_table #special_duty_time {
+    padding: 5px; }
+  .specialDutyForm #special_duty_table .submitRow input {
+    float: right;
+    background: #003366;
+    border: 1px solid #003366;
+    padding: 10px 30px 10px 30px;
+    border-radius: 5px;
+    margin-top: 3px;
+    color: white; }
+  @media (orientation: portrait) {
+    .specialDutyForm #special_duty_table {
+      width: 100%; }
+      .specialDutyForm #special_duty_table .dutyLabel {
+        width: 30%; }
+      .specialDutyForm #special_duty_table .inputCol {
+        width: 65%; } }
+
+/* ---------------------------------------------------
+    ADD CLEANER TABLE STYLE
+----------------------------------------------------- */
+.addCleanerTable {
+  width: 60%; }
+  @media (orientation: portrait) {
+    .addCleanerTable {
+      width: 95%; } }
+  .addCleanerTable .tableTitle .noOfCleanerTitle {
+    width: 21%; }
+  .addCleanerTable .tableTitle td {
+    font-weight: bold; }
+  .addCleanerTable #new_cleaners_area {
+    width: 50%; }
+    .addCleanerTable #new_cleaners_area tr .cleanerLabel {
+      text-align: center; }
+    .addCleanerTable #new_cleaners_area tr input {
+      margin: 0px;
+      padding: 5px;
+      border: 1px solid white; }
+  .addCleanerTable .addBtnCol {
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white; }
+    .addCleanerTable .addBtnCol #addCleaner {
+      float: right;
+      background: #003366;
+      border: 1px solid #003366;
+      padding: 10px 30px 10px 30px;
+      border-radius: 5px;
+      margin-top: 3px;
+      color: white; }
+  @media (orientation: portrait) {
+    .addCleanerTable {
+      width: 100%; } }
+
+.deleteCleanerTable {
+  width: 60%; }
+  @media (orientation: portrait) {
+    .deleteCleanerTable {
+      width: 95%; } }
+  .deleteCleanerTable .tableTitle .noOfCleanerTitle {
+    width: 21%; }
+  .deleteCleanerTable .tableTitle td {
+    font-weight: bold; }
+  .deleteCleanerTable #original_cleaners_area .deleteBtnCol {
+    text-align: center; }
+    .deleteCleanerTable #original_cleaners_area .deleteBtnCol .delete-cleaner {
+      background: #FF3366;
+      border: 1px solid #FF3366;
+      padding: 10px 10px 10px 10px;
+      border-radius: 5px;
+      color: white;
+      width: 100%; }
+  .deleteCleanerTable #original_cleaners_area input {
+    margin: 0px;
+    padding: 5px;
+    border: 1px solid white;
+    width: 100%; }
+  @media (orientation: portrait) {
+    .deleteCleanerTable {
+      width: 100%; } }
+
+/* ---------------------------------------------------
+    GENERAL STYLE
+----------------------------------------------------- */
+.pageTitle {
+  margin-top: 10px;
+  font-weight: bold;
+  letter-spacing: 5px; }
+  @media (orientation: portrait) and (max-width: 450px) {
+    .pageTitle {
+      text-align: center; } }
+
+.cleanerTitle {
+  font-weight: bold;
+  margin-top: 20px; }
+
+/*# sourceMappingURL=supervisorSpecifySpecialDutyStyle.css.map */

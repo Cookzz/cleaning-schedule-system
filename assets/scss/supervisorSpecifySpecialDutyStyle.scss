@@ -1,0 +1,173 @@
+@import "global.scss";
+/* ---------------------------------------------------
+    Form Style
+----------------------------------------------------- */
+.specialDutyForm {
+    #special_duty_table {
+        width: 60%;
+        
+        .dutyError {
+            color: red;
+        }
+        .dutyLabel {
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-size: 18px;
+            width: 10%;
+        }
+        
+        .inputCol {
+            width: 45%;
+        }
+        
+        textarea {
+            resize: none;
+            width: 100%;
+        }
+        
+        #special_duty_dutyTitle, #special_duty_dutyDetail, #special_duty_date, #special_duty_time {
+            padding: 5px;
+        }
+        
+        .submitRow {
+            input {
+                float: right;
+                background: $mainbuttontheme;
+                border: 1px solid $mainbuttontheme;
+                padding: 10px 30px 10px 30px;
+                border-radius: 5px;
+                margin-top: 3px;
+                color: white;
+            }
+        }
+        
+        @media (orientation:portrait){
+            width: 100%;
+            
+            .dutyLabel {
+                width: 30%;
+            }
+            .inputCol {
+                width: 65%;
+            }
+        }
+    }
+}
+
+/* ---------------------------------------------------
+    ADD CLEANER TABLE STYLE
+----------------------------------------------------- */
+.addCleanerTable {
+    width: 60%;
+    
+    @media (orientation:portrait){
+        width: 95%;
+    }
+    
+    .tableTitle {
+        .noOfCleanerTitle {
+            width: 21%;
+        }
+        
+        td {
+            font-weight: bold;
+        }
+    }
+    
+    #new_cleaners_area {
+        width: 50%;
+        tr {
+            .cleanerLabel {
+                text-align: center;
+            }
+            input {
+                margin: 0px;
+                padding: 5px;
+                border: 1px solid white;
+            }
+        }
+    }
+    .addBtnCol {
+        border-bottom: 1px solid white;
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+        
+        #addCleaner {    
+            float: right;
+            background: $mainbuttontheme;
+            border: 1px solid $mainbuttontheme;
+            padding: 10px 30px 10px 30px;
+            border-radius: 5px;
+            margin-top: 3px;
+            color: white;
+        }
+    }
+    
+    @media (orientation:portrait){
+        width: 100%;
+    }
+}
+
+.deleteCleanerTable {
+    width: 60%;
+    
+    @media (orientation:portrait){
+        width: 95%;
+    }
+    
+    .tableTitle {
+        .noOfCleanerTitle {
+            width: 21%;
+        }
+        
+        td {
+            font-weight: bold;
+        }
+    }
+    
+    #original_cleaners_area{
+        .deleteBtnCol {
+            text-align: center;
+
+            .delete-cleaner {
+                background: $secondarybuttontheme;
+                border: 1px solid $secondarybuttontheme;
+                padding: 10px 10px 10px 10px;
+                border-radius: 5px;
+                color: white;
+                width: 100%;
+            }
+        }
+        
+        input {
+            margin: 0px;
+            padding: 5px;
+            border: 1px solid white;
+            width: 100%;
+        }
+    }
+    
+    @media (orientation:portrait){
+        width: 100%;
+    }
+}
+
+
+/* ---------------------------------------------------
+    GENERAL STYLE
+----------------------------------------------------- */
+.pageTitle {
+    margin-top: 10px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    
+    @media (orientation:portrait) and (max-width: 450px){
+        text-align: center;
+    }
+}
+
+
+.cleanerTitle {
+    font-weight: bold;
+    margin-top: 20px;
+}
