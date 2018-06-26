@@ -47,7 +47,7 @@
 				<td id="<?php echo $pending_duty["pending_duty_id"];?>_pending_duty_comment" contenteditable="true"><?php echo $pending_duty["pending_duty_comment"];?></td>
 				<td id="<?php echo $pending_duty["pending_duty_id"];?>_pending_duty_schedule"><?php echo $pending_duty["pending_duty_schedule"];?></td>
 				<td id="<?php echo $pending_duty["pending_duty_id"];?>_pending_duty_date"><?php echo $pending_duty["pending_duty_date"];?></td>
-				<td><center><button id="<?php echo $pending_duty["pending_duty_id"];?>update" class="update btn btn-default" type="button">Update</button></center></td>
+				<td><center><button id="<?php echo $pending_duty["pending_duty_id"];?>update" class="update" type="button">Update</button></center></td>
 				<td><center><button style="width:80px;height:30px" id="<?php echo $pending_duty["pending_duty_id"];?>delete" class="w3-text-red fa fa-trash delete" type="button"></button></center></td>
 			</tr>
 			<?php $i++;?>
