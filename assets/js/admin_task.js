@@ -47,7 +47,7 @@ function update_task(task_id)
 				{
 					var data = message;
 					alert("Update Incomplete, Duplicate or Invalid Data Appear");
-					$("#"+task_id+"_task").text(message);
+					$("#"+task_id+"_task").text(message.trim());
 				}
 				
 			}

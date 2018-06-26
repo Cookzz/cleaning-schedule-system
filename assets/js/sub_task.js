@@ -99,7 +99,7 @@ function update_sub_task(sub_task_id)
 				{
 					var data = message;
 					alert("Update Incomplete, Duplicate or Invalid Data Appear");
-					$("#"+sub_task_id+"_sub_task").text(message);
+					$("#"+sub_task_id+"_sub_task").text(message.trim());
 				}
 				
 			}
