@@ -8,7 +8,7 @@ function insert_back_table(message)
 		var newRow = table.row.add( [
 			i,
 			task_data["task"],
-			"<button type='button' id='"+task_data["task_id"]+"_update' class='update'>Update</button>",
+			"<center><button type='button' id='"+task_data["task_id"]+"_update' class='update'>Update</button></center>",
 			"<center><button style='width:80px;height:30px' type='button' id='"+task_data["task_id"]+"_delete' class='w3-text-red fa fa-trash delete'></button></center>"
 		]).draw( false ).node();
 		i++;
@@ -100,7 +100,7 @@ function update_task(task_id)
 				{
 					var data = message;
 					alert("Update Incomplete, Duplicate or Invalid Data Appear");
-					$("#"+task_id+"_task").text(message);
+					$("#"+task_id+"_task").text(message.trim());
 				}
 				
 			}
