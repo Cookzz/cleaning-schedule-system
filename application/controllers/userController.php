@@ -188,9 +188,94 @@
 			if((isset($_POST['id']))) 
 			{		
 				$id = $_POST['id'];
+				
+				$data = array("id" => $id);
+				$get_cleaner_query = $this->main_model->get_specify_data("*","id",$data,"users");
+				$user_name = $get_cleaner_query->row()->user_name;	
+				$user_id = $get_cleaner_query->row()->user_id;	
+				
 				$data = array("id" => $id);
 				$query = $this->main_model->delete_data("users",$data);
+				
+				//this week schedule 
+				$week_number = date('W');
+				$data = array("week_number" => $week_number,"monday"=>$user_id."_".$user_name);
+				$replaceData = array("monday"=>"NA");
+				$this->main_model->update_data2($data,$replaceData,"morning_schedule");
+				$this->main_model->update_data2($data,$replaceData,"afternoon_schedule");
+				
+				$data = array("week_number" => $week_number,"tuesday"=>$user_id."_".$user_name);
+				$replaceData = array("tuesday"=>"NA");
+				$this->main_model->update_data2($data,$replaceData,"morning_schedule");
+				$this->main_model->update_data2($data,$replaceData,"afternoon_schedule");
+				
+				$data = array("week_number" => $week_number,"wednesday"=>$user_id."_".$user_name);
+				$replaceData = array("wednesday"=>"NA");
+				$this->main_model->update_data2($data,$replaceData,"morning_schedule");
+				$this->main_model->update_data2($data,$replaceData,"afternoon_schedule");
+				
+				$data = array("week_number" => $week_number,"thursday"=>$user_id."_".$user_name);
+				$replaceData = array("thursday"=>"NA");
+				$this->main_model->update_data2($data,$replaceData,"morning_schedule");
+				$this->main_model->update_data2($data,$replaceData,"afternoon_schedule");
+				
+				$data = array("week_number" => $week_number,"friday"=>$user_id."_".$user_name);
+				$replaceData = array("friday"=>"NA");
+				$this->main_model->update_data2($data,$replaceData,"morning_schedule");
+				$this->main_model->update_data2($data,$replaceData,"afternoon_schedule");
+				
+				$data = array("week_number" => $week_number,"saturday"=>$user_id."_".$user_name);
+				$replaceData = array("saturday"=>"NA");
+				$this->main_model->update_data2($data,$replaceData,"morning_schedule");
+				$this->main_model->update_data2($data,$replaceData,"afternoon_schedule");
+				
+				$data = array("week_number" => $week_number,"sunday"=>$user_id."_".$user_name);
+				$replaceData = array("sunday"=>"NA");
+				$this->main_model->update_data2($data,$replaceData,"morning_schedule");
+				$this->main_model->update_data2($data,$replaceData,"afternoon_schedule");	
+				
+				//next week schedule 
+				$week_number = ((date("W"))+1);
+				$data = array("week_number" => $week_number,"monday"=>$user_id."_".$user_name);
+				$replaceData = array("monday"=>"NA");
+				$this->main_model->update_data2($data,$replaceData,"morning_schedule");
+				$this->main_model->update_data2($data,$replaceData,"afternoon_schedule");
+				
+				$data = array("week_number" => $week_number,"tuesday"=>$user_id."_".$user_name);
+				$replaceData = array("tuesday"=>"NA");
+				$this->main_model->update_data2($data,$replaceData,"morning_schedule");
+				$this->main_model->update_data2($data,$replaceData,"afternoon_schedule");
+				
+				$data = array("week_number" => $week_number,"wednesday"=>$user_id."_".$user_name);
+				$replaceData = array("wednesday"=>"NA");
+				$this->main_model->update_data2($data,$replaceData,"morning_schedule");
+				$this->main_model->update_data2($data,$replaceData,"afternoon_schedule");
+				
+				$data = array("week_number" => $week_number,"thursday"=>$user_id."_".$user_name);
+				$replaceData = array("thursday"=>"NA");
+				$this->main_model->update_data2($data,$replaceData,"morning_schedule");
+				$this->main_model->update_data2($data,$replaceData,"afternoon_schedule");
+				
+				$data = array("week_number" => $week_number,"friday"=>$user_id."_".$user_name);
+				$replaceData = array("friday"=>"NA");
+				$this->main_model->update_data2($data,$replaceData,"morning_schedule");
+				$this->main_model->update_data2($data,$replaceData,"afternoon_schedule");
+				
+				$data = array("week_number" => $week_number,"saturday"=>$user_id."_".$user_name);
+				$replaceData = array("saturday"=>"NA");
+				$this->main_model->update_data2($data,$replaceData,"morning_schedule");
+				$this->main_model->update_data2($data,$replaceData,"afternoon_schedule");
+				
+				$data = array("week_number" => $week_number,"sunday"=>$user_id."_".$user_name);
+				$replaceData = array("sunday"=>"NA");
+				$this->main_model->update_data2($data,$replaceData,"morning_schedule");
+				$this->main_model->update_data2($data,$replaceData,"afternoon_schedule");	
 					
+				//delete pending duty
+				$date = date("Y/m/d");
+				$data = array("pending_duty_date" => $date ,"pending_duty_cleaner" => $user_id."_".$user_name);
+				$query = $this->main_model->delete_data("pending_duty",$data);
+				
 				echo (true);
 			}	
 		}

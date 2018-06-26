@@ -88,8 +88,8 @@ function insert_user_data()
 					$("#"+user_data["id"]).find('td:eq(4)').attr('contenteditable',true);
 					$("#"+user_data["id"]).find('td:eq(5)').attr('id',user_data["id"]+"_user_position");
 					$("#"+user_data["id"]).find('td:eq(5)').attr('contenteditable',true);
-					$("#"+user_data["id"]).find('td:eq(7)').attr('id',user_data["id"]+"_user_access_level");
-					$("#"+user_data["id"]).find('td:eq(8)').attr('id',user_data["id"]+"_join_date");
+					$("#"+user_data["id"]).find('td:eq(6)').attr('id',user_data["id"]+"_user_access_level");
+					$("#"+user_data["id"]).find('td:eq(7)').attr('id',user_data["id"]+"_join_date");
 					
 					position_data.forEach(function(position_data){
 					$( "#"+user_data["id"]+"_user_position_selector" ).prepend("<option value='"+position_data["position_name"]+"'>"+position_data["position_name"]+"</option>");
@@ -183,8 +183,8 @@ function update_user_data(id)
 			success: function(message){
 				
 				var data = JSON.parse(message);
-				var final_message = data[0];
-				var access_level = data[1];
+				var final_message = data[0].trim();
+				var access_level = data[1].trim();
 				if(final_message === "Update Success")
 				{	
 					alert(final_message);
